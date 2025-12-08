@@ -23,13 +23,15 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  turbopack: {
-    rules: {
-      "*.{jsx,tsx}": {
-        loaders: [LOADER]
-      }
-    }
-  }
+  // Turbopack loader configuration temporarily disabled due to compatibility issues
+  // The loader uses Webpack APIs that are not compatible with Turbopack
+  // turbopack: {
+  //   rules: {
+  //     "*.{jsx,tsx}": {
+  //       loaders: [LOADER]
+  //     }
+  //   }
+  // }
 };
 
 export default nextConfig;

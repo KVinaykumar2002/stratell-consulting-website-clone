@@ -14,6 +14,7 @@ import GlobalNetworkSection from "@/components/sections/global-network";
 import FeaturesAccordionSection from "@/components/sections/features-accordion";
 import CurvedLoop from "@/components/CurvedLoop";
 import { NeonOrbs } from "@/components/ui/neon-orbs";
+import { Feature108 } from "@/components/blocks/shadcnblocks-com-feature108";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -36,6 +37,7 @@ export default function Home() {
       <HeroSection />
       <StatisticsSection />
       <ServicesSection />
+      <Feature108 />
       <FeatureSection />     
       <div className="py-8 overflow-visible">
         <CurvedLoop 

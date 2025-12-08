@@ -8,6 +8,8 @@ import { ServiceGrid, Service } from "@/components/ui/service-grid";
 import ZoomParallaxDemo from "@/components/ui/zoom-parallax-demo";
 import { Timeline } from "@/components/ui/timeline";
 import Image from "next/image";
+import { Feature108 } from "@/components/blocks/shadcnblocks-com-feature108";
+import { Server, Brain, Code, Cloud } from "lucide-react";
 
 // IT Consultancy services with Unsplash images
 const itConsultancyServices: Service[] = [
@@ -135,6 +137,76 @@ export default function ServicesPage() {
       </section>
 
       <ZoomParallaxDemo />
+      
+      {/* Features Section with Tabs */}
+      <Feature108
+        badge="Our Expertise"
+        heading="Comprehensive IT Solutions Tailored to Your Needs"
+        description="Explore our core service areas and discover how we can transform your business with cutting-edge technology."
+        tabs={[
+          {
+            value: "it-feature",
+            icon: <Server className="h-auto w-4 shrink-0" />,
+            label: "IT Feature",
+            content: {
+              badge: "Enterprise IT",
+              title: "Complete IT Infrastructure & Support Solutions.",
+              description:
+                "We provide comprehensive IT services including infrastructure management, system integration, cybersecurity, and 24/7 technical support. Our expert team ensures your IT systems run smoothly, securely, and efficiently.",
+              buttonText: "Explore IT Services",
+              imageSrc:
+                "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
+              imageAlt: "IT infrastructure and enterprise solutions",
+            },
+          },
+          {
+            value: "ai-ml",
+            icon: <Brain className="h-auto w-4 shrink-0" />,
+            label: "AI & ML",
+            content: {
+              badge: "Intelligent Automation",
+              title: "Harness the Power of Artificial Intelligence & Machine Learning.",
+              description:
+                "Transform your business with AI and ML solutions. From predictive analytics and natural language processing to computer vision and automated decision-making systems, we help you leverage intelligent technologies to gain competitive advantages.",
+              buttonText: "Learn About AI/ML",
+              imageSrc:
+                "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop",
+              imageAlt: "Artificial intelligence and machine learning",
+            },
+          },
+          {
+            value: "web-development",
+            icon: <Code className="h-auto w-4 shrink-0" />,
+            label: "Web Development",
+            content: {
+              badge: "Modern Web Solutions",
+              title: "Build Scalable, High-Performance Web Applications.",
+              description:
+                "Our web development expertise spans from responsive frontend designs to robust backend systems. We create modern, secure, and scalable web applications using the latest technologies and best practices to deliver exceptional user experiences.",
+              buttonText: "View Web Solutions",
+              imageSrc:
+                "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop",
+              imageAlt: "Web development and programming",
+            },
+          },
+          {
+            value: "cloud",
+            icon: <Cloud className="h-auto w-4 shrink-0" />,
+            label: "Cloud",
+            content: {
+              badge: "Cloud Excellence",
+              title: "Scalable Cloud Infrastructure & Migration Services.",
+              description:
+                "Accelerate your digital transformation with our cloud solutions. We specialize in cloud migration, infrastructure setup, DevOps automation, and cloud-native application development across AWS, Azure, and GCP platforms.",
+              buttonText: "Discover Cloud Services",
+              imageSrc:
+                "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop",
+              imageAlt: "Cloud computing and infrastructure",
+            },
+          },
+        ]}
+      />
+
       <ServiceGrid
         title="Our IT Consultancy Services"
         subtitle="Comprehensive technology solutions to drive your business forward. Choose from our wide range of expert IT services."
