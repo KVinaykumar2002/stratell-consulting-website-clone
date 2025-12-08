@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useEffect, useRef } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Layout, Pointer, Zap, Cloud } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -32,12 +33,14 @@ interface Feature108Props {
   heading?: string;
   description?: string;
   tabs?: Tab[];
+  autoSwitchInterval?: number; // Interval in milliseconds (default: 5000ms = 5 seconds)
 }
 
 const Feature108 = ({
   badge = "shadcnblocks.com",
   heading = "A Collection of Components Built With Shadcn & Tailwind",
   description = "Join us to build flawless web solutions.",
+  autoSwitchInterval = 5000, // 5 seconds default
   tabs = [
     {
       value: "tab-1",
@@ -93,6 +96,50 @@ const Feature108 = ({
     },
   ],
 }: Feature108Props) => {
+  const [activeTab, setActiveTab] = useState(tabs[0].value);
+  const autoSwitchPausedRef = useRef(false);
+  const pauseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Auto-switch tabs
+  useEffect(() => {
+    if (autoSwitchPausedRef.current) return;
+
+    const interval = setInterval(() => {
+      setActiveTab((current) => {
+        const currentIndex = tabs.findIndex((tab) => tab.value === current);
+        const nextIndex = (currentIndex + 1) % tabs.length;
+        return tabs[nextIndex].value;
+      });
+    }, autoSwitchInterval);
+
+    return () => clearInterval(interval);
+  }, [tabs, autoSwitchInterval]);
+
+  // Handle manual tab change - pause auto-switching temporarily
+  const handleTabChange = (value: string) => {
+    setActiveTab(value);
+    autoSwitchPausedRef.current = true;
+
+    // Clear existing timeout if any
+    if (pauseTimeoutRef.current) {
+      clearTimeout(pauseTimeoutRef.current);
+    }
+
+    // Resume auto-switching after 10 seconds of inactivity
+    pauseTimeoutRef.current = setTimeout(() => {
+      autoSwitchPausedRef.current = false;
+    }, 10000);
+  };
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (pauseTimeoutRef.current) {
+        clearTimeout(pauseTimeoutRef.current);
+      }
+    };
+  }, []);
+
   return (
     <section className="py-32">
       <div className="container mx-auto">
@@ -103,55 +150,70 @@ const Feature108 = ({
           </h1>
           <p className="text-muted-foreground">{description}</p>
         </div>
-        <Tabs defaultValue={tabs[0].value} className="mt-8">
+        <Tabs value={activeTab} onValueChange={handleTabChange} className="mt-8">
           <TabsList className="container flex flex-col items-center justify-center gap-4 sm:flex-row md:gap-10">
             {tabs.map((tab) => (
               <TabsTrigger
                 key={tab.value}
                 value={tab.value}
-                className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-muted-foreground data-[state=active]:bg-muted data-[state=active]:text-primary"
+                className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-muted-foreground transition-all duration-300 ease-in-out data-[state=active]:bg-muted data-[state=active]:text-primary data-[state=active]:scale-105"
               >
                 {tab.icon} {tab.label}
               </TabsTrigger>
             ))}
           </TabsList>
-          <div className="mx-auto mt-8 max-w-screen-xl rounded-2xl bg-muted/70 p-6 lg:p-16">
-            {tabs.map((tab) => (
-              <TabsContent
-                key={tab.value}
-                value={tab.value}
-                className="grid place-items-center gap-20 lg:grid-cols-2 lg:gap-10"
-              >
-                <div className="flex flex-col gap-5">
-                  <Badge variant="outline" className="w-fit bg-background">
-                    {tab.content.badge}
-                  </Badge>
-                  <h3 className="text-3xl font-semibold lg:text-5xl">
-                    {tab.content.title}
-                  </h3>
-                  <p className="text-muted-foreground lg:text-lg">
-                    {tab.content.description}
-                  </p>
-                  <Button className="mt-2.5 w-fit gap-2" size="lg">
-                    {tab.content.buttonText}
-                  </Button>
-                </div>
-                <div className="w-full max-w-lg h-[500px] flex items-center justify-center overflow-hidden bg-transparent">
-                  <Lottie
-                    animationData={tab.content.animationData}
-                    loop={true}
-                    autoplay={true}
-                    style={{ 
-                      width: "100%", 
-                      height: "100%",
-                      maxWidth: "100%",
-                      maxHeight: "100%"
-                    }}
-                    className="rounded-xl"
-                  />
-                </div>
-              </TabsContent>
-            ))}
+          <div className="mx-auto mt-8 max-w-screen-xl rounded-2xl bg-muted/70 p-6 lg:p-16 relative overflow-hidden min-h-[600px]">
+            {tabs.map((tab) => {
+              const isActive = activeTab === tab.value;
+              return (
+                <TabsContent
+                  key={tab.value}
+                  value={tab.value}
+                  className={`grid place-items-center gap-20 lg:grid-cols-2 lg:gap-10 transition-all duration-500 ease-in-out ${
+                    isActive 
+                      ? "opacity-100 translate-x-0 relative z-10" 
+                      : "opacity-0 translate-x-4 absolute inset-0 pointer-events-none"
+                  }`}
+                >
+                  <div className={`flex flex-col gap-5 transition-all duration-700 ease-out ${
+                    isActive 
+                      ? "opacity-100 translate-x-0 delay-150" 
+                      : "opacity-0 -translate-x-4"
+                  }`}>
+                    <Badge variant="outline" className="w-fit bg-background">
+                      {tab.content.badge}
+                    </Badge>
+                    <h3 className="text-3xl font-semibold lg:text-5xl">
+                      {tab.content.title}
+                    </h3>
+                    <p className="text-muted-foreground lg:text-lg">
+                      {tab.content.description}
+                    </p>
+                    <Button className="mt-2.5 w-fit gap-2" size="lg">
+                      {tab.content.buttonText}
+                    </Button>
+                  </div>
+                  <div className={`w-full max-w-lg h-[500px] flex items-center justify-center overflow-hidden bg-transparent transition-all duration-700 ease-out ${
+                    isActive 
+                      ? "opacity-100 scale-100 delay-300" 
+                      : "opacity-0 scale-95"
+                  }`}>
+                    <Lottie
+                      animationData={tab.content.animationData}
+                      loop={true}
+                      autoplay={true}
+                      style={{ 
+                        width: "100%", 
+                        height: "100%",
+                        maxWidth: "100%",
+                        maxHeight: "100%"
+                      }}
+                      className="rounded-xl"
+                    />
+                  </div>
+                </TabsContent>
+              );
+            })}
           </div>
         </Tabs>
       </div>

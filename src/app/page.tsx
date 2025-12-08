@@ -102,15 +102,7 @@ export default function Home() {
         ]}
       />
       <FeatureSection />     
-      <div className="py-8 overflow-visible">
-        <CurvedLoop 
-          marqueeText="Welcome to TechnoRealm ✦"
-          speed={3}
-          curveAmount={500}
-          direction="right"
-          interactive={true}
-        />
-      </div>
+    
       <FeaturesAccordionSection />
       <GlobalNetworkSection />
       <TrustedBy />
