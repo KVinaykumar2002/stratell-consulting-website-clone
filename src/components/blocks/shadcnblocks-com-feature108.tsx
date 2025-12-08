@@ -1,17 +1,23 @@
 "use client"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Layout, Pointer, Zap } from "lucide-react";
+import { Layout, Pointer, Zap, Cloud } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import Lottie from "lottie-react";
+
+// Import JSON files directly - Next.js will handle these
+import webDevelopmentAnimation from "@/app/web_development.json";
+import itDevPinkAnimation from "@/app/IT_dev_pink.json";
+import dataSecurityAnimation from "@/app/DATA_SECURITY.json";
+import cloudAnimation from "@/app/Cloud.json";
 
 interface TabContent {
   badge: string;
   title: string;
   description: string;
   buttonText: string;
-  imageSrc: string;
-  imageAlt: string;
+  animationData: object;
 }
 
 interface Tab {
@@ -43,9 +49,7 @@ const Feature108 = ({
         description:
           "Discover new web trends that help you craft sleek, highly functional sites that drive traffic and convert leads into customers.",
         buttonText: "See Plans",
-        imageSrc:
-          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-        imageAlt: "Modern web design showcase",
+        animationData: webDevelopmentAnimation,
       },
     },
     {
@@ -58,9 +62,7 @@ const Feature108 = ({
         description:
           "Use stellar design to easily engage users and strengthen their loyalty. Create a seamless experience that keeps them coming back for more.",
         buttonText: "See Tools",
-        imageSrc:
-          "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
-        imageAlt: "User engagement illustration",
+        animationData: itDevPinkAnimation,
       },
     },
     {
@@ -73,9 +75,20 @@ const Feature108 = ({
         description:
           "Lift your brand with modern tech that grabs attention and drives action. Create a digital experience that stands out from the crowd.",
         buttonText: "See Options",
-        imageSrc:
-          "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop",
-        imageAlt: "Advanced web layouts",
+        animationData: dataSecurityAnimation,
+      },
+    },
+    {
+      value: "tab-4",
+      icon: <Cloud className="h-auto w-4 shrink-0" />,
+      label: "Cloud Solutions",
+      content: {
+        badge: "Cloud Technology",
+        title: "Scale your infrastructure with cloud solutions.",
+        description:
+          "Leverage the power of cloud computing to enhance your business operations, improve scalability, and reduce costs with our comprehensive cloud services.",
+        buttonText: "Learn More",
+        animationData: cloudAnimation,
       },
     },
   ],
@@ -123,11 +136,20 @@ const Feature108 = ({
                     {tab.content.buttonText}
                   </Button>
                 </div>
-                <img
-                  src={tab.content.imageSrc}
-                  alt={tab.content.imageAlt}
-                  className="rounded-xl"
-                />
+                <div className="w-full max-w-lg h-[500px] flex items-center justify-center overflow-hidden bg-transparent">
+                  <Lottie
+                    animationData={tab.content.animationData}
+                    loop={true}
+                    autoplay={true}
+                    style={{ 
+                      width: "100%", 
+                      height: "100%",
+                      maxWidth: "100%",
+                      maxHeight: "100%"
+                    }}
+                    className="rounded-xl"
+                  />
+                </div>
               </TabsContent>
             ))}
           </div>

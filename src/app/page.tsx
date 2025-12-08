@@ -16,6 +16,10 @@ import CurvedLoop from "@/components/CurvedLoop";
 import { NeonOrbs } from "@/components/ui/neon-orbs";
 import { Feature108 } from "@/components/blocks/shadcnblocks-com-feature108";
 import { Server, Brain, Code, Cloud } from "lucide-react";
+import webDevelopmentAnimation from "@/app/web_development.json";
+import itDevPinkAnimation from "@/app/IT_dev_pink.json";
+import dataSecurityAnimation from "@/app/DATA_SECURITY.json";
+import cloudAnimation from "@/app/Cloud.json";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -53,9 +57,7 @@ export default function Home() {
               description:
                 "We provide comprehensive IT services including infrastructure management, system integration, cybersecurity, and 24/7 technical support. Our expert team ensures your IT systems run smoothly, securely, and efficiently.",
               buttonText: "Explore IT Services",
-              imageSrc:
-                "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
-              imageAlt: "IT infrastructure and enterprise solutions",
+              animationData: itDevPinkAnimation,
             },
           },
           {
@@ -68,9 +70,7 @@ export default function Home() {
               description:
                 "Transform your business with AI and ML solutions. From predictive analytics and natural language processing to computer vision and automated decision-making systems, we help you leverage intelligent technologies to gain competitive advantages.",
               buttonText: "Learn About AI/ML",
-              imageSrc:
-                "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop",
-              imageAlt: "Artificial intelligence and machine learning",
+              animationData: dataSecurityAnimation,
             },
           },
           {
@@ -83,9 +83,7 @@ export default function Home() {
               description:
                 "Our web development expertise spans from responsive frontend designs to robust backend systems. We create modern, secure, and scalable web applications using the latest technologies and best practices to deliver exceptional user experiences.",
               buttonText: "View Web Solutions",
-              imageSrc:
-                "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop",
-              imageAlt: "Web development and programming",
+              animationData: webDevelopmentAnimation,
             },
           },
           {
@@ -98,9 +96,7 @@ export default function Home() {
               description:
                 "Accelerate your digital transformation with our cloud solutions. We specialize in cloud migration, infrastructure setup, DevOps automation, and cloud-native application development across AWS, Azure, and GCP platforms.",
               buttonText: "Discover Cloud Services",
-              imageSrc:
-                "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop",
-              imageAlt: "Cloud computing and infrastructure",
+              animationData: cloudAnimation,
             },
           },
         ]}
