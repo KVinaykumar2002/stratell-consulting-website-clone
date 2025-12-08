@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { SparklesPreview } from "@/components/ui/sparkles-preview";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { TechnoRealmLogo } from "@/components/logo";
 
 const Footer = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -77,11 +77,12 @@ const Footer = () => {
             {/* Logo */}
             <div>
               <Link href="/">
-                <Image
-                  src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/9b84987e-5fc0-480d-bd08-54bddc2234ce-stratwell-consulting-framer-website/assets/svgs/ln32nYbqWvSJBoA7GRhGM437VII-1.svg"
-                  alt="TechnoRealm Logo"
-                  width={164}
-                  height={48}
+                <TechnoRealmLogo 
+                  width={220} 
+                  height={60} 
+                  className="h-[60px] w-auto"
+                  imageSrc="/image.png"
+                  variant="light"
                 />
               </Link>
 

@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
+import { TechnoRealmLogo } from "@/components/logo";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -28,13 +28,13 @@ export default function Header() {
           boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
         }}
       >
-        <Link href="/" className="relative h-[48px] w-[164px] flex-shrink-0">
-          <Image
-            src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/9b84987e-5fc0-480d-bd08-54bddc2234ce-stratwell-consulting-framer-website/assets/svgs/ln32nYbqWvSJBoA7GRhGM437VII-1.svg"
-            alt="TechnoRealm Logo"
-            fill
-            className="object-contain"
-            priority
+        <Link href="/" className="flex-shrink-0">
+          <TechnoRealmLogo 
+            width={200} 
+            height={56} 
+            className="h-14 w-auto"
+            imageSrc="/image.png"
+            variant="light"
           />
         </Link>
         
@@ -65,12 +65,13 @@ export default function Header() {
                 <div className="flex flex-col h-full">
                   <div className="flex items-center justify-between p-6 border-b border-white/20">
                       <SheetClose asChild>
-                        <Link href="/" className="h-[40px] w-[140px] relative">
-                          <Image
-                            src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/9b84987e-5fc0-480d-bd08-54bddc2234ce-stratwell-consulting-framer-website/assets/svgs/ln32nYbqWvSJBoA7GRhGM437VII-1.svg"
-                            alt="TechnoRealm Logo"
-                            fill
-                            className="object-contain"
+                        <Link href="/" className="flex-shrink-0">
+                          <TechnoRealmLogo 
+                            width={240} 
+                            height={60} 
+                            className="h-[60px] w-auto"
+                            imageSrc="/image.png"
+                            variant="light"
                           />
                         </Link>
                       </SheetClose>
