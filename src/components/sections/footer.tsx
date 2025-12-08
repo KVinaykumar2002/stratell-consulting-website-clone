@@ -78,22 +78,17 @@ const Footer = () => {
             <div>
               <Link href="/">
                 <TechnoRealmLogo 
-                  width={220} 
-                  height={60} 
-                  className="h-[60px] w-auto"
+                  width={650} 
+                  height={195} 
+                  className="h-48 md:h-52 lg:h-56 xl:h-60 w-auto"
                   imageSrc="/image.png"
                   variant="light"
                 />
               </Link>
 
-              <p className="mt-6 text-base text-white/70 max-w-sm">
-                TechnoRealm helps businesses streamline operations,
-                optimize performance, and achieve measurable growth.
-              </p>
-
               <Link
                 href="/contact"
-                className="group relative inline-flex items-center h-14 px-6 mt-8 bg-white text-black rounded-2xl overflow-hidden transition-all duration-300"
+                className="group relative inline-flex items-center h-14 px-6 mt-10 bg-white text-black rounded-2xl overflow-hidden transition-all duration-300"
               >
                 {/* Overlay animation from left to right - using primary blue */}
                 <span className="absolute inset-0 bg-[#2639ED] transform origin-left -translate-x-full transition-transform duration-500 ease-in-out group-hover:translate-x-0 rounded-2xl"></span>

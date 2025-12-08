@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1152px]">
       <div
-        className="flex items-center justify-between h-20 rounded-2xl px-4 border border-white/10"
+        className="flex items-center justify-between h-16 md:h-20 rounded-2xl px-4 md:px-6 border border-white/10"
         style={{
           backgroundColor: 'rgba(0, 0, 0, 0.4)',
           backdropFilter: 'blur(20px)',
@@ -30,9 +30,9 @@ export default function Header() {
       >
         <Link href="/" className="flex-shrink-0">
           <TechnoRealmLogo 
-            width={200} 
-            height={56} 
-            className="h-14 w-auto"
+            width={320} 
+            height={90} 
+            className="h-20 md:h-24 w-auto"
             imageSrc="/image.png"
             variant="light"
           />
@@ -67,9 +67,9 @@ export default function Header() {
                       <SheetClose asChild>
                         <Link href="/" className="flex-shrink-0">
                           <TechnoRealmLogo 
-                            width={240} 
-                            height={60} 
-                            className="h-[60px] w-auto"
+                            width={260} 
+                            height={72} 
+                            className="h-[72px] w-auto"
                             imageSrc="/image.png"
                             variant="light"
                           />
