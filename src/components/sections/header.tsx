@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
@@ -15,11 +15,39 @@ const navLinks = [
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // If scrolled down more than 50px, shrink navbar
+      if (currentScrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   return (
-    <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1152px]">
+    <header className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'top-2 w-[85%] max-w-[900px]' 
+        : 'top-6 w-[95%] max-w-[1152px]'
+    }`}>
       <div
-        className="flex items-center justify-between h-16 md:h-20 rounded-2xl px-4 md:px-6 border border-white/10"
+        className={`flex items-center justify-between rounded-2xl border border-white/10 transition-all duration-300 ${
+          isScrolled 
+            ? 'h-12 md:h-14 px-3 md:px-4' 
+            : 'h-16 md:h-20 px-4 md:px-6'
+        }`}
         style={{
           backgroundColor: 'rgba(0, 0, 0, 0.4)',
           backdropFilter: 'blur(20px)',
@@ -31,7 +59,11 @@ export default function Header() {
           <TechnoRealmLogo 
             width={320} 
             height={90} 
-            className="h-20 md:h-24 w-auto"
+            className={`w-auto transition-all duration-300 ${
+              isScrolled 
+                ? 'h-12 md:h-14' 
+                : 'h-20 md:h-24'
+            }`}
             imageSrc="/image.png"
             variant="light"
           />
@@ -48,7 +80,11 @@ export default function Header() {
         <div className="flex items-center">
           <Link
             href="/contact"
-            className="hidden lg:inline-flex items-center justify-center bg-white text-[#0F1828] text-base font-medium h-12 px-8 rounded-xl hover:bg-gray-200 transition-colors"
+            className={`hidden lg:inline-flex items-center justify-center bg-white text-[#0F1828] font-medium rounded-xl hover:bg-gray-200 transition-all duration-300 ${
+              isScrolled 
+                ? 'text-sm h-9 px-5' 
+                : 'text-base h-12 px-8'
+            }`}
           >
             Contact Us
           </Link>
