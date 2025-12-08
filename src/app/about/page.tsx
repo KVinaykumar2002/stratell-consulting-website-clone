@@ -96,9 +96,9 @@ export default function AboutPage() {
       <Header />
       <div className='min-h-screen'>
         <ScrollExpandMedia
-          mediaType='image'
-          mediaSrc='https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1280&h=720&fit=crop&q=80'
-          bgImageSrc='https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&h=1080&fit=crop&q=80'
+          mediaType='video'
+          mediaSrc='https://res.cloudinary.com/dp7oywrdl/video/upload/v1765227997/3252148-uhd_3840_2160_25fps_kwhlgo.mp4'
+          bgImageSrc='/about_us_back.jpg'
           title='About TechnoRealm'
           date='Our Story'
           scrollToExpand='Scroll to Learn More'
