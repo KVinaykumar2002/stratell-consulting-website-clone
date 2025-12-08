@@ -56,8 +56,8 @@ export default function FeatureSection() {
 
   return (
     <section className="relative w-full my-32 px-6 md:px-10 flex flex-col md:flex-row items-center justify-between min-h-[30rem] border border-border bg-card overflow-hidden rounded-3xl">
-      {/* Background Lottie Animation */}
-      <div className="absolute inset-0 w-full h-full opacity-20 -z-10 pointer-events-none">
+      {/* Background Lottie Animation - positioned behind left side */}
+      <div className="absolute left-50 top-0 w-full md:w-1/2 h-full pointer-events-none z-0">
         <Lottie
           animationData={workingOnlineAnimation}
           loop={true}
@@ -65,13 +65,14 @@ export default function FeatureSection() {
           style={{ 
             width: "100%", 
             height: "100%",
-            objectFit: "cover"
+            objectFit: "contain",
+            opacity: 1
           }}
           className="w-full h-full"
         />
       </div>
       {/* Left side: Heading and Text */}
-      <div className="w-half md:w-1/2 z-10 py-10 md:py-0 relative">
+      <div className="w-half md:w-1/2 py-10 md:py-0 relative z-20 ">
         <h1 className="text-4xl sm:text-6xl font-bold mb-4 text-foreground">
           Build your idea
         </h1>
@@ -90,7 +91,7 @@ export default function FeatureSection() {
       </div>
 
       {/* Right side: Orbit animation cropped to 1/4 */}
-      <div className="relative w-full md:w-1/2 h-[20rem] md:h-full flex items-center justify-start overflow-hidden z-10">
+      <div className="relative w-full md:w-1/2 h-[20rem] md:h-full flex items-center justify-start overflow-hidden z-20">
         <div className="relative w-[50rem] h-[50rem] translate-x-[50%] flex items-center justify-center">
           {/* Center Circle */}
           <div className="w-24 h-24 rounded-full bg-secondary shadow-lg flex items-center justify-center">
