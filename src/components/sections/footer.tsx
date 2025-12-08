@@ -79,14 +79,14 @@ const Footer = () => {
               <Link href="/">
                 <Image
                   src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/9b84987e-5fc0-480d-bd08-54bddc2234ce-stratwell-consulting-framer-website/assets/svgs/ln32nYbqWvSJBoA7GRhGM437VII-1.svg"
-                  alt="Stratwell Consulting Logo"
+                  alt="TechnoRealm Logo"
                   width={164}
                   height={48}
                 />
               </Link>
 
               <p className="mt-6 text-base text-white/70 max-w-sm">
-                Stratwell Consulting helps businesses streamline operations,
+                TechnoRealm helps businesses streamline operations,
                 optimize performance, and achieve measurable growth.
               </p>
 
@@ -140,9 +140,9 @@ const Footer = () => {
               <h3 className="text-sm uppercase text-white/50 mb-6">Contact</h3>
               <ul className="space-y-4">
                 <li>+1 (555) 867-6543</li>
-                <li>contact@stratwellconsulting.com</li>
+                <li>contact@technorealm.com</li>
                 <li>
-                  420 Stratwell Avenue, Suite 300<br />
+                  420 TechnoRealm Avenue, Suite 300<br />
                   Boston, MA 02116, USA
                 </li>
               </ul>
@@ -166,7 +166,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 pt-8">
           <p className="text-sm text-white/50">
-            © 2025 Stratwell Consulting
+            © 2025 TechnoRealm
           </p>
 
           <div className="flex gap-4 text-sm text-white/50">

@@ -36,7 +36,7 @@ const CtaFinal = () => {
           Ready to <em className="italic">Transform</em> Your Business?
         </h2>
         <p className="max-w-xl font-body text-base leading-[1.6] text-white/70">
-          Schedule a free consultation and discover how Stratwell Consulting can streamline your operations, optimize performance, and deliver measurable results.
+          Schedule a free consultation and discover how TechnoRealm can streamline your operations, optimize performance, and deliver measurable results.
         </p>
         <Link
           href="/contact"

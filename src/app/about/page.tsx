@@ -10,11 +10,11 @@ const AboutContent = () => {
   return (
     <div className='max-w-4xl mx-auto'>
       <h2 className='text-3xl font-bold mb-6 text-foreground'>
-        About Stratwell Consulting
+        About TechnoRealm
       </h2>
       <div className='space-y-6 text-lg text-muted-foreground'>
         <p>
-          Stratwell Consulting is a leading business consulting firm dedicated
+          TechnoRealm is a leading business consulting firm dedicated
           to helping organizations streamline operations, optimize performance,
           and achieve measurable growth. With years of experience across
           multiple industries, we bring expertise and innovation to every
@@ -99,7 +99,7 @@ export default function AboutPage() {
           mediaType='image'
           mediaSrc='https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1280&h=720&fit=crop&q=80'
           bgImageSrc='https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&h=1080&fit=crop&q=80'
-          title='About Stratwell'
+          title='About TechnoRealm'
           date='Our Story'
           scrollToExpand='Scroll to Learn More'
           textBlend={false}

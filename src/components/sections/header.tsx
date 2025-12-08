@@ -31,7 +31,7 @@ export default function Header() {
         <Link href="/" className="relative h-[48px] w-[164px] flex-shrink-0">
           <Image
             src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/9b84987e-5fc0-480d-bd08-54bddc2234ce-stratwell-consulting-framer-website/assets/svgs/ln32nYbqWvSJBoA7GRhGM437VII-1.svg"
-            alt="Stratwell Consulting Logo"
+            alt="TechnoRealm Logo"
             fill
             className="object-contain"
             priority
@@ -68,7 +68,7 @@ export default function Header() {
                         <Link href="/" className="h-[40px] w-[140px] relative">
                           <Image
                             src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/9b84987e-5fc0-480d-bd08-54bddc2234ce-stratwell-consulting-framer-website/assets/svgs/ln32nYbqWvSJBoA7GRhGM437VII-1.svg"
-                            alt="Stratwell Consulting Logo"
+                            alt="TechnoRealm Logo"
                             fill
                             className="object-contain"
                           />

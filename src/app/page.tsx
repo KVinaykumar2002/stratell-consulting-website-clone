@@ -49,7 +49,7 @@ export default function Home() {
       <FeaturesAccordionSection />
       <GlobalNetworkSection />
       <TrustedBy />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <div className="container px-6 pb-20">
         <CtaFinal />
       </div>
