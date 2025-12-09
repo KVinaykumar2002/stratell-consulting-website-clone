@@ -45,8 +45,8 @@ export default function Header() {
       <div
         className={`flex items-center justify-between rounded-2xl border border-white/10 transition-all duration-300 ${
           isScrolled 
-            ? 'h-14 md:h-16 px-3 md:px-4' 
-            : 'h-18 md:h-22 px-4 md:px-6'
+            ? 'h-16 md:h-18 px-3 md:px-4' 
+            : 'h-22 md:h-26 px-4 md:px-6'
         }`}
         style={{
           backgroundColor: 'rgba(0, 0, 0, 0.4)',
@@ -57,12 +57,12 @@ export default function Header() {
       >
         <Link href="/" className="flex-shrink-0">
           <TechnoRealmLogo 
-            width={320} 
-            height={94} 
+            width={360} 
+            height={106} 
             className={`w-auto transition-all duration-300 ${
               isScrolled 
-                ? 'h-12 md:h-14' 
-                : 'h-16 md:h-18'
+                ? 'h-14 md:h-16' 
+                : 'h-18 md:h-20'
             }`}
             imageSrc="/image.png"
             variant="light"
@@ -102,9 +102,9 @@ export default function Header() {
                       <SheetClose asChild>
                         <Link href="/" className="flex-shrink-0">
                           <TechnoRealmLogo 
-                            width={320} 
-                            height={94} 
-                            className="h-[88px] w-auto"
+                            width={340} 
+                            height={100} 
+                            className="h-[92px] w-auto"
                             imageSrc="/image.png"
                             variant="light"
                           />
