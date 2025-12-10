@@ -14,17 +14,17 @@ const AboutContent = () => {
       </h2>
       <div className='space-y-6 text-lg text-muted-foreground'>
         <p>
-          TechnoRealm is a leading business consulting firm dedicated
+          TechnoRealm is a leading technology consulting firm dedicated
           to helping organizations streamline operations, optimize performance,
-          and achieve measurable growth. With years of experience across
-          multiple industries, we bring expertise and innovation to every
+          and achieve measurable growth through innovative IT solutions. With years of experience across
+          multiple industries, we bring technical expertise and innovation to every
           project.
         </p>
         <p>
-          Our team of seasoned consultants works closely with clients to
-          understand their unique challenges and develop tailored solutions
+          Our team of seasoned technology consultants works closely with clients to
+          understand their unique challenges and develop tailored IT solutions
           that drive real results. We combine strategic thinking with practical
-          execution to deliver value at every stage of your business journey.
+          technical execution to deliver value at every stage of your digital transformation journey.
         </p>
         <div className='grid md:grid-cols-2 gap-8 mt-12'>
           <div>
@@ -32,8 +32,8 @@ const AboutContent = () => {
               Our Mission
             </h3>
             <p className='text-muted-foreground'>
-              To empower businesses with strategic insights and actionable
-              solutions that transform challenges into opportunities for
+              To empower businesses with strategic technology insights and actionable
+              IT solutions that transform challenges into opportunities for
               sustainable growth.
             </p>
           </div>
@@ -42,8 +42,8 @@ const AboutContent = () => {
               Our Vision
             </h3>
             <p className='text-muted-foreground'>
-              To be the most trusted consulting partner for businesses seeking
-              to achieve operational excellence and strategic transformation.
+              To be the most trusted technology consulting partner for businesses seeking
+              to achieve operational excellence and digital transformation.
             </p>
           </div>
         </div>
@@ -57,8 +57,8 @@ const AboutContent = () => {
                 Expert Team
               </h4>
               <p className='text-sm text-muted-foreground'>
-                Our consultants bring decades of combined experience across
-                various industries and specializations.
+                Our technology consultants bring decades of combined experience across
+                various industries and IT specializations.
               </p>
             </div>
             <div className='p-6 rounded-lg bg-card border border-border'>

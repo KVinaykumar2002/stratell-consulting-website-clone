@@ -1,7 +1,7 @@
 /**
  * TechnoRealm Logo Component
  * 
- * This component renders the TechnoRealm Consultancy logo.
+ * This component renders the TechnoRealm logo.
  * 
  * To use your actual logo image file:
  * 1. Place your logo file in the /public folder with one of these names:
@@ -66,7 +66,7 @@ export const TechnoRealmLogo: React.FC<LogoProps> = ({
     return (
       <Image
         src={finalImageSrc}
-        alt="TechnoRealm Consultancy Logo"
+        alt="TechnoRealm Logo"
         width={width}
         height={height}
         className={className}

@@ -16,8 +16,8 @@ import itDevPinkAnimation from "@/app/IT_dev_pink.json";
 import dataSecurityAnimation from "@/app/DATA_SECURITY.json";
 import cloudAnimation from "@/app/Cloud.json";
 
-// IT Consultancy services with Unsplash images
-const itConsultancyServices: Service[] = [
+// IT services with Unsplash images
+const itServices: Service[] = [
   {
     name: "Cloud Migration",
     imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=400&fit=crop&q=80",
@@ -215,7 +215,7 @@ export default function ServicesPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              Our IT Consultancy Services
+              Our Technology Services
             </motion.h2>
             <motion.p 
               className="max-w-2xl mx-auto font-body text-lg font-normal leading-[1.6] text-muted-foreground"
@@ -440,7 +440,7 @@ export default function ServicesPage() {
               content: (
                 <div>
                   <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
-                    Key milestones and achievements in our consultancy journey:
+                    Key milestones and achievements in our technology journey:
                   </p>
                   <div className="mb-8">
                     <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">

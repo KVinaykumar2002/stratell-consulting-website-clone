@@ -148,7 +148,7 @@ const StatisticsSection = () => {
           </div>
           <h2 className="max-w-[960px] font-display text-[56px] font-normal leading-[1.2] tracking-[-0.01em] text-primary-navy">
             TechnoRealm is a{" "}
-            <em className="font-normal">results-driven</em> business consultancy{" "}
+            <em className="font-normal">results-driven</em> technology consultancy{" "}
             <em className="font-normal">helping</em> leaders{" "}
             <em className="font-normal">navigate</em> complexity,{" "}
             <em className="font-normal">refine</em> strategy, and{" "}
