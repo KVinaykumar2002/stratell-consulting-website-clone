@@ -14,6 +14,7 @@ interface Frame {
   borderThickness: number
   borderSize: number
   isHovered: boolean
+  serviceName?: string
 }
 
 interface FrameComponentProps {
@@ -29,6 +30,7 @@ interface FrameComponentProps {
   borderSize: number
   showFrame: boolean
   isHovered: boolean
+  serviceName?: string
 }
 
 function FrameComponent({
@@ -44,6 +46,7 @@ function FrameComponent({
   borderSize,
   showFrame,
   isHovered,
+  serviceName,
 }: FrameComponentProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
 
@@ -151,6 +154,23 @@ function FrameComponent({
             />
           </div>
         )}
+        
+        {/* Service Name Overlay on Hover */}
+        {isHovered && serviceName && (
+          <motion.div
+            className="absolute inset-0 flex items-center justify-center z-10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="bg-black/70 backdrop-blur-sm px-6 py-3 rounded-lg">
+              <h3 className="text-white text-xl font-semibold tracking-wide">
+                {serviceName}
+              </h3>
+            </div>
+          </motion.div>
+        )}
       </div>
     </div>
   )
@@ -234,6 +254,7 @@ export function DynamicFrameLayout({
               borderSize={frame.borderSize}
               showFrame={showFrames}
               isHovered={hovered?.row === row && hovered?.col === col}
+              serviceName={frame.serviceName}
             />
           </motion.div>
         )

@@ -15,7 +15,6 @@ import webDevelopmentAnimation from "@/app/web_development.json";
 import itDevPinkAnimation from "@/app/IT_dev_pink.json";
 import dataSecurityAnimation from "@/app/DATA_SECURITY.json";
 import cloudAnimation from "@/app/Cloud.json";
-
 // IT services with Unsplash images
 const itServices: Service[] = [
   {
@@ -241,6 +240,7 @@ export default function ServicesPage() {
                   borderThickness: 4,
                   borderSize: 95,
                   isHovered: false,
+                  serviceName: "AI & Machine Learning",
                 },
                 {
                   id: 2,
@@ -253,6 +253,7 @@ export default function ServicesPage() {
                   borderThickness: 4,
                   borderSize: 95,
                   isHovered: false,
+                  serviceName: "Cloud Infrastructure & Management",
                 },
                 {
                   id: 3,
@@ -265,6 +266,7 @@ export default function ServicesPage() {
                   borderThickness: 4,
                   borderSize: 95,
                   isHovered: false,
+                  serviceName: "Cybersecurity & Risk Management",
                 },
                 {
                   id: 4,
@@ -277,6 +279,7 @@ export default function ServicesPage() {
                   borderThickness: 4,
                   borderSize: 95,
                   isHovered: false,
+                  serviceName: "DevOps Consulting",
                 },
                 {
                   id: 5,
@@ -289,6 +292,7 @@ export default function ServicesPage() {
                   borderThickness: 4,
                   borderSize: 95,
                   isHovered: false,
+                  serviceName: "Application Development",
                 },
                 {
                   id: 6,
@@ -301,6 +305,7 @@ export default function ServicesPage() {
                   borderThickness: 4,
                   borderSize: 95,
                   isHovered: false,
+                  serviceName: "Data & Analytics",
                 },
                 {
                   id: 7,
@@ -313,6 +318,7 @@ export default function ServicesPage() {
                   borderThickness: 4,
                   borderSize: 95,
                   isHovered: false,
+                  serviceName: "Salesforce & Centene",
                 },
                 {
                   id: 8,
@@ -325,6 +331,7 @@ export default function ServicesPage() {
                   borderThickness: 4,
                   borderSize: 95,
                   isHovered: false,
+                  serviceName: "System Integration",
                 },
                 {
                   id: 9,
@@ -337,6 +344,7 @@ export default function ServicesPage() {
                   borderThickness: 4,
                   borderSize: 95,
                   isHovered: false,
+                  serviceName: "IT Consulting",
                 },
               ]} 
               className="w-full h-full" 

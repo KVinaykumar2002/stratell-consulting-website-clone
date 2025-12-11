@@ -1,14 +1,31 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export default function HeroSection() {
+  const words = ["Business", "idea", "Goals", "Vision"];
+  const wordColors = [
+    "text-[#2639ED]", // Blue for Business
+    "text-[#FF6B6B]", // Red/Pink for idea
+    "text-[#4ECDC4]", // Teal for Goals
+    "text-[#FFE66D]", // Yellow for Vision
+  ];
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 3000); // Change word every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [words.length]);
   return (
     <section className="relative flex h-screen w-full items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <video
-          src="https://framerusercontent.com/assets/wgHWlu6sTglBDJ9jxgyB4tfvEY.mp4"
+          src="https://ikconsultingservices.com/wp-content/uploads/2025/03/business-consulting11.mp4"
           autoPlay
           loop
           muted
@@ -28,7 +45,22 @@ export default function HeroSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="font-display text-[56px] font-normal leading-[1.1] tracking-[-0.02em] text-white md:text-[72px]">
-              Strategy That Powers <em className="italic">Your Next Level</em> of Growth.
+              Transform Your{" "}
+              <span className="relative inline-block min-w-[200px] md:min-w-[250px]">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={currentWordIndex}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5 }}
+                    className={`inline-block italic ${wordColors[currentWordIndex]}`}
+                  >
+                    {words[currentWordIndex]}
+                  </motion.span>
+                </AnimatePresence>
+              </span>{" "}
+              with Expert IT Solutions
             </h1>
           </motion.div>
           <motion.div 
@@ -38,8 +70,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
             <p className="font-body text-xl font-normal leading-[1.6] text-white">
-              We help businesses unlock opportunities, scale faster, and achieve
-              measurable results through data-driven strategies.
+              We deliver cutting-edge technology consulting services that drive innovation, optimize operations, and accelerate your digital transformation journey.
             </p>
             <a
               href="/contact"
