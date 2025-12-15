@@ -181,37 +181,6 @@ export default function ServicePage() {
                 </motion.div>
               )}
 
-              {/* Features Section */}
-              {service.features && service.features.length > 0 && (
-                <motion.div
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                  <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-8 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                    What We Offer
-                  </h2>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {service.features.map((feature, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: index * 0.05 }}
-                        whileHover={{ scale: 1.02, y: -5 }}
-                        className="group relative"
-                      >
-                        <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl opacity-0 group-hover:opacity-20 blur transition-opacity" />
-                        <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 p-5 hover:border-purple-500/50 transition-colors">
-                          <p className="text-base text-gray-300">{feature}</p>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
             </div>
 
             {/* Right Column - Sidebar */}
