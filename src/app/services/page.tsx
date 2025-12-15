@@ -20,7 +20,7 @@ const itServices: Service[] = [
   {
     name: "Cloud Migration",
     imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=400&fit=crop&q=80",
-    href: "/services/cloud-migration",
+    href: "/services/cloud-infrastructure",
   },
   {
     name: "DevOps",
@@ -33,9 +33,9 @@ const itServices: Service[] = [
     href: "/services/cybersecurity",
   },
   {
-    name: "Software Development",
+    name: "Application Development",
     imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=400&fit=crop&q=80",
-    href: "/services/software-development",
+    href: "/services/application-development",
   },
   {
     name: "Data Analytics",
@@ -75,7 +75,7 @@ const itServices: Service[] = [
   {
     name: "IT Strategy",
     imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=400&fit=crop&q=80",
-    href: "/services/it-strategy",
+    href: "/services/it-consulting",
   },
   {
     name: "System Integration",

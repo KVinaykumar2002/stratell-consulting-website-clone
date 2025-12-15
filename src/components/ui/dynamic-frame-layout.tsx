@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
+import Link from "next/link"
+import { getServiceSlugFromName } from "@/lib/services-data"
 
 interface Frame {
   id: number
@@ -15,6 +17,7 @@ interface Frame {
   borderSize: number
   isHovered: boolean
   serviceName?: string
+  href?: string
 }
 
 interface FrameComponentProps {
@@ -31,6 +34,7 @@ interface FrameComponentProps {
   showFrame: boolean
   isHovered: boolean
   serviceName?: string
+  href?: string
 }
 
 function FrameComponent({
@@ -47,6 +51,7 @@ function FrameComponent({
   showFrame,
   isHovered,
   serviceName,
+  href,
 }: FrameComponentProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
 
@@ -58,9 +63,9 @@ function FrameComponent({
     }
   }, [isHovered])
 
-  return (
+  const content = (
     <div
-      className={`relative ${className}`}
+      className={`relative ${href ? 'cursor-pointer' : ''} ${className}`}
       style={{
         width,
         height,
@@ -174,6 +179,16 @@ function FrameComponent({
       </div>
     </div>
   )
+
+  if (href) {
+    return (
+      <Link href={href} className="block w-full h-full cursor-pointer">
+        {content}
+      </Link>
+    )
+  }
+
+  return content
 }
 
 interface DynamicFrameLayoutProps {
@@ -229,6 +244,10 @@ export function DynamicFrameLayout({
         const row = Math.floor(frame.defaultPos.y / 4)
         const col = Math.floor(frame.defaultPos.x / 4)
         const transformOrigin = getTransformOrigin(frame.defaultPos.x, frame.defaultPos.y)
+        
+        // Get href from frame or generate from serviceName
+        const slug = frame.serviceName ? getServiceSlugFromName(frame.serviceName) : null
+        const href = frame.href || (slug ? `/services/${slug}` : undefined)
 
         return (
           <motion.div
@@ -255,6 +274,7 @@ export function DynamicFrameLayout({
               showFrame={showFrames}
               isHovered={hovered?.row === row && hovered?.col === col}
               serviceName={frame.serviceName}
+              href={href}
             />
           </motion.div>
         )

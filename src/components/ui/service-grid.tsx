@@ -1,6 +1,7 @@
 // components/ui/service-grid.tsx
 
 import * as React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils"; // Your utility for merging Tailwind classes
 
@@ -50,7 +51,7 @@ const ServiceGrid = React.forwardRef<HTMLDivElement, ServiceGridProps>(
         y: 0,
         opacity: 1,
         transition: {
-          type: "spring",
+          type: "spring" as const,
           stiffness: 100,
           damping: 10,
         },
@@ -86,27 +87,31 @@ const ServiceGrid = React.forwardRef<HTMLDivElement, ServiceGridProps>(
             animate="visible"
           >
             {services.map((service, index) => (
-              <motion.a
+              <motion.div
                 key={index}
-                href={service.href}
-                className="group flex flex-col items-center justify-start gap-3 text-center"
                 variants={itemVariants}
-                whileHover={{ scale: 1.05, y: -5 }} // Hover animation
-                transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                transition={{ type: "spring" as const, stiffness: 300, damping: 15 }}
+                className="w-full"
               >
-                <div className="flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28">
-                  <img
-                    src={service.imageUrl}
-                    alt={`${service.name} service icon`}
-                    width={100}
-                    height={100}
-                    className="object-contain transition-transform duration-300 group-hover:scale-110"
-                  />
-                </div>
-                <span className="text-sm font-medium text-foreground transition-colors duration-300 group-hover:text-primary">
-                  {service.name}
-                </span>
-              </motion.a>
+                <Link
+                  href={service.href}
+                  className="group flex flex-col items-center justify-start gap-3 text-center cursor-pointer block w-full h-full"
+                >
+                  <div className="flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 mx-auto">
+                    <img
+                      src={service.imageUrl}
+                      alt={`${service.name} service icon`}
+                      width={100}
+                      height={100}
+                      className="object-contain transition-transform duration-300 group-hover:scale-110 pointer-events-none"
+                    />
+                  </div>
+                  <span className="text-sm font-medium text-foreground transition-colors duration-300 group-hover:text-primary pointer-events-none">
+                    {service.name}
+                  </span>
+                </Link>
+              </motion.div>
             ))}
           </motion.div>
         </div>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Layout, Pointer, Zap, Cloud } from "lucide-react";
+import { Layout, Pointer, Zap, Cloud, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -193,13 +193,15 @@ const Feature108 = ({
                     </p>
                     {tab.content.buttonHref ? (
                       <Link href={tab.content.buttonHref}>
-                        <Button className="mt-2.5 w-fit gap-2" size="lg">
-                          {tab.content.buttonText}
+                        <Button className="mt-2.5 w-fit gap-2 group/btn relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg" size="lg">
+                          <span className="relative z-10 transition-all duration-300">{tab.content.buttonText}</span>
+                          <ArrowRight className="w-4 h-4 relative z-10 transition-all duration-300 group-hover/btn:translate-x-2" />
                         </Button>
                       </Link>
                     ) : (
-                      <Button className="mt-2.5 w-fit gap-2" size="lg">
-                        {tab.content.buttonText}
+                      <Button className="mt-2.5 w-fit gap-2 group/btn relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg" size="lg">
+                        <span className="relative z-10 transition-all duration-300">{tab.content.buttonText}</span>
+                        <ArrowRight className="w-4 h-4 relative z-10 transition-all duration-300 group-hover/btn:translate-x-2" />
                       </Button>
                     )}
                   </div>
