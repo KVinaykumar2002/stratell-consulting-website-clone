@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Image from "next/image"
 
 export function NeonOrbs() {
   const [mounted, setMounted] = useState(false)
@@ -96,40 +97,25 @@ export function NeonOrbs() {
         </div>
       </div>
 
-      {/* Center text */}
-      <div className="relative z-10 text-center text-indigo-900 dark:text-white transition-colors duration-500">
-        <h1 
-          className={`text-4xl md:text-7xl font-extralight tracking-[0.2em] mb-4 transition-all duration-1000 ease-out ${
+      {/* Center logo */}
+      <div className="relative z-10 flex items-center justify-center w-full h-full">
+        <div 
+          className={`transition-all duration-1000 ease-out ${
             mounted 
-              ? "opacity-100 translate-y-0 blur-0" 
-              : "opacity-0 translate-y-8 blur-sm"
+              ? "opacity-100 translate-y-0 blur-0 scale-100" 
+              : "opacity-0 translate-y-8 blur-sm scale-95"
           }`}
           style={{ transitionDelay: "500ms" }}
         >
-          {/* Show full "TechnoRealm" with letter-by-letter animation */}
-          {"TechnoRealm".split("").map((char, i) => (
-            <span
-              key={i}
-              className="inline-block letter-expand"
-              style={{ 
-                animationDelay: `${i * 40}ms`,
-                opacity: 0
-              }}
-            >
-              {char}
-            </span>
-          ))}
-        </h1>
-        <p 
-          className={`text-lg md:text-xl font-light tracking-widest text-indigo-600/60 dark:text-white/60 transition-all duration-1000 ease-out ${
-            mounted
-              ? "opacity-100 translate-y-0 blur-0" 
-              : "opacity-0 translate-y-4 blur-sm"
-          }`}
-          style={{ transitionDelay: "800ms" }}
-        >
-          THE FUTURE IS NOW
-        </p>
+          <Image
+            src="/logo image/loading12/31.png"
+            alt="TechnoRealm Logo"
+            width={800}
+            height={300}
+            className="w-auto h-48 md:h-64 lg:h-80 xl:h-96 mx-auto"
+            priority
+          />
+        </div>
       </div>
 
       <style jsx global>{`
