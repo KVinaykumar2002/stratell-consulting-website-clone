@@ -3,8 +3,6 @@
 import { useEffect, useState } from "react";
 import Header from "@/components/sections/header";
 import HeroSection from "@/components/sections/hero";
-import StatisticsSection from "@/components/sections/statistics";
-import ServicesSection from "@/components/sections/services";
 import FeatureSection from "@/components/ui/stack-feature-section";
 import Testimonials from "@/components/sections/testimonials";
 import TrustedBy from "@/components/sections/trusted-by";
@@ -42,8 +40,6 @@ export default function Home() {
     <main className="min-h-screen bg-background">
       <Header />
       <HeroSection />
-      <StatisticsSection />
-      <ServicesSection />
       <Feature108
         badge="Our Expertise"
         heading="Comprehensive IT Solutions Tailored to Your Needs"
@@ -59,6 +55,7 @@ export default function Home() {
               description:
                 "We provide comprehensive IT services including infrastructure management, system integration, cybersecurity, and 24/7 technical support. Our expert team ensures your IT systems run smoothly, securely, and efficiently.",
               buttonText: "Explore IT Services",
+              buttonHref: "/services/it-consulting",
               animationData: itDevPinkAnimation,
             },
           },
@@ -72,6 +69,7 @@ export default function Home() {
               description:
                 "Transform your business with AI and ML solutions. From predictive analytics and natural language processing to computer vision and automated decision-making systems, we help you leverage intelligent technologies to gain competitive advantages.",
               buttonText: "Learn About AI/ML",
+              buttonHref: "/services/ai-ml",
               animationData: dataSecurityAnimation,
             },
           },
@@ -85,6 +83,7 @@ export default function Home() {
               description:
                 "Our web development expertise spans from responsive frontend designs to robust backend systems. We create modern, secure, and scalable web applications using the latest technologies and best practices to deliver exceptional user experiences.",
               buttonText: "View Web Solutions",
+              buttonHref: "/services/application-development",
               animationData: webDevelopmentAnimation,
             },
           },
@@ -98,6 +97,7 @@ export default function Home() {
               description:
                 "Accelerate your digital transformation with our cloud solutions. We specialize in cloud migration, infrastructure setup, DevOps automation, and cloud-native application development across AWS, Azure, and GCP platforms.",
               buttonText: "Discover Cloud Services",
+              buttonHref: "/services/cloud-infrastructure",
               animationData: cloudAnimation,
             },
           },

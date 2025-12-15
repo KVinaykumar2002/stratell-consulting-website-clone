@@ -158,6 +158,7 @@ export default function ServicesPage() {
               description:
                 "We provide comprehensive IT services including infrastructure management, system integration, cybersecurity, and 24/7 technical support. Our expert team ensures your IT systems run smoothly, securely, and efficiently.",
               buttonText: "Explore IT Services",
+              buttonHref: "/services/it-consulting",
               animationData: itDevPinkAnimation,
             },
           },
@@ -171,6 +172,7 @@ export default function ServicesPage() {
               description:
                 "Transform your business with AI and ML solutions. From predictive analytics and natural language processing to computer vision and automated decision-making systems, we help you leverage intelligent technologies to gain competitive advantages.",
               buttonText: "Learn About AI/ML",
+              buttonHref: "/services/ai-ml",
               animationData: dataSecurityAnimation,
             },
           },
@@ -184,6 +186,7 @@ export default function ServicesPage() {
               description:
                 "Our web development expertise spans from responsive frontend designs to robust backend systems. We create modern, secure, and scalable web applications using the latest technologies and best practices to deliver exceptional user experiences.",
               buttonText: "View Web Solutions",
+              buttonHref: "/services/application-development",
               animationData: webDevelopmentAnimation,
             },
           },
@@ -197,6 +200,7 @@ export default function ServicesPage() {
               description:
                 "Accelerate your digital transformation with our cloud solutions. We specialize in cloud migration, infrastructure setup, DevOps automation, and cloud-native application development across AWS, Azure, and GCP platforms.",
               buttonText: "Discover Cloud Services",
+              buttonHref: "/services/cloud-infrastructure",
               animationData: cloudAnimation,
             },
           },

@@ -13,25 +13,25 @@ const serviceData = [
     icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/9b84987e-5fc0-480d-bd08-54bddc2234ce-stratwell-consulting-framer-website/assets/svgs/5GD0777uhTEfnLJ2ecCWjovLkFc-2.svg",
     title: "Business Strategy",
     description: "Set the right direction with market insights and actionable roadmaps.",
-    href: "/services",
+    href: "/services/business-strategy",
   },
   {
     icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/9b84987e-5fc0-480d-bd08-54bddc2234ce-stratwell-consulting-framer-website/assets/svgs/T1N2PVkGTQYDfsFV5Gv7NMJwzEE-3.svg",
     title: "Operations Optimization",
     description: "Streamline workflows, cut costs, and boost efficiency.",
-    href: "/services",
+    href: "/services/operations-optimization",
   },
   {
     icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/9b84987e-5fc0-480d-bd08-54bddc2234ce-stratwell-consulting-framer-website/assets/svgs/UpDOwZQHaYF0oZSLO3Wbtd9NChY-4.svg",
     title: "Digital Transformation",
     description: "Set the right direction with market insights and actionable roadmaps.",
-    href: "/services",
+    href: "/services/digital-transformation",
   },
   {
     icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/9b84987e-5fc0-480d-bd08-54bddc2234ce-stratwell-consulting-framer-website/assets/svgs/S9HEVhoKrF04xj78azaPdZfuNQ-5.svg",
     title: "Financial Advisory",
     description: "Improve performance, reduce risk, and unlock growth capital.",
-    href: "/services",
+    href: "/services/financial-advisory",
   },
 ];
 

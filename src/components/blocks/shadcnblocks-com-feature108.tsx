@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Layout, Pointer, Zap, Cloud } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import Lottie from "lottie-react";
 
 // Import JSON files directly - Next.js will handle these
@@ -19,6 +20,7 @@ interface TabContent {
   description: string;
   buttonText: string;
   animationData: object;
+  buttonHref?: string; // Optional href for button navigation
 }
 
 interface Tab {
@@ -189,9 +191,17 @@ const Feature108 = ({
                     <p className="text-muted-foreground lg:text-lg">
                       {tab.content.description}
                     </p>
-                    <Button className="mt-2.5 w-fit gap-2" size="lg">
-                      {tab.content.buttonText}
-                    </Button>
+                    {tab.content.buttonHref ? (
+                      <Link href={tab.content.buttonHref}>
+                        <Button className="mt-2.5 w-fit gap-2" size="lg">
+                          {tab.content.buttonText}
+                        </Button>
+                      </Link>
+                    ) : (
+                      <Button className="mt-2.5 w-fit gap-2" size="lg">
+                        {tab.content.buttonText}
+                      </Button>
+                    )}
                   </div>
                   <div className={`w-full max-w-lg h-[500px] flex items-center justify-center overflow-hidden bg-transparent transition-all duration-700 ease-out ${
                     isActive 
