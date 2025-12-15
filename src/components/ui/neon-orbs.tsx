@@ -4,16 +4,9 @@ import { useEffect, useState } from "react"
 
 export function NeonOrbs() {
   const [mounted, setMounted] = useState(false)
-  const [expanded, setExpanded] = useState(false)
 
   useEffect(() => {
     setMounted(true)
-    // Show TR first, then expand after 1200ms to give time to see TR clearly
-    const expandTimer = setTimeout(() => {
-      setExpanded(true)
-    }, 1200)
-    
-    return () => clearTimeout(expandTimer)
   }, [])
 
   return (
@@ -113,42 +106,27 @@ export function NeonOrbs() {
           }`}
           style={{ transitionDelay: "500ms" }}
         >
-          {expanded ? (
-            // Show full "TechnoRealm" with letter-by-letter animation expanding from TR
-            "TechnoRealm".split("").map((char, i) => (
-              <span
-                key={i}
-                className="inline-block letter-expand"
-                style={{ 
-                  animationDelay: `${i * 40}ms`,
-                  opacity: 0
-                }}
-              >
-                {char}
-              </span>
-            ))
-          ) : (
-            // Show "TR" first - clearly visible
-            "TR".split("").map((char, i) => (
-              <span
-                key={i}
-                className={`inline-block transition-all duration-700 ease-out ${
-                  mounted ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-0"
-                }`}
-                style={{ transitionDelay: `${500 + i * 150}ms` }}
-              >
-                {char}
-              </span>
-            ))
-          )}
+          {/* Show full "TechnoRealm" with letter-by-letter animation */}
+          {"TechnoRealm".split("").map((char, i) => (
+            <span
+              key={i}
+              className="inline-block letter-expand"
+              style={{ 
+                animationDelay: `${i * 40}ms`,
+                opacity: 0
+              }}
+            >
+              {char}
+            </span>
+          ))}
         </h1>
         <p 
           className={`text-lg md:text-xl font-light tracking-widest text-indigo-600/60 dark:text-white/60 transition-all duration-1000 ease-out ${
-            mounted && expanded
+            mounted
               ? "opacity-100 translate-y-0 blur-0" 
               : "opacity-0 translate-y-4 blur-sm"
           }`}
-          style={{ transitionDelay: expanded ? "1800ms" : "0ms" }}
+          style={{ transitionDelay: "800ms" }}
         >
           THE FUTURE IS NOW
         </p>

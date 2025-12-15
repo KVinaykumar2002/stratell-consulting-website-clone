@@ -57,14 +57,14 @@ export default function Header() {
       >
         <Link href="/" className="flex-shrink-0">
           <TechnoRealmLogo 
-            width={500} 
-            height={148} 
+            width={600} 
+            height={178} 
             className={`w-auto transition-all duration-300 ${
               isScrolled 
-                ? 'h-20 md:h-22' 
-                : 'h-24 md:h-28'
+                ? 'h-36 md:h-40' 
+                : 'h-40 md:h-48'
             }`}
-            imageSrc="/image.png"
+            imageSrc="/logo image/31.png"
             variant="light"
           />
         </Link>
@@ -105,7 +105,7 @@ export default function Header() {
                             width={480} 
                             height={142} 
                             className="h-[130px] w-auto"
-                            imageSrc="/image.png"
+                            imageSrc="/logo image/31.png"
                             variant="light"
                           />
                         </Link>

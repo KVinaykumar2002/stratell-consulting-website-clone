@@ -240,7 +240,7 @@ export default function ServicesPage() {
                   borderThickness: 4,
                   borderSize: 95,
                   isHovered: false,
-                  serviceName: "AI & Machine Learning",
+                  serviceName: "Cloud Infrastructure & Management",
                 },
                 {
                   id: 2,
@@ -253,7 +253,7 @@ export default function ServicesPage() {
                   borderThickness: 4,
                   borderSize: 95,
                   isHovered: false,
-                  serviceName: "Cloud Infrastructure & Management",
+                  serviceName: "Application Development",
                 },
                 {
                   id: 3,
@@ -266,7 +266,7 @@ export default function ServicesPage() {
                   borderThickness: 4,
                   borderSize: 95,
                   isHovered: false,
-                  serviceName: "Cybersecurity & Risk Management",
+                  serviceName: "AI & Machine Learning",
                 },
                 {
                   id: 4,
@@ -292,7 +292,7 @@ export default function ServicesPage() {
                   borderThickness: 4,
                   borderSize: 95,
                   isHovered: false,
-                  serviceName: "Application Development",
+                  serviceName: "Cybersecurity & Risk Management",
                 },
                 {
                   id: 6,
