@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
+import { useState, useEffect } from "react";
+import Lottie from "lottie-react";
 import {
   Accordion,
   AccordionContent,
@@ -12,7 +12,7 @@ import {
 interface FeatureItem {
   id: number;
   title: string;
-  image: string;
+  lottiePath: string;
   description: string;
 }
 
@@ -65,7 +65,22 @@ const defaultFeatures: FeatureItem[] = [
 
 const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
   const [activeTabId, setActiveTabId] = useState<number | null>(1);
-  const [activeImage, setActiveImage] = useState(features[0].image);
+  const [activeLottiePath, setActiveLottiePath] = useState(features[0].lottiePath);
+  const [animationData, setAnimationData] = useState<any>(null);
+
+  useEffect(() => {
+    // Load the active Lottie animation
+    const loadAnimation = async () => {
+      try {
+        const response = await fetch(activeLottiePath);
+        const data = await response.json();
+        setAnimationData(data);
+      } catch (error) {
+        console.error("Error loading Lottie animation:", error);
+      }
+    };
+    loadAnimation();
+  }, [activeLottiePath]);
 
   return (
     <section className="py-32">
@@ -82,7 +97,7 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
                 if (id) {
                   const feature = features.find((f) => f.id === id);
                   if (feature) {
-                    setActiveImage(feature.image);
+                    setActiveLottiePath(feature.lottiePath);
                   }
                 }
               }}
@@ -105,13 +120,7 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
                       {tab.description}
                     </p>
                     <div className="mt-4 md:hidden">
-                      <Image
-                        src={tab.image}
-                        alt={tab.title}
-                        width={800}
-                        height={600}
-                        className="h-full max-h-80 w-full rounded-md object-cover"
-                      />
+                      <LottieComponent lottiePath={tab.lottiePath} />
                     </div>
                   </AccordionContent>
                 </AccordionItem>
@@ -119,17 +128,63 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
             </Accordion>
           </div>
           <div className="relative m-auto hidden w-1/2 overflow-hidden rounded-xl bg-muted md:block">
-            <Image
-              src={activeImage}
-              alt="Feature preview"
-              width={800}
-              height={600}
-              className="aspect-[4/3] rounded-md object-cover pl-4"
-            />
+            {animationData ? (
+              <Lottie
+                animationData={animationData}
+                loop={true}
+                autoplay={true}
+                style={{ 
+                  width: "100%", 
+                  height: "100%",
+                  maxWidth: "100%",
+                  maxHeight: "100%"
+                }}
+                className="aspect-[4/3] rounded-md pl-4"
+              />
+            ) : (
+              <div className="aspect-[4/3] flex items-center justify-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+              </div>
+            )}
           </div>
         </div>
       </div>
     </section>
+  );
+};
+
+// Helper component for mobile Lottie animations
+const LottieComponent = ({ lottiePath }: { lottiePath: string }) => {
+  const [animationData, setAnimationData] = useState<any>(null);
+
+  useEffect(() => {
+    const loadAnimation = async () => {
+      try {
+        const response = await fetch(lottiePath);
+        const data = await response.json();
+        setAnimationData(data);
+      } catch (error) {
+        console.error("Error loading Lottie animation:", error);
+      }
+    };
+    loadAnimation();
+  }, [lottiePath]);
+
+  if (!animationData) {
+    return (
+      <div className="h-full max-h-80 w-full flex items-center justify-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+      </div>
+    );
+  }
+
+  return (
+    <Lottie
+      animationData={animationData}
+      loop={true}
+      autoplay={true}
+      className="h-full max-h-80 w-full rounded-md"
+    />
   );
 };
 
