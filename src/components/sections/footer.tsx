@@ -171,28 +171,6 @@ const Footer = () => {
             <a href="#">Built in Framer</a>
           </div>
         </div>
-        
-        {/* Built with Optiwebrix */}
-        <motion.div 
-          className="text-center pt-6 pb-6"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-sm text-white/70 flex items-center justify-center gap-2 flex-wrap">
-            <span>Built with</span>
-            <motion.span 
-              className="inline-block cursor-pointer"
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <span className="font-bold text-lg bg-gradient-to-r from-blue-400 via-purple-500 via-pink-500 to-orange-400 bg-clip-text text-transparent">
-                Optiwebrix
-              </span>
-            </motion.span>
-          </p>
-        </motion.div>
       </div>
 
       {/* Scroll To Top Button */}
