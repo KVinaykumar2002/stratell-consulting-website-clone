@@ -4,10 +4,24 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
-import { ServiceGrid, Service } from "@/components/ui/service-grid";
-import ZoomParallaxDemo from "@/components/ui/zoom-parallax-demo";
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import { Feature108 } from "@/components/blocks/shadcnblocks-com-feature108";
+
+// Lazy load heavy components
+const ServiceGrid = dynamic(() => import("@/components/ui/service-grid").then((mod) => ({ default: mod.ServiceGrid })), { 
+  ssr: false 
+});
+const ZoomParallaxDemo = dynamic(() => import("@/components/ui/zoom-parallax-demo"), { 
+  ssr: false 
+});
+const Feature108 = dynamic(
+  () => import("@/components/blocks/shadcnblocks-com-feature108").then((mod) => ({ default: mod.Feature108 })),
+  { 
+    ssr: false 
+  }
+);
+
+import type { Service } from "@/components/ui/service-grid";
 import { Server, Brain, Code, Cloud } from "lucide-react";
 import { DynamicFrameLayout } from "@/components/ui/dynamic-frame-layout";
 import webDevelopmentAnimation from "@/app/web_development.json";

@@ -56,7 +56,7 @@ export default function ContactPage() {
       <FloatingParticles />
       
       {/* Hero Section with Contact Form */}
-      <section className="relative min-h-screen w-full py-20 md:py-32 px-4 md:px-6 lg:px-12">
+      <section className="relative min-h-screen w-full py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 md:px-8 lg:px-12">
         {/* Background with stars */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,215,0,0.08)_0%,rgba(0,0,0,0)_80%)]" />
@@ -91,24 +91,24 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-10 md:mb-12"
           >
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#282800] px-4 py-1.5 mb-6">
-              <span className="h-[6px] w-[6px] rounded-full bg-[#FFD700]" />
-              <p className="text-[12px] font-medium uppercase tracking-[0.16em] text-white/90">
+            <div className="inline-flex items-center gap-2 rounded-full bg-[#282800] px-3 sm:px-4 py-1 sm:py-1.5 mb-4 sm:mb-6">
+              <span className="h-[4px] w-[4px] sm:h-[6px] sm:w-[6px] rounded-full bg-[#FFD700]" />
+              <p className="text-[10px] sm:text-[11px] md:text-[12px] font-medium uppercase tracking-[0.16em] text-white/90">
                 Let's Connect
               </p>
             </div>
             <TypingAnimation
               text="Get in Touch with Our IT Experts"
               speed={60}
-              className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-4 block"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-3 sm:mb-4 block px-2"
             />
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.5, duration: 0.8 }}
-              className="text-base md:text-lg text-zinc-300 max-w-2xl mx-auto"
+              className="text-sm sm:text-base md:text-lg text-zinc-300 max-w-2xl mx-auto px-4"
             >
               Tell us about your project and we'll get back to you with a tailored solution.
             </motion.p>

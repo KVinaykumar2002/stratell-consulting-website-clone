@@ -135,14 +135,14 @@ export default function Header() {
       <style jsx global>{animations}</style>
       <header className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
         isScrolled 
-          ? 'top-2 w-[90%] max-w-[1000px]' 
-          : 'top-4 w-[95%] max-w-[1200px]'
+          ? 'top-2 w-[95%] sm:w-[90%] max-w-[1000px]' 
+          : 'top-2 sm:top-4 w-[98%] sm:w-[95%] max-w-[1200px]'
       }`}>
       <div
-        className={`relative flex items-center justify-between rounded-2xl border border-white/30 transition-all duration-500 overflow-hidden ${
+        className={`relative flex items-center justify-between rounded-xl sm:rounded-2xl border border-white/30 transition-all duration-500 overflow-hidden ${
           isScrolled 
-            ? 'h-16 px-4 md:px-6' 
-            : 'h-18 md:h-20 px-5 md:px-8'
+            ? 'h-14 sm:h-16 px-3 sm:px-4 md:px-6' 
+            : 'h-16 sm:h-18 md:h-20 px-4 sm:px-5 md:px-8'
         }`}
         style={{
           backgroundColor: 'rgba(255, 255, 255, 0.4)',
@@ -188,7 +188,7 @@ export default function Header() {
             className={`relative transition-all duration-500 ${
               hoveredLink === "/logo" ? "scale-110 rotate-1" : "scale-100 rotate-0"
             } group-active:scale-95 ${
-              isScrolled ? 'h-36' : 'h-40 md:h-48'
+              isScrolled ? 'h-24 sm:h-28 md:h-32 lg:h-36' : 'h-28 sm:h-32 md:h-40 lg:h-48'
             } ${pathname === "/" ? "animate-float" : ""}`}
           >
             {/* Multiple glow layers for depth */}
@@ -244,7 +244,7 @@ export default function Header() {
         </Link>
         
         {/* Desktop Navigation - Highly Interactive */}
-        <nav className="hidden lg:flex items-center gap-x-6 xl:gap-x-8 relative z-10">
+        <nav className="hidden lg:flex items-center gap-x-4 xl:gap-x-6 2xl:gap-x-8 relative z-10">
           {navLinks.map((link, index) => {
             const active = isActive(link.href);
             const isHovered = hoveredLink === link.href;
@@ -255,7 +255,7 @@ export default function Header() {
                 href={link.href}
                 onMouseEnter={() => setHoveredLink(link.href)}
                 onMouseLeave={() => setHoveredLink(null)}
-                className={`group relative text-sm xl:text-base font-medium transition-all duration-300 py-3 px-4 rounded-xl ${
+                className={`group relative text-xs xl:text-sm 2xl:text-base font-medium transition-all duration-300 py-2 xl:py-3 px-2 xl:px-4 rounded-lg xl:rounded-xl ${
                   active 
                     ? 'text-[#1E3A5F] font-bold scale-105' 
                     : 'text-gray-700 hover:text-[#1E3A5F] hover:scale-105'
@@ -325,8 +325,8 @@ export default function Header() {
             onMouseLeave={() => setHoveredLink(null)}
             className={`group relative hidden lg:inline-flex items-center justify-center bg-gradient-to-r from-[#E5B800] to-[#d4a800] text-[#1E3A5F] font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#E5B800]/50 hover:scale-110 active:scale-95 overflow-hidden ${
               isScrolled 
-                ? 'text-sm h-10 px-6' 
-                : 'text-sm h-11 px-8'
+                ? 'text-xs xl:text-sm h-9 xl:h-10 px-4 xl:px-6' 
+                : 'text-xs xl:text-sm h-10 xl:h-11 px-6 xl:px-8'
             } ${pathname === "/contact" ? "ring-2 ring-[#E5B800] ring-offset-2 animate-pulse-glow" : ""} ${
               hoveredLink === "/contact" ? "scale-110" : "scale-100"
             }`}

@@ -62,7 +62,7 @@ const FloatingCard = ({ icon, title, content, delay = 0 }: FloatingCardProps) =>
           transform: 'translateZ(75px)',
           transformStyle: 'preserve-3d',
         }}
-        className="relative rounded-2xl bg-gradient-to-br from-[#1A2B42]/80 via-[#1E3A5F]/60 to-[#0A0A10]/80 backdrop-blur-xl border border-[#FFD700]/20 p-6 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_48px_rgba(255,215,0,0.3)] transition-all duration-300"
+        className="relative rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#1A2B42]/80 via-[#1E3A5F]/60 to-[#0A0A10]/80 backdrop-blur-xl border border-[#FFD700]/20 p-4 sm:p-6 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_48px_rgba(255,215,0,0.3)] transition-all duration-300"
       >
         {/* Glow effect */}
         <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#FFD700]/0 via-[#FFD700]/0 to-[#FFD700]/0 group-hover:from-[#FFD700]/10 group-hover:via-[#FFD700]/5 group-hover:to-[#FFD700]/10 transition-all duration-500 -z-10 blur-xl" />
@@ -74,8 +74,10 @@ const FloatingCard = ({ icon, title, content, delay = 0 }: FloatingCardProps) =>
           }}
           className="mb-4"
         >
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FFD700] to-[#E5B800] flex items-center justify-center text-[#1E3A5F] shadow-lg">
-            {icon}
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-[#FFD700] to-[#E5B800] flex items-center justify-center text-[#1E3A5F] shadow-lg">
+            <div className="w-5 h-5 sm:w-6 sm:h-6">
+              {icon}
+            </div>
           </div>
         </div>
 
@@ -85,8 +87,8 @@ const FloatingCard = ({ icon, title, content, delay = 0 }: FloatingCardProps) =>
             transform: 'translateZ(50px)',
           }}
         >
-          <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
-          <p className="text-sm text-zinc-300 leading-relaxed">{content}</p>
+          <h3 className="text-base sm:text-lg font-semibold text-white mb-1 sm:mb-2">{title}</h3>
+          <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">{content}</p>
         </div>
 
         {/* Shine effect */}
@@ -100,7 +102,7 @@ const FloatingCard = ({ icon, title, content, delay = 0 }: FloatingCardProps) =>
 
 export const FloatingContactCards = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
       <FloatingCard
         icon={<Mail className="w-6 h-6" />}
         title="Email Us"

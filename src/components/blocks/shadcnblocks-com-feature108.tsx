@@ -143,72 +143,73 @@ const Feature108 = ({
   }, []);
 
   return (
-    <section className="py-32 bg-gradient-to-b from-[#0a1628] to-zinc-950">
-      <div className="container mx-auto">
-        <div className="flex flex-col items-center gap-4 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#E5B800]/30 bg-[#E5B800]/10 px-4 py-2">
-            <div className="h-2 w-2 rounded-full bg-[#E5B800] animate-pulse" />
-            <span className="text-sm font-medium text-[#E5B800] tracking-wide">{badge}</span>
+    <section className="py-16 sm:py-24 md:py-32 bg-gradient-to-b from-[#0a1628] to-zinc-950">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex flex-col items-center gap-3 sm:gap-4 text-center mb-4 sm:mb-0">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#E5B800]/30 bg-[#E5B800]/10 px-3 sm:px-4 py-1.5 sm:py-2">
+            <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#E5B800] animate-pulse" />
+            <span className="text-xs sm:text-sm font-medium text-[#E5B800] tracking-wide">{badge}</span>
           </div>
-          <h1 className="max-w-2xl text-3xl font-semibold md:text-4xl text-white">
+          <h1 className="max-w-2xl text-2xl sm:text-3xl md:text-4xl font-semibold text-white px-4 leading-tight sm:leading-normal">
             {heading}
           </h1>
-          <p className="text-zinc-400">{description}</p>
+          <p className="text-sm sm:text-base text-zinc-400 px-4 leading-relaxed">{description}</p>
         </div>
-        <Tabs value={activeTab} onValueChange={handleTabChange} className="mt-8">
-          <TabsList className="container flex flex-col items-center justify-center gap-4 sm:flex-row md:gap-10 bg-transparent">
+        <Tabs value={activeTab} onValueChange={handleTabChange} className="mt-6 sm:mt-8">
+          <TabsList className="container flex flex-row items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-10 bg-transparent w-full sm:w-auto px-2 sm:px-0 overflow-x-auto scrollbar-hide">
             {tabs.map((tab) => (
               <TabsTrigger
                 key={tab.value}
                 value={tab.value}
-                className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-zinc-400 transition-all duration-300 ease-in-out data-[state=active]:bg-[#1E3A5F] data-[state=active]:text-[#E5B800] data-[state=active]:scale-105 data-[state=active]:shadow-[0_0_20px_rgba(229,184,0,0.2)] hover:text-white"
+                className="flex items-center justify-center gap-1.5 sm:gap-2 rounded-lg sm:rounded-xl px-2.5 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm font-semibold text-zinc-400 transition-all duration-300 ease-in-out data-[state=active]:bg-[#1E3A5F] data-[state=active]:text-[#E5B800] data-[state=active]:scale-100 sm:data-[state=active]:scale-105 data-[state=active]:shadow-[0_0_20px_rgba(229,184,0,0.2)] hover:text-white flex-shrink-0 min-h-[40px] sm:min-h-0 whitespace-nowrap"
               >
-                {tab.icon} {tab.label}
+                <span className="w-3.5 h-3.5 sm:w-auto sm:h-auto flex items-center justify-center flex-shrink-0 [&>svg]:w-3.5 [&>svg]:h-3.5 sm:[&>svg]:w-auto sm:[&>svg]:h-auto">{tab.icon}</span>
+                <span className="text-center">{tab.label}</span>
               </TabsTrigger>
             ))}
           </TabsList>
-          <div className="mx-auto mt-8 max-w-screen-xl rounded-2xl bg-gradient-to-br from-[#1E3A5F]/30 to-zinc-900/50 border border-white/10 p-6 lg:p-16 relative overflow-hidden min-h-[600px]">
+          <div className="mx-auto mt-6 sm:mt-8 max-w-screen-xl rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#1E3A5F]/30 to-zinc-900/50 border border-white/10 p-4 sm:p-6 md:p-8 lg:p-16 relative overflow-hidden min-h-[400px] sm:min-h-[500px] md:min-h-[600px]">
             {tabs.map((tab) => {
               const isActive = activeTab === tab.value;
               return (
                 <TabsContent
                   key={tab.value}
                   value={tab.value}
-                  className={`grid place-items-center gap-20 lg:grid-cols-2 lg:gap-10 transition-all duration-500 ease-in-out ${
+                  className={`grid place-items-center gap-8 sm:gap-12 md:gap-16 lg:gap-20 lg:grid-cols-2 lg:gap-10 transition-all duration-500 ease-in-out ${
                     isActive 
                       ? "opacity-100 translate-x-0 relative z-10" 
                       : "opacity-0 translate-x-4 absolute inset-0 pointer-events-none"
                   }`}
                 >
-                  <div className={`flex flex-col gap-5 transition-all duration-700 ease-out ${
+                  <div className={`flex flex-col gap-3 sm:gap-4 md:gap-5 transition-all duration-700 ease-out ${
                     isActive 
                       ? "opacity-100 translate-x-0 delay-150" 
                       : "opacity-0 -translate-x-4"
                   }`}>
-                    <div className="inline-flex items-center gap-2 rounded-full border border-[#E5B800]/30 bg-[#E5B800]/10 px-3 py-1.5 w-fit">
-                      <span className="text-xs font-medium text-[#E5B800]">{tab.content.badge}</span>
+                    <div className="inline-flex items-center gap-2 rounded-full border border-[#E5B800]/30 bg-[#E5B800]/10 px-2.5 sm:px-3 py-1 sm:py-1.5 w-fit">
+                      <span className="text-[10px] sm:text-xs font-medium text-[#E5B800]">{tab.content.badge}</span>
                     </div>
-                    <h3 className="text-3xl font-semibold lg:text-5xl text-white">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold text-white">
                       {tab.content.title}
                     </h3>
-                    <p className="text-zinc-400 lg:text-lg">
+                    <p className="text-sm sm:text-base md:text-lg text-zinc-400">
                       {tab.content.description}
                     </p>
                     {tab.content.buttonHref ? (
                       <Link href={tab.content.buttonHref}>
-                        <Button className="mt-2.5 w-fit gap-2 group/btn relative overflow-hidden transition-all duration-300 hover:scale-105 bg-[#E5B800] text-[#1E3A5F] hover:bg-[#E5B800]/90 shadow-[0_0_20px_rgba(229,184,0,0.3)]" size="lg">
+                        <Button className="mt-2 sm:mt-2.5 w-full sm:w-fit gap-2 group/btn relative overflow-hidden transition-all duration-300 hover:scale-105 bg-[#E5B800] text-[#1E3A5F] hover:bg-[#E5B800]/90 shadow-[0_0_20px_rgba(229,184,0,0.3)] text-sm sm:text-base" size="default">
                           <span className="relative z-10 transition-all duration-300 font-semibold">{tab.content.buttonText}</span>
-                          <ArrowRight className="w-4 h-4 relative z-10 transition-all duration-300 group-hover/btn:translate-x-2" />
+                          <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 relative z-10 transition-all duration-300 group-hover/btn:translate-x-2" />
                         </Button>
                       </Link>
                     ) : (
-                      <Button className="mt-2.5 w-fit gap-2 group/btn relative overflow-hidden transition-all duration-300 hover:scale-105 bg-[#E5B800] text-[#1E3A5F] hover:bg-[#E5B800]/90 shadow-[0_0_20px_rgba(229,184,0,0.3)]" size="lg">
+                      <Button className="mt-2 sm:mt-2.5 w-full sm:w-fit gap-2 group/btn relative overflow-hidden transition-all duration-300 hover:scale-105 bg-[#E5B800] text-[#1E3A5F] hover:bg-[#E5B800]/90 shadow-[0_0_20px_rgba(229,184,0,0.3)] text-sm sm:text-base" size="default">
                         <span className="relative z-10 transition-all duration-300 font-semibold">{tab.content.buttonText}</span>
-                        <ArrowRight className="w-4 h-4 relative z-10 transition-all duration-300 group-hover/btn:translate-x-2" />
+                        <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 relative z-10 transition-all duration-300 group-hover/btn:translate-x-2" />
                       </Button>
                     )}
                   </div>
-                  <div className={`w-full max-w-lg h-[500px] flex items-center justify-center overflow-hidden bg-transparent transition-all duration-700 ease-out ${
+                  <div className={`w-full max-w-lg h-[300px] sm:h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden bg-transparent transition-all duration-700 ease-out ${
                     isActive 
                       ? "opacity-100 scale-100 delay-300" 
                       : "opacity-0 scale-95"

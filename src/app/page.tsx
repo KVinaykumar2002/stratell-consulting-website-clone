@@ -1,25 +1,72 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import { motion } from "framer-motion";
+import { Server, Brain, Code, Cloud } from "lucide-react";
 import Header from "@/components/sections/header";
 import HeroSection from "@/components/sections/hero";
-import FeatureSection from "@/components/ui/stack-feature-section";
-import Testimonials from "@/components/sections/testimonials";
-import TrustedBy from "@/components/sections/trusted-by";
-import CtaFinal from "@/components/sections/cta-final";
-import Footer from "@/components/sections/footer";
-import GlobalNetworkSection from "@/components/sections/global-network";
-import FeaturesAccordionSection from "@/components/sections/features-accordion";
-import CurvedLoop from "@/components/CurvedLoop";
 import { NeonOrbs } from "@/components/ui/neon-orbs";
-import { Feature108 } from "@/components/blocks/shadcnblocks-com-feature108";
-import { Server, Brain, Code, Cloud } from "lucide-react";
 import webDevelopmentAnimation from "@/app/web_development.json";
 import itDevPinkAnimation from "@/app/IT_dev_pink.json";
 import dataSecurityAnimation from "@/app/DATA_SECURITY.json";
 import cloudAnimation from "@/app/Cloud.json";
-import { DynamicFrameLayout } from "@/components/ui/dynamic-frame-layout";
-import { motion } from "framer-motion";
+
+// Lazy load heavy components
+const CurvedLoop = dynamic(() => import("@/components/CurvedLoop"), { 
+  ssr: false,
+  loading: () => <div className="h-32" />
+});
+
+const Feature108 = dynamic(
+  () => import("@/components/blocks/shadcnblocks-com-feature108").then((mod) => ({ default: mod.Feature108 })),
+  { 
+    ssr: false,
+    loading: () => (
+      <div className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="h-96 bg-zinc-900/50 rounded-2xl animate-pulse" />
+        </div>
+      </div>
+    )
+  }
+);
+
+// Lazy load sections below the fold
+const FeatureSection = dynamic(() => import("@/components/ui/stack-feature-section"), { 
+  ssr: false 
+});
+const Testimonials = dynamic(() => import("@/components/sections/testimonials"), { 
+  ssr: false 
+});
+const TrustedBy = dynamic(() => import("@/components/sections/trusted-by"), { 
+  ssr: false 
+});
+const CtaFinal = dynamic(() => import("@/components/sections/cta-final"), { 
+  ssr: false 
+});
+const Footer = dynamic(() => import("@/components/sections/footer"), { 
+  ssr: false 
+});
+const GlobalNetworkSection = dynamic(() => import("@/components/sections/global-network"), { 
+  ssr: false 
+});
+const FeaturesAccordionSection = dynamic(() => import("@/components/sections/features-accordion"), { 
+  ssr: false 
+});
+
+// Lazy load heavy components
+const DynamicFrameLayout = dynamic(
+  () => import("@/components/ui/dynamic-frame-layout").then((mod) => ({ default: mod.DynamicFrameLayout })),
+  { 
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-full flex items-center justify-center">
+        <div className="w-16 h-16 border-4 border-[#E5B800] border-t-transparent rounded-full animate-spin" />
+      </div>
+    )
+  }
+);
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -106,23 +153,23 @@ export default function Home() {
       <FeatureSection />
       
       {/* Our Technology Services Section */}
-      <section className="py-32 px-6 bg-gradient-to-b from-zinc-950 to-[#0a1628]">
-        <div className="mx-auto w-full max-w-[1200px]">
-          <div className="mb-12 text-center">
+      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-to-b from-zinc-950 to-[#0a1628] relative overflow-visible">
+        <div className="mx-auto w-full max-w-[1200px] relative z-10">
+          <div className="mb-8 sm:mb-10 md:mb-12 text-center">
             <motion.div
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E5B800]/30 bg-[#E5B800]/10 px-4 py-2 mb-6"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E5B800]/30 bg-[#E5B800]/10 px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="h-2 w-2 rounded-full bg-[#E5B800] animate-pulse"></div>
-              <p className="text-sm font-medium text-[#E5B800] tracking-wide">
+              <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#E5B800] animate-pulse"></div>
+              <p className="text-xs sm:text-sm font-medium text-[#E5B800] tracking-wide">
                 Our Services
               </p>
             </motion.div>
             <motion.h2 
-              className="font-display text-3xl font-normal leading-[1.2] tracking-[-0.02em] text-white md:text-4xl lg:text-5xl mb-4"
+              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal leading-[1.2] tracking-[-0.02em] text-white mb-3 sm:mb-4 px-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -131,7 +178,7 @@ export default function Home() {
               Our Technology <span className="text-[#E5B800]">Services</span>
             </motion.h2>
             <motion.p 
-              className="max-w-2xl mx-auto font-body text-lg font-normal leading-[1.6] text-zinc-400"
+              className="max-w-2xl mx-auto font-body text-sm sm:text-base md:text-lg font-normal leading-[1.6] text-zinc-400 px-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -140,7 +187,7 @@ export default function Home() {
               Comprehensive technology solutions to drive your business forward. Hover over each service to explore.
             </motion.p>
           </div>
-          <div className="w-full h-[600px] md:h-[700px] lg:h-[800px]">
+          <div className="w-full h-[600px] sm:h-[500px] md:h-[600px] lg:h-[700px] xl:h-[800px] overflow-visible relative">
             <DynamicFrameLayout 
               frames={[
                 {

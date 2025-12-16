@@ -31,23 +31,24 @@ export default function HeroSection() {
           loop
           muted
           playsInline
+          preload="metadata"
           className="h-full w-full object-cover"
           aria-label="Business professionals collaborating in a modern office."
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a162866] via-[#1E3A5F50] to-[#0a162899]" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6">
-        <div className="flex flex-col items-center justify-between gap-10 lg:flex-row">
+      <div className="relative z-10 mx-auto w-full max-w-[1200px] px-4 sm:px-6 md:px-8">
+        <div className="flex flex-col items-center justify-between gap-8 md:gap-10 lg:flex-row">
           <motion.div 
-            className="w-full lg:max-w-[680px]"
+            className="w-full lg:max-w-[680px] text-center lg:text-left"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="font-display text-[56px] font-normal leading-[1.1] tracking-[-0.02em] text-white md:text-[72px]">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[72px] font-normal leading-[1.1] tracking-[-0.02em] text-white">
               Transform Your{" "}
-              <span className="relative inline-block min-w-[200px] md:min-w-[250px]">
+              <span className="relative inline-block min-w-[140px] sm:min-w-[180px] md:min-w-[200px] lg:min-w-[250px]">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={currentWordIndex}
@@ -65,17 +66,17 @@ export default function HeroSection() {
             </h1>
           </motion.div>
           <motion.div 
-            className="flex w-full flex-col items-start gap-10 lg:max-w-[440px]"
+            className="flex w-full flex-col items-center lg:items-start gap-6 md:gap-8 lg:max-w-[440px]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            <p className="font-body text-xl font-normal leading-[1.6] text-white/90">
+            <p className="font-body text-base sm:text-lg md:text-xl font-normal leading-[1.6] text-white/90 text-center lg:text-left">
               We deliver cutting-edge technology consulting services that drive innovation, optimize operations, and accelerate your digital transformation journey.
             </p>
             <a
               href="/contact"
-              className="group relative inline-flex items-center h-14 px-6 rounded-xl bg-[#E5B800] text-[#1E3A5F] overflow-hidden transition-all duration-300 shadow-[0_0_30px_rgba(229,184,0,0.3)]"
+              className="group relative inline-flex items-center h-12 sm:h-14 px-5 sm:px-6 md:px-8 rounded-xl bg-[#E5B800] text-[#1E3A5F] overflow-hidden transition-all duration-300 shadow-[0_0_30px_rgba(229,184,0,0.3)] text-sm sm:text-base font-semibold"
             >
               {/* Overlay animation from left to right */}
               <span className="absolute inset-0 bg-[#1E3A5F] transform origin-left -translate-x-full transition-transform duration-500 ease-in-out group-hover:translate-x-0 rounded-xl"></span>
@@ -86,8 +87,8 @@ export default function HeroSection() {
               </span>
               
               {/* Navy circle with arrow */}
-              <div className="relative z-10 flex items-center justify-center w-10 h-10 bg-[#1E3A5F] rounded-full transition-all duration-300 group-hover:bg-[#E5B800] group-hover:translate-x-1">
-                <ArrowRight className="w-4 h-4 text-white group-hover:text-[#1E3A5F] transition-colors" />
+              <div className="relative z-10 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-[#1E3A5F] rounded-full transition-all duration-300 group-hover:bg-[#E5B800] group-hover:translate-x-1">
+                <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 text-white group-hover:text-[#1E3A5F] transition-colors" />
               </div>
             </a>
           </motion.div>

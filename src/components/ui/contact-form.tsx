@@ -125,21 +125,21 @@ export function ContactForm({
   return (
     <div className="w-full max-w-3xl mx-auto">
       {heading && (
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white text-center mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white text-center mb-3 sm:mb-4 px-4">
           {heading}
         </h2>
       )}
 
       {description && (
-        <p className="text-base md:text-lg text-white/80 text-center mb-10 max-w-xl mx-auto">
+        <p className="text-sm sm:text-base md:text-lg text-white/80 text-center mb-6 sm:mb-8 md:mb-10 max-w-xl mx-auto px-4">
           {description}
         </p>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-5">
+      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 px-4 sm:px-0">
         <FormProgress completed={totalCompleted} total={totalFields} />
         {/* Name and Email Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
           <div>
             <Input
               type="text"
@@ -148,7 +148,7 @@ export function ContactForm({
               value={formData.fullName}
               onChange={handleChange}
               required
-              className="h-12 md:h-14 bg-white text-black placeholder:text-gray-500 border-0 rounded-lg px-4 text-base"
+              className="h-11 sm:h-12 md:h-14 bg-white text-black placeholder:text-gray-500 border-0 rounded-lg px-3 sm:px-4 text-sm sm:text-base"
               disabled={isSubmitting || isSubmitted}
             />
           </div>
@@ -160,14 +160,14 @@ export function ContactForm({
               value={formData.email}
               onChange={handleChange}
               required
-              className="h-12 md:h-14 bg-white text-black placeholder:text-gray-500 border-0 rounded-lg px-4 text-base"
+              className="h-11 sm:h-12 md:h-14 bg-white text-black placeholder:text-gray-500 border-0 rounded-lg px-3 sm:px-4 text-sm sm:text-base"
               disabled={isSubmitting || isSubmitted}
             />
           </div>
         </div>
 
         {/* Company and Phone Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
           <div>
             <Input
               type="text"
@@ -175,7 +175,7 @@ export function ContactForm({
               placeholder="Company Name"
               value={formData.company}
               onChange={handleChange}
-              className="h-12 md:h-14 bg-white text-black placeholder:text-gray-500 border-0 rounded-lg px-4 text-base"
+              className="h-11 sm:h-12 md:h-14 bg-white text-black placeholder:text-gray-500 border-0 rounded-lg px-3 sm:px-4 text-sm sm:text-base"
               disabled={isSubmitting || isSubmitted}
             />
           </div>
@@ -186,7 +186,7 @@ export function ContactForm({
               placeholder="Phone Number"
               value={formData.phone}
               onChange={handleChange}
-              className="h-12 md:h-14 bg-white text-black placeholder:text-gray-500 border-0 rounded-lg px-4 text-base"
+              className="h-11 sm:h-12 md:h-14 bg-white text-black placeholder:text-gray-500 border-0 rounded-lg px-3 sm:px-4 text-sm sm:text-base"
               disabled={isSubmitting || isSubmitted}
             />
           </div>
@@ -199,7 +199,7 @@ export function ContactForm({
             onValueChange={handleServiceChange}
             disabled={isSubmitting || isSubmitted}
           >
-            <SelectTrigger className="h-12 md:h-14 bg-white text-black border-0 rounded-lg px-4 text-base w-full">
+            <SelectTrigger className="h-11 sm:h-12 md:h-14 bg-white text-black border-0 rounded-lg px-3 sm:px-4 text-sm sm:text-base w-full">
               <SelectValue placeholder="Select a Service *" />
             </SelectTrigger>
             <SelectContent className="bg-white">
@@ -207,7 +207,7 @@ export function ContactForm({
                 <SelectItem
                   key={service}
                   value={service}
-                  className="text-black hover:bg-gray-100"
+                  className="text-sm sm:text-base text-black hover:bg-gray-100"
                 >
                   {service}
                 </SelectItem>
@@ -224,13 +224,13 @@ export function ContactForm({
             value={formData.message}
             onChange={handleChange}
             rows={5}
-            className="min-h-32 bg-white text-black placeholder:text-gray-500 border-0 rounded-lg px-4 py-3 text-base resize-none"
+            className="min-h-28 sm:min-h-32 bg-white text-black placeholder:text-gray-500 border-0 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base resize-none"
             disabled={isSubmitting || isSubmitted}
           />
         </div>
 
         {/* Submit Button */}
-        <div className="flex justify-center">
+        <div className="flex justify-center pt-2">
           <button
             type="submit"
             disabled={
@@ -240,7 +240,7 @@ export function ContactForm({
               !formData.email.trim() ||
               !formData.service
             }
-            className="group relative inline-flex items-center h-14 px-12 bg-[#E5B800] text-[#1E3A5F] rounded-xl overflow-hidden transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_30px_rgba(229,184,0,0.3)]"
+            className="group relative inline-flex items-center h-12 sm:h-14 px-8 sm:px-10 md:px-12 bg-[#E5B800] text-[#1E3A5F] rounded-xl overflow-hidden transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_30px_rgba(229,184,0,0.3)] text-sm sm:text-base font-semibold"
           >
             {/* Overlay animation from left to right */}
             <span className="absolute inset-0 bg-[#1E3A5F] transform origin-left -translate-x-full transition-transform duration-500 ease-in-out group-hover:translate-x-0 rounded-xl"></span>
@@ -255,14 +255,14 @@ export function ContactForm({
             </span>
             
             {/* Navy circle with arrow */}
-            <div className="relative z-10 flex items-center justify-center w-10 h-10 bg-[#1E3A5F] rounded-full transition-all duration-300 group-hover:bg-[#E5B800] group-hover:translate-x-1">
-              <ArrowRight className="w-4 h-4 text-white group-hover:text-[#1E3A5F] transition-colors" />
+            <div className="relative z-10 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-[#1E3A5F] rounded-full transition-all duration-300 group-hover:bg-[#E5B800] group-hover:translate-x-1">
+              <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 text-white group-hover:text-[#1E3A5F] transition-colors" />
             </div>
           </button>
         </div>
 
         {reassuranceText && (
-          <p className="text-sm text-white/60 text-center">
+          <p className="text-xs sm:text-sm text-white/60 text-center px-4">
             {reassuranceText}
           </p>
         )}

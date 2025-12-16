@@ -54,25 +54,52 @@ function FrameComponent({
   href,
 }: FrameComponentProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const [shouldLoad, setShouldLoad] = useState(false)
+  const frameRef = useRef<HTMLDivElement>(null)
+
+  // Intersection Observer for lazy loading
+  useEffect(() => {
+    if (!frameRef.current) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setShouldLoad(true)
+            observer.disconnect()
+          }
+        })
+      },
+      { rootMargin: '50px' } // Start loading 50px before entering viewport
+    )
+
+    observer.observe(frameRef.current)
+
+    return () => observer.disconnect()
+  }, [])
 
   useEffect(() => {
-    if (isHovered) {
-      videoRef.current?.play()
+    if (isHovered && shouldLoad) {
+      videoRef.current?.play().catch(() => {
+        // Handle autoplay restrictions
+      })
     } else {
       videoRef.current?.pause()
     }
-  }, [isHovered])
+  }, [isHovered, shouldLoad])
 
   const content = (
     <div
+      ref={frameRef}
       className={`relative ${href ? 'cursor-pointer' : ''} ${className}`}
       style={{
         width,
         height,
+        minHeight: '100%',
         transition: "width 0.3s ease-in-out, height 0.3s ease-in-out",
       }}
     >
-      <div className="relative w-full h-full overflow-hidden">
+      <div className="relative w-full h-full overflow-hidden rounded-lg sm:rounded-none">
         <div
           className="absolute inset-0 flex items-center justify-center"
           style={{
@@ -93,14 +120,22 @@ function FrameComponent({
               transition: "transform 0.3s ease-in-out",
             }}
           >
-            <video
-              className="w-full h-full object-cover"
-              src={video}
-              loop
-              muted
-              playsInline
-              ref={videoRef}
-            />
+            {shouldLoad ? (
+              <video
+                className="w-full h-full object-cover"
+                src={video}
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                ref={videoRef}
+                loading="lazy"
+              />
+            ) : (
+              <div className="w-full h-full bg-gradient-to-br from-zinc-800 to-zinc-900 animate-pulse flex items-center justify-center">
+                <div className="text-zinc-500 text-xs text-center px-2">Loading...</div>
+              </div>
+            )}
           </div>
         </div>
 
@@ -210,14 +245,14 @@ export function DynamicFrameLayout({
   const [hovered, setHovered] = useState<{ row: number; col: number } | null>(null)
 
   const getRowSizes = () => {
-    if (hovered === null) return "4fr 4fr 4fr"
+    if (hovered === null) return "1fr 1fr 1fr"
     const { row } = hovered
     const nonHoveredSize = (12 - hoverSize) / 2
     return [0, 1, 2].map((r) => (r === row ? `${hoverSize}fr` : `${nonHoveredSize}fr`)).join(" ")
   }
 
   const getColSizes = () => {
-    if (hovered === null) return "4fr 4fr 4fr"
+    if (hovered === null) return "1fr 1fr 1fr"
     const { col } = hovered
     const nonHoveredSize = (12 - hoverSize) / 2
     return [0, 1, 2].map((c) => (c === col ? `${hoverSize}fr` : `${nonHoveredSize}fr`)).join(" ")
@@ -229,15 +264,29 @@ export function DynamicFrameLayout({
     return `${vertical} ${horizontal}`
   }
 
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
   return (
     <div
       className={`relative w-full h-full ${className}`}
       style={{
         display: "grid",
-        gridTemplateRows: getRowSizes(),
-        gridTemplateColumns: getColSizes(),
-        gap: `${gapSize}px`,
-        transition: "grid-template-rows 0.4s ease, grid-template-columns 0.4s ease",
+        gridTemplateRows: isMobile ? "1fr 1fr 1fr" : getRowSizes(),
+        gridTemplateColumns: isMobile ? "1fr 1fr 1fr" : getColSizes(),
+        gap: isMobile ? `${Math.max(gapSize * 0.5, 2)}px` : `${gapSize}px`,
+        transition: isMobile ? "none" : "grid-template-rows 0.4s ease, grid-template-columns 0.4s ease",
+        minHeight: isMobile ? "600px" : "auto",
+        visibility: "visible",
+        opacity: 1,
       }}
     >
       {frames.map((frame) => {
@@ -255,10 +304,17 @@ export function DynamicFrameLayout({
             className="relative"
             style={{
               transformOrigin,
-              transition: "transform 0.4s ease",
+              transition: isMobile ? "none" : "transform 0.4s ease",
             }}
-            onMouseEnter={() => setHovered({ row, col })}
-            onMouseLeave={() => setHovered(null)}
+            onMouseEnter={() => !isMobile && setHovered({ row, col })}
+            onMouseLeave={() => !isMobile && setHovered(null)}
+            onTouchStart={() => {
+              // On mobile, show service name on tap
+              if (isMobile) {
+                setHovered({ row, col })
+                setTimeout(() => setHovered(null), 2000)
+              }
+            }}
           >
             <FrameComponent
               video={frame.video}
@@ -276,6 +332,10 @@ export function DynamicFrameLayout({
               serviceName={frame.serviceName}
               href={href}
             />
+            {/* Mobile touch indicator */}
+            {isMobile && hovered?.row === row && hovered?.col === col && (
+              <div className="absolute inset-0 border-2 border-[#FFD700] rounded-lg pointer-events-none z-20" />
+            )}
           </motion.div>
         )
       })}

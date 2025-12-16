@@ -2,12 +2,21 @@
 
 import { useEffect, useRef } from 'react';
 import { motion, useInView, useMotionValue, animate } from 'framer-motion';
-import ScrollExpandMedia from '@/components/ui/scroll-expansion-hero';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Header from '@/components/sections/header';
 import Footer from '@/components/sections/footer';
-import { Timeline } from '@/components/ui/timeline';
-import TrustedBy from '@/components/sections/trusted-by';
+
+// Lazy load heavy components
+const ScrollExpandMedia = dynamic(() => import('@/components/ui/scroll-expansion-hero').then((mod) => ({ default: mod.default })), { 
+  ssr: false 
+});
+const Timeline = dynamic(() => import('@/components/ui/timeline').then((mod) => ({ default: mod.Timeline })), { 
+  ssr: false 
+});
+const TrustedBy = dynamic(() => import('@/components/sections/trusted-by'), { 
+  ssr: false 
+});
 
 const AnimatedStatNumber = ({
   value,
@@ -199,39 +208,39 @@ export default function AboutPage() {
       </div>
 
       {/* Mission & Vision Section */}
-      <section className="py-20 px-6">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl relative">
-          <div className="pointer-events-none absolute inset-x-8 -top-10 h-32 rounded-full bg-gradient-to-r from-primary/20 via-sky-500/10 to-purple-500/20 blur-3xl opacity-70" />
+          <div className="pointer-events-none absolute inset-x-4 sm:inset-x-8 -top-10 h-24 sm:h-32 rounded-full bg-gradient-to-r from-primary/20 via-sky-500/10 to-purple-500/20 blur-3xl opacity-70" />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-12 md:mb-16"
           >
-            <div className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-4 py-2 mb-4">
-              <div className="h-[6px] w-[6px] rounded-full bg-primary"></div>
-              <p className="text-[13px] font-semibold uppercase leading-none tracking-[0.05em] text-sky-100">
+            <div className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-3 sm:px-4 py-1.5 sm:py-2 mb-3 sm:mb-4">
+              <div className="h-[4px] w-[4px] sm:h-[6px] sm:w-[6px] rounded-full bg-primary"></div>
+              <p className="text-[11px] sm:text-[12px] md:text-[13px] font-semibold uppercase leading-none tracking-[0.05em] text-sky-100">
                 Our Foundation
               </p>
             </div>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-normal leading-[1.2] tracking-[-0.02em] text-zinc-100 mb-4 drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)]">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal leading-[1.2] tracking-[-0.02em] text-zinc-100 mb-3 sm:mb-4 drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)] px-4">
               Our Mission & Vision
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-20 relative z-10">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16 md:mb-20 relative z-10">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="p-8 rounded-2xl border border-white/10 bg-gradient-to-br from-zinc-950/80 via-zinc-900/80 to-primary/10 shadow-[0_18px_60px_rgba(0,0,0,0.8)] backdrop-blur-xl"
+              className="p-6 sm:p-8 rounded-xl sm:rounded-2xl border border-white/10 bg-gradient-to-br from-zinc-950/80 via-zinc-900/80 to-primary/10 shadow-[0_18px_60px_rgba(0,0,0,0.8)] backdrop-blur-xl"
             >
-              <h3 className='text-2xl font-semibold mb-4 text-zinc-100'>
+              <h3 className='text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-zinc-100'>
                 Our Mission
               </h3>
-              <p className='text-zinc-300 leading-relaxed'>
+              <p className='text-sm sm:text-base text-zinc-300 leading-relaxed'>
                 To empower businesses with strategic technology insights and actionable
                 IT solutions that transform challenges into opportunities for
                 sustainable growth. We are committed to delivering measurable results
@@ -244,12 +253,12 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="p-8 rounded-2xl border border-white/10 bg-gradient-to-br from-zinc-950/80 via-zinc-900/80 to-sky-500/10 shadow-[0_18px_60px_rgba(0,0,0,0.8)] backdrop-blur-xl"
+              className="p-6 sm:p-8 rounded-xl sm:rounded-2xl border border-white/10 bg-gradient-to-br from-zinc-950/80 via-zinc-900/80 to-sky-500/10 shadow-[0_18px_60px_rgba(0,0,0,0.8)] backdrop-blur-xl"
             >
-              <h3 className='text-2xl font-semibold mb-4 text-zinc-100'>
+              <h3 className='text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-zinc-100'>
                 Our Vision
               </h3>
-              <p className='text-zinc-300 leading-relaxed'>
+              <p className='text-sm sm:text-base text-zinc-300 leading-relaxed'>
                 To be the most trusted technology consulting partner for businesses seeking
                 to achieve operational excellence and digital transformation. We envision
                 a future where every organization can leverage cutting-edge technology
@@ -264,35 +273,35 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mb-20 relative z-10"
+            className="mb-12 sm:mb-16 md:mb-20 relative z-10"
           >
-            <h3 className='text-2xl md:text-3xl font-semibold mb-8 text-center text-zinc-100'>
+            <h3 className='text-xl sm:text-2xl md:text-3xl font-semibold mb-6 sm:mb-8 text-center text-zinc-100 px-4'>
               Why Choose Us
             </h3>
-            <div className='grid md:grid-cols-3 gap-6'>
-              <div className='p-6 rounded-xl border border-white/8 bg-zinc-950/70 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(59,130,246,0.35)] transition-all backdrop-blur-xl'>
-                <h4 className='font-semibold mb-3 text-zinc-100'>
+            <div className='grid sm:grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6'>
+              <div className='p-5 sm:p-6 rounded-lg sm:rounded-xl border border-white/8 bg-zinc-950/70 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(59,130,246,0.35)] transition-all backdrop-blur-xl'>
+                <h4 className='text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-zinc-100'>
                   Expert Team
                 </h4>
-                <p className='text-sm text-zinc-300 leading-relaxed'>
+                <p className='text-xs sm:text-sm text-zinc-300 leading-relaxed'>
                   Our technology consultants bring decades of combined experience across
                   various industries and IT specializations, ensuring you get the best expertise.
                 </p>
               </div>
-              <div className='p-6 rounded-xl border border-white/8 bg-zinc-950/70 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(59,130,246,0.35)] transition-all backdrop-blur-xl'>
-                <h4 className='font-semibold mb-3 text-zinc-100'>
+              <div className='p-5 sm:p-6 rounded-lg sm:rounded-xl border border-white/8 bg-zinc-950/70 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(59,130,246,0.35)] transition-all backdrop-blur-xl'>
+                <h4 className='text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-zinc-100'>
                   Proven Results
                 </h4>
-                <p className='text-sm text-zinc-300 leading-relaxed'>
+                <p className='text-xs sm:text-sm text-zinc-300 leading-relaxed'>
                   We measure success by the tangible impact we deliver to our
                   clients' bottom line. Our track record speaks for itself.
                 </p>
               </div>
-              <div className='p-6 rounded-xl border border-white/8 bg-zinc-950/70 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(59,130,246,0.35)] transition-all backdrop-blur-xl'>
-                <h4 className='font-semibold mb-3 text-zinc-100'>
+              <div className='p-5 sm:p-6 rounded-lg sm:rounded-xl border border-white/8 bg-zinc-950/70 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(59,130,246,0.35)] transition-all backdrop-blur-xl'>
+                <h4 className='text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-zinc-100'>
                   Custom Solutions
                 </h4>
-                <p className='text-sm text-zinc-300 leading-relaxed'>
+                <p className='text-xs sm:text-sm text-zinc-300 leading-relaxed'>
                   Every business is unique, and we tailor our approach to meet
                   your specific needs and goals with precision and care.
                 </p>
