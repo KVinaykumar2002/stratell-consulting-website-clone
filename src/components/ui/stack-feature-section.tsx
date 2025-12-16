@@ -55,7 +55,7 @@ export default function FeatureSection() {
   const iconsPerOrbit = Math.ceil(iconConfigs.length / orbitCount);
 
   return (
-    <section className="relative w-full my-32 px-6 md:px-10 flex flex-col md:flex-row items-center justify-between min-h-[30rem] border border-border bg-card overflow-hidden rounded-3xl">
+    <section className="relative w-full my-32 px-6 md:px-10 flex flex-col md:flex-row items-center justify-between min-h-[30rem] border border-white/10 bg-gradient-to-br from-[#1E3A5F]/30 to-zinc-900/50 overflow-hidden rounded-3xl">
       {/* Background Lottie Animation - positioned behind left side */}
       <div className="absolute left-50 top-0 w-full md:w-1/2 h-full pointer-events-none z-0">
         <Lottie
@@ -73,20 +73,20 @@ export default function FeatureSection() {
       </div>
       {/* Left side: Heading and Text */}
       <div className="w-half md:w-1/2 py-10 md:py-0 relative z-20 ">
-        <h1 className="text-4xl sm:text-6xl font-bold mb-4 text-foreground">
-          Build your idea
+        <h1 className="text-4xl sm:text-6xl font-bold mb-4 text-white">
+          Build your <span className="text-[#E5B800]">idea</span>
         </h1>
-        <p className="text-muted-foreground mb-6 max-w-lg">
-          RUIXEN is a modern and responsive UI kit for React, Next.js, and
-          Tailwind CSS.
+        <p className="text-zinc-400 mb-6 max-w-lg">
+          TechnoRealm delivers modern and responsive solutions using React, Next.js, and
+          cutting-edge technologies.
         </p>
         <div className="flex items-center gap-3">
-          <Button variant="default">
-            <Link href="https://ruixen.com" target="_blank">
+          <Button variant="default" className="bg-[#E5B800] text-[#1E3A5F] hover:bg-[#E5B800]/90">
+            <Link href="/contact">
               Get Started
             </Link>
           </Button>
-          <Button variant="outline">Learn More</Button>
+          <Button variant="outline" className="border-[#E5B800]/30 text-white hover:bg-[#E5B800]/10 hover:border-[#E5B800]">Learn More</Button>
         </div>
       </div>
 
@@ -94,8 +94,8 @@ export default function FeatureSection() {
       <div className="relative w-full md:w-1/2 h-[20rem] md:h-full flex items-center justify-start overflow-hidden z-20">
         <div className="relative w-[50rem] h-[50rem] translate-x-[50%] flex items-center justify-center">
           {/* Center Circle */}
-          <div className="w-24 h-24 rounded-full bg-secondary shadow-lg flex items-center justify-center">
-            <FaReact className="w-12 h-12 text-blue-400" />
+          <div className="w-24 h-24 rounded-full bg-[#1E3A5F] shadow-[0_0_30px_rgba(229,184,0,0.2)] flex items-center justify-center border border-[#E5B800]/30">
+            <FaReact className="w-12 h-12 text-[#E5B800]" />
           </div>
 
           {/* Generate Orbits */}
@@ -107,7 +107,7 @@ export default function FeatureSection() {
             return (
               <div
                 key={orbitIdx}
-                className="absolute rounded-full border-2 border-dotted border-border"
+                className="absolute rounded-full border-2 border-dotted border-[#E5B800]/30"
                 style={{
                   width: size,
                   height: size,
@@ -128,7 +128,7 @@ export default function FeatureSection() {
                     return (
                       <div
                         key={iconIdx}
-                        className="absolute bg-card rounded-full p-1 shadow-md"
+                        className="absolute bg-zinc-900 rounded-full p-1 shadow-md border border-white/10"
                         style={{
                           left: `${x}%`,
                           top: `${y}%`,

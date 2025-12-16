@@ -7,6 +7,7 @@ import Image from 'next/image';
 import Header from '@/components/sections/header';
 import Footer from '@/components/sections/footer';
 import { Timeline } from '@/components/ui/timeline';
+import TrustedBy from '@/components/sections/trusted-by';
 
 const AnimatedStatNumber = ({
   value,
@@ -328,36 +329,58 @@ export default function AboutPage() {
           <Timeline
             data={[
               {
-                title: "2024",
+                title: "2022",
                 content: (
                   <div>
                     <p className="text-zinc-300 text-sm md:text-base font-normal mb-6 leading-relaxed">
-                      Expanded our service offerings with cutting-edge AI and machine learning solutions, helping clients transform their businesses with intelligent automation.
+                      Key milestones and achievements in our technology journey:
                     </p>
+                    <div className="mb-6 space-y-3">
+                      <div className="flex gap-3 items-center text-zinc-100 text-sm md:text-base">
+                        <span className="text-[#E5B800] font-bold">✓</span>
+                        <span>Launched digital transformation services</span>
+                      </div>
+                      <div className="flex gap-3 items-center text-zinc-100 text-sm md:text-base">
+                        <span className="text-[#E5B800] font-bold">✓</span>
+                        <span>Expanded mobile development capabilities</span>
+                      </div>
+                      <div className="flex gap-3 items-center text-zinc-100 text-sm md:text-base">
+                        <span className="text-[#E5B800] font-bold">✓</span>
+                        <span>Achieved ISO 27001 certification</span>
+                      </div>
+                      <div className="flex gap-3 items-center text-zinc-100 text-sm md:text-base">
+                        <span className="text-[#E5B800] font-bold">✓</span>
+                        <span>Opened new offices in key markets</span>
+                      </div>
+                      <div className="flex gap-3 items-center text-zinc-100 text-sm md:text-base">
+                        <span className="text-[#E5B800] font-bold">✓</span>
+                        <span>Reached 100+ successful client projects</span>
+                      </div>
+                    </div>
                     <div className="grid grid-cols-2 gap-4">
                       <Image
-                        src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=500&h=500&fit=crop&q=80"
-                        alt="AI and ML services"
+                        src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=500&h=500&fit=crop&q=80"
+                        alt="Digital transformation"
                         width={500}
                         height={500}
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
                       />
                       <Image
-                        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=500&fit=crop&q=80"
-                        alt="Data analytics"
+                        src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=500&fit=crop&q=80"
+                        alt="Mobile development"
                         width={500}
                         height={500}
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
                       />
                       <Image
-                        src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&h=500&fit=crop&q=80"
-                        alt="Cloud migration"
+                        src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=500&h=500&fit=crop&q=80"
+                        alt="UI/UX design"
                         width={500}
                         height={500}
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
                       />
                       <Image
-                        src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&h=500&fit=crop&q=80"
+                        src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=500&fit=crop&q=80"
                         alt="Cybersecurity"
                         width={500}
                         height={500}
@@ -411,58 +434,36 @@ export default function AboutPage() {
                 ),
               },
               {
-                title: "2022",
+                title: "2024",
                 content: (
                   <div>
                     <p className="text-zinc-300 text-sm md:text-base font-normal mb-6 leading-relaxed">
-                      Key milestones and achievements in our technology journey:
+                      Expanded our service offerings with cutting-edge AI and machine learning solutions, helping clients transform their businesses with intelligent automation.
                     </p>
-                    <div className="mb-6 space-y-3">
-                      <div className="flex gap-3 items-center text-zinc-100 text-sm md:text-base">
-                        <span className="text-primary font-bold">✓</span>
-                        <span>Launched digital transformation services</span>
-                      </div>
-                      <div className="flex gap-3 items-center text-zinc-100 text-sm md:text-base">
-                        <span className="text-primary font-bold">✓</span>
-                        <span>Expanded mobile development capabilities</span>
-                      </div>
-                      <div className="flex gap-3 items-center text-zinc-100 text-sm md:text-base">
-                        <span className="text-primary font-bold">✓</span>
-                        <span>Achieved ISO 27001 certification</span>
-                      </div>
-                      <div className="flex gap-3 items-center text-zinc-100 text-sm md:text-base">
-                        <span className="text-primary font-bold">✓</span>
-                        <span>Opened new offices in key markets</span>
-                      </div>
-                      <div className="flex gap-3 items-center text-zinc-100 text-sm md:text-base">
-                        <span className="text-primary font-bold">✓</span>
-                        <span>Reached 100+ successful client projects</span>
-                      </div>
-                    </div>
                     <div className="grid grid-cols-2 gap-4">
                       <Image
-                        src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=500&h=500&fit=crop&q=80"
-                        alt="Digital transformation"
+                        src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=500&h=500&fit=crop&q=80"
+                        alt="AI and ML services"
                         width={500}
                         height={500}
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
                       />
                       <Image
-                        src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=500&fit=crop&q=80"
-                        alt="Mobile development"
+                        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=500&fit=crop&q=80"
+                        alt="Data analytics"
                         width={500}
                         height={500}
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
                       />
                       <Image
-                        src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=500&h=500&fit=crop&q=80"
-                        alt="UI/UX design"
+                        src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&h=500&fit=crop&q=80"
+                        alt="Cloud migration"
                         width={500}
                         height={500}
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
                       />
                       <Image
-                        src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=500&fit=crop&q=80"
+                        src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&h=500&fit=crop&q=80"
                         alt="Cybersecurity"
                         width={500}
                         height={500}
@@ -476,6 +477,9 @@ export default function AboutPage() {
           />
         </div>
       </section>
+
+      {/* Trusted By Section */}
+      <TrustedBy />
 
       <Footer />
     </main>

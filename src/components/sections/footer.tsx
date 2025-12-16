@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { SparklesPreview } from "@/components/ui/sparkles-preview";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { TechnoRealmLogo } from "@/components/logo";
 
 const Footer = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -69,49 +69,53 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-black text-white font-body relative">
+    <footer className="bg-gradient-to-b from-zinc-950 to-[#0a1628] text-white font-body relative">
+      {/* Top accent line */}
+      <div className="h-1 bg-gradient-to-r from-transparent via-[#E5B800] to-transparent" />
+      
       <div className="container pt-10 pb-6">
         {/* Main Grid */}
         <div className="pb-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr] gap-x-12 lg:gap-x-20 gap-y-12">
             {/* Logo */}
             <div>
-              <Link href="/">
-                <TechnoRealmLogo 
-                  width={650} 
-                  height={195} 
-                  className="h-48 md:h-52 lg:h-56 xl:h-60 w-auto"
-                  imageSrc="/image.png"
-                  variant="light"
+              <Link href="/" className="inline-block relative h-32 md:h-40 lg:h-48">
+                <Image
+                  src="/logo-33.png"
+                  alt="TechnoRealm Logo"
+                  width={500}
+                  height={150}
+                  className="h-full w-auto object-contain"
+                  priority
                 />
               </Link>
 
               <Link
                 href="/contact"
-                className="group relative inline-flex items-center h-14 px-6 mt-10 bg-white text-black rounded-2xl overflow-hidden transition-all duration-300"
+                className="group relative inline-flex items-center h-14 px-6 mt-10 bg-[#E5B800] text-[#1E3A5F] rounded-xl overflow-hidden transition-all duration-300 shadow-[0_0_20px_rgba(229,184,0,0.2)]"
               >
-                {/* Overlay animation from left to right - using primary blue */}
-                <span className="absolute inset-0 bg-[#2639ED] transform origin-left -translate-x-full transition-transform duration-500 ease-in-out group-hover:translate-x-0 rounded-2xl"></span>
+                {/* Overlay animation from left to right */}
+                <span className="absolute inset-0 bg-[#1E3A5F] transform origin-left -translate-x-full transition-transform duration-500 ease-in-out group-hover:translate-x-0 rounded-xl"></span>
                 
-                {/* Text - changes to white on hover */}
-                <span className="relative z-10 font-medium text-base leading-none transition-colors duration-300 delay-100 group-hover:text-white mr-3">
+                {/* Text - changes to gold on hover */}
+                <span className="relative z-10 font-semibold text-base leading-none transition-colors duration-300 delay-100 group-hover:text-[#E5B800] mr-3">
                   Enquiry Now
                 </span>
                 
-                {/* Blue circle with arrow - aligned next to text */}
-                <div className="relative z-10 flex items-center justify-center w-10 h-10 bg-[#2639ED] rounded-full transition-all duration-300 group-hover:bg-[#1B28C3] group-hover:translate-x-1">
-                  <ArrowRight className="w-4 h-4 text-white" />
+                {/* Navy circle with arrow */}
+                <div className="relative z-10 flex items-center justify-center w-10 h-10 bg-[#1E3A5F] rounded-full transition-all duration-300 group-hover:bg-[#E5B800] group-hover:translate-x-1">
+                  <ArrowRight className="w-4 h-4 text-white group-hover:text-[#1E3A5F] transition-colors" />
                 </div>
               </Link>
             </div>
 
             {/* Menu */}
             <div>
-              <h3 className="text-sm uppercase text-white/50 mb-6">Menu</h3>
+              <h3 className="text-sm uppercase text-[#E5B800] mb-6 tracking-wider">Menu</h3>
               <ul className="space-y-4">
                 {menuItems.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href}>{item.name}</Link>
+                    <Link href={item.href} className="text-zinc-400 hover:text-[#E5B800] transition-colors">{item.name}</Link>
                   </li>
                 ))}
               </ul>
@@ -119,11 +123,11 @@ const Footer = () => {
 
             {/* Socials */}
             <div>
-              <h3 className="text-sm uppercase text-white/50 mb-6">Socials</h3>
+              <h3 className="text-sm uppercase text-[#E5B800] mb-6 tracking-wider">Socials</h3>
               <ul className="space-y-4">
                 {socialLinks.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} target="_blank">
+                    <a href={link.href} target="_blank" className="text-zinc-400 hover:text-[#E5B800] transition-colors">
                       {link.name}
                     </a>
                   </li>
@@ -133,8 +137,8 @@ const Footer = () => {
 
             {/* Contact */}
             <div>
-              <h3 className="text-sm uppercase text-white/50 mb-6">Contact</h3>
-              <ul className="space-y-4">
+              <h3 className="text-sm uppercase text-[#E5B800] mb-6 tracking-wider">Contact</h3>
+              <ul className="space-y-4 text-zinc-400">
                 <li>+1 (555) 867-6543</li>
                 <li>contact@technorealm.com</li>
                 <li>
@@ -177,7 +181,7 @@ const Footer = () => {
       {isVisible && (
         <motion.button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-6 right-6 bg-white text-black px-4 py-2 rounded-full shadow-lg z-50"
+          className="fixed bottom-6 right-6 bg-[#E5B800] text-[#1E3A5F] px-4 py-2 rounded-full shadow-[0_0_20px_rgba(229,184,0,0.3)] z-50 font-bold"
           animate={{
             opacity: 1,
             y: [0, -10, 0],
@@ -185,8 +189,8 @@ const Footer = () => {
           }}
           initial={{ opacity: 0, y: 20 }}
           whileHover={{
-            backgroundColor: "#3b82f6",
-            color: "#ffffff",
+            backgroundColor: "#1E3A5F",
+            color: "#E5B800",
             scale: 1.15,
             y: -5,
           }}

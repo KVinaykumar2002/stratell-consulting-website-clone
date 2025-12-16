@@ -99,35 +99,38 @@ export default function ServicesPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-gradient-to-b from-[#0a1628] via-zinc-950 to-[#0a1628]">
       <Header />
       
       {/* Hero Heading Section */}
-      <section className="relative flex h-[60vh] md:h-[70vh] w-full items-center justify-center overflow-hidden bg-gradient-to-b from-background via-background/95 to-background">
+      <section className="relative flex h-[60vh] md:h-[70vh] w-full items-center justify-center overflow-hidden bg-gradient-to-b from-[#0a1628] via-zinc-950/95 to-zinc-950">
+        {/* Subtle glow effect */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#E5B800]/5 rounded-full blur-[120px]" />
+        
         <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6">
           <div className="flex flex-col items-center justify-center gap-6 text-center">
             <motion.div 
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-4 py-2"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E5B800]/30 bg-[#E5B800]/10 px-4 py-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="h-[6px] w-[6px] rounded-full bg-primary"></div>
-              <p className="text-[13px] font-semibold uppercase leading-none tracking-[0.05em] text-primary">
+              <div className="h-2 w-2 rounded-full bg-[#E5B800] animate-pulse"></div>
+              <p className="text-sm font-medium text-[#E5B800] tracking-wide">
                 Our Services
               </p>
             </motion.div>
             <motion.h1 
-              className="font-display text-4xl font-normal leading-[1.2] tracking-[-0.02em] text-foreground md:text-5xl lg:text-6xl"
+              className="font-display text-4xl font-normal leading-[1.2] tracking-[-0.02em] text-white md:text-5xl lg:text-6xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               Comprehensive IT Solutions for{" "}
-              <em className="italic">Your Business</em>
+              <em className="italic text-[#E5B800]">Your Business</em>
             </motion.h1>
             <motion.p 
-              className="max-w-2xl font-body text-lg font-normal leading-[1.6] text-muted-foreground md:text-xl"
+              className="max-w-2xl font-body text-lg font-normal leading-[1.6] text-zinc-400 md:text-xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -207,20 +210,32 @@ export default function ServicesPage() {
       />
 
       {/* Dynamic Frame Layout Section */}
-      <section className="py-32 px-6">
+      <section className="py-32 px-6 bg-gradient-to-b from-zinc-950 to-[#0a1628]">
         <div className="mx-auto w-full max-w-[1200px]">
           <div className="mb-12 text-center">
-            <motion.h2 
-              className="font-display text-3xl font-normal leading-[1.2] tracking-[-0.02em] text-foreground md:text-4xl lg:text-5xl mb-4"
+            <motion.div
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E5B800]/30 bg-[#E5B800]/10 px-4 py-2 mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              Our Technology Services
+              <div className="h-2 w-2 rounded-full bg-[#E5B800] animate-pulse"></div>
+              <p className="text-sm font-medium text-[#E5B800] tracking-wide">
+                Explore Services
+              </p>
+            </motion.div>
+            <motion.h2 
+              className="font-display text-3xl font-normal leading-[1.2] tracking-[-0.02em] text-white md:text-4xl lg:text-5xl mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              Our Technology <span className="text-[#E5B800]">Services</span>
             </motion.h2>
             <motion.p 
-              className="max-w-2xl mx-auto font-body text-lg font-normal leading-[1.6] text-muted-foreground"
+              className="max-w-2xl mx-auto font-body text-lg font-normal leading-[1.6] text-zinc-400"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

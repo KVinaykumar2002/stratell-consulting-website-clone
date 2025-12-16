@@ -5,22 +5,23 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 export default function HeroSection() {
-  const words = ["Business", "idea", "Goals", "Vision"];
+  const words = ["Business", "Ideas", "Goals", "Vision"];
   const wordColors = [
-    "text-[#2639ED]", // Blue for Business
-    "text-[#FF6B6B]", // Red/Pink for idea
-    "text-[#4ECDC4]", // Teal for Goals
-    "text-[#FFE66D]", // Yellow for Vision
+    "text-[#E5B800]", // Gold for Business
+    "text-[#E5B800]", // Gold for Ideas
+    "text-[#E5B800]", // Gold for Goals
+    "text-[#E5B800]", // Gold for Vision
   ];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 3000); // Change word every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [words.length]);
+
   return (
     <section className="relative flex h-screen w-full items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -33,7 +34,7 @@ export default function HeroSection() {
           className="h-full w-full object-cover"
           aria-label="Business professionals collaborating in a modern office."
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0F182866] to-[#0F182899]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a162866] via-[#1E3A5F50] to-[#0a162899]" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6">
@@ -54,7 +55,7 @@ export default function HeroSection() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.5 }}
-                    className={`inline-block italic ${wordColors[currentWordIndex]}`}
+                    className={`inline-block italic ${wordColors[currentWordIndex]} drop-shadow-[0_0_20px_rgba(229,184,0,0.5)]`}
                   >
                     {words[currentWordIndex]}
                   </motion.span>
@@ -69,24 +70,24 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            <p className="font-body text-xl font-normal leading-[1.6] text-white">
+            <p className="font-body text-xl font-normal leading-[1.6] text-white/90">
               We deliver cutting-edge technology consulting services that drive innovation, optimize operations, and accelerate your digital transformation journey.
             </p>
             <a
               href="/contact"
-              className="group relative inline-flex items-center h-14 px-6 rounded-2xl bg-white text-primary-navy overflow-hidden transition-all duration-300"
+              className="group relative inline-flex items-center h-14 px-6 rounded-xl bg-[#E5B800] text-[#1E3A5F] overflow-hidden transition-all duration-300 shadow-[0_0_30px_rgba(229,184,0,0.3)]"
             >
               {/* Overlay animation from left to right */}
-              <span className="absolute inset-0 bg-[#2639ED] transform origin-left -translate-x-full transition-transform duration-500 ease-in-out group-hover:translate-x-0 rounded-2xl"></span>
+              <span className="absolute inset-0 bg-[#1E3A5F] transform origin-left -translate-x-full transition-transform duration-500 ease-in-out group-hover:translate-x-0 rounded-xl"></span>
               
-              {/* Text - changes to white on hover */}
-              <span className="relative z-10 font-medium text-base leading-none transition-colors duration-300 delay-100 group-hover:text-white mr-3">
+              {/* Text - changes to gold on hover */}
+              <span className="relative z-10 font-semibold text-base leading-none transition-colors duration-300 delay-100 group-hover:text-[#E5B800] mr-3">
                 Book a Consultation
               </span>
               
-              {/* Blue circle with arrow - aligned next to text */}
-              <div className="relative z-10 flex items-center justify-center w-10 h-10 bg-[#2639ED] rounded-full transition-all duration-300 group-hover:bg-[#1B28C3] group-hover:translate-x-1">
-                <ArrowRight className="w-4 h-4 text-white" />
+              {/* Navy circle with arrow */}
+              <div className="relative z-10 flex items-center justify-center w-10 h-10 bg-[#1E3A5F] rounded-full transition-all duration-300 group-hover:bg-[#E5B800] group-hover:translate-x-1">
+                <ArrowRight className="w-4 h-4 text-white group-hover:text-[#1E3A5F] transition-colors" />
               </div>
             </a>
           </motion.div>

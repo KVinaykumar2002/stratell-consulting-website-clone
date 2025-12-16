@@ -7,13 +7,13 @@ export default function FAQWithSpiral() {
   const [panelOpen, setPanelOpen] = useState(false);
   const [query, setQuery] = useState("");
 
-  // Spiral configuration
+  // Spiral configuration - TechnoRealm colors
   const [cfg, setCfg] = useState({
     points: 700,
     dotRadius: 1.8,
     duration: 3.0,
-    color: "#ffffff",
-    gradient: "none" as
+    color: "#E5B800", // TechnoRealm Gold
+    gradient: "technorealm" as
       | "none"
       | "rainbow"
       | "sunset"
@@ -21,16 +21,17 @@ export default function FAQWithSpiral() {
       | "fire"
       | "neon"
       | "pastel"
-      | "grayscale",
+      | "grayscale"
+      | "technorealm",
     pulseEffect: true,
     opacityMin: 0.25,
     opacityMax: 0.9,
     sizeMin: 0.5,
     sizeMax: 1.4,
-    background: "#000000",
+    background: "#0a1628", // TechnoRealm Dark
   });
 
-  // Gradient presets
+  // Gradient presets - including TechnoRealm brand colors
   const gradients: Record<string, string[]> = useMemo(
     () => ({
       none: [],
@@ -41,6 +42,7 @@ export default function FAQWithSpiral() {
       neon: ["#ff00ff", "#00ffff", "#ffff00"],
       pastel: ["#ffcccc", "#ccffcc", "#ccccff"],
       grayscale: ["#ffffff", "#999999", "#333333"],
+      technorealm: ["#E5B800", "#1E3A5F", "#E5B800"], // TechnoRealm Gold & Navy
     }),
     []
   );
@@ -272,11 +274,15 @@ export default function FAQWithSpiral() {
       {/* Layout */}
       <div className="relative mx-auto max-w-5xl px-6 pt-32 pb-16">
         {/* Header */}
-        <header className="mb-10 flex items-end justify-between pb-6">
+        <header className="mb-10 flex flex-col md:flex-row md:items-end justify-between pb-6 gap-6">
           <div>
-            <h1 className="text-4xl md:text-6xl font-black tracking-tight text-white">FAQ</h1>
-            <p className="mt-2 text-sm md:text-base text-white/70">
-              Clean, minimalistic, black‑and‑white.
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#E5B800]/30 bg-[#E5B800]/10 px-4 py-2 mb-4">
+              <div className="h-2 w-2 rounded-full bg-[#E5B800] animate-pulse" />
+              <span className="text-sm font-medium text-[#E5B800] tracking-wide">Questions & Answers</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-black tracking-tight text-white">Frequently Asked <span className="text-[#E5B800]">Questions</span></h1>
+            <p className="mt-2 text-sm md:text-base text-zinc-400">
+              Find answers to common questions about our IT consulting services.
             </p>
           </div>
           <div className="flex items-center gap-3">
@@ -284,7 +290,7 @@ export default function FAQWithSpiral() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search questions…"
-              className="h-10 w-56 rounded-xl border border-white/20 bg-transparent px-3 text-sm text-white placeholder:text-white/50 outline-none transition focus:border-white/60"
+              className="h-10 w-56 rounded-xl border border-[#E5B800]/30 bg-[#1E3A5F]/30 px-3 text-sm text-white placeholder:text-zinc-500 outline-none transition focus:border-[#E5B800]/60 focus:ring-2 focus:ring-[#E5B800]/20"
             />
           </div>
         </header>
@@ -299,8 +305,8 @@ export default function FAQWithSpiral() {
         </section>
 
         {/* Footer */}
-        <footer className="mt-16 border-t border-white/10 pt-6 text-xs text-white/50">
-          © {new Date().getFullYear()} Your team — products that move metrics.
+        <footer className="mt-16 border-t border-[#E5B800]/20 pt-6 text-xs text-zinc-500">
+          © {new Date().getFullYear()} TechnoRealm — Transforming businesses with cutting-edge IT solutions.
         </footer>
       </div>
 
@@ -357,31 +363,32 @@ function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-white/15 bg-black/40 p-5 transition hover:border-white/40">
+    <div className={`group relative overflow-hidden rounded-2xl border p-5 transition duration-300 ${
+      open 
+        ? "border-[#E5B800]/40 bg-gradient-to-br from-[#1E3A5F]/40 to-zinc-900/60 shadow-[0_0_30px_rgba(229,184,0,0.1)]" 
+        : "border-white/10 bg-zinc-900/40 hover:border-[#E5B800]/30"
+    }`}>
       <button
         onClick={() => setOpen((v) => !v)}
         className="flex w-full items-center justify-between text-left"
         aria-expanded={open}
       >
         <div className="flex items-baseline gap-3">
-          <span className="text-xs text-white/40">{String(index).padStart(2, "0")}</span>
+          <span className={`text-xs font-medium transition-colors ${open ? "text-[#E5B800]" : "text-zinc-500"}`}>{String(index).padStart(2, "0")}</span>
           <h3 className="text-base md:text-lg font-semibold leading-tight text-white">{q}</h3>
         </div>
-        <span className="ml-4 text-white/60 transition group-hover:text-white">{open ? "–" : "+"}</span>
+        <span className={`ml-4 w-8 h-8 rounded-full flex items-center justify-center text-lg transition-all ${
+          open 
+            ? "bg-[#E5B800] text-[#1E3A5F] rotate-0" 
+            : "bg-[#1E3A5F] text-[#E5B800] group-hover:bg-[#E5B800]/20"
+        }`}>{open ? "−" : "+"}</span>
       </button>
       <div
         className={`grid transition-[grid-template-rows] duration-300 ease-[cubic-bezier(.4,0,.2,1)] ${open ? "mt-3 grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
       >
         <div className="min-h-0 overflow-hidden">
-          <p className="text-sm text-white/70">{a}</p>
+          <p className="text-sm text-zinc-400 leading-relaxed">{a}</p>
         </div>
-      </div>
-      {/* Hover halo */}
-      <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100">
-        <div
-          className="absolute -inset-1 rounded-2xl border border-white/10"
-          style={{ maskImage: "radial-gradient(180px_180px_at_var(--x,50%)_var(--y,50%),white,transparent)" }}
-        />
       </div>
     </div>
   );

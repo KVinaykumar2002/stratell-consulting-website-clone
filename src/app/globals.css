@@ -5,53 +5,58 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  /* Shadcn/UI colors */
-  --color-background: #E8EBF2;
-  --color-foreground: #0F1828;
+  /* TechnoRealm Brand Colors */
+  --color-tr-navy: #1E3A5F;
+  --color-tr-gold: #E5B800;
+  --color-tr-dark: #0a1628;
+  
+  /* Shadcn/UI colors - Updated for TechnoRealm */
+  --color-background: #0a1628;
+  --color-foreground: #FFFFFF;
 
-  --color-card: #FFFFFF;
-  --color-card-foreground: #0F1828;
+  --color-card: #1E3A5F;
+  --color-card-foreground: #FFFFFF;
 
-  --color-popover: #FFFFFF;
-  --color-popover-foreground: #0F1828;
+  --color-popover: #1E3A5F;
+  --color-popover-foreground: #FFFFFF;
 
-  --color-primary: #2639ED;
-  --color-primary-foreground: #FFFFFF;
+  --color-primary: #E5B800;
+  --color-primary-foreground: #1E3A5F;
 
-  --color-secondary: #F5F6F8; /* Adjusted from design system's general light background for secondary elements */
-  --color-secondary-foreground: #0F1828;
+  --color-secondary: #1E3A5F;
+  --color-secondary-foreground: #FFFFFF;
 
-  --color-muted: #D1D5DE; /* Using border/divider color for muted */
-  --color-muted-foreground: #595F6D;
+  --color-muted: #27272a;
+  --color-muted-foreground: #a1a1aa;
 
-  --color-accent: #E8EBFF; /* Badge Blue for accent */
-  --color-accent-foreground: #2639ED;
+  --color-accent: #E5B800;
+  --color-accent-foreground: #1E3A5F;
 
   --color-destructive: #ef4444;
   --color-destructive-foreground: #fafafa;
 
-  --color-border: #D1D5DE;
-  --color-input: #D1D5DE;
-  --color-ring: #2639ED; /* Primary blue for ring focus */
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-input: rgba(255, 255, 255, 0.1);
+  --color-ring: #E5B800;
 
-  --color-chart-1: #e67e22;
-  --color-chart-2: #2d8659;
-  --color-chart-3: #1e3a5f;
+  --color-chart-1: #E5B800;
+  --color-chart-2: #1E3A5F;
+  --color-chart-3: #3b82f6;
   --color-chart-4: #f1c40f;
   --color-chart-5: #e74c3c;
 
-  --color-sidebar: #f7f7f7;
-  --color-sidebar-foreground: #404040;
-  --color-sidebar-primary: #1a1a1a;
-  --color-sidebar-primary-foreground: #fafafa;
-  --color-sidebar-accent: #f0f0f0;
-  --color-sidebar-accent-foreground: #1a1a1a;
-  --color-sidebar-border: #d4d4d8;
-  --color-sidebar-ring: #3b82f6;
+  --color-sidebar: #0a1628;
+  --color-sidebar-foreground: #FFFFFF;
+  --color-sidebar-primary: #E5B800;
+  --color-sidebar-primary-foreground: #1E3A5F;
+  --color-sidebar-accent: #1E3A5F;
+  --color-sidebar-accent-foreground: #FFFFFF;
+  --color-sidebar-border: rgba(255, 255, 255, 0.1);
+  --color-sidebar-ring: #E5B800;
 
-  --radius-lg: 1.5rem; /* Cards: 24px */
-  --radius-md: 0.75rem; /* Buttons: 12px */
-  --radius-sm: 0.5rem; /* Images: 8px (adjusted from 16px to fit sm) */
+  --radius-lg: 1.5rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
@@ -73,18 +78,18 @@
     }
   }
 
-  /* Additional design system colors */
-  --color-primary-navy: #0F1828;
-  --color-primary-blue: #2639ED;
-  --color-background-light: #E8EBF2;
-  --color-background-white: #FFFFFF;
-  --color-text-dark: #0F1828;
-  --color-text-body: #595F6D;
+  /* TechnoRealm design system colors */
+  --color-primary-navy: #1E3A5F;
+  --color-primary-gold: #E5B800;
+  --color-background-dark: #0a1628;
+  --color-background-darker: #09101f;
+  --color-text-dark: #1E3A5F;
+  --color-text-body: #a1a1aa;
   --color-text-light: #FFFFFF;
-  --color-overlay-dark: #0F1828; /* Storing base color, opacity handled in usage */
-  --color-border-divider: #D1D5DE;
-  --color-badge-blue: #E8EBFF;
-  --color-hover-blue: #1B28C3;
+  --color-overlay-dark: #0a1628;
+  --color-border-divider: rgba(255, 255, 255, 0.1);
+  --color-badge-gold: rgba(229, 184, 0, 0.1);
+  --color-hover-gold: #d4a800;
 
   /* Font families */
   --font-display: "Playfair Display", serif;
@@ -113,6 +118,14 @@
   body {
     font-family: var(--font-body);
   }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
 }
 
 @keyframes orbit-spin {
@@ -121,6 +134,15 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
@@ -179,7 +201,7 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    color: var(--color-text-dark);
+    color: var(--color-text-light);
   }
 
   h1 {
@@ -207,6 +229,28 @@
     font-weight: 400;
     line-height: 1.6;
     color: var(--color-text-body);
+  }
+
+  /* TechnoRealm Gold Accent */
+  .text-gold {
+    color: var(--color-tr-gold);
+  }
+
+  .bg-gold {
+    background-color: var(--color-tr-gold);
+  }
+
+  .border-gold {
+    border-color: var(--color-tr-gold);
+  }
+
+  /* TechnoRealm Navy Accent */
+  .text-navy {
+    color: var(--color-tr-navy);
+  }
+
+  .bg-navy {
+    background-color: var(--color-tr-navy);
   }
 
   .text-body-lg {

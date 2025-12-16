@@ -143,28 +143,31 @@ const Feature108 = ({
   }, []);
 
   return (
-    <section className="py-32">
+    <section className="py-32 bg-gradient-to-b from-[#0a1628] to-zinc-950">
       <div className="container mx-auto">
         <div className="flex flex-col items-center gap-4 text-center">
-          <Badge variant="outline">{badge}</Badge>
-          <h1 className="max-w-2xl text-3xl font-semibold md:text-4xl">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#E5B800]/30 bg-[#E5B800]/10 px-4 py-2">
+            <div className="h-2 w-2 rounded-full bg-[#E5B800] animate-pulse" />
+            <span className="text-sm font-medium text-[#E5B800] tracking-wide">{badge}</span>
+          </div>
+          <h1 className="max-w-2xl text-3xl font-semibold md:text-4xl text-white">
             {heading}
           </h1>
-          <p className="text-muted-foreground">{description}</p>
+          <p className="text-zinc-400">{description}</p>
         </div>
         <Tabs value={activeTab} onValueChange={handleTabChange} className="mt-8">
-          <TabsList className="container flex flex-col items-center justify-center gap-4 sm:flex-row md:gap-10">
+          <TabsList className="container flex flex-col items-center justify-center gap-4 sm:flex-row md:gap-10 bg-transparent">
             {tabs.map((tab) => (
               <TabsTrigger
                 key={tab.value}
                 value={tab.value}
-                className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-muted-foreground transition-all duration-300 ease-in-out data-[state=active]:bg-muted data-[state=active]:text-primary data-[state=active]:scale-105"
+                className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-zinc-400 transition-all duration-300 ease-in-out data-[state=active]:bg-[#1E3A5F] data-[state=active]:text-[#E5B800] data-[state=active]:scale-105 data-[state=active]:shadow-[0_0_20px_rgba(229,184,0,0.2)] hover:text-white"
               >
                 {tab.icon} {tab.label}
               </TabsTrigger>
             ))}
           </TabsList>
-          <div className="mx-auto mt-8 max-w-screen-xl rounded-2xl bg-muted/70 p-6 lg:p-16 relative overflow-hidden min-h-[600px]">
+          <div className="mx-auto mt-8 max-w-screen-xl rounded-2xl bg-gradient-to-br from-[#1E3A5F]/30 to-zinc-900/50 border border-white/10 p-6 lg:p-16 relative overflow-hidden min-h-[600px]">
             {tabs.map((tab) => {
               const isActive = activeTab === tab.value;
               return (
@@ -182,25 +185,25 @@ const Feature108 = ({
                       ? "opacity-100 translate-x-0 delay-150" 
                       : "opacity-0 -translate-x-4"
                   }`}>
-                    <Badge variant="outline" className="w-fit bg-background">
-                      {tab.content.badge}
-                    </Badge>
-                    <h3 className="text-3xl font-semibold lg:text-5xl">
+                    <div className="inline-flex items-center gap-2 rounded-full border border-[#E5B800]/30 bg-[#E5B800]/10 px-3 py-1.5 w-fit">
+                      <span className="text-xs font-medium text-[#E5B800]">{tab.content.badge}</span>
+                    </div>
+                    <h3 className="text-3xl font-semibold lg:text-5xl text-white">
                       {tab.content.title}
                     </h3>
-                    <p className="text-muted-foreground lg:text-lg">
+                    <p className="text-zinc-400 lg:text-lg">
                       {tab.content.description}
                     </p>
                     {tab.content.buttonHref ? (
                       <Link href={tab.content.buttonHref}>
-                        <Button className="mt-2.5 w-fit gap-2 group/btn relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg" size="lg">
-                          <span className="relative z-10 transition-all duration-300">{tab.content.buttonText}</span>
+                        <Button className="mt-2.5 w-fit gap-2 group/btn relative overflow-hidden transition-all duration-300 hover:scale-105 bg-[#E5B800] text-[#1E3A5F] hover:bg-[#E5B800]/90 shadow-[0_0_20px_rgba(229,184,0,0.3)]" size="lg">
+                          <span className="relative z-10 transition-all duration-300 font-semibold">{tab.content.buttonText}</span>
                           <ArrowRight className="w-4 h-4 relative z-10 transition-all duration-300 group-hover/btn:translate-x-2" />
                         </Button>
                       </Link>
                     ) : (
-                      <Button className="mt-2.5 w-fit gap-2 group/btn relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg" size="lg">
-                        <span className="relative z-10 transition-all duration-300">{tab.content.buttonText}</span>
+                      <Button className="mt-2.5 w-fit gap-2 group/btn relative overflow-hidden transition-all duration-300 hover:scale-105 bg-[#E5B800] text-[#1E3A5F] hover:bg-[#E5B800]/90 shadow-[0_0_20px_rgba(229,184,0,0.3)]" size="lg">
+                        <span className="relative z-10 transition-all duration-300 font-semibold">{tab.content.buttonText}</span>
                         <ArrowRight className="w-4 h-4 relative z-10 transition-all duration-300 group-hover/btn:translate-x-2" />
                       </Button>
                     )}

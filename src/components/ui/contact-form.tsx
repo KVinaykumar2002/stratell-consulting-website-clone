@@ -12,6 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { FormProgress } from "./form-progress";
 
 interface ContactFormData {
   fullName: string;
@@ -113,6 +114,14 @@ export function ContactForm({
     setTimeout(() => setIsSubmitted(false), 5000);
   };
 
+  // Calculate form completion
+  const requiredFields = [formData.fullName, formData.email, formData.service];
+  const optionalFields = [formData.company, formData.phone, formData.message];
+  const completedRequired = requiredFields.filter(f => f.trim()).length;
+  const completedOptional = optionalFields.filter(f => f.trim()).length;
+  const totalCompleted = completedRequired + completedOptional;
+  const totalFields = 6;
+
   return (
     <div className="w-full max-w-3xl mx-auto">
       {heading && (
@@ -128,6 +137,7 @@ export function ContactForm({
       )}
 
       <form onSubmit={handleSubmit} className="space-y-5">
+        <FormProgress completed={totalCompleted} total={totalFields} />
         {/* Name and Email Row */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
@@ -230,13 +240,13 @@ export function ContactForm({
               !formData.email.trim() ||
               !formData.service
             }
-            className="group relative inline-flex items-center h-14 px-12 bg-white text-black rounded-2xl overflow-hidden transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="group relative inline-flex items-center h-14 px-12 bg-[#E5B800] text-[#1E3A5F] rounded-xl overflow-hidden transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_30px_rgba(229,184,0,0.3)]"
           >
-            {/* Overlay animation from left to right - using primary blue */}
-            <span className="absolute inset-0 bg-[#2639ED] transform origin-left -translate-x-full transition-transform duration-500 ease-in-out group-hover:translate-x-0 rounded-2xl"></span>
+            {/* Overlay animation from left to right */}
+            <span className="absolute inset-0 bg-[#1E3A5F] transform origin-left -translate-x-full transition-transform duration-500 ease-in-out group-hover:translate-x-0 rounded-xl"></span>
             
-            {/* Text - changes to white on hover */}
-            <span className="relative z-10 font-medium text-base leading-none transition-colors duration-300 delay-100 group-hover:text-white mr-3">
+            {/* Text - changes to gold on hover */}
+            <span className="relative z-10 font-semibold text-base leading-none transition-colors duration-300 delay-100 group-hover:text-[#E5B800] mr-3">
               {isSubmitting
                 ? "Sending..."
                 : isSubmitted
@@ -244,9 +254,9 @@ export function ContactForm({
                 : buttonText}
             </span>
             
-            {/* Blue circle with arrow - aligned next to text */}
-            <div className="relative z-10 flex items-center justify-center w-10 h-10 bg-[#2639ED] rounded-full transition-all duration-300 group-hover:bg-[#1B28C3] group-hover:translate-x-1">
-              <ArrowRight className="w-4 h-4 text-white" />
+            {/* Navy circle with arrow */}
+            <div className="relative z-10 flex items-center justify-center w-10 h-10 bg-[#1E3A5F] rounded-full transition-all duration-300 group-hover:bg-[#E5B800] group-hover:translate-x-1">
+              <ArrowRight className="w-4 h-4 text-white group-hover:text-[#1E3A5F] transition-colors" />
             </div>
           </button>
         </div>

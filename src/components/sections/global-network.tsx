@@ -5,23 +5,33 @@ import { motion } from "framer-motion";
 
 export default function GlobalNetworkSection() {
   return (
-    <div className="py-40 dark:bg-black bg-white w-full">
+    <div className="py-40 bg-gradient-to-b from-[#0a1628] to-zinc-950 w-full">
       <div className="max-w-7xl mx-auto text-center px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E5B800]/30 bg-[#E5B800]/10 px-4 py-2 mb-6"
+        >
+          <div className="h-2 w-2 rounded-full bg-[#E5B800] animate-pulse" />
+          <span className="text-sm font-medium text-[#E5B800] tracking-wide">Worldwide Presence</span>
+        </motion.div>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-bold text-xl md:text-4xl dark:text-white text-black"
+          className="font-bold text-xl md:text-4xl text-white"
         >
-          Global Network
+          Global <span className="text-[#E5B800]">Network</span>
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-sm md:text-lg text-neutral-500 max-w-2xl mx-auto py-4"
+          className="text-sm md:text-lg text-zinc-400 max-w-2xl mx-auto py-4"
         >
           Connect with teams and clients worldwide. Our platform enables seamless
           collaboration across continents, bringing the world to your workspace.
@@ -103,7 +113,7 @@ export default function GlobalNetworkSection() {
               },
             },
           ]}
-          lineColor="#2639ED"
+          lineColor="#E5B800"
         />
       </div>
     </div>

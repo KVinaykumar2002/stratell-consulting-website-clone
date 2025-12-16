@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Lottie from "lottie-react";
 import {
   Accordion,
@@ -66,10 +67,10 @@ const defaultFeatures: FeatureItem[] = [
 const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
   const [activeTabId, setActiveTabId] = useState<number | null>(1);
   const [activeLottiePath, setActiveLottiePath] = useState(features[0].lottiePath);
-  const [animationData, setAnimationData] = useState<any>(null);
+  const [animationData, setAnimationData] = useState<Record<string, unknown> | null>(null);
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   useEffect(() => {
-    // Load the active Lottie animation
     const loadAnimation = async () => {
       try {
         const response = await fetch(activeLottiePath);
@@ -83,13 +84,46 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
   }, [activeLottiePath]);
 
   return (
-    <section className="py-32">
-      <div className="container mx-auto">
-        <div className="mb-12 flex w-full items-start justify-between gap-12">
-          <div className="w-full md:w-1/2">
+    <section className="py-24 bg-gradient-to-b from-zinc-950 via-[#0a1628] to-zinc-950 relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#E5B800]/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#1E3A5F]/20 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Section Header */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#E5B800]/30 bg-[#E5B800]/10 px-4 py-2 mb-4">
+            <div className="h-2 w-2 rounded-full bg-[#E5B800] animate-pulse" />
+            <span className="text-sm font-medium text-[#E5B800] tracking-wide">Why Choose Us</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+            What Sets Us <span className="text-[#E5B800]">Apart</span>
+          </h2>
+          <p className="text-zinc-400 max-w-2xl mx-auto">
+            Discover the core principles that drive our success and make us the preferred technology partner
+          </p>
+        </motion.div>
+
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-12">
+          {/* Accordion Section */}
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-full lg:w-1/2"
+          >
             <Accordion
               type="single"
-              className="w-full"
+              className="w-full space-y-4"
               defaultValue="item-1"
               onValueChange={(value) => {
                 const id = value ? parseInt(value.replace("item-", "")) : null;
@@ -102,51 +136,142 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
                 }
               }}
             >
-              {features.map((tab) => (
-                <AccordionItem key={tab.id} value={`item-${tab.id}`}>
-                  <AccordionTrigger className="cursor-pointer py-5 !no-underline transition">
-                    <h6
-                      className={`text-xl font-semibold ${
-                        tab.id === activeTabId
-                          ? "text-foreground"
-                          : "text-muted-foreground"
-                      }`}
-                    >
-                      {tab.title}
-                    </h6>
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    <p className="mt-3 text-muted-foreground">
-                      {tab.description}
-                    </p>
-                    <div className="mt-4 md:hidden">
-                      <LottieComponent lottiePath={tab.lottiePath} />
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
+              {features.map((tab, index) => (
+                <motion.div
+                  key={tab.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.1 * index }}
+                  onMouseEnter={() => setHoveredId(tab.id)}
+                  onMouseLeave={() => setHoveredId(null)}
+                >
+                  <AccordionItem 
+                    value={`item-${tab.id}`}
+                    className={`
+                      border rounded-xl overflow-hidden transition-all duration-300
+                      ${tab.id === activeTabId 
+                        ? 'border-[#E5B800]/50 bg-gradient-to-r from-[#1E3A5F]/30 to-[#E5B800]/10 shadow-[0_0_30px_rgba(229,184,0,0.15)]' 
+                        : 'border-white/10 bg-zinc-900/50 hover:border-[#E5B800]/30 hover:bg-zinc-900/80'
+                      }
+                    `}
+                  >
+                    <AccordionTrigger className="cursor-pointer px-6 py-5 !no-underline transition-all group">
+                      <div className="flex items-center gap-4">
+                        {/* Number indicator */}
+                        <div className={`
+                          w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300
+                          ${tab.id === activeTabId 
+                            ? 'bg-[#E5B800] text-[#1E3A5F]' 
+                            : 'bg-zinc-800 text-zinc-400 group-hover:bg-[#E5B800]/20 group-hover:text-[#E5B800]'
+                          }
+                        `}>
+                          {String(tab.id).padStart(2, '0')}
+                        </div>
+                        <h6
+                          className={`text-lg md:text-xl font-semibold transition-all duration-300 ${
+                            tab.id === activeTabId
+                              ? "text-white"
+                              : "text-zinc-400 group-hover:text-white"
+                          }`}
+                        >
+                          {tab.title}
+                        </h6>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 pb-6">
+                      <div className="pl-14">
+                        <motion.p 
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 0.3 }}
+                          className="text-zinc-400 leading-relaxed"
+                        >
+                          {tab.description}
+                        </motion.p>
+                        {/* Mobile Lottie */}
+                        <div className="mt-6 lg:hidden">
+                          <div className="rounded-xl overflow-hidden bg-gradient-to-br from-[#1E3A5F]/20 to-zinc-900 border border-white/10 p-4">
+                            <LottieComponent lottiePath={tab.lottiePath} />
+                          </div>
+                        </div>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                </motion.div>
               ))}
             </Accordion>
-          </div>
-          <div className="relative m-auto hidden w-1/2 overflow-hidden rounded-xl bg-muted md:block">
-            {animationData ? (
-              <Lottie
-                animationData={animationData}
-                loop={true}
-                autoplay={true}
-                style={{ 
-                  width: "100%", 
-                  height: "100%",
-                  maxWidth: "100%",
-                  maxHeight: "100%"
-                }}
-                className="aspect-[4/3] rounded-md pl-4"
-              />
-            ) : (
-              <div className="aspect-[4/3] flex items-center justify-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+
+            {/* Progress indicator */}
+            <div className="flex gap-2 mt-8 justify-center lg:justify-start">
+              {features.map((feature) => (
+                <motion.div
+                  key={feature.id}
+                  className={`h-1.5 rounded-full transition-all duration-500 ${
+                    feature.id === activeTabId 
+                      ? 'w-8 bg-[#E5B800]' 
+                      : 'w-2 bg-zinc-700 hover:bg-zinc-600'
+                  }`}
+                  whileHover={{ scale: 1.2 }}
+                />
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Animation Display */}
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="relative w-full lg:w-1/2 hidden lg:block"
+          >
+            <div className="relative">
+              {/* Glow effect */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-[#E5B800]/20 via-[#1E3A5F]/30 to-[#E5B800]/20 rounded-3xl blur-2xl opacity-50" />
+              
+              {/* Main container */}
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-zinc-900 via-[#0a1628] to-zinc-900 p-6">
+                <AnimatePresence mode="wait">
+                  {animationData ? (
+                    <motion.div
+                      key={activeLottiePath}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      transition={{ duration: 0.4 }}
+                    >
+                      <Lottie
+                        animationData={animationData}
+                        loop={true}
+                        autoplay={true}
+                        style={{ 
+                          width: "100%", 
+                          height: "100%",
+                          maxWidth: "100%",
+                          maxHeight: "100%"
+                        }}
+                        className="aspect-[4/3] rounded-xl"
+                      />
+                    </motion.div>
+                  ) : (
+                    <div className="aspect-[4/3] flex items-center justify-center">
+                      <div className="relative">
+                        <div className="w-16 h-16 border-4 border-[#E5B800]/20 rounded-full" />
+                        <div className="absolute top-0 left-0 w-16 h-16 border-4 border-transparent border-t-[#E5B800] rounded-full animate-spin" />
+                      </div>
+                    </div>
+                  )}
+                </AnimatePresence>
+
+                {/* Decorative corners */}
+                <div className="absolute top-3 left-3 w-8 h-8 border-l-2 border-t-2 border-[#E5B800]/30 rounded-tl-lg" />
+                <div className="absolute top-3 right-3 w-8 h-8 border-r-2 border-t-2 border-[#E5B800]/30 rounded-tr-lg" />
+                <div className="absolute bottom-3 left-3 w-8 h-8 border-l-2 border-b-2 border-[#E5B800]/30 rounded-bl-lg" />
+                <div className="absolute bottom-3 right-3 w-8 h-8 border-r-2 border-b-2 border-[#E5B800]/30 rounded-br-lg" />
               </div>
-            )}
-          </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
@@ -155,7 +280,7 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
 
 // Helper component for mobile Lottie animations
 const LottieComponent = ({ lottiePath }: { lottiePath: string }) => {
-  const [animationData, setAnimationData] = useState<any>(null);
+  const [animationData, setAnimationData] = useState<Record<string, unknown> | null>(null);
 
   useEffect(() => {
     const loadAnimation = async () => {
@@ -173,7 +298,10 @@ const LottieComponent = ({ lottiePath }: { lottiePath: string }) => {
   if (!animationData) {
     return (
       <div className="h-full max-h-80 w-full flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+        <div className="relative">
+          <div className="w-12 h-12 border-4 border-[#E5B800]/20 rounded-full" />
+          <div className="absolute top-0 left-0 w-12 h-12 border-4 border-transparent border-t-[#E5B800] rounded-full animate-spin" />
+        </div>
       </div>
     );
   }
@@ -183,7 +311,7 @@ const LottieComponent = ({ lottiePath }: { lottiePath: string }) => {
       animationData={animationData}
       loop={true}
       autoplay={true}
-      className="h-full max-h-80 w-full rounded-md"
+      className="h-full max-h-80 w-full rounded-xl"
     />
   );
 };

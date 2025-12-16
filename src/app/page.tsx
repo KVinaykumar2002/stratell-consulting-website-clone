@@ -37,7 +37,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-gradient-to-b from-[#0a1628] via-zinc-950 to-[#0a1628]">
       <Header />
       <HeroSection />
       <Feature108
@@ -106,32 +106,32 @@ export default function Home() {
       <FeatureSection />
       
       {/* Our Technology Services Section */}
-      <section className="py-32 px-6">
+      <section className="py-32 px-6 bg-gradient-to-b from-zinc-950 to-[#0a1628]">
         <div className="mx-auto w-full max-w-[1200px]">
           <div className="mb-12 text-center">
             <motion.div
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-4 py-2 mb-6"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E5B800]/30 bg-[#E5B800]/10 px-4 py-2 mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="h-[6px] w-[6px] rounded-full bg-primary"></div>
-              <p className="text-[13px] font-semibold uppercase leading-none tracking-[0.05em] text-primary">
+              <div className="h-2 w-2 rounded-full bg-[#E5B800] animate-pulse"></div>
+              <p className="text-sm font-medium text-[#E5B800] tracking-wide">
                 Our Services
               </p>
             </motion.div>
             <motion.h2 
-              className="font-display text-3xl font-normal leading-[1.2] tracking-[-0.02em] text-foreground md:text-4xl lg:text-5xl mb-4"
+              className="font-display text-3xl font-normal leading-[1.2] tracking-[-0.02em] text-white md:text-4xl lg:text-5xl mb-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              Our Technology Services
+              Our Technology <span className="text-[#E5B800]">Services</span>
             </motion.h2>
             <motion.p 
-              className="max-w-2xl mx-auto font-body text-lg font-normal leading-[1.6] text-muted-foreground"
+              className="max-w-2xl mx-auto font-body text-lg font-normal leading-[1.6] text-zinc-400"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
