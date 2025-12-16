@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
-import { TechnoRealmLogo } from "@/components/logo";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -16,119 +16,130 @@ const navLinks = [
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
-      // If scrolled down more than 50px, shrink navbar
-      if (currentScrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-      
-      setLastScrollY(currentScrollY);
+      setIsScrolled(currentScrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   return (
     <header className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'top-2 w-[85%] max-w-[900px]' 
-        : 'top-6 w-[95%] max-w-[1152px]'
+        ? 'top-2 w-[90%] max-w-[1000px]' 
+        : 'top-4 w-[95%] max-w-[1200px]'
     }`}>
       <div
-        className={`flex items-center justify-between rounded-2xl border border-white/10 transition-all duration-300 ${
+        className={`flex items-center justify-between rounded-xl border border-white/10 transition-all duration-300 ${
           isScrolled 
-            ? 'h-14 md:h-16 px-3 md:px-4' 
-            : 'h-16 md:h-18 px-4 md:px-6'
+            ? 'h-14 px-4 md:px-6' 
+            : 'h-16 md:h-[72px] px-5 md:px-8'
         }`}
         style={{
-          backgroundColor: 'rgba(0, 0, 0, 0.4)',
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
           boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
         }}
       >
+        {/* Logo */}
         <Link href="/" className="flex-shrink-0">
-          <TechnoRealmLogo 
-            width={600} 
-            height={178} 
-            className={`w-auto transition-all duration-300 ${
-              isScrolled 
-                ? 'h-36 md:h-40' 
-                : 'h-40 md:h-48'
+          <Image
+            src="/logo-32.png"
+            alt="TechnoRealm Logo"
+            width={500}
+            height={150}
+            className={`object-contain transition-all duration-300 ${
+              isScrolled ? 'h-24 w-auto' : 'h-36 md:h-44 w-auto'
             }`}
-            imageSrc="/logo image/31.png"
-            variant="light"
+            priority
           />
         </Link>
         
-        <nav className="hidden lg:flex items-center gap-x-10">
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center gap-x-8 xl:gap-x-10">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-base font-medium text-white hover:text-[#2639ED] transition-colors">
+            <Link 
+              key={link.href} 
+              href={link.href} 
+              className="text-sm xl:text-base font-medium text-white hover:text-white/70 transition-colors"
+            >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="flex items-center">
+        {/* Contact Button & Mobile Menu */}
+        <div className="flex items-center gap-3">
           <Link
             href="/contact"
-            className={`hidden lg:inline-flex items-center justify-center bg-white text-[#0F1828] font-medium rounded-xl hover:bg-gray-200 transition-all duration-300 ${
+            className={`hidden lg:inline-flex items-center justify-center bg-white text-[#0F1828] font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 ${
               isScrolled 
                 ? 'text-sm h-9 px-5' 
-                : 'text-base h-12 px-8'
+                : 'text-sm h-10 px-6'
             }`}
           >
             Contact Us
           </Link>
 
-          <div className="lg:hidden ml-4">
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden">
             <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
               <SheetTrigger asChild>
-                <button aria-label="Open menu" className="p-2 text-white">
-                  <Menu size={28} />
+                <button aria-label="Open menu" className="p-2 text-white hover:text-white/70 transition-colors">
+                  <Menu size={24} />
                 </button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-[#0F1828] border-l-0 text-white p-0 w-full max-w-sm">
+              <SheetContent side="right" className="bg-[#0F1828] border-l border-white/10 text-white p-0 w-full max-w-sm">
                 <div className="flex flex-col h-full">
-                  <div className="flex items-center justify-between p-6 border-b border-white/20">
-                      <SheetClose asChild>
-                        <Link href="/" className="flex-shrink-0">
-                          <TechnoRealmLogo 
-                            width={480} 
-                            height={142} 
-                            className="h-[130px] w-auto"
-                            imageSrc="/logo image/31.png"
-                            variant="light"
-                          />
-                        </Link>
-                      </SheetClose>
+                  {/* Mobile Header */}
+                  <div className="flex items-center justify-between p-6 border-b border-white/10">
                     <SheetClose asChild>
-                       <button aria-label="Close menu"><X size={24} /></button>
+                      <Link href="/">
+                        <Image
+                          src="/logo-32.png"
+                          alt="TechnoRealm Logo"
+                          width={200}
+                          height={60}
+                          className="h-14 w-auto object-contain"
+                        />
+                      </Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <button aria-label="Close menu" className="p-2 hover:text-white/70 transition-colors">
+                        <X size={24} />
+                      </button>
                     </SheetClose>
                   </div>
-                  <nav className="flex flex-col gap-y-6 pt-10 px-6">
+                  
+                  {/* Mobile Navigation */}
+                  <nav className="flex flex-col gap-y-4 pt-8 px-6">
                     {navLinks.map((link) => (
                       <SheetClose asChild key={link.href}>
-                           <Link href={link.href} className="text-2xl font-medium hover:text-[#2639ED] transition-colors">
-                              {link.label}
-                           </Link>
+                        <Link 
+                          href={link.href} 
+                          className="text-xl font-medium hover:text-white/70 transition-colors py-2"
+                        >
+                          {link.label}
+                        </Link>
                       </SheetClose>
                     ))}
                   </nav>
-                   <div className="mt-auto p-6">
-                     <SheetClose asChild>
-                      <Link href="/contact" className="flex items-center justify-center w-full bg-primary text-primary-foreground text-base font-medium h-12 rounded-xl hover:bg-primary/90 transition-colors">
-                          Contact Us
+                  
+                  {/* Mobile Contact Button */}
+                  <div className="mt-auto p-6">
+                    <SheetClose asChild>
+                      <Link 
+                        href="/contact" 
+                        className="flex items-center justify-center w-full bg-white text-[#0F1828] text-base font-semibold h-12 rounded-lg hover:bg-gray-100 transition-colors"
+                      >
+                        Contact Us
                       </Link>
-                     </SheetClose>
+                    </SheetClose>
                   </div>
                 </div>
               </SheetContent>
