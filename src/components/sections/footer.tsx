@@ -6,6 +6,8 @@ import { SparklesPreview } from "@/components/ui/sparkles-preview";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { FaInstagram, FaFacebookF, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
+import { HiPhone, HiEnvelope, HiMapPin } from "react-icons/hi2";
 
 const Footer = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -62,10 +64,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: "Instagram", href: "https://www.instagram.com/technorealm", icon: "instagram" },
-    { name: "Facebook", href: "https://www.facebook.com/technorealm", icon: "facebook" },
-    { name: "LinkedIn", href: "https://www.linkedin.com/company/technorealm", icon: "linkedin" },
-    { name: "Twitter (X)", href: "https://twitter.com/technorealm", icon: "twitter" },
+    { name: "Instagram", href: "https://www.instagram.com/technorealm", icon: FaInstagram, color: "#E1306C" },
+    { name: "Facebook", href: "https://www.facebook.com/technorealm", icon: FaFacebookF, color: "#1877F2" },
+    { name: "LinkedIn", href: "https://www.linkedin.com/company/technorealm", icon: FaLinkedinIn, color: "#0A66C2" },
+    { name: "Twitter (X)", href: "https://twitter.com/technorealm", icon: FaXTwitter, color: "#ffffff" },
   ];
 
   return (
@@ -132,8 +134,12 @@ const Footer = () => {
                       target="_blank" 
                       rel="noopener noreferrer"
                       aria-label={`Follow TechnoRealm on ${link.name}`}
-                      className="text-zinc-400 hover:text-[#E5B800] transition-colors"
+                      className="flex items-center gap-3 text-zinc-400 hover:text-[#E5B800] transition-colors group"
                     >
+                      <link.icon 
+                        className="w-5 h-5 group-hover:scale-110 transition-transform" 
+                        style={{ color: link.color }}
+                      />
                       {link.name}
                     </a>
                   </li>
@@ -146,18 +152,24 @@ const Footer = () => {
               <h3 className="text-sm uppercase text-[#E5B800] mb-6 tracking-wider">Contact</h3>
               <ul className="space-y-4 text-zinc-400">
                 <li>
-                  <a href="tel:+15558676543" className="hover:text-[#E5B800] transition-colors">
+                  <a href="tel:+15558676543" className="flex items-center gap-3 hover:text-[#E5B800] transition-colors group">
+                    <HiPhone className="w-5 h-5 text-[#25D366] group-hover:scale-110 transition-transform" />
                     +1 (555) 867-6543
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:contact@technorealm.com" className="hover:text-[#E5B800] transition-colors">
+                  <a href="mailto:contact@technorealm.com" className="flex items-center gap-3 hover:text-[#E5B800] transition-colors group">
+                    <HiEnvelope className="w-5 h-5 text-[#EA4335] group-hover:scale-110 transition-transform" />
                     contact@technorealm.com
                   </a>
                 </li>
-                <li>
-                  420 TechnoRealm Avenue, Suite 300<br />
-                  Boston, MA 02116, USA
+                <li className="flex gap-3">
+                  <HiMapPin className="w-5 h-5 text-[#4285F4] flex-shrink-0 mt-0.5" />
+                  <span>
+                    420 TechnoRealm Avenue,<br />
+                    Suite 300<br />
+                    Boston, MA 02116, USA
+                  </span>
                 </li>
               </ul>
             </address>

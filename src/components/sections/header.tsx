@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 // Simplified animations - reduced for better performance
 const animations = `
@@ -23,9 +23,22 @@ const animations = `
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
+  { href: "/services", label: "Services", hasDropdown: true },
   { href: "/about", label: "About Us" },
   { href: "/faqs", label: "FAQs" },
+];
+
+const serviceItems = [
+  { href: "/services/ai-ml", label: "AI & Machine Learning" },
+  { href: "/services/cloud-infrastructure", label: "Cloud Infrastructure" },
+  { href: "/services/cybersecurity", label: "Cybersecurity" },
+  { href: "/services/devops", label: "DevOps Consulting" },
+  { href: "/services/application-development", label: "App Development" },
+  { href: "/services/data-analytics", label: "Data & Analytics" },
+  { href: "/services/system-integration", label: "System Integration" },
+  { href: "/services/it-consulting", label: "IT Consulting" },
+  { href: "/services/digital-transformation", label: "Digital Transformation" },
+  { href: "/services/business-strategy", label: "Business Strategy" },
 ];
 
 export default function Header() {
@@ -33,6 +46,9 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const servicesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Optimized scroll handler with throttling
   useEffect(() => {
@@ -68,7 +84,7 @@ export default function Header() {
           : 'top-2 sm:top-4 w-[98%] sm:w-[95%] max-w-[1200px]'
       }`}>
       <div
-        className={`relative flex items-center justify-between rounded-xl sm:rounded-2xl border border-white/30 transition-all duration-500 overflow-hidden ${
+        className={`relative flex items-center justify-between rounded-xl sm:rounded-2xl border border-white/30 transition-all duration-500 ${
           isScrolled 
             ? 'h-14 sm:h-16 px-3 sm:px-4 md:px-6' 
             : 'h-16 sm:h-18 md:h-20 px-4 sm:px-5 md:px-8'
@@ -84,7 +100,7 @@ export default function Header() {
       >
         {/* Glassy overlay effect */}
         <div 
-          className="absolute inset-0 pointer-events-none"
+          className="absolute inset-0 pointer-events-none rounded-xl sm:rounded-2xl overflow-hidden"
           style={{
             background: `linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.1) 100%)`,
             backdropFilter: 'blur(1px)',
@@ -101,7 +117,7 @@ export default function Header() {
         
         {/* Reflective glass highlight */}
         <div 
-          className="absolute top-0 left-0 right-0 h-1/2 pointer-events-none rounded-t-2xl"
+          className="absolute top-0 left-0 right-0 h-1/2 pointer-events-none rounded-t-xl sm:rounded-t-2xl overflow-hidden"
           style={{
             background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0.3), transparent)',
           }}
@@ -141,6 +157,92 @@ export default function Header() {
         <nav className="hidden lg:flex items-center gap-x-4 xl:gap-x-6 2xl:gap-x-8 relative z-10">
           {navLinks.map((link) => {
             const active = isActive(link.href);
+            
+            if (link.hasDropdown) {
+              return (
+                <div 
+                  key={link.href}
+                  className="relative"
+                  onMouseEnter={() => {
+                    if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
+                    setIsServicesOpen(true);
+                    setHoveredLink(link.href);
+                  }}
+                  onMouseLeave={() => {
+                    servicesTimeoutRef.current = setTimeout(() => {
+                      setIsServicesOpen(false);
+                    }, 150);
+                    setHoveredLink(null);
+                  }}
+                >
+                  <Link 
+                    href={link.href}
+                    className={`group relative text-xs xl:text-sm 2xl:text-base font-medium transition-colors duration-200 py-2 xl:py-3 px-2 xl:px-4 rounded-lg xl:rounded-xl flex items-center gap-1 ${
+                      active 
+                        ? 'text-[#1E3A5F] font-bold' 
+                        : 'text-gray-700 hover:text-[#1E3A5F]'
+                    }`}
+                  >
+                    <span className={`absolute inset-0 rounded-xl transition-colors duration-200 ${
+                      active 
+                        ? 'bg-[#E5B800]/15' 
+                        : 'bg-transparent group-hover:bg-[#E5B800]/10'
+                    }`} />
+                    
+                    <span className="relative z-10 flex items-center gap-1">
+                      {link.label}
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
+                      {active && (
+                        <span className="w-1.5 h-1.5 bg-[#E5B800] rounded-full" />
+                      )}
+                    </span>
+                    
+                    <span 
+                      className={`absolute bottom-0 left-0 h-1 rounded-full bg-[#E5B800] transition-all duration-200 ${
+                        active ? 'w-full' : 'w-0 group-hover:w-full'
+                      }`} 
+                    />
+                  </Link>
+                  
+                  {/* Services Dropdown */}
+                  {isServicesOpen && (
+                    <div 
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-72 bg-white backdrop-blur-xl rounded-xl shadow-2xl border border-gray-200 overflow-hidden animate-slide-in z-[100]"
+                      onMouseEnter={() => {
+                        if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
+                        setIsServicesOpen(true);
+                      }}
+                      onMouseLeave={() => {
+                        servicesTimeoutRef.current = setTimeout(() => {
+                          setIsServicesOpen(false);
+                        }, 150);
+                      }}
+                    >
+                      <div className="p-2 max-h-80 overflow-y-auto">
+                        {serviceItems.map((service, index) => (
+                          <Link
+                            key={service.href}
+                            href={service.href}
+                            className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#E5B800]/10 hover:text-[#1E3A5F] rounded-lg transition-colors duration-150"
+                            style={{ animationDelay: `${index * 30}ms` }}
+                          >
+                            {service.label}
+                          </Link>
+                        ))}
+                      </div>
+                      <div className="border-t border-gray-200/50 p-2">
+                        <Link
+                          href="/services"
+                          className="block px-4 py-2.5 text-sm font-semibold text-[#1E3A5F] hover:bg-[#E5B800]/20 rounded-lg transition-colors duration-150 text-center"
+                        >
+                          View All Services →
+                        </Link>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            }
             
             return (
               <Link 
@@ -229,9 +331,57 @@ export default function Header() {
                   </div>
                   
                   {/* Mobile Navigation */}
-                  <nav className="flex flex-col gap-y-2 pt-8 px-6">
+                  <nav className="flex flex-col gap-y-2 pt-8 px-6 overflow-y-auto">
                     {navLinks.map((link, index) => {
                       const active = isActive(link.href);
+                      
+                      if (link.hasDropdown) {
+                        return (
+                          <div key={link.href} className="animate-slide-in" style={{ animationDelay: `${index * 0.05}s` }}>
+                            <button
+                              onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                              className={`w-full group relative text-2xl font-medium transition-all duration-300 py-4 px-4 rounded-lg ${
+                                active
+                                  ? 'text-[#1E3A5F] font-semibold bg-gradient-to-r from-[#E5B800]/15 to-transparent'
+                                  : 'text-gray-700 hover:text-[#1E3A5F] hover:bg-gradient-to-r hover:from-[#E5B800]/10 hover:to-transparent'
+                              }`}
+                            >
+                              <span className="relative z-10 flex items-center justify-between">
+                                <span>{link.label}</span>
+                                <ChevronDown className={`w-6 h-6 transition-transform duration-300 ${isMobileServicesOpen ? 'rotate-180' : ''}`} />
+                              </span>
+                              <span className={`absolute left-0 top-1/2 -translate-y-1/2 w-1 bg-[#E5B800] rounded-r-full transition-all duration-300 ${
+                                active ? 'h-full' : 'h-0 group-hover:h-full'
+                              }`}></span>
+                            </button>
+                            
+                            {/* Mobile Services Dropdown */}
+                            {isMobileServicesOpen && (
+                              <div className="ml-4 mt-2 space-y-1 border-l-2 border-[#E5B800]/30 pl-4">
+                                {serviceItems.map((service) => (
+                                  <SheetClose asChild key={service.href}>
+                                    <Link
+                                      href={service.href}
+                                      className="block py-2.5 px-3 text-base text-gray-600 hover:text-[#1E3A5F] hover:bg-[#E5B800]/10 rounded-lg transition-colors"
+                                    >
+                                      {service.label}
+                                    </Link>
+                                  </SheetClose>
+                                ))}
+                                <SheetClose asChild>
+                                  <Link
+                                    href="/services"
+                                    className="block py-2.5 px-3 text-base font-semibold text-[#1E3A5F] hover:bg-[#E5B800]/20 rounded-lg transition-colors"
+                                  >
+                                    View All Services →
+                                  </Link>
+                                </SheetClose>
+                              </div>
+                            )}
+                          </div>
+                        );
+                      }
+                      
                       return (
                         <SheetClose asChild key={link.href}>
                           <Link 
