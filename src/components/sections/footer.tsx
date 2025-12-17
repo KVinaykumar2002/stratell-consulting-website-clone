@@ -57,15 +57,15 @@ const Footer = () => {
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
     { name: "About Us", href: "/about" },
-    { name: "Case Studies", href: "/case-studies" },
     { name: "FAQs", href: "/faqs" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const socialLinks = [
-    { name: "Instagram", href: "#" },
-    { name: "Facebook", href: "#" },
-    { name: "LinkedIn", href: "#" },
-    { name: "Twitter (X)", href: "#" },
+    { name: "Instagram", href: "https://www.instagram.com/technorealm", icon: "instagram" },
+    { name: "Facebook", href: "https://www.facebook.com/technorealm", icon: "facebook" },
+    { name: "LinkedIn", href: "https://www.linkedin.com/company/technorealm", icon: "linkedin" },
+    { name: "Twitter (X)", href: "https://twitter.com/technorealm", icon: "twitter" },
   ];
 
   return (
@@ -127,7 +127,13 @@ const Footer = () => {
               <ul className="space-y-4">
                 {socialLinks.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} target="_blank" className="text-zinc-400 hover:text-[#E5B800] transition-colors">
+                    <a 
+                      href={link.href} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      aria-label={`Follow TechnoRealm on ${link.name}`}
+                      className="text-zinc-400 hover:text-[#E5B800] transition-colors"
+                    >
                       {link.name}
                     </a>
                   </li>

@@ -23,8 +23,12 @@ export default function HeroSection() {
   }, [words.length]);
 
   return (
-    <section className="relative flex h-screen w-full items-center justify-center overflow-hidden" aria-label="Hero section - Transform your business with expert IT solutions">
-      <div className="absolute inset-0 z-0" role="presentation">
+    <section 
+      className="relative flex h-screen w-full items-center justify-center overflow-hidden" 
+      aria-label="Hero section - Transform your business with expert IT solutions"
+    >
+      {/* Background Video with SEO-optimized attributes */}
+      <div className="absolute inset-0 z-0" role="presentation" aria-hidden="true">
         <video
           src="https://ikconsultingservices.com/wp-content/uploads/2025/03/business-consulting11.mp4"
           autoPlay
@@ -32,11 +36,18 @@ export default function HeroSection() {
           muted
           playsInline
           preload="metadata"
+          poster="/images/hero-poster.jpg"
           className="h-full w-full object-cover"
-          aria-label="Business professionals collaborating in a modern office for IT consulting and technology solutions."
-          title="TechnoRealm IT Consulting Services - Business Collaboration"
+          aria-hidden="true"
+        >
+          {/* Fallback text for accessibility */}
+          <p>Business professionals collaborating in a modern office environment, showcasing IT consulting and technology solutions.</p>
+        </video>
+        {/* Gradient overlay for text readability */}
+        <div 
+          className="absolute inset-0 bg-gradient-to-b from-[#0a162866] via-[#1E3A5F50] to-[#0a162899]" 
+          aria-hidden="true" 
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a162866] via-[#1E3A5F50] to-[#0a162899]" aria-hidden="true" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1200px] px-4 sm:px-6 md:px-8">
@@ -59,6 +70,7 @@ export default function HeroSection() {
                     transition={{ duration: 0.5 }}
                     className={`inline-block italic ${wordColors[currentWordIndex]} drop-shadow-[0_0_20px_rgba(229,184,0,0.5)]`}
                     aria-live="polite"
+                    aria-atomic="true"
                   >
                     {words[currentWordIndex]}
                   </motion.span>
@@ -67,6 +79,7 @@ export default function HeroSection() {
               with Expert IT Solutions
             </h1>
           </motion.header>
+          
           <motion.div 
             className="flex w-full flex-col items-center lg:items-start gap-6 md:gap-8 lg:max-w-[440px] lg:mt-48 xl:mt-60"
             initial={{ opacity: 0, y: 30 }}
@@ -79,9 +92,13 @@ export default function HeroSection() {
             <a
               href="/contact"
               className="group relative inline-flex items-center h-12 sm:h-14 px-5 sm:px-6 md:px-8 rounded-xl bg-[#E5B800] text-[#1E3A5F] overflow-hidden transition-all duration-300 shadow-[0_0_30px_rgba(229,184,0,0.3)] text-sm sm:text-base font-semibold"
+              aria-label="Book a free consultation with TechnoRealm IT experts"
             >
               {/* Overlay animation from left to right */}
-              <span className="absolute inset-0 bg-[#1E3A5F] transform origin-left -translate-x-full transition-transform duration-500 ease-in-out group-hover:translate-x-0 rounded-xl"></span>
+              <span 
+                className="absolute inset-0 bg-[#1E3A5F] transform origin-left -translate-x-full transition-transform duration-500 ease-in-out group-hover:translate-x-0 rounded-xl"
+                aria-hidden="true"
+              />
               
               {/* Text - changes to gold on hover */}
               <span className="relative z-10 font-semibold text-base leading-none transition-colors duration-300 delay-100 group-hover:text-[#E5B800] mr-3">
@@ -89,9 +106,12 @@ export default function HeroSection() {
               </span>
               
               {/* Navy circle with arrow */}
-              <div className="relative z-10 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-[#1E3A5F] rounded-full transition-all duration-300 group-hover:bg-[#E5B800] group-hover:translate-x-1">
+              <span 
+                className="relative z-10 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-[#1E3A5F] rounded-full transition-all duration-300 group-hover:bg-[#E5B800] group-hover:translate-x-1"
+                aria-hidden="true"
+              >
                 <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 text-white group-hover:text-[#1E3A5F] transition-colors" />
-              </div>
+              </span>
             </a>
           </motion.div>
         </div>

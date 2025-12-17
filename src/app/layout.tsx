@@ -81,10 +81,10 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // Add your verification codes here when available
-    // google: "your-google-verification-code",
-    // yandex: "your-yandex-verification-code",
-    // bing: "your-bing-verification-code",
+    // Replace these with your actual verification codes when available
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || "",
+    // yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION || "",
+    // bing: process.env.NEXT_PUBLIC_BING_VERIFICATION || "",
   },
   alternates: {
     canonical: siteUrl,
