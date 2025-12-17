@@ -55,11 +55,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon.ico", sizes: "192x192", type: "image/x-icon" },
+      { url: "/icon", sizes: "32x32", type: "image/png" },
     ],
     apple: [
-      { url: "/favicon.ico", sizes: "180x180", type: "image/x-icon" },
+      { url: "/apple-icon", sizes: "180x180", type: "image/png" },
     ],
   },
   openGraph: {

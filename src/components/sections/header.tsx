@@ -77,13 +77,13 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex-shrink-0 relative z-10">
           <div className={`relative transition-all duration-300 ${
-            isScrolled ? 'h-28 md:h-32' : 'h-32 md:h-40'
+            isScrolled ? 'h-36 md:h-44' : 'h-44 md:h-56'
           }`}>
             <Image
               src="/logo-33.png"
               alt="TechnoRealm"
-              width={400}
-              height={120}
+              width={560}
+              height={168}
               className="h-full w-auto object-contain"
               priority
             />
