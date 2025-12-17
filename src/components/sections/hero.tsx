@@ -2,32 +2,30 @@
 
 import { ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 
 export default function HeroSection() {
-  const words = ["Business", "Ideas", "Goals", "Vision"];
-  const wordColors = [
-    "text-[#E5B800]", // Gold for Business
-    "text-[#E5B800]", // Gold for Ideas
-    "text-[#E5B800]", // Gold for Goals
-    "text-[#E5B800]", // Gold for Vision
-  ];
+  // Memoize static arrays to prevent re-renders
+  const words = useMemo(() => ["Business", "Ideas", "Goals", "Vision"], []);
+  const wordColor = "text-[#E5B800]"; // Single color - no array needed
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
+  // Memoize the interval callback
+  const rotateWord = useCallback(() => {
+    setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
   }, [words.length]);
+
+  useEffect(() => {
+    const interval = setInterval(rotateWord, 3000);
+    return () => clearInterval(interval);
+  }, [rotateWord]);
 
   return (
     <section 
       className="relative flex h-screen w-full items-center justify-center overflow-hidden" 
       aria-label="Hero section - Transform your business with expert IT solutions"
     >
-      {/* Background Video with SEO-optimized attributes */}
+      {/* Background Video with optimized loading for better LCP */}
       <div className="absolute inset-0 z-0" role="presentation" aria-hidden="true">
         <video
           src="https://ikconsultingservices.com/wp-content/uploads/2025/03/business-consulting11.mp4"
@@ -35,7 +33,7 @@ export default function HeroSection() {
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="none"
           poster="/images/hero-poster.jpg"
           className="h-full w-full object-cover"
           aria-hidden="true"
@@ -68,7 +66,7 @@ export default function HeroSection() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.5 }}
-                    className={`inline-block italic ${wordColors[currentWordIndex]} drop-shadow-[0_0_20px_rgba(229,184,0,0.5)]`}
+                    className={`inline-block italic ${wordColor} drop-shadow-[0_0_20px_rgba(229,184,0,0.5)]`}
                     aria-live="polite"
                     aria-atomic="true"
                   >

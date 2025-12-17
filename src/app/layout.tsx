@@ -1,10 +1,26 @@
 import type { Metadata } from "next";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import VisualEditsMessenger from "../visual-edits/VisualEditsMessenger";
 import ErrorReporter from "@/components/ErrorReporter";
 import { ThemeProvider } from "@/components/providers";
 import Script from "next/script";
 import { OrganizationSchema, WebsiteSchema } from "@/components/seo/structured-data";
+
+// Optimize font loading with next/font - eliminates render-blocking CSS
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-body",
+  preload: true,
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-display",
+  preload: true,
+});
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://technorealm.com";
 
@@ -98,8 +114,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="antialiased">
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${playfair.variable}`}>
+      <body className="antialiased font-body">
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

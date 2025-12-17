@@ -1,8 +1,6 @@
 import type { NextConfig } from "next";
 import path from "node:path";
 
-const LOADER = path.resolve(__dirname, 'src/visual-edits/component-tagger-loader.js');
-
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
@@ -21,25 +19,25 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 60,
   },
   outputFileTracingRoot: path.resolve(__dirname, '../../'),
-  typescript: {
-    ignoreBuildErrors: true,
-    // Faster TypeScript compilation
-    tsconfigPath: './tsconfig.json',
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  
   // Performance optimizations
   compress: true,
   poweredByHeader: false,
+  
   // SEO optimizations
   trailingSlash: false,
-  // Enable static optimization where possible
-  swcMinify: true,
+  
+  // External packages for server components (moved from experimental)
+  serverExternalPackages: [
+    '@react-three/fiber',
+    '@react-three/drei',
+    'three',
+    'three-globe',
+  ],
   
   // Compilation optimizations
   experimental: {
-    // Faster refresh
+    // Optimize package imports for smaller bundles
     optimizePackageImports: [
       '@radix-ui/react-accordion',
       '@radix-ui/react-dialog',
@@ -53,46 +51,10 @@ const nextConfig: NextConfig = {
     ],
     // Optimize CSS
     optimizeCss: true,
-    // Faster server components
-    serverComponentsExternalPackages: [
-      '@react-three/fiber',
-      '@react-three/drei',
-      'three',
-      'three-globe',
-    ],
   },
   
-  // Webpack optimizations (only used when not using Turbopack)
-  webpack: (config, { dev, isServer }) => {
-    // Only apply if not using Turbopack (Turbopack has its own optimizations)
-    if (dev && !process.env.TURBOPACK) {
-      config.watchOptions = {
-        poll: 1000,
-        aggregateTimeout: 300,
-        ignored: ['**/node_modules', '**/.next'],
-      };
-      
-      // Cache modules for faster rebuilds
-      config.cache = {
-        type: 'filesystem',
-        buildDependencies: {
-          config: [__filename],
-        },
-      };
-    }
-    
-    return config;
-  },
-  
-  // Turbopack loader configuration temporarily disabled due to compatibility issues
-  // The loader uses Webpack APIs that are not compatible with Turbopack
-  // turbopack: {
-  //   rules: {
-  //     "*.{jsx,tsx}": {
-  //       loaders: [LOADER]
-  //     }
-  //   }
-  // }
+  // Enable Turbopack (Next.js 16 default)
+  turbopack: {},
 };
 
 export default nextConfig;

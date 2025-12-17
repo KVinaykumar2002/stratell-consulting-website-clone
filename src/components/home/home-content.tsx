@@ -1,17 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { Server, Brain, Code, Cloud } from "lucide-react";
 import Header from "@/components/sections/header";
 import HeroSection from "@/components/sections/hero";
-
-// Lazy load heavy components
-const NeonOrbs = dynamic(() => import("@/components/ui/neon-orbs").then(mod => ({ default: mod.NeonOrbs })), { 
-  ssr: false,
-  loading: () => <div className="min-h-screen bg-[#0a1628]" />
-});
 
 // Import JSON animations - these are small and can be imported directly
 import webDevelopmentAnimation from "@/app/web_development.json";
@@ -19,12 +12,7 @@ import itDevPinkAnimation from "@/app/IT_dev_pink.json";
 import dataSecurityAnimation from "@/app/DATA_SECURITY.json";
 import cloudAnimation from "@/app/Cloud.json";
 
-// Lazy load heavy components
-const CurvedLoop = dynamic(() => import("@/components/CurvedLoop"), { 
-  ssr: false,
-  loading: () => <div className="h-32" />
-});
-
+// Lazy load heavy components with better loading states
 const Feature108 = dynamic(
   () => import("@/components/blocks/shadcnblocks-com-feature108").then((mod) => ({ default: mod.Feature108 })),
   { 
@@ -39,11 +27,8 @@ const Feature108 = dynamic(
   }
 );
 
-// Lazy load sections below the fold
+// Lazy load sections below the fold - only load when needed
 const FeatureSection = dynamic(() => import("@/components/ui/stack-feature-section"), { 
-  ssr: false 
-});
-const Testimonials = dynamic(() => import("@/components/sections/testimonials"), { 
   ssr: false 
 });
 const TrustedBy = dynamic(() => import("@/components/sections/trusted-by"), { 
@@ -76,19 +61,7 @@ const DynamicFrameLayout = dynamic(
 );
 
 export default function HomeContent() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return <NeonOrbs />;
-  }
+  // Removed artificial 2-second loading delay - this was killing LCP scores
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#0a1628] via-zinc-950 to-[#0a1628]">

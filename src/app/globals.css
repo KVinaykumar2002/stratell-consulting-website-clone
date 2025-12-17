@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+/* Fonts are loaded via next/font in layout.tsx for optimal performance */
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -91,9 +91,9 @@
   --color-badge-gold: rgba(229, 184, 0, 0.1);
   --color-hover-gold: #d4a800;
 
-  /* Font families */
-  --font-display: "Playfair Display", serif;
-  --font-body: "Inter", sans-serif;
+  /* Font families - Using CSS variables from next/font */
+  --font-display: var(--font-display), "Playfair Display", serif;
+  --font-body: var(--font-body), "Inter", sans-serif;
 }
 
 /*

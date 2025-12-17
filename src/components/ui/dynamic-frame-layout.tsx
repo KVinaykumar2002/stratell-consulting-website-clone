@@ -127,9 +127,8 @@ function FrameComponent({
                 loop
                 muted
                 playsInline
-                preload="metadata"
+                preload="none"
                 ref={videoRef}
-                loading="lazy"
               />
             ) : (
               <div className="w-full h-full bg-gradient-to-br from-zinc-800 to-zinc-900 animate-pulse flex items-center justify-center">
