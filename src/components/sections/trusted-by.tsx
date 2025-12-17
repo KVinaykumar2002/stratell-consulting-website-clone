@@ -1,23 +1,36 @@
 'use client';
 
 import React from 'react';
+import { 
+  SiMicrosoft, 
+  SiAmazon, 
+  SiGoogle, 
+  SiIbm, 
+  SiOracle, 
+  SiSalesforce, 
+  SiAdobe, 
+  SiSap, 
+  SiCisco, 
+  SiDell,
+  SiAccenture,
+  SiDeloitte
+} from 'react-icons/si';
+import { FaAws } from 'react-icons/fa';
 
 const clients = [
-  'Microsoft',
-  'Amazon',
-  'Google',
-  'IBM',
-  'Oracle',
-  'Salesforce',
-  'Adobe',
-  'SAP',
-  'Cisco',
-  'Dell',
-  'HP',
-  'Accenture',
-  'Deloitte',
-  'PwC',
-  'EY',
+  { name: 'Microsoft', icon: SiMicrosoft, color: '#00A4EF' },
+  { name: 'Amazon', icon: SiAmazon, color: '#FF9900' },
+  { name: 'Google', icon: SiGoogle, color: '#4285F4' },
+  { name: 'IBM', icon: SiIbm, color: '#1F70C1' },
+  { name: 'Oracle', icon: SiOracle, color: '#F80000' },
+  { name: 'Salesforce', icon: SiSalesforce, color: '#00A1E0' },
+  { name: 'Adobe', icon: SiAdobe, color: '#FF0000' },
+  { name: 'SAP', icon: SiSap, color: '#0FAAFF' },
+  { name: 'Cisco', icon: SiCisco, color: '#1BA0D7' },
+  { name: 'Dell', icon: SiDell, color: '#007DB8' },
+  { name: 'AWS', icon: FaAws, color: '#FF9900' },
+  { name: 'Accenture', icon: SiAccenture, color: '#A100FF' },
+  { name: 'Deloitte', icon: SiDeloitte, color: '#86BC25' },
 ];
 
 const TrustedBy = () => {
@@ -51,11 +64,12 @@ const TrustedBy = () => {
             {clients.map((client, i) => (
               <div
                 key={`first-${i}`}
-                className="flex-shrink-0 rounded-lg sm:rounded-xl bg-[#1A2B42] px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 min-w-[140px] sm:min-w-[160px] md:min-w-[200px] flex items-center justify-center border border-white/5 shadow-lg hover:border-[#FFD700]/30 transition-all duration-300"
+                className="flex-shrink-0 rounded-xl bg-[#1A2B42]/80 px-6 sm:px-8 md:px-10 py-5 sm:py-6 md:py-7 min-w-[140px] sm:min-w-[160px] md:min-w-[180px] flex items-center justify-center border border-white/5 shadow-lg hover:border-[#FFD700]/30 hover:bg-[#1A2B42] transition-all duration-300 group"
               >
-                <span className="font-sans text-xs sm:text-sm font-medium uppercase tracking-widest text-zinc-300 text-center">
-                  {client}
-                </span>
+                <client.icon 
+                  className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 transition-all duration-300 opacity-60 group-hover:opacity-100"
+                  style={{ color: client.color }}
+                />
               </div>
             ))}
             
@@ -63,11 +77,12 @@ const TrustedBy = () => {
             {clients.map((client, i) => (
               <div
                 key={`second-${i}`}
-                className="flex-shrink-0 rounded-lg sm:rounded-xl bg-[#1A2B42] px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 min-w-[140px] sm:min-w-[160px] md:min-w-[200px] flex items-center justify-center border border-white/5 shadow-lg hover:border-[#FFD700]/30 transition-all duration-300"
+                className="flex-shrink-0 rounded-xl bg-[#1A2B42]/80 px-6 sm:px-8 md:px-10 py-5 sm:py-6 md:py-7 min-w-[140px] sm:min-w-[160px] md:min-w-[180px] flex items-center justify-center border border-white/5 shadow-lg hover:border-[#FFD700]/30 hover:bg-[#1A2B42] transition-all duration-300 group"
               >
-                <span className="font-sans text-xs sm:text-sm font-medium uppercase tracking-widest text-zinc-300 text-center">
-                  {client}
-                </span>
+                <client.icon 
+                  className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 transition-all duration-300 opacity-60 group-hover:opacity-100"
+                  style={{ color: client.color }}
+                />
               </div>
             ))}
           </div>
