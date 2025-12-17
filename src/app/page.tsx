@@ -6,7 +6,14 @@ import { motion } from "framer-motion";
 import { Server, Brain, Code, Cloud } from "lucide-react";
 import Header from "@/components/sections/header";
 import HeroSection from "@/components/sections/hero";
-import { NeonOrbs } from "@/components/ui/neon-orbs";
+
+// Lazy load heavy components
+const NeonOrbs = dynamic(() => import("@/components/ui/neon-orbs").then(mod => ({ default: mod.NeonOrbs })), { 
+  ssr: false,
+  loading: () => <div className="min-h-screen bg-[#0a1628]" />
+});
+
+// Import JSON animations - these are small and can be imported directly
 import webDevelopmentAnimation from "@/app/web_development.json";
 import itDevPinkAnimation from "@/app/IT_dev_pink.json";
 import dataSecurityAnimation from "@/app/DATA_SECURITY.json";

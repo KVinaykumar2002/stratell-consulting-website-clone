@@ -178,9 +178,8 @@ const Footer = () => {
           </p>
 
           <div className="flex gap-4 text-sm text-white/50">
-            <a href="#">Privacy</a>
-            <a href="#">T&C</a>
-            <a href="#">Built in Framer</a>
+            <Link href="/privacy" className="hover:text-[#E5B800] transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-[#E5B800] transition-colors">Terms & Conditions</Link>
           </div>
         </div>
       </div>
