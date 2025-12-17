@@ -134,15 +134,12 @@ export default function ServicesPage() {
                 Our Services
               </p>
             </motion.div>
-            <motion.h1 
+            <h1 
               className="font-display text-4xl font-normal leading-[1.2] tracking-[-0.02em] text-white md:text-5xl lg:text-6xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
             >
               Comprehensive IT Solutions for{" "}
               <em className="italic text-[#E5B800]">Your Business</em>
-            </motion.h1>
+            </h1>
             <motion.p 
               className="max-w-2xl font-body text-lg font-normal leading-[1.6] text-zinc-400 md:text-xl"
               initial={{ opacity: 0, y: 20 }}
@@ -239,15 +236,11 @@ export default function ServicesPage() {
                 Explore Services
               </p>
             </motion.div>
-            <motion.h2 
+            <h2 
               className="font-display text-3xl font-normal leading-[1.2] tracking-[-0.02em] text-white md:text-4xl lg:text-5xl mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
             >
               Our Technology <span className="text-[#E5B800]">Services</span>
-            </motion.h2>
+            </h2>
             <motion.p 
               className="max-w-2xl mx-auto font-body text-lg font-normal leading-[1.6] text-zinc-400"
               initial={{ opacity: 0, y: 20 }}

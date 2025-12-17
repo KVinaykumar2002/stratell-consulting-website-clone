@@ -23,8 +23,8 @@ export default function HeroSection() {
   }, [words.length]);
 
   return (
-    <section className="relative flex h-screen w-full items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
+    <section className="relative flex h-screen w-full items-center justify-center overflow-hidden" aria-label="Hero section - Transform your business with expert IT solutions">
+      <div className="absolute inset-0 z-0" role="presentation">
         <video
           src="https://ikconsultingservices.com/wp-content/uploads/2025/03/business-consulting11.mp4"
           autoPlay
@@ -33,14 +33,15 @@ export default function HeroSection() {
           playsInline
           preload="metadata"
           className="h-full w-full object-cover"
-          aria-label="Business professionals collaborating in a modern office."
+          aria-label="Business professionals collaborating in a modern office for IT consulting and technology solutions."
+          title="TechnoRealm IT Consulting Services - Business Collaboration"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a162866] via-[#1E3A5F50] to-[#0a162899]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a162866] via-[#1E3A5F50] to-[#0a162899]" aria-hidden="true" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1200px] px-4 sm:px-6 md:px-8">
         <div className="flex flex-col items-center justify-between gap-8 md:gap-10 lg:flex-row lg:items-start">
-          <motion.div 
+          <motion.header 
             className="w-full lg:max-w-[680px] text-center lg:text-left lg:mt-48 xl:mt-60"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -57,6 +58,7 @@ export default function HeroSection() {
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.5 }}
                     className={`inline-block italic ${wordColors[currentWordIndex]} drop-shadow-[0_0_20px_rgba(229,184,0,0.5)]`}
+                    aria-live="polite"
                   >
                     {words[currentWordIndex]}
                   </motion.span>
@@ -64,7 +66,7 @@ export default function HeroSection() {
               </span>{" "}
               with Expert IT Solutions
             </h1>
-          </motion.div>
+          </motion.header>
           <motion.div 
             className="flex w-full flex-col items-center lg:items-start gap-6 md:gap-8 lg:max-w-[440px] lg:mt-48 xl:mt-60"
             initial={{ opacity: 0, y: 30 }}

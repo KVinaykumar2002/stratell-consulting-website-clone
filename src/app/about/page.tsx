@@ -69,12 +69,12 @@ const AboutContent = () => {
 
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-start">
         <div className="space-y-6">
-          <h2 className='text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-50 drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)]'>
+          <h1 className='text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-50 drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)]'>
             A technology partner
             <span className="block text-zinc-300">
               built for ambitious businesses.
             </span>
-          </h2>
+          </h1>
           <p className='text-base md:text-lg text-zinc-300 leading-relaxed max-w-2xl'>
             TechnoRealm is a boutique technology consulting studio helping modern organisations
             redesign how they operate, scale, and innovate. We sit at the intersection of
@@ -369,31 +369,35 @@ export default function AboutPage() {
                     <div className="grid grid-cols-2 gap-4">
                       <Image
                         src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=500&h=500&fit=crop&q=80"
-                        alt="Digital transformation"
+                        alt="Digital transformation consulting services by TechnoRealm - Modern business technology solutions"
                         width={500}
                         height={500}
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
+                        loading="lazy"
                       />
                       <Image
                         src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=500&fit=crop&q=80"
-                        alt="Mobile development"
+                        alt="Mobile application development services by TechnoRealm - iOS and Android app development"
                         width={500}
                         height={500}
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
+                        loading="lazy"
                       />
                       <Image
                         src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=500&h=500&fit=crop&q=80"
-                        alt="UI/UX design"
+                        alt="UI/UX design services by TechnoRealm - User experience and interface design for web and mobile applications"
                         width={500}
                         height={500}
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
+                        loading="lazy"
                       />
                       <Image
                         src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=500&fit=crop&q=80"
-                        alt="Cybersecurity"
+                        alt="Cybersecurity and risk management services by TechnoRealm - Enterprise security solutions"
                         width={500}
                         height={500}
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -452,31 +456,35 @@ export default function AboutPage() {
                     <div className="grid grid-cols-2 gap-4">
                       <Image
                         src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=500&h=500&fit=crop&q=80"
-                        alt="AI and ML services"
+                        alt="AI and machine learning consulting services by TechnoRealm - Artificial intelligence solutions for business automation"
                         width={500}
                         height={500}
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
+                        loading="lazy"
                       />
                       <Image
                         src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=500&fit=crop&q=80"
-                        alt="Data analytics"
+                        alt="Data analytics and business intelligence services by TechnoRealm - Data-driven decision making solutions"
                         width={500}
                         height={500}
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
+                        loading="lazy"
                       />
                       <Image
                         src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&h=500&fit=crop&q=80"
-                        alt="Cloud migration"
+                        alt="Cloud migration and infrastructure services by TechnoRealm - AWS, Azure, GCP cloud solutions"
                         width={500}
                         height={500}
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
+                        loading="lazy"
                       />
                       <Image
                         src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&h=500&fit=crop&q=80"
-                        alt="Cybersecurity"
+                        alt="Cybersecurity and risk management services by TechnoRealm - Enterprise security and compliance solutions"
                         width={500}
                         height={500}
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
+                        loading="lazy"
                       />
                     </div>
                   </div>

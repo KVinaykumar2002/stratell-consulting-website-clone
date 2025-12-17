@@ -201,7 +201,7 @@ export default function Header() {
             
             <Image
               src="/logo-33.png"
-              alt="TechnoRealm Logo"
+              alt="TechnoRealm - Expert IT Consulting and Technology Solutions - Home"
               width={700}
               height={210}
               className={`h-full w-auto object-contain transition-all duration-500 ${
@@ -387,7 +387,7 @@ export default function Header() {
                       <Link href="/" className="relative h-32">
                         <Image
                           src="/logo-33.png"
-                          alt="TechnoRealm Logo"
+                          alt="TechnoRealm - Expert IT Consulting and Technology Solutions"
                           width={650}
                           height={195}
                           className="h-full w-auto object-contain"

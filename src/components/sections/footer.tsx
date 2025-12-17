@@ -79,10 +79,10 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr] gap-x-12 lg:gap-x-20 gap-y-12">
             {/* Logo */}
             <div>
-              <Link href="/" className="inline-block relative h-32 md:h-40 lg:h-48">
+              <Link href="/" className="inline-block relative h-32 md:h-40 lg:h-48" aria-label="TechnoRealm Home - IT Consulting Services">
                 <Image
                   src="/logo-33.png"
-                  alt="TechnoRealm Logo"
+                  alt="TechnoRealm - Expert IT Consulting and Technology Solutions Logo"
                   width={500}
                   height={150}
                   className="h-full w-auto object-contain"
@@ -136,17 +136,25 @@ const Footer = () => {
             </div>
 
             {/* Contact */}
-            <div>
+            <address className="not-italic">
               <h3 className="text-sm uppercase text-[#E5B800] mb-6 tracking-wider">Contact</h3>
               <ul className="space-y-4 text-zinc-400">
-                <li>+1 (555) 867-6543</li>
-                <li>contact@technorealm.com</li>
+                <li>
+                  <a href="tel:+15558676543" className="hover:text-[#E5B800] transition-colors">
+                    +1 (555) 867-6543
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:contact@technorealm.com" className="hover:text-[#E5B800] transition-colors">
+                    contact@technorealm.com
+                  </a>
+                </li>
                 <li>
                   420 TechnoRealm Avenue, Suite 300<br />
                   Boston, MA 02116, USA
                 </li>
               </ul>
-            </div>
+            </address>
           </div>
         </div>
 

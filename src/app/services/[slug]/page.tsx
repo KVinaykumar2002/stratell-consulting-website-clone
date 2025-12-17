@@ -299,9 +299,10 @@ export default function ServicePage() {
                     <div className="relative h-64 rounded-xl overflow-hidden border-2 border-gray-800">
                       <Image
                         src={image}
-                        alt={`${service.title} - Example ${index + 1}`}
+                        alt={`${service.title} consulting service example ${index + 1} - TechnoRealm IT solutions`}
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>

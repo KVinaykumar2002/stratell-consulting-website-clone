@@ -99,11 +99,13 @@ export default function ContactPage() {
                 Let's Connect
               </p>
             </div>
-            <TypingAnimation
-              text="Get in Touch with Our IT Experts"
-              speed={60}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-3 sm:mb-4 block px-2"
-            />
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-3 sm:mb-4 block px-2">
+              <TypingAnimation
+                text="Get in Touch with Our IT Experts"
+                speed={60}
+                className="block"
+              />
+            </h1>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

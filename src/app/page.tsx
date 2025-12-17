@@ -168,15 +168,11 @@ export default function Home() {
                 Our Services
               </p>
             </motion.div>
-            <motion.h2 
+            <h2 
               className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal leading-[1.2] tracking-[-0.02em] text-white mb-3 sm:mb-4 px-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
             >
               Our Technology <span className="text-[#E5B800]">Services</span>
-            </motion.h2>
+            </h2>
             <motion.p 
               className="max-w-2xl mx-auto font-body text-sm sm:text-base md:text-lg font-normal leading-[1.6] text-zinc-400 px-4"
               initial={{ opacity: 0, y: 20 }}

@@ -15,6 +15,10 @@ const nextConfig: NextConfig = {
         hostname: '**',
       },
     ],
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
   },
   outputFileTracingRoot: path.resolve(__dirname, '../../'),
   typescript: {
@@ -23,6 +27,13 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  // Performance optimizations
+  compress: true,
+  poweredByHeader: false,
+  // SEO optimizations
+  trailingSlash: false,
+  // Enable static optimization where possible
+  swcMinify: true,
   // Turbopack loader configuration temporarily disabled due to compatibility issues
   // The loader uses Webpack APIs that are not compatible with Turbopack
   // turbopack: {
