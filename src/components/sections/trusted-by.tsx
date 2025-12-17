@@ -2,35 +2,35 @@
 
 import React from 'react';
 import { 
-  SiMicrosoft, 
-  SiAmazon, 
-  SiGoogle, 
-  SiIbm, 
-  SiOracle, 
-  SiSalesforce, 
-  SiAdobe, 
-  SiSap, 
-  SiCisco, 
-  SiDell,
-  SiAccenture,
-  SiDeloitte
-} from 'react-icons/si';
-import { FaAws } from 'react-icons/fa';
+  FaMicrosoft, 
+  FaAmazon, 
+  FaGoogle, 
+  FaSalesforce, 
+  FaAws,
+  FaApple,
+  FaSlack,
+  FaDropbox,
+  FaShopify,
+  FaSpotify,
+  FaStripe,
+  FaUber,
+  FaAirbnb
+} from 'react-icons/fa';
 
 const clients = [
-  { name: 'Microsoft', icon: SiMicrosoft, color: '#00A4EF' },
-  { name: 'Amazon', icon: SiAmazon, color: '#FF9900' },
-  { name: 'Google', icon: SiGoogle, color: '#4285F4' },
-  { name: 'IBM', icon: SiIbm, color: '#1F70C1' },
-  { name: 'Oracle', icon: SiOracle, color: '#F80000' },
-  { name: 'Salesforce', icon: SiSalesforce, color: '#00A1E0' },
-  { name: 'Adobe', icon: SiAdobe, color: '#FF0000' },
-  { name: 'SAP', icon: SiSap, color: '#0FAAFF' },
-  { name: 'Cisco', icon: SiCisco, color: '#1BA0D7' },
-  { name: 'Dell', icon: SiDell, color: '#007DB8' },
+  { name: 'Microsoft', icon: FaMicrosoft, color: '#00A4EF' },
+  { name: 'Amazon', icon: FaAmazon, color: '#FF9900' },
+  { name: 'Google', icon: FaGoogle, color: '#4285F4' },
   { name: 'AWS', icon: FaAws, color: '#FF9900' },
-  { name: 'Accenture', icon: SiAccenture, color: '#A100FF' },
-  { name: 'Deloitte', icon: SiDeloitte, color: '#86BC25' },
+  { name: 'Salesforce', icon: FaSalesforce, color: '#00A1E0' },
+  { name: 'Apple', icon: FaApple, color: '#A2AAAD' },
+  { name: 'Slack', icon: FaSlack, color: '#4A154B' },
+  { name: 'Dropbox', icon: FaDropbox, color: '#0061FF' },
+  { name: 'Shopify', icon: FaShopify, color: '#96BF48' },
+  { name: 'Spotify', icon: FaSpotify, color: '#1DB954' },
+  { name: 'Stripe', icon: FaStripe, color: '#635BFF' },
+  { name: 'Uber', icon: FaUber, color: '#000000' },
+  { name: 'Airbnb', icon: FaAirbnb, color: '#FF5A5F' },
 ];
 
 const TrustedBy = () => {
@@ -59,15 +59,15 @@ const TrustedBy = () => {
           <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-l from-[#0A0A10] to-transparent z-10 pointer-events-none" />
           
           {/* Scrolling clients */}
-          <div className="flex gap-4 sm:gap-6 animate-scroll w-fit">
+          <div className="flex items-center gap-10 sm:gap-14 md:gap-20 animate-scroll w-fit">
             {/* First set of clients */}
             {clients.map((client, i) => (
               <div
                 key={`first-${i}`}
-                className="flex-shrink-0 rounded-xl bg-[#1A2B42]/80 px-6 sm:px-8 md:px-10 py-5 sm:py-6 md:py-7 min-w-[140px] sm:min-w-[160px] md:min-w-[180px] flex items-center justify-center border border-white/5 shadow-lg hover:border-[#FFD700]/30 hover:bg-[#1A2B42] transition-all duration-300 group"
+                className="flex-shrink-0 flex items-center justify-center group"
               >
                 <client.icon 
-                  className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 transition-all duration-300 opacity-60 group-hover:opacity-100"
+                  className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 transition-all duration-300 opacity-50 group-hover:opacity-100 group-hover:scale-110"
                   style={{ color: client.color }}
                 />
               </div>
@@ -77,10 +77,10 @@ const TrustedBy = () => {
             {clients.map((client, i) => (
               <div
                 key={`second-${i}`}
-                className="flex-shrink-0 rounded-xl bg-[#1A2B42]/80 px-6 sm:px-8 md:px-10 py-5 sm:py-6 md:py-7 min-w-[140px] sm:min-w-[160px] md:min-w-[180px] flex items-center justify-center border border-white/5 shadow-lg hover:border-[#FFD700]/30 hover:bg-[#1A2B42] transition-all duration-300 group"
+                className="flex-shrink-0 flex items-center justify-center group"
               >
                 <client.icon 
-                  className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 transition-all duration-300 opacity-60 group-hover:opacity-100"
+                  className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 transition-all duration-300 opacity-50 group-hover:opacity-100 group-hover:scale-110"
                   style={{ color: client.color }}
                 />
               </div>
