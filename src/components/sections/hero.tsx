@@ -39,9 +39,9 @@ export default function HeroSection() {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1200px] px-4 sm:px-6 md:px-8">
-        <div className="flex flex-col items-center justify-between gap-8 md:gap-10 lg:flex-row">
+        <div className="flex flex-col items-center justify-between gap-8 md:gap-10 lg:flex-row lg:items-start">
           <motion.div 
-            className="w-full lg:max-w-[680px] text-center lg:text-left"
+            className="w-full lg:max-w-[680px] text-center lg:text-left lg:mt-48 xl:mt-60"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -66,7 +66,7 @@ export default function HeroSection() {
             </h1>
           </motion.div>
           <motion.div 
-            className="flex w-full flex-col items-center lg:items-start gap-6 md:gap-8 lg:max-w-[440px]"
+            className="flex w-full flex-col items-center lg:items-start gap-6 md:gap-8 lg:max-w-[440px] lg:mt-48 xl:mt-60"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
