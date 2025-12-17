@@ -74,19 +74,17 @@ export default function FeatureSection() {
       {/* Left side: Heading and Text */}
       <div className="w-half md:w-1/2 py-10 md:py-0 relative z-20 ">
         <h1 className="text-4xl sm:text-6xl font-bold mb-4 text-white">
-          Build your <span className="text-[#E5B800]">idea</span>
+          Transform Your <span className="text-[#E5B800]">Business</span>
         </h1>
         <p className="text-zinc-400 mb-6 max-w-lg">
-          TechnoRealm delivers modern and responsive solutions using React, Next.js, and
-          cutting-edge technologies.
+          We deliver end-to-end IT solutions—from cloud infrastructure and DevOps to custom software development and digital transformation strategies.
         </p>
         <div className="flex items-center gap-3">
           <Button variant="default" className="bg-[#E5B800] text-[#1E3A5F] hover:bg-[#E5B800]/90">
             <Link href="/contact">
-              Get Started
+              Start Your Project
             </Link>
           </Button>
-          <Button variant="outline" className="border-[#E5B800]/30 text-white hover:bg-[#E5B800]/10 hover:border-[#E5B800]">Learn More</Button>
         </div>
       </div>
 
