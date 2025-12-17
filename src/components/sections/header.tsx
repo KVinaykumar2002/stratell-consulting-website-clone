@@ -1,25 +1,11 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
-import { Menu, X, ChevronDown } from "lucide-react";
-
-// Simplified animations - reduced for better performance
-const animations = `
-  @keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-  }
-  @keyframes slideIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .animate-shimmer { animation: shimmer 0.8s ease-in-out; }
-  .animate-slide-in { animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-`;
+import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -45,12 +31,10 @@ export default function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const servicesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Optimized scroll handler with throttling
   useEffect(() => {
     let ticking = false;
     
@@ -69,92 +53,45 @@ export default function Header() {
   }, []);
 
   const isActive = (href: string) => {
-    if (href === "/") {
-      return pathname === "/";
-    }
+    if (href === "/") return pathname === "/";
     return pathname?.startsWith(href);
   };
 
   return (
-    <>
-      <style jsx global>{animations}</style>
-      <header className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
+    <header className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'top-2 w-[95%] sm:w-[90%] max-w-[1000px]' 
-          : 'top-2 sm:top-4 w-[98%] sm:w-[95%] max-w-[1200px]'
+        ? 'top-3 w-[92%] max-w-5xl' 
+        : 'top-4 w-[95%] max-w-6xl'
       }`}>
-      <div
-        className={`relative flex items-center justify-between rounded-xl sm:rounded-2xl border border-white/30 transition-all duration-500 ${
+      <nav
+        className={`flex items-center justify-between rounded-2xl transition-all duration-300 ${
           isScrolled 
-            ? 'h-14 sm:h-16 px-3 sm:px-4 md:px-6' 
-            : 'h-16 sm:h-18 md:h-20 px-4 sm:px-5 md:px-8'
+            ? 'h-16 px-4 md:px-6 bg-[#0f1729]/95 shadow-lg shadow-black/20' 
+            : 'h-18 md:h-20 px-5 md:px-8 bg-[#0f1729]/90'
         }`}
         style={{
-          backgroundColor: 'rgba(255, 255, 255, 0.4)',
-          backdropFilter: 'blur(40px) saturate(200%)',
-          WebkitBackdropFilter: 'blur(40px) saturate(200%)',
-          boxShadow: isScrolled 
-            ? '0 8px 32px 0 rgba(0, 0, 0, 0.15), inset 0 1px 1px 0 rgba(255, 255, 255, 0.8), inset 0 -1px 1px 0 rgba(255, 255, 255, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)'
-            : '0 12px 48px 0 rgba(0, 0, 0, 0.18), inset 0 1px 1px 0 rgba(255, 255, 255, 0.9), inset 0 -1px 1px 0 rgba(255, 255, 255, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.15)',
-        }}
+          backdropFilter: 'blur(20px)',
+          border: '1px solid rgba(255, 255, 255, 0.08)',
+          }}
       >
-        {/* Glassy overlay effect */}
-        <div 
-          className="absolute inset-0 pointer-events-none rounded-xl sm:rounded-2xl overflow-hidden"
-          style={{
-            background: `linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.1) 100%)`,
-            backdropFilter: 'blur(1px)',
-          }}
-        />
-        
-        {/* Subtle gradient background - removed mouse tracking for performance */}
-        <div 
-          className="absolute inset-0 opacity-10 pointer-events-none"
-          style={{
-            background: `radial-gradient(600px circle at 50% 50%, rgba(229, 184, 0, 0.08), transparent 70%)`,
-          }}
-        />
-        
-        {/* Reflective glass highlight */}
-        <div 
-          className="absolute top-0 left-0 right-0 h-1/2 pointer-events-none rounded-t-xl sm:rounded-t-2xl overflow-hidden"
-          style={{
-            background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0.3), transparent)',
-          }}
-        />
-        {/* Logo - Highly Interactive */}
-        <Link 
-          href="/" 
-          className="flex-shrink-0 relative z-10 group"
-          onMouseEnter={() => setHoveredLink("/logo")}
-          onMouseLeave={() => setHoveredLink(null)}
-        >
-          <div 
-            className={`relative transition-all duration-300 ${
-              hoveredLink === "/logo" ? "scale-105" : "scale-100"
-            } ${isScrolled ? 'h-24 sm:h-28 md:h-32 lg:h-36' : 'h-28 sm:h-32 md:h-40 lg:h-48'}`}
-          >
+        {/* Logo */}
+        <Link href="/" className="flex-shrink-0 relative z-10">
+          <div className={`relative transition-all duration-300 ${
+            isScrolled ? 'h-28 md:h-32' : 'h-32 md:h-40'
+          }`}>
             <Image
               src="/logo-33.png"
-              alt="TechnoRealm - Expert IT Consulting and Technology Solutions - Home"
-              width={700}
-              height={210}
-              className={`h-full w-auto object-contain transition-all duration-300 drop-shadow-lg ${
-                hoveredLink === "/logo" ? "drop-shadow-[0_0_20px_rgba(229,184,0,0.4)]" : ""
-              }`}
+              alt="TechnoRealm"
+              width={400}
+              height={120}
+              className="h-full w-auto object-contain"
               priority
-              fetchPriority="high"
             />
-            
-            {/* Simplified active indicator */}
-            {pathname === "/" && (
-              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#E5B800] rounded-full shadow-[0_0_10px_rgba(229,184,0,0.6)]" />
-            )}
           </div>
         </Link>
         
-        {/* Desktop Navigation - Optimized for performance */}
-        <nav className="hidden lg:flex items-center gap-x-4 xl:gap-x-6 2xl:gap-x-8 relative z-10">
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => {
             const active = isActive(link.href);
             
@@ -166,48 +103,32 @@ export default function Header() {
                   onMouseEnter={() => {
                     if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
                     setIsServicesOpen(true);
-                    setHoveredLink(link.href);
                   }}
                   onMouseLeave={() => {
                     servicesTimeoutRef.current = setTimeout(() => {
                       setIsServicesOpen(false);
-                    }, 150);
-                    setHoveredLink(null);
+                    }, 100);
                   }}
                 >
                   <Link 
                     href={link.href}
-                    className={`group relative text-xs xl:text-sm 2xl:text-base font-medium transition-colors duration-200 py-2 xl:py-3 px-2 xl:px-4 rounded-lg xl:rounded-xl flex items-center gap-1 ${
+                    className={`flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
                       active 
-                        ? 'text-[#1E3A5F] font-bold' 
-                        : 'text-gray-700 hover:text-[#1E3A5F]'
+                        ? 'text-[#E5B800]' 
+                        : 'text-white/80 hover:text-white hover:bg-white/5'
                     }`}
                   >
-                    <span className={`absolute inset-0 rounded-xl transition-colors duration-200 ${
-                      active 
-                        ? 'bg-[#E5B800]/15' 
-                        : 'bg-transparent group-hover:bg-[#E5B800]/10'
+                    {link.label}
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                      isServicesOpen ? 'rotate-180' : ''
                     }`} />
-                    
-                    <span className="relative z-10 flex items-center gap-1">
-                      {link.label}
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
-                      {active && (
-                        <span className="w-1.5 h-1.5 bg-[#E5B800] rounded-full" />
-                      )}
-                    </span>
-                    
-                    <span 
-                      className={`absolute bottom-0 left-0 h-1 rounded-full bg-[#E5B800] transition-all duration-200 ${
-                        active ? 'w-full' : 'w-0 group-hover:w-full'
-                      }`} 
-                    />
                   </Link>
                   
                   {/* Services Dropdown */}
                   {isServicesOpen && (
                     <div 
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-72 bg-white backdrop-blur-xl rounded-xl shadow-2xl border border-gray-200 overflow-hidden animate-slide-in z-[100]"
+                      className="absolute top-full left-0 mt-2 w-64 py-2 bg-[#0f1729] rounded-xl border border-white/10 shadow-xl shadow-black/30 z-[100]"
+                      style={{ backdropFilter: 'blur(20px)' }}
                       onMouseEnter={() => {
                         if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
                         setIsServicesOpen(true);
@@ -215,27 +136,28 @@ export default function Header() {
                       onMouseLeave={() => {
                         servicesTimeoutRef.current = setTimeout(() => {
                           setIsServicesOpen(false);
-                        }, 150);
+                        }, 100);
                       }}
                     >
-                      <div className="p-2 max-h-80 overflow-y-auto">
-                        {serviceItems.map((service, index) => (
+                      <div className="max-h-80 overflow-y-auto">
+                        {serviceItems.map((service) => (
                           <Link
                             key={service.href}
                             href={service.href}
-                            className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#E5B800]/10 hover:text-[#1E3A5F] rounded-lg transition-colors duration-150"
-                            style={{ animationDelay: `${index * 30}ms` }}
+                            className="flex items-center gap-3 px-4 py-2.5 text-sm text-white/70 hover:text-[#E5B800] hover:bg-white/5 transition-colors"
                           >
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#E5B800]/50" />
                             {service.label}
                           </Link>
                         ))}
                       </div>
-                      <div className="border-t border-gray-200/50 p-2">
+                      <div className="border-t border-white/10 mt-2 pt-2 px-2">
                         <Link
                           href="/services"
-                          className="block px-4 py-2.5 text-sm font-semibold text-[#1E3A5F] hover:bg-[#E5B800]/20 rounded-lg transition-colors duration-150 text-center"
+                          className="flex items-center justify-between px-3 py-2.5 text-sm font-medium text-[#E5B800] hover:bg-[#E5B800]/10 rounded-lg transition-colors"
                         >
-                          View All Services →
+                          View All Services
+                          <ArrowRight className="w-4 h-4" />
                         </Link>
                       </div>
                     </div>
@@ -248,186 +170,146 @@ export default function Header() {
               <Link 
                 key={link.href} 
                 href={link.href}
-                onMouseEnter={() => setHoveredLink(link.href)}
-                onMouseLeave={() => setHoveredLink(null)}
-                className={`group relative text-xs xl:text-sm 2xl:text-base font-medium transition-colors duration-200 py-2 xl:py-3 px-2 xl:px-4 rounded-lg xl:rounded-xl ${
+                className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
                   active 
-                    ? 'text-[#1E3A5F] font-bold' 
-                    : 'text-gray-700 hover:text-[#1E3A5F]'
+                    ? 'text-[#E5B800]' 
+                    : 'text-white/80 hover:text-white hover:bg-white/5'
                 }`}
               >
-                {/* Background */}
-                <span className={`absolute inset-0 rounded-xl transition-colors duration-200 ${
-                  active 
-                    ? 'bg-[#E5B800]/15' 
-                    : 'bg-transparent group-hover:bg-[#E5B800]/10'
-                }`} />
-                
-                <span className="relative z-10 flex items-center gap-2">
                   {link.label}
-                  {active && (
-                    <span className="w-1.5 h-1.5 bg-[#E5B800] rounded-full" />
-                  )}
-                </span>
-                
-                {/* Underline */}
-                <span 
-                  className={`absolute bottom-0 left-0 h-1 rounded-full bg-[#E5B800] transition-all duration-200 ${
-                    active ? 'w-full' : 'w-0 group-hover:w-full'
-                  }`} 
-                />
               </Link>
             );
           })}
-        </nav>
+        </div>
 
         {/* Contact Button & Mobile Menu */}
         <div className="flex items-center gap-3">
           <Link
             href="/contact"
-            className={`group hidden lg:inline-flex items-center justify-center bg-[#E5B800] text-[#1E3A5F] font-bold rounded-full transition-all duration-200 shadow-md hover:shadow-lg hover:bg-[#d4a800] active:scale-95 overflow-hidden ${
-              isScrolled 
-                ? 'text-xs xl:text-sm h-9 xl:h-10 px-4 xl:px-6' 
-                : 'text-xs xl:text-sm h-10 xl:h-11 px-6 xl:px-8'
-            } ${pathname === "/contact" ? "ring-2 ring-[#E5B800] ring-offset-2" : ""}`}
+            className={`hidden lg:flex items-center gap-2 bg-[#E5B800] text-[#0f1729] font-semibold rounded-lg transition-all duration-200 hover:bg-[#f5c800] active:scale-[0.98] ${
+              isScrolled ? 'h-10 px-5 text-sm' : 'h-11 px-6 text-sm'
+            }`}
           >
-            <span className="relative z-10 flex items-center gap-2">
               Contact Us
-              <span className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200">→</span>
-            </span>
-            
-            {/* Shine effect on hover */}
-            <span className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-shimmer" />
+            <ArrowRight className="w-4 h-4" />
           </Link>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
             <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
               <SheetTrigger asChild>
-                <button aria-label="Open menu" className="p-2 text-gray-700 hover:text-gray-900 transition-colors">
-                  <Menu size={24} />
+                <button 
+                  aria-label="Open menu" 
+                  className="p-2.5 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+                >
+                  <Menu size={22} />
                 </button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-white/95 backdrop-blur-xl border-l border-gray-200 text-gray-900 p-0 w-full max-w-sm">
+              <SheetContent 
+                side="right" 
+                className="bg-[#0f1729] border-l border-white/10 text-white p-0 w-full max-w-sm"
+              >
                 <div className="flex flex-col h-full">
                   {/* Mobile Header */}
-                  <div className="flex items-center justify-between p-6 border-b border-gray-200">
+                  <div className="flex items-center justify-between p-5 border-b border-white/10">
                     <SheetClose asChild>
-                      <Link href="/" className="relative h-32">
+                      <Link href="/" className="relative h-10">
                         <Image
                           src="/logo-33.png"
-                          alt="TechnoRealm - Expert IT Consulting and Technology Solutions"
-                          width={650}
-                          height={195}
+                          alt="TechnoRealm"
+                          width={180}
+                          height={54}
                           className="h-full w-auto object-contain"
                         />
                       </Link>
                     </SheetClose>
                     <SheetClose asChild>
-                      <button aria-label="Close menu" className="p-2 hover:text-gray-600 transition-colors text-gray-700">
-                        <X size={28} />
+                      <button 
+                        aria-label="Close menu" 
+                        className="p-2 text-white/60 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+                      >
+                        <X size={24} />
                       </button>
                     </SheetClose>
                   </div>
                   
                   {/* Mobile Navigation */}
-                  <nav className="flex flex-col gap-y-2 pt-8 px-6 overflow-y-auto">
-                    {navLinks.map((link, index) => {
+                  <nav className="flex-1 overflow-y-auto py-6 px-4">
+                    <div className="space-y-1">
+                      {navLinks.map((link) => {
                       const active = isActive(link.href);
-                      
-                      if (link.hasDropdown) {
-                        return (
-                          <div key={link.href} className="animate-slide-in" style={{ animationDelay: `${index * 0.05}s` }}>
-                            <button
-                              onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                              className={`w-full group relative text-2xl font-medium transition-all duration-300 py-4 px-4 rounded-lg ${
-                                active
-                                  ? 'text-[#1E3A5F] font-semibold bg-gradient-to-r from-[#E5B800]/15 to-transparent'
-                                  : 'text-gray-700 hover:text-[#1E3A5F] hover:bg-gradient-to-r hover:from-[#E5B800]/10 hover:to-transparent'
-                              }`}
-                            >
-                              <span className="relative z-10 flex items-center justify-between">
-                                <span>{link.label}</span>
-                                <ChevronDown className={`w-6 h-6 transition-transform duration-300 ${isMobileServicesOpen ? 'rotate-180' : ''}`} />
-                              </span>
-                              <span className={`absolute left-0 top-1/2 -translate-y-1/2 w-1 bg-[#E5B800] rounded-r-full transition-all duration-300 ${
-                                active ? 'h-full' : 'h-0 group-hover:h-full'
-                              }`}></span>
-                            </button>
-                            
-                            {/* Mobile Services Dropdown */}
-                            {isMobileServicesOpen && (
-                              <div className="ml-4 mt-2 space-y-1 border-l-2 border-[#E5B800]/30 pl-4">
-                                {serviceItems.map((service) => (
-                                  <SheetClose asChild key={service.href}>
+                        
+                        if (link.hasDropdown) {
+                          return (
+                            <div key={link.href}>
+                              <button
+                                onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                                className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-base font-medium transition-all ${
+                                  active
+                                    ? 'text-[#E5B800] bg-[#E5B800]/10'
+                                    : 'text-white/80 hover:text-white hover:bg-white/5'
+                                }`}
+                              >
+                                {link.label}
+                                <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${
+                                  isMobileServicesOpen ? 'rotate-180' : ''
+                                }`} />
+                              </button>
+                              
+                              {isMobileServicesOpen && (
+                                <div className="mt-1 ml-4 pl-4 border-l border-white/10 space-y-1">
+                                  {serviceItems.map((service) => (
+                                    <SheetClose asChild key={service.href}>
+                                      <Link
+                                        href={service.href}
+                                        className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#E5B800] rounded-lg transition-colors"
+                                      >
+                                        {service.label}
+                                      </Link>
+                                    </SheetClose>
+                                  ))}
+                                  <SheetClose asChild>
                                     <Link
-                                      href={service.href}
-                                      className="block py-2.5 px-3 text-base text-gray-600 hover:text-[#1E3A5F] hover:bg-[#E5B800]/10 rounded-lg transition-colors"
+                                      href="/services"
+                                      className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-[#E5B800] rounded-lg"
                                     >
-                                      {service.label}
+                                      View All Services
+                                      <ArrowRight className="w-4 h-4" />
                                     </Link>
                                   </SheetClose>
-                                ))}
-                                <SheetClose asChild>
-                                  <Link
-                                    href="/services"
-                                    className="block py-2.5 px-3 text-base font-semibold text-[#1E3A5F] hover:bg-[#E5B800]/20 rounded-lg transition-colors"
-                                  >
-                                    View All Services →
-                                  </Link>
-                                </SheetClose>
-                              </div>
-                            )}
-                          </div>
-                        );
-                      }
-                      
+                                </div>
+                              )}
+                            </div>
+                          );
+                        }
+                        
                       return (
                         <SheetClose asChild key={link.href}>
                           <Link 
                             href={link.href} 
-                            className={`group relative text-2xl font-medium transition-all duration-300 py-4 px-4 rounded-lg ${
+                              className={`block px-4 py-3.5 rounded-xl text-base font-medium transition-all ${
                               active
-                                ? 'text-[#1E3A5F] font-semibold bg-gradient-to-r from-[#E5B800]/15 to-transparent'
-                                : 'text-gray-700 hover:text-[#1E3A5F] hover:bg-gradient-to-r hover:from-[#E5B800]/10 hover:to-transparent'
-                            } animate-slide-in`}
-                            style={{
-                              animationDelay: `${index * 0.05}s`,
-                            }}
-                          >
-                            <span className="relative z-10 flex items-center justify-between">
-                              <span>{link.label}</span>
-                              {active && (
-                                <span className="w-2 h-2 bg-[#E5B800] rounded-full animate-pulse"></span>
-                              )}
-                              <span className="opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300">→</span>
-                            </span>
-                            <span className={`absolute left-0 top-1/2 -translate-y-1/2 w-1 bg-[#E5B800] rounded-r-full transition-all duration-300 ${
-                              active ? 'h-full' : 'h-0 group-hover:h-full'
-                            }`}></span>
+                                  ? 'text-[#E5B800] bg-[#E5B800]/10'
+                                  : 'text-white/80 hover:text-white hover:bg-white/5'
+                              }`}
+                            >
+                              {link.label}
                           </Link>
                         </SheetClose>
                       );
                     })}
+                    </div>
                   </nav>
                   
                   {/* Mobile Contact Button */}
-                  <div className="mt-auto p-6">
+                  <div className="p-5 border-t border-white/10">
                     <SheetClose asChild>
                       <Link 
                         href="/contact" 
-                        className={`group relative flex items-center justify-center w-full bg-[#E5B800] text-[#1E3A5F] text-lg font-semibold h-14 rounded-full hover:bg-[#d4a800] transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-[#E5B800]/40 hover:scale-105 active:scale-95 overflow-hidden ${
-                          pathname === "/contact" ? "ring-2 ring-[#E5B800] ring-offset-2" : ""
-                        }`}
+                        className="flex items-center justify-center gap-2 w-full h-12 bg-[#E5B800] text-[#0f1729] text-base font-semibold rounded-xl hover:bg-[#f5c800] transition-colors"
                       >
-                        <span className="relative z-10 flex items-center gap-2">
                           Contact Us
-                          <span className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300">→</span>
-                        </span>
-                        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-shimmer"></span>
-                        {pathname === "/contact" && (
-                          <span className="absolute inset-0 rounded-full bg-[#E5B800] opacity-20 animate-pulse"></span>
-                        )}
+                        <ArrowRight className="w-5 h-5" />
                       </Link>
                     </SheetClose>
                   </div>
@@ -436,8 +318,7 @@ export default function Header() {
             </Sheet>
           </div>
         </div>
-      </div>
+      </nav>
     </header>
-    </>
   );
 }

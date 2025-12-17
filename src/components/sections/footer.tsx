@@ -168,7 +168,7 @@ const Footer = () => {
                   <span>
                     420 TechnoRealm Avenue,<br />
                     Suite 300<br />
-                    Boston, MA 02116, USA
+                  Boston, MA 02116, USA
                   </span>
                 </li>
               </ul>
