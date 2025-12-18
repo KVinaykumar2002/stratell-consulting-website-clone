@@ -63,6 +63,15 @@ const Footer = () => {
     { name: "Contact", href: "/contact" },
   ];
 
+  const serviceLinks = [
+    { name: "AI & Machine Learning", href: "/services/ai-ml" },
+    { name: "Cloud Infrastructure", href: "/services/cloud-infrastructure" },
+    { name: "Cybersecurity", href: "/services/cybersecurity" },
+    { name: "DevOps Consulting", href: "/services/devops" },
+    { name: "App Development", href: "/services/application-development" },
+    { name: "Data & Analytics", href: "/services/data-analytics" },
+  ];
+
   const socialLinks = [
     { name: "Instagram", href: "https://www.instagram.com/technorealm", icon: FaInstagram, color: "#E1306C" },
     { name: "Facebook", href: "https://www.facebook.com/technorealm", icon: FaFacebookF, color: "#1877F2" },
@@ -78,7 +87,7 @@ const Footer = () => {
       <div className="container pt-10 pb-6">
         {/* Main Grid */}
         <div className="pb-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr] gap-x-12 lg:gap-x-20 gap-y-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1fr] gap-x-8 lg:gap-x-12 gap-y-12">
             {/* Logo */}
             <div>
               <Link href="/" className="inline-block relative h-32 md:h-40 lg:h-48" aria-label="TechnoRealm Home - IT Consulting Services">
@@ -96,15 +105,10 @@ const Footer = () => {
                 href="/contact"
                 className="group relative inline-flex items-center h-14 px-6 mt-10 bg-[#E5B800] text-[#1E3A5F] rounded-xl overflow-hidden transition-all duration-300 shadow-[0_0_20px_rgba(229,184,0,0.2)]"
               >
-                {/* Overlay animation from left to right */}
                 <span className="absolute inset-0 bg-[#1E3A5F] transform origin-left -translate-x-full transition-transform duration-500 ease-in-out group-hover:translate-x-0 rounded-xl"></span>
-                
-                {/* Text - changes to gold on hover */}
                 <span className="relative z-10 font-semibold text-base leading-none transition-colors duration-300 delay-100 group-hover:text-[#E5B800] mr-3">
                   Enquiry Now
                 </span>
-                
-                {/* Navy circle with arrow */}
                 <div className="relative z-10 flex items-center justify-center w-10 h-10 bg-[#1E3A5F] rounded-full transition-all duration-300 group-hover:bg-[#E5B800] group-hover:translate-x-1">
                   <ArrowRight className="w-4 h-4 text-white group-hover:text-[#1E3A5F] transition-colors" />
                 </div>
@@ -114,7 +118,7 @@ const Footer = () => {
             {/* Menu */}
             <div>
               <h3 className="text-sm uppercase text-[#E5B800] mb-6 tracking-wider">Menu</h3>
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 {menuItems.map((item) => (
                   <li key={item.name}>
                     <Link href={item.href} className="text-zinc-400 hover:text-[#E5B800] transition-colors">{item.name}</Link>
@@ -123,16 +127,33 @@ const Footer = () => {
               </ul>
             </div>
 
+            {/* Services - Important for SEO internal linking */}
+            <div>
+              <h3 className="text-sm uppercase text-[#E5B800] mb-6 tracking-wider">Services</h3>
+              <ul className="space-y-3">
+                {serviceLinks.map((item) => (
+                  <li key={item.name}>
+                    <Link href={item.href} className="text-zinc-400 hover:text-[#E5B800] transition-colors text-sm">{item.name}</Link>
+                  </li>
+                ))}
+                <li>
+                  <Link href="/services" className="text-[#E5B800] hover:text-[#f5c800] transition-colors text-sm font-medium">
+                    View All →
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
             {/* Socials */}
             <div>
               <h3 className="text-sm uppercase text-[#E5B800] mb-6 tracking-wider">Socials</h3>
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 {socialLinks.map((link) => (
                   <li key={link.name}>
                     <a 
                       href={link.href} 
                       target="_blank" 
-                      rel="noopener noreferrer"
+                      rel="noopener noreferrer nofollow"
                       aria-label={`Follow TechnoRealm on ${link.name}`}
                       className="flex items-center gap-3 text-zinc-400 hover:text-[#E5B800] transition-colors group"
                     >
@@ -150,7 +171,7 @@ const Footer = () => {
             {/* Contact */}
             <address className="not-italic">
               <h3 className="text-sm uppercase text-[#E5B800] mb-6 tracking-wider">Contact</h3>
-              <ul className="space-y-4 text-zinc-400">
+              <ul className="space-y-3 text-zinc-400">
                 <li>
                   <a href="tel:+15558676543" className="flex items-center gap-3 hover:text-[#E5B800] transition-colors group">
                     <HiPhone className="w-5 h-5 text-[#25D366] group-hover:scale-110 transition-transform" />
@@ -168,7 +189,7 @@ const Footer = () => {
                   <span>
                     420 TechnoRealm Avenue,<br />
                     Suite 300<br />
-                  Boston, MA 02116, USA
+                    Boston, MA 02116, USA
                   </span>
                 </li>
               </ul>
