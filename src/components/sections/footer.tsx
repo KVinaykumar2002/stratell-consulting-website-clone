@@ -73,10 +73,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: "Instagram", href: "https://www.instagram.com/technorealm", icon: FaInstagram, color: "#E1306C" },
-    { name: "Facebook", href: "https://www.facebook.com/technorealm", icon: FaFacebookF, color: "#1877F2" },
-    { name: "LinkedIn", href: "https://www.linkedin.com/company/technorealm", icon: FaLinkedinIn, color: "#0A66C2" },
-    { name: "Twitter (X)", href: "https://twitter.com/technorealm", icon: FaXTwitter, color: "#ffffff" },
+    { name: "Instagram", href: "https://www.instagram.com/technorealm", icon: FaInstagram },
+    { name: "Facebook", href: "https://www.facebook.com/technorealm", icon: FaFacebookF },
+    { name: "LinkedIn", href: "https://www.linkedin.com/company/technorealm", icon: FaLinkedinIn },
+    { name: "Twitter (X)", href: "https://twitter.com/technorealm", icon: FaXTwitter },
   ];
 
   return (
@@ -92,7 +92,7 @@ const Footer = () => {
             <div>
               <Link href="/" className="inline-block relative h-32 md:h-40 lg:h-48" aria-label="TechnoRealm Home - IT Consulting Services">
                 <Image
-                  src="/logo-33.png"
+                  src="/chatgpt_log.png"
                   alt="TechnoRealm - Expert IT Consulting and Technology Solutions Logo"
                   width={500}
                   height={150}
@@ -158,8 +158,7 @@ const Footer = () => {
                       className="flex items-center gap-3 text-zinc-400 hover:text-[#E5B800] transition-colors group"
                     >
                       <link.icon 
-                        className="w-5 h-5 group-hover:scale-110 transition-transform" 
-                        style={{ color: link.color }}
+                        className="w-5 h-5 text-[#E5B800] group-hover:scale-110 transition-transform" 
                       />
                       {link.name}
                     </a>
@@ -174,18 +173,18 @@ const Footer = () => {
               <ul className="space-y-3 text-zinc-400">
                 <li>
                   <a href="tel:+15558676543" className="flex items-center gap-3 hover:text-[#E5B800] transition-colors group">
-                    <HiPhone className="w-5 h-5 text-[#25D366] group-hover:scale-110 transition-transform" />
+                    <HiPhone className="w-5 h-5 text-[#E5B800] group-hover:scale-110 transition-transform" />
                     +1 (555) 867-6543
                   </a>
                 </li>
                 <li>
                   <a href="mailto:contact@technorealm.com" className="flex items-center gap-3 hover:text-[#E5B800] transition-colors group">
-                    <HiEnvelope className="w-5 h-5 text-[#EA4335] group-hover:scale-110 transition-transform" />
+                    <HiEnvelope className="w-5 h-5 text-[#E5B800] group-hover:scale-110 transition-transform" />
                     contact@technorealm.com
                   </a>
                 </li>
                 <li className="flex gap-3">
-                  <HiMapPin className="w-5 h-5 text-[#4285F4] flex-shrink-0 mt-0.5" />
+                  <HiMapPin className="w-5 h-5 text-[#E5B800] flex-shrink-0 mt-0.5" />
                   <span>
                     420 TechnoRealm Avenue,<br />
                     Suite 300<br />

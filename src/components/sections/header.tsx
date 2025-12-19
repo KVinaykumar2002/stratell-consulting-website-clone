@@ -80,7 +80,7 @@ export default function Header() {
             isScrolled ? 'h-36 md:h-44' : 'h-44 md:h-56'
           }`}>
             <Image
-              src="/logo-33.png"
+              src="/chatgpt_log.png"
               alt="TechnoRealm"
               width={560}
               height={168}
