@@ -26,7 +26,7 @@ const CtaFinal = () => {
         className="z-0"
         loading="lazy"
       />
-      <div className="absolute inset-0 z-10 bg-gradient-to-br from-[#1E3A5F]/80 via-[#0a1628]/70 to-[#1E3A5F]/80" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-br from-[#1E3A5F]/60 via-white/40 to-[#1E3A5F]/60" />
       <motion.div 
         className="relative z-20 flex w-full max-w-[680px] flex-col items-center gap-6 rounded-3xl bg-white/[.08] p-10 text-center backdrop-blur-[8px] md:p-8 sm:p-6 border border-[#14B8A6]/20"
         initial={{ opacity: 0, y: 30 }}

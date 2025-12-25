@@ -43,7 +43,7 @@ export default function HeroSection() {
         </video>
         {/* Gradient overlay for text readability */}
         <div 
-          className="absolute inset-0 bg-gradient-to-b from-[#0a162866] via-[#1E3A5F50] to-[#0a162899]" 
+          className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/10 to-white/30" 
           aria-hidden="true" 
         />
       </div>

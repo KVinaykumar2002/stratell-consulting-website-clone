@@ -2,8 +2,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme {
   /* TechnoRealm Brand Colors - Updated to match new logo */
   --color-tr-navy: #1E3A5F;
@@ -11,33 +9,33 @@
   --color-tr-cyan: #00D4FF;
   --color-tr-dark: #0a1628;
   
-  /* Shadcn/UI colors - Updated for TechnoRealm */
-  --color-background: #0a1628;
-  --color-foreground: #FFFFFF;
+  /* Shadcn/UI colors - Light Theme for TechnoRealm */
+  --color-background: #FFFFFF;
+  --color-foreground: #1E3A5F;
 
-  --color-card: #1E3A5F;
-  --color-card-foreground: #FFFFFF;
+  --color-card: #F8FAFC;
+  --color-card-foreground: #1E3A5F;
 
-  --color-popover: #1E3A5F;
-  --color-popover-foreground: #FFFFFF;
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #1E3A5F;
 
   --color-primary: #14B8A6;
-  --color-primary-foreground: #1E3A5F;
+  --color-primary-foreground: #FFFFFF;
 
-  --color-secondary: #1E3A5F;
-  --color-secondary-foreground: #FFFFFF;
+  --color-secondary: #F1F5F9;
+  --color-secondary-foreground: #1E3A5F;
 
-  --color-muted: #27272a;
-  --color-muted-foreground: #a1a1aa;
+  --color-muted: #F1F5F9;
+  --color-muted-foreground: #64748B;
 
   --color-accent: #14B8A6;
-  --color-accent-foreground: #1E3A5F;
+  --color-accent-foreground: #FFFFFF;
 
   --color-destructive: #ef4444;
-  --color-destructive-foreground: #fafafa;
+  --color-destructive-foreground: #FFFFFF;
 
-  --color-border: rgba(255, 255, 255, 0.1);
-  --color-input: rgba(255, 255, 255, 0.1);
+  --color-border: rgba(30, 58, 95, 0.1);
+  --color-input: rgba(30, 58, 95, 0.1);
   --color-ring: #14B8A6;
 
   --color-chart-1: #14B8A6;
@@ -46,13 +44,13 @@
   --color-chart-4: #f1c40f;
   --color-chart-5: #e74c3c;
 
-  --color-sidebar: #0a1628;
-  --color-sidebar-foreground: #FFFFFF;
+  --color-sidebar: #FFFFFF;
+  --color-sidebar-foreground: #1E3A5F;
   --color-sidebar-primary: #14B8A6;
-  --color-sidebar-primary-foreground: #1E3A5F;
-  --color-sidebar-accent: #1E3A5F;
-  --color-sidebar-accent-foreground: #FFFFFF;
-  --color-sidebar-border: rgba(255, 255, 255, 0.1);
+  --color-sidebar-primary-foreground: #FFFFFF;
+  --color-sidebar-accent: #F1F5F9;
+  --color-sidebar-accent-foreground: #1E3A5F;
+  --color-sidebar-border: rgba(30, 58, 95, 0.1);
   --color-sidebar-ring: #14B8A6;
 
   --radius-lg: 1.5rem;
@@ -79,17 +77,17 @@
     }
   }
 
-  /* TechnoRealm design system colors - Updated to match new logo */
+  /* TechnoRealm design system colors - Light Theme */
   --color-primary-navy: #1E3A5F;
   --color-primary-teal: #14B8A6;
   --color-primary-cyan: #00D4FF;
-  --color-background-dark: #0a1628;
-  --color-background-darker: #09101f;
+  --color-background-light: #FFFFFF;
+  --color-background-lighter: #F8FAFC;
   --color-text-dark: #1E3A5F;
-  --color-text-body: #a1a1aa;
-  --color-text-light: #FFFFFF;
-  --color-overlay-dark: #0a1628;
-  --color-border-divider: rgba(255, 255, 255, 0.1);
+  --color-text-body: #475569;
+  --color-text-light: #1E3A5F;
+  --color-overlay-light: rgba(255, 255, 255, 0.95);
+  --color-border-divider: rgba(30, 58, 95, 0.1);
   --color-badge-teal: rgba(20, 184, 166, 0.1);
   --color-hover-teal: #0D9488;
 
@@ -195,7 +193,7 @@
     --sidebar-ring: var(--color-sidebar-ring);
   }
 
-  /* No dark theme defined as per instructions for light theme detection */
+  /* Light theme only - dark theme removed */
 
   * {
     border-color: var(--border);
@@ -213,7 +211,7 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    color: var(--color-text-light);
+    color: var(--color-text-dark);
   }
 
   h1 {

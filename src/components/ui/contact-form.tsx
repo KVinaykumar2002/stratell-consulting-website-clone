@@ -125,13 +125,13 @@ export function ContactForm({
   return (
     <div className="w-full max-w-3xl mx-auto">
       {heading && (
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white text-center mb-3 sm:mb-4 px-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#1E3A5F] text-center mb-3 sm:mb-4 px-4">
           {heading}
         </h2>
       )}
 
       {description && (
-        <p className="text-sm sm:text-base md:text-lg text-white/80 text-center mb-6 sm:mb-8 md:mb-10 max-w-xl mx-auto px-4">
+        <p className="text-sm sm:text-base md:text-lg text-gray-600 text-center mb-6 sm:mb-8 md:mb-10 max-w-xl mx-auto px-4">
           {description}
         </p>
       )}

@@ -20,7 +20,7 @@ const Feature108 = dynamic(
     loading: () => (
       <div className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="h-96 bg-zinc-900/50 rounded-2xl animate-pulse" />
+          <div className="h-96 bg-gray-200 rounded-2xl animate-pulse" />
         </div>
       </div>
     )
@@ -64,7 +64,7 @@ export default function HomeContent() {
   // Removed artificial 2-second loading delay - this was killing LCP scores
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#0a1628] via-zinc-950 to-[#0a1628]">
+    <main className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
       <Header />
       <HeroSection />
       <Feature108
@@ -133,7 +133,7 @@ export default function HomeContent() {
       <FeatureSection />
       
       {/* Our Technology Services Section */}
-      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-to-b from-zinc-950 to-[#0a1628] relative overflow-visible">
+      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-to-b from-gray-50 to-white relative overflow-visible">
         <div className="mx-auto w-full max-w-[1200px] relative z-10">
           <div className="mb-8 sm:mb-10 md:mb-12 text-center">
             <motion.div
@@ -149,7 +149,7 @@ export default function HomeContent() {
               </p>
             </motion.div>
             <h2 
-              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal leading-[1.2] tracking-[-0.02em] text-white mb-3 sm:mb-4 px-4"
+              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal leading-[1.2] tracking-[-0.02em] text-[#1E3A5F] mb-3 sm:mb-4 px-4"
             >
               Our Technology <span className="text-[#14B8A6]">Services</span>
             </h2>

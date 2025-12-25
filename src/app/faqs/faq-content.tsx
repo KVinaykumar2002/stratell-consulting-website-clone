@@ -11,7 +11,7 @@ export default function FAQPageContent() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-[#0a1628] via-zinc-950 to-[#0a1628]">
+    <div className="relative min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
       <Header />
       <main>
         <FAQWithSpiral />

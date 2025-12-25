@@ -143,14 +143,14 @@ const Feature108 = ({
   }, []);
 
   return (
-    <section className="py-16 sm:py-24 md:py-32 bg-gradient-to-b from-[#0a1628] to-zinc-950">
+    <section className="py-16 sm:py-24 md:py-32 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex flex-col items-center gap-3 sm:gap-4 text-center mb-4 sm:mb-0">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#14B8A6]/30 bg-[#14B8A6]/10 px-3 sm:px-4 py-1.5 sm:py-2">
             <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#14B8A6] animate-pulse" />
             <span className="text-xs sm:text-sm font-medium text-[#14B8A6] tracking-wide">{badge}</span>
           </div>
-          <h1 className="max-w-2xl text-2xl sm:text-3xl md:text-4xl font-semibold text-white px-4 leading-tight sm:leading-normal">
+          <h1 className="max-w-2xl text-2xl sm:text-3xl md:text-4xl font-semibold text-[#1E3A5F] px-4 leading-tight sm:leading-normal">
             {heading}
           </h1>
           <p className="text-sm sm:text-base text-zinc-400 px-4 leading-relaxed">{description}</p>
@@ -161,14 +161,14 @@ const Feature108 = ({
               <TabsTrigger
                 key={tab.value}
                 value={tab.value}
-                className="flex items-center justify-center gap-1.5 sm:gap-2 rounded-lg sm:rounded-xl px-2.5 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm font-semibold text-zinc-400 transition-all duration-300 ease-in-out data-[state=active]:bg-[#1E3A5F] data-[state=active]:text-[#14B8A6] data-[state=active]:scale-100 sm:data-[state=active]:scale-105 data-[state=active]:shadow-[0_0_20px_rgba(20,184,166,0.2)] hover:text-white flex-shrink-0 min-h-[40px] sm:min-h-0 whitespace-nowrap"
+                className="flex items-center justify-center gap-1.5 sm:gap-2 rounded-lg sm:rounded-xl px-2.5 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm font-semibold text-gray-600 transition-all duration-300 ease-in-out data-[state=active]:bg-[#1E3A5F] data-[state=active]:text-[#14B8A6] data-[state=active]:scale-100 sm:data-[state=active]:scale-105 data-[state=active]:shadow-[0_0_20px_rgba(20,184,166,0.2)] hover:text-[#1E3A5F] flex-shrink-0 min-h-[40px] sm:min-h-0 whitespace-nowrap"
               >
                 <span className="w-3.5 h-3.5 sm:w-auto sm:h-auto flex items-center justify-center flex-shrink-0 [&>svg]:w-3.5 [&>svg]:h-3.5 sm:[&>svg]:w-auto sm:[&>svg]:h-auto">{tab.icon}</span>
                 <span className="text-center">{tab.label}</span>
               </TabsTrigger>
             ))}
           </TabsList>
-          <div className="mx-auto mt-6 sm:mt-8 max-w-screen-xl rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#1E3A5F]/30 to-zinc-900/50 border border-white/10 p-4 sm:p-6 md:p-8 lg:p-16 relative overflow-hidden min-h-[400px] sm:min-h-[500px] md:min-h-[600px]">
+          <div className="mx-auto mt-6 sm:mt-8 max-w-screen-xl rounded-xl sm:rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 p-4 sm:p-6 md:p-8 lg:p-16 relative overflow-hidden min-h-[400px] sm:min-h-[500px] md:min-h-[600px] shadow-lg">
             {tabs.map((tab) => {
               const isActive = activeTab === tab.value;
               return (
@@ -189,7 +189,7 @@ const Feature108 = ({
                     <div className="inline-flex items-center gap-2 rounded-full border border-[#14B8A6]/30 bg-[#14B8A6]/10 px-2.5 sm:px-3 py-1 sm:py-1.5 w-fit">
                       <span className="text-[10px] sm:text-xs font-medium text-[#14B8A6]">{tab.content.badge}</span>
                     </div>
-                    <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold text-white">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold text-[#1E3A5F]">
                       {tab.content.title}
                     </h3>
                     <p className="text-sm sm:text-base md:text-lg text-zinc-400">

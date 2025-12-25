@@ -55,7 +55,7 @@ export default function FeatureSection() {
   const iconsPerOrbit = Math.ceil(iconConfigs.length / orbitCount);
 
   return (
-    <section className="relative w-full my-32 px-6 md:px-10 flex flex-col md:flex-row items-center justify-between min-h-[30rem] border border-white/10 bg-gradient-to-br from-[#1E3A5F]/30 to-zinc-900/50 overflow-hidden rounded-3xl">
+    <section className="relative w-full my-32 px-6 md:px-10 flex flex-col md:flex-row items-center justify-between min-h-[30rem] border border-gray-200 bg-gradient-to-br from-white to-gray-50 overflow-hidden rounded-3xl shadow-lg">
       {/* Background Lottie Animation - positioned behind left side */}
       <div className="absolute left-50 top-0 w-full md:w-1/2 h-full pointer-events-none z-0">
         <Lottie
@@ -73,10 +73,10 @@ export default function FeatureSection() {
       </div>
       {/* Left side: Heading and Text */}
       <div className="w-half md:w-1/2 py-10 md:py-0 relative z-20 ">
-        <h1 className="text-4xl sm:text-6xl font-bold mb-4 text-white">
+        <h1 className="text-4xl sm:text-6xl font-bold mb-4 text-[#1E3A5F]">
           Transform Your <span className="text-[#14B8A6]">Business</span>
         </h1>
-        <p className="text-zinc-400 mb-6 max-w-lg">
+        <p className="text-gray-600 mb-6 max-w-lg">
           We deliver end-to-end IT solutions—from cloud infrastructure and DevOps to custom software development and digital transformation strategies.
         </p>
         <div className="flex items-center gap-3">
@@ -126,7 +126,7 @@ export default function FeatureSection() {
                     return (
                       <div
                         key={iconIdx}
-                        className="absolute bg-zinc-900 rounded-full p-1 shadow-md border border-white/10"
+                        className="absolute bg-white rounded-full p-1 shadow-md border border-gray-200"
                         style={{
                           left: `${x}%`,
                           top: `${y}%`,

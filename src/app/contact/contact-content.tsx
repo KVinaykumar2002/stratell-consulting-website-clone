@@ -48,7 +48,7 @@ export default function ContactPageContent() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#0A0A10] via-[#0a1628] to-[#0A0A10] relative overflow-hidden">
+    <main className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
       <Header />
       
       {/* Floating Particles Background */}

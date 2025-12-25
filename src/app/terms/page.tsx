@@ -11,7 +11,7 @@ export default function TermsPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#0a1628] via-zinc-950 to-[#0a1628]">
+    <main className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
       <Header />
       
       <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8">

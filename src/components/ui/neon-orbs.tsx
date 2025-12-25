@@ -11,7 +11,7 @@ export function NeonOrbs() {
   }, [])
 
   return (
-    <div className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-slate-100 dark:bg-[#050a18] transition-colors duration-500">
+    <div className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-white transition-colors duration-500">
       {/* Top-left orb */}
       <div
         className={`absolute transition-all duration-1000 ease-out ${
@@ -140,11 +140,6 @@ export function NeonOrbs() {
           box-shadow: 0 0 20px 4px rgba(20, 184, 166, 0.6), 0 0 40px 8px rgba(0, 212, 255, 0.3);
         }
         
-        .dark .beam-light {
-          background: linear-gradient(90deg, transparent 0%, rgba(20, 184, 166, 0.5) 30%, rgba(0, 212, 255, 0.9) 70%, white 100%);
-          box-shadow: 0 0 20px 4px rgba(0, 212, 255, 0.8), 0 0 40px 8px rgba(20, 184, 166, 0.4);
-        }
-        
         .orb-light {
           background: radial-gradient(circle at 50% 50%, #e0fdfa 0%, #e0fdfa 90%, transparent 100%);
           box-shadow: 
@@ -152,15 +147,6 @@ export function NeonOrbs() {
             0 0 100px 5px rgba(20, 184, 166, 0.15),
             inset 0 0 60px 2px rgba(20, 184, 166, 0.08);
           border: 1px solid rgba(20, 184, 166, 0.4);
-        }
-        
-        .dark .orb-light {
-          background: radial-gradient(circle at 50% 50%, #050a18 0%, #050a18 90%, transparent 100%);
-          box-shadow: 
-            0 0 60px 2px rgba(20, 184, 166, 0.4),
-            0 0 100px 5px rgba(20, 184, 166, 0.2),
-            inset 0 0 60px 2px rgba(20, 184, 166, 0.1);
-          border: 1px solid rgba(0, 212, 255, 0.3);
         }
         
         .beam-spin-6 {

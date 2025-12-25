@@ -260,7 +260,7 @@ export default function FAQWithSpiral() {
 
   return (
     <div
-      className="relative min-h-screen w-full overflow-hidden text-white"
+      className="relative min-h-screen w-full overflow-hidden text-[#1E3A5F] bg-white"
       style={{ backgroundColor: cfg.background }}
     >
       {/* Background Spiral */}
@@ -280,8 +280,8 @@ export default function FAQWithSpiral() {
               <div className="h-2 w-2 rounded-full bg-[#14B8A6] animate-pulse" />
               <span className="text-sm font-medium text-[#14B8A6] tracking-wide">Questions & Answers</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-black tracking-tight text-white">Frequently Asked <span className="text-[#14B8A6]">Questions</span></h1>
-            <p className="mt-2 text-sm md:text-base text-zinc-400">
+            <h1 className="text-4xl md:text-6xl font-black tracking-tight text-[#1E3A5F]">Frequently Asked <span className="text-[#14B8A6]">Questions</span></h1>
+            <p className="mt-2 text-sm md:text-base text-gray-600">
               Find answers to common questions about our IT consulting services.
             </p>
           </div>
@@ -290,7 +290,7 @@ export default function FAQWithSpiral() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search questions…"
-              className="h-10 w-56 rounded-xl border border-[#14B8A6]/30 bg-[#1E3A5F]/30 px-3 text-sm text-white placeholder:text-zinc-500 outline-none transition focus:border-[#14B8A6]/60 focus:ring-2 focus:ring-[#14B8A6]/20"
+              className="h-10 w-56 rounded-xl border border-gray-200 bg-white px-3 text-sm text-[#1E3A5F] placeholder:text-gray-400 outline-none transition focus:border-[#14B8A6]/60 focus:ring-2 focus:ring-[#14B8A6]/20"
             />
           </div>
         </header>
@@ -305,15 +305,15 @@ export default function FAQWithSpiral() {
         </section>
 
         {/* Footer */}
-        <footer className="mt-16 border-t border-[#14B8A6]/20 pt-6 text-xs text-zinc-500">
+        <footer className="mt-16 border-t border-gray-200 pt-6 text-xs text-gray-600">
           © {new Date().getFullYear()} TechnoRealm — Transforming businesses with cutting-edge IT solutions.
         </footer>
       </div>
 
       {/* Control Panel */}
       {panelOpen && (
-        <aside className="fixed right-4 top-4 z-20 w-[320px] rounded-2xl border border-white/15 bg-black/70 p-4 backdrop-blur">
-          <h3 className="mb-3 text-sm font-semibold tracking-wide text-white/80">Spiral Controls</h3>
+        <aside className="fixed right-4 top-4 z-20 w-[320px] rounded-2xl border border-gray-200 bg-white/95 p-4 backdrop-blur shadow-lg">
+          <h3 className="mb-3 text-sm font-semibold tracking-wide text-[#1E3A5F]">Spiral Controls</h3>
           <div className="space-y-3 text-xs">
             <Slider label="Points" min={100} max={2000} step={50} value={cfg.points} onChange={(v)=> setCfg({...cfg, points: v})} />
             <Slider label="Dot radius" min={0.5} max={5} step={0.1} value={cfg.dotRadius} onChange={(v)=> setCfg({...cfg, dotRadius: v})} />
@@ -341,7 +341,7 @@ export default function FAQWithSpiral() {
             <div className="flex gap-2">
               <button
                 onClick={randomize}
-                className="w-full rounded-xl border border-white/20 px-3 py-2 text-xs text-white hover:border-white/50"
+                className="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs text-[#1E3A5F] hover:border-gray-300 bg-white"
               >
                 Randomize (R)
               </button>
@@ -365,8 +365,8 @@ function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
   return (
     <div className={`group relative overflow-hidden rounded-2xl border p-5 transition duration-300 ${
       open 
-        ? "border-[#14B8A6]/40 bg-gradient-to-br from-[#1E3A5F]/40 to-zinc-900/60 shadow-[0_0_30px_rgba(20,184,166,0.1)]" 
-        : "border-white/10 bg-zinc-900/40 hover:border-[#14B8A6]/30"
+        ? "border-[#14B8A6]/40 bg-gradient-to-br from-[#14B8A6]/10 to-white shadow-[0_0_30px_rgba(20,184,166,0.1)]" 
+        : "border-gray-200 bg-white hover:border-[#14B8A6]/30 shadow-sm"
     }`}>
       <button
         onClick={() => setOpen((v) => !v)}
@@ -374,8 +374,8 @@ function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
         aria-expanded={open}
       >
         <div className="flex items-baseline gap-3">
-          <span className={`text-xs font-medium transition-colors ${open ? "text-[#14B8A6]" : "text-zinc-500"}`}>{String(index).padStart(2, "0")}</span>
-          <h3 className="text-base md:text-lg font-semibold leading-tight text-white">{q}</h3>
+          <span className={`text-xs font-medium transition-colors ${open ? "text-[#14B8A6]" : "text-gray-500"}`}>{String(index).padStart(2, "0")}</span>
+          <h3 className="text-base md:text-lg font-semibold leading-tight text-[#1E3A5F]">{q}</h3>
         </div>
         <span className={`ml-4 w-8 h-8 rounded-full flex items-center justify-center text-lg transition-all ${
           open 
@@ -387,7 +387,7 @@ function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
         className={`grid transition-[grid-template-rows] duration-300 ease-[cubic-bezier(.4,0,.2,1)] ${open ? "mt-3 grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
       >
         <div className="min-h-0 overflow-hidden">
-          <p className="text-sm text-zinc-400 leading-relaxed">{a}</p>
+          <p className="text-sm text-gray-600 leading-relaxed">{a}</p>
         </div>
       </div>
     </div>
@@ -412,8 +412,8 @@ function Slider({
   return (
     <label className="block">
       <div className="mb-1 flex items-center justify-between">
-        <span className="text-white">{label}</span>
-        <span className="tabular-nums text-white/50">{value.toFixed(2)}</span>
+        <span className="text-[#1E3A5F]">{label}</span>
+        <span className="tabular-nums text-gray-600">{value.toFixed(2)}</span>
       </div>
       <input
         type="range"
@@ -431,13 +431,13 @@ function Slider({
 function Toggle({ label, value, onChange }: { label: string; value: boolean; onChange: (v: boolean) => void }) {
   return (
     <label className="flex items-center justify-between">
-      <span className="text-white">{label}</span>
+      <span className="text-[#1E3A5F]">{label}</span>
       <button
         onClick={() => onChange(!value)}
         className={`h-6 w-10 rounded-full border border-white/20 transition ${value ? "bg-white" : "bg-transparent"}`}
         aria-pressed={value}
       >
-        <span className={`block h-5 w-5 translate-x-0.5 rounded-full bg-black transition ${value ? "translate-x-4" : "translate-x-0"}`} />
+        <span className={`block h-5 w-5 translate-x-0.5 rounded-full bg-gray-300 transition ${value ? "translate-x-4 bg-[#14B8A6]" : "translate-x-0"}`} />
       </button>
     </label>
   );
@@ -456,12 +456,12 @@ function Select({
 }) {
   return (
     <label className="block">
-      <div className="mb-1 text-white">{label}</div>
+      <div className="mb-1 text-[#1E3A5F]">{label}</div>
       <div className="relative">
         <select
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="w-full appearance-none rounded-xl border border-white/20 bg-black px-3 py-2 text-xs text-white outline-none"
+          className="w-full appearance-none rounded-xl border border-gray-200 bg-white px-3 py-2 text-xs text-[#1E3A5F] outline-none"
         >
           {options.map((o) => (
             <option key={o.value} value={o.value}>
@@ -469,7 +469,7 @@ function Select({
             </option>
           ))}
         </select>
-        <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-white/50">▾</span>
+        <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">▾</span>
       </div>
     </label>
   );

@@ -80,7 +80,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-b from-zinc-950 to-[#0a1628] text-white font-body relative">
+    <footer className="bg-gradient-to-b from-gray-50 to-white text-[#1E3A5F] font-body relative border-t border-gray-200">
       {/* Top accent line */}
       <div className="h-1 bg-gradient-to-r from-transparent via-[#14B8A6] to-transparent" />
       
@@ -121,7 +121,7 @@ const Footer = () => {
               <ul className="space-y-3">
                 {menuItems.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-zinc-400 hover:text-[#14B8A6] transition-colors">{item.name}</Link>
+                    <Link href={item.href} className="text-gray-600 hover:text-[#14B8A6] transition-colors">{item.name}</Link>
                   </li>
                 ))}
               </ul>
@@ -133,7 +133,7 @@ const Footer = () => {
               <ul className="space-y-3">
                 {serviceLinks.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-zinc-400 hover:text-[#14B8A6] transition-colors text-sm">{item.name}</Link>
+                    <Link href={item.href} className="text-gray-600 hover:text-[#14B8A6] transition-colors text-sm">{item.name}</Link>
                   </li>
                 ))}
                 <li>
@@ -155,7 +155,7 @@ const Footer = () => {
                       target="_blank" 
                       rel="noopener noreferrer nofollow"
                       aria-label={`Follow TechnoRealm on ${link.name}`}
-                      className="flex items-center gap-3 text-zinc-400 hover:text-[#14B8A6] transition-colors group"
+                      className="flex items-center gap-3 text-gray-600 hover:text-[#14B8A6] transition-colors group"
                     >
                       <link.icon 
                         className="w-5 h-5 text-[#14B8A6] group-hover:scale-110 transition-transform" 
@@ -170,7 +170,7 @@ const Footer = () => {
             {/* Contact */}
             <address className="not-italic">
               <h3 className="text-sm uppercase text-[#14B8A6] mb-6 tracking-wider">Contact</h3>
-              <ul className="space-y-3 text-zinc-400">
+              <ul className="space-y-3 text-gray-600">
                 <li>
                   <a href="tel:+15558676543" className="flex items-center gap-3 hover:text-[#14B8A6] transition-colors group">
                     <HiPhone className="w-5 h-5 text-[#14B8A6] group-hover:scale-110 transition-transform" />
@@ -207,15 +207,15 @@ const Footer = () => {
           <SparklesPreview text="TechnoRealm" />
         </motion.div>
 
-        <div className="border-t border-white/10 mt-6"></div>
+        <div className="border-t border-gray-200 mt-6"></div>
 
         {/* Bottom Bar */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 pt-8">
-          <p className="text-sm text-white/50">
+          <p className="text-sm text-gray-600">
             © 2025 TechnoRealm
           </p>
 
-          <div className="flex gap-4 text-sm text-white/50">
+          <div className="flex gap-4 text-sm text-gray-600">
             <Link href="/privacy" className="hover:text-[#14B8A6] transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-[#14B8A6] transition-colors">Terms & Conditions</Link>
           </div>
@@ -226,7 +226,7 @@ const Footer = () => {
       {isVisible && (
         <motion.button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-6 right-6 bg-[#14B8A6] text-[#1E3A5F] px-4 py-2 rounded-full shadow-[0_0_20px_rgba(20,184,166,0.3)] z-50 font-bold"
+          className="fixed bottom-6 right-6 bg-[#14B8A6] text-white px-4 py-2 rounded-full shadow-[0_0_20px_rgba(20,184,166,0.3)] z-50 font-bold"
           animate={{
             opacity: 1,
             y: [0, -10, 0],

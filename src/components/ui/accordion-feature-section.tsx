@@ -39,10 +39,10 @@ const defaultFeatures: FeatureItem[] = [
   },
   {
     id: 3,
-    title: "Dark Mode & Customization",
+    title: "Light Theme & Customization",
     lottiePath: "/animations/dark-mode.json",
     description:
-      "Every block supports dark mode out of the box and can be customized to match your brand. Modify colors, spacing, and typography using Tailwind's configuration. The shadcn/ui theming system makes it easy to maintain consistency across your site.",
+      "Every block uses a clean light theme and can be customized to match your brand. Modify colors, spacing, and typography using Tailwind's configuration. The shadcn/ui theming system makes it easy to maintain consistency across your site.",
   },
   {
     id: 4,
@@ -83,7 +83,7 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
     <section className="py-24 bg-gradient-to-b from-zinc-950 via-[#0a1628] to-zinc-950 relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#14B8A6]/5 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#14B8A6]/10 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#1E3A5F]/20 rounded-full blur-3xl" />
       </div>
 
@@ -100,10 +100,10 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
             <div className="h-2 w-2 rounded-full bg-[#14B8A6] animate-pulse" />
             <span className="text-sm font-medium text-[#14B8A6] tracking-wide">Why Choose Us</span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1E3A5F] mb-4">
             What Sets Us <span className="text-[#14B8A6]">Apart</span>
           </h2>
-          <p className="text-zinc-400 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto">
             Discover the core principles that drive our success and make us the preferred technology partner
           </p>
         </motion.div>
@@ -147,8 +147,8 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
                     className={`
                       border rounded-xl overflow-hidden transition-all duration-300
                       ${tab.id === activeTabId 
-                        ? 'border-[#14B8A6]/50 bg-gradient-to-r from-[#1E3A5F]/30 to-[#14B8A6]/10 shadow-[0_0_30px_rgba(20,184,166,0.15)]' 
-                        : 'border-white/10 bg-zinc-900/50 hover:border-[#14B8A6]/30 hover:bg-zinc-900/80'
+                        ? 'border-[#14B8A6]/50 bg-gradient-to-r from-[#14B8A6]/10 to-white shadow-[0_0_30px_rgba(20,184,166,0.15)]' 
+                        : 'border-gray-200 bg-white hover:border-[#14B8A6]/30 hover:bg-gray-50 shadow-sm'
                       }
                     `}
                   >
@@ -158,8 +158,8 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
                         <div className={`
                           w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300
                           ${tab.id === activeTabId 
-                            ? 'bg-[#14B8A6] text-[#1E3A5F]' 
-                            : 'bg-zinc-800 text-zinc-400 group-hover:bg-[#14B8A6]/20 group-hover:text-[#14B8A6]'
+                            ? 'bg-[#14B8A6] text-white' 
+                            : 'bg-gray-100 text-gray-600 group-hover:bg-[#14B8A6]/20 group-hover:text-[#14B8A6]'
                           }
                         `}>
                           {String(tab.id).padStart(2, '0')}
@@ -167,8 +167,8 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
                         <h6
                           className={`text-lg md:text-xl font-semibold transition-all duration-300 ${
                             tab.id === activeTabId
-                              ? "text-white"
-                              : "text-zinc-400 group-hover:text-white"
+                              ? "text-[#1E3A5F]"
+                              : "text-gray-600 group-hover:text-[#1E3A5F]"
                           }`}
                         >
                           {tab.title}
@@ -181,13 +181,13 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ duration: 0.3 }}
-                          className="text-zinc-400 leading-relaxed"
+                          className="text-gray-600 leading-relaxed"
                         >
                           {tab.description}
                         </motion.p>
                         {/* Mobile Lottie */}
                         <div className="mt-6 lg:hidden">
-                          <div className="rounded-xl overflow-hidden bg-gradient-to-br from-[#1E3A5F]/20 to-zinc-900 border border-white/10 p-4">
+                          <div className="rounded-xl overflow-hidden bg-gradient-to-br from-[#14B8A6]/10 to-white border border-gray-200 p-4 shadow-sm">
                             <LottieComponent lottiePath={tab.lottiePath} />
                           </div>
                         </div>
@@ -206,7 +206,7 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
                   className={`h-1.5 rounded-full transition-all duration-500 ${
                     feature.id === activeTabId 
                       ? 'w-8 bg-[#14B8A6]' 
-                      : 'w-2 bg-zinc-700 hover:bg-zinc-600'
+                      : 'w-2 bg-gray-300 hover:bg-gray-400'
                   }`}
                   whileHover={{ scale: 1.2 }}
                 />
@@ -227,7 +227,7 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
               <div className="absolute -inset-4 bg-gradient-to-r from-[#14B8A6]/20 via-[#1E3A5F]/30 to-[#14B8A6]/20 rounded-3xl blur-2xl opacity-50" />
               
               {/* Main container */}
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-zinc-900 via-[#0a1628] to-zinc-900 p-6">
+              <div className="relative rounded-2xl overflow-hidden border border-gray-200 bg-gradient-to-br from-white to-gray-50 p-6 shadow-lg">
                 <AnimatePresence mode="wait">
                   {animationData ? (
                     <motion.div

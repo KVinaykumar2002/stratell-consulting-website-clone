@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function GlobalNetworkSection() {
   return (
-    <div className="py-40 bg-gradient-to-b from-[#0a1628] to-zinc-950 w-full">
+    <div className="py-40 bg-gradient-to-b from-white to-gray-50 w-full">
       <div className="max-w-7xl mx-auto text-center px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -22,7 +22,7 @@ export default function GlobalNetworkSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-bold text-xl md:text-4xl text-white"
+          className="font-bold text-xl md:text-4xl text-[#1E3A5F]"
         >
           Global <span className="text-[#14B8A6]">Network</span>
         </motion.p>

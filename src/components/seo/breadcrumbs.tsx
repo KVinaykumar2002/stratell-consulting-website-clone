@@ -136,7 +136,7 @@ export function Breadcrumbs({ items, className = '', showHome = true }: Breadcru
               >
                 {isLast ? (
                   <span 
-                    className="text-white font-medium"
+                    className="text-[#1E3A5F] font-medium"
                     itemProp="name"
                     aria-current="page"
                   >

@@ -29,11 +29,11 @@ export default function ServicesPageContent() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#0a1628] via-zinc-950 to-[#0a1628]">
+    <main className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
       <Header />
       
       {/* Hero Heading Section */}
-      <section className="relative flex h-[60vh] md:h-[70vh] w-full items-center justify-center overflow-hidden bg-gradient-to-b from-[#0a1628] via-zinc-950/95 to-zinc-950" aria-labelledby="services-hero-title">
+      <section className="relative flex h-[60vh] md:h-[70vh] w-full items-center justify-center overflow-hidden bg-gradient-to-b from-white via-gray-50 to-gray-50" aria-labelledby="services-hero-title">
         {/* Subtle glow effect */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#14B8A6]/5 rounded-full blur-[120px]" aria-hidden="true" />
         
@@ -138,7 +138,7 @@ export default function ServicesPageContent() {
       />
 
       {/* Dynamic Frame Layout Section */}
-      <section className="py-32 px-6 bg-gradient-to-b from-zinc-950 to-[#0a1628]" aria-labelledby="technology-services-title">
+      <section className="py-32 px-6 bg-gradient-to-b from-gray-50 to-white" aria-labelledby="technology-services-title">
         <div className="mx-auto w-full max-w-[1200px]">
           <div className="mb-12 text-center">
             <motion.div

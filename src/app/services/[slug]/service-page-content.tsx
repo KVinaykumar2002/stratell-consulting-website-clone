@@ -19,7 +19,7 @@ export default function ServicePageContent({ service }: ServicePageContentProps)
   }, []);
 
   return (
-    <main className="min-h-screen bg-black text-white relative overflow-hidden">
+    <main className="min-h-screen bg-white text-[#1E3A5F] relative overflow-hidden">
       {/* Animated Tech Grid Background */}
       <div className="fixed inset-0 opacity-20 pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
