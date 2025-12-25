@@ -12,10 +12,10 @@ export default function GlobalNetworkSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E5B800]/30 bg-[#E5B800]/10 px-4 py-2 mb-6"
+          className="inline-flex items-center justify-center gap-2 rounded-full border border-[#14B8A6]/30 bg-[#14B8A6]/10 px-4 py-2 mb-6"
         >
-          <div className="h-2 w-2 rounded-full bg-[#E5B800] animate-pulse" />
-          <span className="text-sm font-medium text-[#E5B800] tracking-wide">Worldwide Presence</span>
+          <div className="h-2 w-2 rounded-full bg-[#14B8A6] animate-pulse" />
+          <span className="text-sm font-medium text-[#14B8A6] tracking-wide">Worldwide Presence</span>
         </motion.div>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -24,7 +24,7 @@ export default function GlobalNetworkSection() {
           transition={{ duration: 0.6 }}
           className="font-bold text-xl md:text-4xl text-white"
         >
-          Global <span className="text-[#E5B800]">Network</span>
+          Global <span className="text-[#14B8A6]">Network</span>
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -113,7 +113,7 @@ export default function GlobalNetworkSection() {
               },
             },
           ]}
-          lineColor="#E5B800"
+          lineColor="#14B8A6"
         />
       </div>
     </div>

@@ -21,7 +21,7 @@ export default function AppleIcon() {
           borderRadius: '36px',
         }}
       >
-        <span style={{ color: '#E5B800', fontWeight: 'bold' }}>T</span>
+        <span style={{ color: '#14B8A6', fontWeight: 'bold' }}>T</span>
         <span style={{ color: '#3a5a8a', fontWeight: 'bold' }}>R</span>
       </div>
     ),

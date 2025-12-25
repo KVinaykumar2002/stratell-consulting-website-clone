@@ -66,12 +66,12 @@ export default function Header() {
       <nav
         className={`flex items-center justify-between rounded-2xl transition-all duration-300 ${
           isScrolled 
-            ? 'h-16 px-4 md:px-6 bg-[#0f1729]/95 shadow-lg shadow-black/20' 
-            : 'h-18 md:h-20 px-5 md:px-8 bg-[#0f1729]/90'
+            ? 'h-16 px-4 md:px-6 bg-white/95 shadow-lg shadow-black/5' 
+            : 'h-18 md:h-20 px-5 md:px-8 bg-white/90'
         }`}
         style={{
-          backdropFilter: 'blur(20px)',
-          border: '1px solid rgba(255, 255, 255, 0.08)',
+          backdropFilter: 'blur(18px)',
+          border: '1px solid rgba(226, 232, 240, 0.9)',
           }}
       >
         {/* Logo */}
@@ -80,7 +80,7 @@ export default function Header() {
             isScrolled ? 'h-36 md:h-44' : 'h-44 md:h-56'
           }`}>
             <Image
-              src="/chatgpt_log.png"
+              src="/logo image/loading12/1234.png"
               alt="TechnoRealm"
               width={560}
               height={168}
@@ -114,8 +114,8 @@ export default function Header() {
                     href={link.href}
                     className={`flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
                       active 
-                        ? 'text-[#E5B800]' 
-                        : 'text-white/80 hover:text-white hover:bg-white/5'
+                        ? 'text-[#14B8A6]' 
+                        : 'text-slate-800/80 hover:text-slate-900 hover:bg-slate-950/5'
                     }`}
                   >
                     {link.label}
@@ -127,8 +127,8 @@ export default function Header() {
                   {/* Services Dropdown */}
                   {isServicesOpen && (
                     <div 
-                      className="absolute top-full left-0 mt-2 w-64 py-2 bg-[#0f1729] rounded-xl border border-white/10 shadow-xl shadow-black/30 z-[100]"
-                      style={{ backdropFilter: 'blur(20px)' }}
+                      className="absolute top-full left-0 mt-2 w-64 py-2 bg-white/95 rounded-xl border border-slate-200/90 shadow-xl shadow-black/10 z-[100]"
+                      style={{ backdropFilter: 'blur(18px)' }}
                       onMouseEnter={() => {
                         if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
                         setIsServicesOpen(true);
@@ -144,9 +144,9 @@ export default function Header() {
                           <Link
                             key={service.href}
                             href={service.href}
-                            className="flex items-center gap-3 px-4 py-2.5 text-sm text-white/70 hover:text-[#E5B800] hover:bg-white/5 transition-colors"
+                            className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:text-[#14B8A6] hover:bg-slate-950/5 transition-colors"
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#E5B800]/50" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#14B8A6]/50" />
                             {service.label}
                           </Link>
                         ))}
@@ -154,7 +154,7 @@ export default function Header() {
                       <div className="border-t border-white/10 mt-2 pt-2 px-2">
                         <Link
                           href="/services"
-                          className="flex items-center justify-between px-3 py-2.5 text-sm font-medium text-[#E5B800] hover:bg-[#E5B800]/10 rounded-lg transition-colors"
+                          className="flex items-center justify-between px-3 py-2.5 text-sm font-medium text-[#14B8A6] hover:bg-[#14B8A6]/10 rounded-lg transition-colors"
                         >
                           View All Services
                           <ArrowRight className="w-4 h-4" />
@@ -172,8 +172,8 @@ export default function Header() {
                 href={link.href}
                 className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
                   active 
-                    ? 'text-[#E5B800]' 
-                    : 'text-white/80 hover:text-white hover:bg-white/5'
+                    ? 'text-[#14B8A6]' 
+                    : 'text-slate-800/80 hover:text-slate-900 hover:bg-slate-950/5'
                 }`}
               >
                   {link.label}
@@ -186,7 +186,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <Link
             href="/contact"
-            className={`hidden lg:flex items-center gap-2 bg-[#E5B800] text-[#0f1729] font-semibold rounded-lg transition-all duration-200 hover:bg-[#f5c800] active:scale-[0.98] ${
+            className={`hidden lg:flex items-center gap-2 bg-[#14B8A6] text-[#0f1729] font-semibold rounded-lg transition-all duration-200 hover:bg-[#0D9488] active:scale-[0.98] ${
               isScrolled ? 'h-10 px-5 text-sm' : 'h-11 px-6 text-sm'
             }`}
           >
@@ -200,22 +200,22 @@ export default function Header() {
               <SheetTrigger asChild>
                 <button 
                   aria-label="Open menu" 
-                  className="p-2.5 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="p-2.5 text-slate-800/80 hover:text-slate-900 hover:bg-slate-950/5 rounded-lg transition-colors"
                 >
                   <Menu size={22} />
                 </button>
               </SheetTrigger>
               <SheetContent 
                 side="right" 
-                className="bg-[#0f1729] border-l border-white/10 text-white p-0 w-full max-w-sm"
+                className="bg-white/95 backdrop-blur-xl border-l border-slate-200 text-slate-900 p-0 w-full max-w-sm"
               >
                 <div className="flex flex-col h-full">
                   {/* Mobile Header */}
-                  <div className="flex items-center justify-between p-5 border-b border-white/10">
+                  <div className="flex items-center justify-between p-5 border-b border-slate-200">
                     <SheetClose asChild>
                       <Link href="/" className="relative h-10">
                         <Image
-                          src="/logo-33.png"
+                          src="/logo image/loading12/1234.png"
                           alt="TechnoRealm"
                           width={180}
                           height={54}
@@ -226,7 +226,7 @@ export default function Header() {
                     <SheetClose asChild>
                       <button 
                         aria-label="Close menu" 
-                        className="p-2 text-white/60 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+                        className="p-2 text-slate-500 hover:text-slate-900 hover:bg-slate-950/5 rounded-lg transition-colors"
                       >
                         <X size={24} />
                       </button>
@@ -246,8 +246,8 @@ export default function Header() {
                                 onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
                                 className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-base font-medium transition-all ${
                                   active
-                                    ? 'text-[#E5B800] bg-[#E5B800]/10'
-                                    : 'text-white/80 hover:text-white hover:bg-white/5'
+                                    ? 'text-[#14B8A6] bg-[#14B8A6]/10'
+                                    : 'text-slate-800/80 hover:text-slate-900 hover:bg-slate-950/5'
                                 }`}
                               >
                                 {link.label}
@@ -257,12 +257,12 @@ export default function Header() {
                               </button>
                               
                               {isMobileServicesOpen && (
-                                <div className="mt-1 ml-4 pl-4 border-l border-white/10 space-y-1">
+                                <div className="mt-1 ml-4 pl-4 border-l border-slate-200 space-y-1">
                                   {serviceItems.map((service) => (
                                     <SheetClose asChild key={service.href}>
                                       <Link
                                         href={service.href}
-                                        className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#E5B800] rounded-lg transition-colors"
+                                        className="block px-4 py-2.5 text-sm text-slate-600 hover:text-[#14B8A6] rounded-lg transition-colors"
                                       >
                                         {service.label}
                                       </Link>
@@ -271,7 +271,7 @@ export default function Header() {
                                   <SheetClose asChild>
                                     <Link
                                       href="/services"
-                                      className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-[#E5B800] rounded-lg"
+                                      className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-[#14B8A6] rounded-lg"
                                     >
                                       View All Services
                                       <ArrowRight className="w-4 h-4" />
@@ -289,8 +289,8 @@ export default function Header() {
                             href={link.href} 
                               className={`block px-4 py-3.5 rounded-xl text-base font-medium transition-all ${
                               active
-                                  ? 'text-[#E5B800] bg-[#E5B800]/10'
-                                  : 'text-white/80 hover:text-white hover:bg-white/5'
+                                  ? 'text-[#14B8A6] bg-[#14B8A6]/10'
+                                  : 'text-slate-800/80 hover:text-slate-900 hover:bg-slate-950/5'
                               }`}
                             >
                               {link.label}
@@ -302,11 +302,11 @@ export default function Header() {
                   </nav>
                   
                   {/* Mobile Contact Button */}
-                  <div className="p-5 border-t border-white/10">
+                  <div className="p-5 border-t border-slate-200">
                     <SheetClose asChild>
                       <Link 
                         href="/contact" 
-                        className="flex items-center justify-center gap-2 w-full h-12 bg-[#E5B800] text-[#0f1729] text-base font-semibold rounded-xl hover:bg-[#f5c800] transition-colors"
+                        className="flex items-center justify-center gap-2 w-full h-12 bg-[#14B8A6] text-[#0f1729] text-base font-semibold rounded-xl hover:bg-[#0D9488] transition-colors"
                       >
                           Contact Us
                         <ArrowRight className="w-5 h-5" />

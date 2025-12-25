@@ -108,7 +108,7 @@ export function NeonOrbs() {
           style={{ transitionDelay: "500ms" }}
         >
           <Image
-            src="/logo image/loading12/31.png"
+            src="/logo image/loading12/1234.png"
             alt="TechnoRealm Logo"
             width={800}
             height={300}
@@ -136,31 +136,31 @@ export function NeonOrbs() {
           border-radius: 2px;
           transform: translateY(-50%);
           transition: all 0.5s;
-          background: linear-gradient(90deg, transparent 0%, rgba(99, 102, 241, 0.5) 30%, rgba(129, 140, 248, 0.9) 70%, rgba(99, 102, 241, 1) 100%);
-          box-shadow: 0 0 20px 4px rgba(99, 102, 241, 0.6), 0 0 40px 8px rgba(129, 140, 248, 0.3);
+          background: linear-gradient(90deg, transparent 0%, rgba(20, 184, 166, 0.5) 30%, rgba(0, 212, 255, 0.9) 70%, rgba(20, 184, 166, 1) 100%);
+          box-shadow: 0 0 20px 4px rgba(20, 184, 166, 0.6), 0 0 40px 8px rgba(0, 212, 255, 0.3);
         }
         
         .dark .beam-light {
-          background: linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.5) 30%, rgba(150, 200, 255, 0.9) 70%, white 100%);
-          box-shadow: 0 0 20px 4px rgba(100, 180, 255, 0.8), 0 0 40px 8px rgba(59, 130, 246, 0.4);
+          background: linear-gradient(90deg, transparent 0%, rgba(20, 184, 166, 0.5) 30%, rgba(0, 212, 255, 0.9) 70%, white 100%);
+          box-shadow: 0 0 20px 4px rgba(0, 212, 255, 0.8), 0 0 40px 8px rgba(20, 184, 166, 0.4);
         }
         
         .orb-light {
-          background: radial-gradient(circle at 50% 50%, #f0f4ff 0%, #f0f4ff 90%, transparent 100%);
+          background: radial-gradient(circle at 50% 50%, #e0fdfa 0%, #e0fdfa 90%, transparent 100%);
           box-shadow: 
-            0 0 60px 2px rgba(99, 102, 241, 0.3),
-            0 0 100px 5px rgba(99, 102, 241, 0.15),
-            inset 0 0 60px 2px rgba(99, 102, 241, 0.08);
-          border: 1px solid rgba(99, 102, 241, 0.4);
+            0 0 60px 2px rgba(20, 184, 166, 0.3),
+            0 0 100px 5px rgba(20, 184, 166, 0.15),
+            inset 0 0 60px 2px rgba(20, 184, 166, 0.08);
+          border: 1px solid rgba(20, 184, 166, 0.4);
         }
         
         .dark .orb-light {
           background: radial-gradient(circle at 50% 50%, #050a18 0%, #050a18 90%, transparent 100%);
           box-shadow: 
-            0 0 60px 2px rgba(59, 130, 246, 0.4),
-            0 0 100px 5px rgba(59, 130, 246, 0.2),
-            inset 0 0 60px 2px rgba(59, 130, 246, 0.1);
-          border: 1px solid rgba(100, 180, 255, 0.3);
+            0 0 60px 2px rgba(20, 184, 166, 0.4),
+            0 0 100px 5px rgba(20, 184, 166, 0.2),
+            inset 0 0 60px 2px rgba(20, 184, 166, 0.1);
+          border: 1px solid rgba(0, 212, 255, 0.3);
         }
         
         .beam-spin-6 {

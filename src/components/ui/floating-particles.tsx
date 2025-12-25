@@ -52,7 +52,7 @@ export const FloatingParticles = () => {
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="absolute rounded-full bg-gradient-to-br from-[#FFD700]/40 to-[#E5B800]/20 blur-sm"
+          className="absolute rounded-full bg-gradient-to-br from-[#14B8A6]/40 to-[#14B8A6]/20 blur-sm"
           style={{
             width: `${particle.size}px`,
             height: `${particle.size}px`,

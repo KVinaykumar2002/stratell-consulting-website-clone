@@ -21,7 +21,7 @@ export default function Icon() {
           borderRadius: '6px',
         }}
       >
-        <span style={{ color: '#E5B800', fontWeight: 'bold' }}>T</span>
+        <span style={{ color: '#14B8A6', fontWeight: 'bold' }}>T</span>
         <span style={{ color: '#1E3A5F', fontWeight: 'bold' }}>R</span>
       </div>
     ),

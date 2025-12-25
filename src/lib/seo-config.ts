@@ -348,7 +348,7 @@ export const schemaTemplates = {
     "@type": "Organization",
     name: "TechnoRealm",
     url: siteUrl,
-    logo: `${siteUrl}/logo-33.png`,
+    logo: `${siteUrl}/logo image/loading12/1234.png`,
     sameAs: offPageSEO.socialProfiles.map(p => p.url),
   },
 

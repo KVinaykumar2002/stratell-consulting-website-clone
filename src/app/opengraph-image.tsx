@@ -31,7 +31,7 @@ export default async function Image() {
             left: 0,
             right: 0,
             height: '8px',
-            background: 'linear-gradient(90deg, transparent 0%, #E5B800 50%, transparent 100%)',
+            background: 'linear-gradient(90deg, transparent 0%, #14B8A6 50%, transparent 100%)',
           }}
         />
         
@@ -51,14 +51,14 @@ export default async function Image() {
             style={{
               fontSize: 72,
               fontWeight: 'bold',
-              color: '#E5B800',
+              color: '#14B8A6',
               marginBottom: '20px',
               display: 'flex',
               alignItems: 'center',
               gap: '16px',
             }}
           >
-            <span style={{ color: '#E5B800' }}>Techno</span>
+            <span style={{ color: '#14B8A6' }}>Techno</span>
             <span style={{ color: '#ffffff' }}>Realm</span>
           </div>
           
@@ -92,7 +92,7 @@ export default async function Image() {
                   border: '1px solid rgba(229, 184, 0, 0.3)',
                   borderRadius: '9999px',
                   padding: '12px 24px',
-                  color: '#E5B800',
+                  color: '#14B8A6',
                   fontSize: 18,
                   fontWeight: 500,
                 }}
@@ -111,7 +111,7 @@ export default async function Image() {
             left: 0,
             right: 0,
             height: '8px',
-            background: 'linear-gradient(90deg, transparent 0%, #E5B800 50%, transparent 100%)',
+            background: 'linear-gradient(90deg, transparent 0%, #14B8A6 50%, transparent 100%)',
           }}
         />
         

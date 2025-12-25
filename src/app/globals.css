@@ -5,9 +5,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  /* TechnoRealm Brand Colors */
+  /* TechnoRealm Brand Colors - Updated to match new logo */
   --color-tr-navy: #1E3A5F;
-  --color-tr-gold: #E5B800;
+  --color-tr-teal: #14B8A6;
+  --color-tr-cyan: #00D4FF;
   --color-tr-dark: #0a1628;
   
   /* Shadcn/UI colors - Updated for TechnoRealm */
@@ -20,7 +21,7 @@
   --color-popover: #1E3A5F;
   --color-popover-foreground: #FFFFFF;
 
-  --color-primary: #E5B800;
+  --color-primary: #14B8A6;
   --color-primary-foreground: #1E3A5F;
 
   --color-secondary: #1E3A5F;
@@ -29,7 +30,7 @@
   --color-muted: #27272a;
   --color-muted-foreground: #a1a1aa;
 
-  --color-accent: #E5B800;
+  --color-accent: #14B8A6;
   --color-accent-foreground: #1E3A5F;
 
   --color-destructive: #ef4444;
@@ -37,9 +38,9 @@
 
   --color-border: rgba(255, 255, 255, 0.1);
   --color-input: rgba(255, 255, 255, 0.1);
-  --color-ring: #E5B800;
+  --color-ring: #14B8A6;
 
-  --color-chart-1: #E5B800;
+  --color-chart-1: #14B8A6;
   --color-chart-2: #1E3A5F;
   --color-chart-3: #3b82f6;
   --color-chart-4: #f1c40f;
@@ -47,12 +48,12 @@
 
   --color-sidebar: #0a1628;
   --color-sidebar-foreground: #FFFFFF;
-  --color-sidebar-primary: #E5B800;
+  --color-sidebar-primary: #14B8A6;
   --color-sidebar-primary-foreground: #1E3A5F;
   --color-sidebar-accent: #1E3A5F;
   --color-sidebar-accent-foreground: #FFFFFF;
   --color-sidebar-border: rgba(255, 255, 255, 0.1);
-  --color-sidebar-ring: #E5B800;
+  --color-sidebar-ring: #14B8A6;
 
   --radius-lg: 1.5rem;
   --radius-md: 0.75rem;
@@ -78,9 +79,10 @@
     }
   }
 
-  /* TechnoRealm design system colors */
+  /* TechnoRealm design system colors - Updated to match new logo */
   --color-primary-navy: #1E3A5F;
-  --color-primary-gold: #E5B800;
+  --color-primary-teal: #14B8A6;
+  --color-primary-cyan: #00D4FF;
   --color-background-dark: #0a1628;
   --color-background-darker: #09101f;
   --color-text-dark: #1E3A5F;
@@ -88,8 +90,8 @@
   --color-text-light: #FFFFFF;
   --color-overlay-dark: #0a1628;
   --color-border-divider: rgba(255, 255, 255, 0.1);
-  --color-badge-gold: rgba(229, 184, 0, 0.1);
-  --color-hover-gold: #d4a800;
+  --color-badge-teal: rgba(20, 184, 166, 0.1);
+  --color-hover-teal: #0D9488;
 
   /* Font families - Using CSS variables from next/font */
   --font-display: var(--font-display), "Playfair Display", serif;
@@ -313,17 +315,25 @@
     }
   }
 
-  /* TechnoRealm Gold Accent */
-  .text-gold {
-    color: var(--color-tr-gold);
+  /* TechnoRealm Teal Accent - Updated to match new logo */
+  .text-teal {
+    color: var(--color-tr-teal);
   }
 
-  .bg-gold {
-    background-color: var(--color-tr-gold);
+  .bg-teal {
+    background-color: var(--color-tr-teal);
   }
 
-  .border-gold {
-    border-color: var(--color-tr-gold);
+  .border-teal {
+    border-color: var(--color-tr-teal);
+  }
+
+  .text-cyan {
+    color: var(--color-tr-cyan);
+  }
+
+  .bg-cyan {
+    background-color: var(--color-tr-cyan);
   }
 
   /* TechnoRealm Navy Accent */

@@ -111,7 +111,7 @@ export function Breadcrumbs({ items, className = '', showHome = true }: Breadcru
             >
               <Link 
                 href="/" 
-                className="flex items-center text-zinc-400 hover:text-[#E5B800] transition-colors"
+                className="flex items-center text-zinc-400 hover:text-[#14B8A6] transition-colors"
                 itemProp="item"
               >
                 <Home className="w-4 h-4" />
@@ -146,7 +146,7 @@ export function Breadcrumbs({ items, className = '', showHome = true }: Breadcru
                   <>
                     <Link 
                       href={item.href}
-                      className="text-zinc-400 hover:text-[#E5B800] transition-colors"
+                      className="text-zinc-400 hover:text-[#14B8A6] transition-colors"
                       itemProp="item"
                     >
                       <span itemProp="name">{item.name}</span>

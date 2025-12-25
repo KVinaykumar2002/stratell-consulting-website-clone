@@ -20,7 +20,7 @@ export const TechnoRealmExactLogo: React.FC<ExactLogoProps> = ({
   variant = 'header'
 }) => {
   // Try to use the logo PNG file first
-  const logoPath = '/logo-33.png';
+  const logoPath = '/logo image/loading12/1234.png';
   
   const sizeClasses = {
     small: 'h-8 md:h-10',
@@ -90,7 +90,7 @@ export const TechnoRealmExactLogoSVG: React.FC<{ className?: string; size?: 'sma
           y={trSize + 20}
           fontSize={trSize}
           fontFamily="'Times New Roman', 'Georgia', serif"
-          fill="#E5B800"
+          fill="#14B8A6"
           fontWeight="700"
           letterSpacing="0"
         >
@@ -120,7 +120,7 @@ export const TechnoRealmExactLogoSVG: React.FC<{ className?: string; size?: 'sma
           fontWeight="600"
           letterSpacing="2"
         >
-          <tspan fill="#E5B800">TECHNO</tspan>
+          <tspan fill="#14B8A6">TECHNO</tspan>
           <tspan fill="#1E3A5F">REALM</tspan>
         </text>
       </g>

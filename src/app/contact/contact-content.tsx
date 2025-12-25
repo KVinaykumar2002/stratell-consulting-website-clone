@@ -61,17 +61,17 @@ export default function ContactPageContent() {
       >
         {/* Background with stars */}
         <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,215,0,0.08)_0%,rgba(0,0,0,0)_80%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(20,184,166,0.08)_0%,rgba(0,0,0,0)_80%)]" />
           <div className="stars absolute inset-0" />
           
           {/* Gradient glows */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FFD700]/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#14B8A6]/10 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#1E3A5F]/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
 
         {/* Multiple shooting star layers */}
         <ShootingStars
-          starColor="#FFD700"
+          starColor="#14B8A6"
           trailColor="#1E3A5F"
           minSpeed={15}
           maxSpeed={35}
@@ -80,7 +80,7 @@ export default function ContactPageContent() {
         />
         <ShootingStars
           starColor="#1E3A5F"
-          trailColor="#FFD700"
+          trailColor="#14B8A6"
           minSpeed={10}
           maxSpeed={25}
           minDelay={2000}
@@ -96,7 +96,7 @@ export default function ContactPageContent() {
             className="text-center mb-8 sm:mb-10 md:mb-12"
           >
             <div className="inline-flex items-center gap-2 rounded-full bg-[#282800] px-3 sm:px-4 py-1 sm:py-1.5 mb-4 sm:mb-6">
-              <span className="h-[4px] w-[4px] sm:h-[6px] sm:w-[6px] rounded-full bg-[#FFD700]" aria-hidden="true" />
+              <span className="h-[4px] w-[4px] sm:h-[6px] sm:w-[6px] rounded-full bg-[#14B8A6]" aria-hidden="true" />
               <p className="text-[10px] sm:text-[11px] md:text-[12px] font-medium uppercase tracking-[0.16em] text-white/90">
                 Let's Connect
               </p>
@@ -140,11 +140,11 @@ export default function ContactPageContent() {
         <style jsx>{`
           .stars {
             background-image: 
-              radial-gradient(2px 2px at 20px 30px, rgba(255,215,0,0.3), rgba(0,0,0,0)),
+              radial-gradient(2px 2px at 20px 30px, rgba(20,184,166,0.3), rgba(0,0,0,0)),
               radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.4), rgba(0,0,0,0)),
-              radial-gradient(2px 2px at 50px 160px, rgba(255,215,0,0.2), rgba(0,0,0,0)),
+              radial-gradient(2px 2px at 50px 160px, rgba(20,184,166,0.2), rgba(0,0,0,0)),
               radial-gradient(2px 2px at 90px 40px, rgba(255,255,255,0.3), rgba(0,0,0,0)),
-              radial-gradient(2px 2px at 130px 80px, rgba(255,215,0,0.3), rgba(0,0,0,0)),
+              radial-gradient(2px 2px at 130px 80px, rgba(20,184,166,0.3), rgba(0,0,0,0)),
               radial-gradient(2px 2px at 160px 120px, rgba(255,255,255,0.2), rgba(0,0,0,0));
             background-repeat: repeat;
             background-size: 200px 200px;

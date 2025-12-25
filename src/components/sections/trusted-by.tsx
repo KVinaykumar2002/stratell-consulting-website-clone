@@ -40,7 +40,7 @@ const TrustedBy = () => {
         <div className="flex flex-col items-center text-center mb-10 sm:mb-12 md:mb-16">
           {/* Tag with muted olive-yellow background */}
           <div className="inline-flex items-center gap-x-2 rounded-full bg-[#282800] px-3 sm:px-4 py-1 sm:py-1.5 mb-3 sm:mb-4">
-            <div className="h-[4px] w-[4px] sm:h-[6px] sm:w-[6px] rounded-full bg-[#FFD700]" />
+            <div className="h-[4px] w-[4px] sm:h-[6px] sm:w-[6px] rounded-full bg-[#14B8A6]" />
             <p className="text-[10px] sm:text-[11px] md:text-[12px] font-medium uppercase tracking-[0.16em] text-white/90">
               WE WORK WITH
             </p>
@@ -48,7 +48,7 @@ const TrustedBy = () => {
           
           {/* Main heading with golden yellow accent */}
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-white leading-[1.2] tracking-[-0.02em] px-4">
-            Trusted <span className="text-[#FFD700]">By</span>
+            Trusted <span className="text-[#14B8A6]">By</span>
           </h2>
         </div>
 

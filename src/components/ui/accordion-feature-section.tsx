@@ -83,7 +83,7 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
     <section className="py-24 bg-gradient-to-b from-zinc-950 via-[#0a1628] to-zinc-950 relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#E5B800]/5 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#14B8A6]/5 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#1E3A5F]/20 rounded-full blur-3xl" />
       </div>
 
@@ -96,12 +96,12 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#E5B800]/30 bg-[#E5B800]/10 px-4 py-2 mb-4">
-            <div className="h-2 w-2 rounded-full bg-[#E5B800] animate-pulse" />
-            <span className="text-sm font-medium text-[#E5B800] tracking-wide">Why Choose Us</span>
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#14B8A6]/30 bg-[#14B8A6]/10 px-4 py-2 mb-4">
+            <div className="h-2 w-2 rounded-full bg-[#14B8A6] animate-pulse" />
+            <span className="text-sm font-medium text-[#14B8A6] tracking-wide">Why Choose Us</span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            What Sets Us <span className="text-[#E5B800]">Apart</span>
+            What Sets Us <span className="text-[#14B8A6]">Apart</span>
           </h2>
           <p className="text-zinc-400 max-w-2xl mx-auto">
             Discover the core principles that drive our success and make us the preferred technology partner
@@ -147,8 +147,8 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
                     className={`
                       border rounded-xl overflow-hidden transition-all duration-300
                       ${tab.id === activeTabId 
-                        ? 'border-[#E5B800]/50 bg-gradient-to-r from-[#1E3A5F]/30 to-[#E5B800]/10 shadow-[0_0_30px_rgba(229,184,0,0.15)]' 
-                        : 'border-white/10 bg-zinc-900/50 hover:border-[#E5B800]/30 hover:bg-zinc-900/80'
+                        ? 'border-[#14B8A6]/50 bg-gradient-to-r from-[#1E3A5F]/30 to-[#14B8A6]/10 shadow-[0_0_30px_rgba(20,184,166,0.15)]' 
+                        : 'border-white/10 bg-zinc-900/50 hover:border-[#14B8A6]/30 hover:bg-zinc-900/80'
                       }
                     `}
                   >
@@ -158,8 +158,8 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
                         <div className={`
                           w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300
                           ${tab.id === activeTabId 
-                            ? 'bg-[#E5B800] text-[#1E3A5F]' 
-                            : 'bg-zinc-800 text-zinc-400 group-hover:bg-[#E5B800]/20 group-hover:text-[#E5B800]'
+                            ? 'bg-[#14B8A6] text-[#1E3A5F]' 
+                            : 'bg-zinc-800 text-zinc-400 group-hover:bg-[#14B8A6]/20 group-hover:text-[#14B8A6]'
                           }
                         `}>
                           {String(tab.id).padStart(2, '0')}
@@ -205,7 +205,7 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
                   key={feature.id}
                   className={`h-1.5 rounded-full transition-all duration-500 ${
                     feature.id === activeTabId 
-                      ? 'w-8 bg-[#E5B800]' 
+                      ? 'w-8 bg-[#14B8A6]' 
                       : 'w-2 bg-zinc-700 hover:bg-zinc-600'
                   }`}
                   whileHover={{ scale: 1.2 }}
@@ -224,7 +224,7 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
           >
             <div className="relative">
               {/* Glow effect */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-[#E5B800]/20 via-[#1E3A5F]/30 to-[#E5B800]/20 rounded-3xl blur-2xl opacity-50" />
+              <div className="absolute -inset-4 bg-gradient-to-r from-[#14B8A6]/20 via-[#1E3A5F]/30 to-[#14B8A6]/20 rounded-3xl blur-2xl opacity-50" />
               
               {/* Main container */}
               <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-zinc-900 via-[#0a1628] to-zinc-900 p-6">
@@ -253,18 +253,18 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
                   ) : (
                     <div className="aspect-[4/3] flex items-center justify-center">
                       <div className="relative">
-                        <div className="w-16 h-16 border-4 border-[#E5B800]/20 rounded-full" />
-                        <div className="absolute top-0 left-0 w-16 h-16 border-4 border-transparent border-t-[#E5B800] rounded-full animate-spin" />
+                        <div className="w-16 h-16 border-4 border-[#14B8A6]/20 rounded-full" />
+                        <div className="absolute top-0 left-0 w-16 h-16 border-4 border-transparent border-t-[#14B8A6] rounded-full animate-spin" />
                       </div>
                     </div>
                   )}
                 </AnimatePresence>
 
                 {/* Decorative corners */}
-                <div className="absolute top-3 left-3 w-8 h-8 border-l-2 border-t-2 border-[#E5B800]/30 rounded-tl-lg" />
-                <div className="absolute top-3 right-3 w-8 h-8 border-r-2 border-t-2 border-[#E5B800]/30 rounded-tr-lg" />
-                <div className="absolute bottom-3 left-3 w-8 h-8 border-l-2 border-b-2 border-[#E5B800]/30 rounded-bl-lg" />
-                <div className="absolute bottom-3 right-3 w-8 h-8 border-r-2 border-b-2 border-[#E5B800]/30 rounded-br-lg" />
+                <div className="absolute top-3 left-3 w-8 h-8 border-l-2 border-t-2 border-[#14B8A6]/30 rounded-tl-lg" />
+                <div className="absolute top-3 right-3 w-8 h-8 border-r-2 border-t-2 border-[#14B8A6]/30 rounded-tr-lg" />
+                <div className="absolute bottom-3 left-3 w-8 h-8 border-l-2 border-b-2 border-[#14B8A6]/30 rounded-bl-lg" />
+                <div className="absolute bottom-3 right-3 w-8 h-8 border-r-2 border-b-2 border-[#14B8A6]/30 rounded-br-lg" />
               </div>
             </div>
           </motion.div>
@@ -295,8 +295,8 @@ const LottieComponent = ({ lottiePath }: { lottiePath: string }) => {
     return (
       <div className="h-full max-h-80 w-full flex items-center justify-center">
         <div className="relative">
-          <div className="w-12 h-12 border-4 border-[#E5B800]/20 rounded-full" />
-          <div className="absolute top-0 left-0 w-12 h-12 border-4 border-transparent border-t-[#E5B800] rounded-full animate-spin" />
+          <div className="w-12 h-12 border-4 border-[#14B8A6]/20 rounded-full" />
+          <div className="absolute top-0 left-0 w-12 h-12 border-4 border-transparent border-t-[#14B8A6] rounded-full animate-spin" />
         </div>
       </div>
     );

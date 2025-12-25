@@ -49,7 +49,7 @@ export const SuccessCelebration = ({ show, onComplete }: SuccessCelebrationProps
           }}
           className="absolute w-2 h-2 rounded-full"
           style={{
-            backgroundColor: ['#FFD700', '#E5B800', '#1E3A5F', '#FFD700'][
+            backgroundColor: ['#14B8A6', '#14B8A6', '#1E3A5F', '#14B8A6'][
               Math.floor(Math.random() * 4)
             ],
           }}
@@ -62,7 +62,7 @@ export const SuccessCelebration = ({ show, onComplete }: SuccessCelebrationProps
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0, opacity: 0 }}
         transition={{ type: 'spring', duration: 0.6 }}
-        className="relative bg-gradient-to-br from-[#1A2B42] to-[#0A0A10] rounded-3xl p-8 md:p-12 border border-[#FFD700]/30 shadow-2xl backdrop-blur-xl"
+        className="relative bg-gradient-to-br from-[#1A2B42] to-[#0A0A10] rounded-3xl p-8 md:p-12 border border-[#14B8A6]/30 shadow-2xl backdrop-blur-xl"
         onAnimationComplete={onComplete}
       >
         {/* Sparkle effects */}
@@ -82,7 +82,7 @@ export const SuccessCelebration = ({ show, onComplete }: SuccessCelebrationProps
               left: `${Math.random() * 100}%`,
             }}
           >
-            <Sparkles className="w-4 h-4 text-[#FFD700]" />
+            <Sparkles className="w-4 h-4 text-[#14B8A6]" />
           </motion.div>
         ))}
 
@@ -93,7 +93,7 @@ export const SuccessCelebration = ({ show, onComplete }: SuccessCelebrationProps
             transition={{ type: 'spring', delay: 0.2 }}
             className="mb-6"
           >
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#FFD700] to-[#E5B800] flex items-center justify-center shadow-[0_0_40px_rgba(255,215,0,0.5)]">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#14B8A6] to-[#14B8A6] flex items-center justify-center shadow-[0_0_40px_rgba(20,184,166,0.5)]">
               <CheckCircle2 className="w-12 h-12 text-[#1E3A5F]" />
             </div>
           </motion.div>

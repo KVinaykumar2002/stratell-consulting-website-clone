@@ -165,12 +165,12 @@ export default function PrivacyPage() {
                   <p>420 TechnoRealm Avenue, Suite 300</p>
                   <p>Boston, MA 02116, USA</p>
                   <p>
-                    <a href="mailto:privacy@technorealm.com" className="text-[#E5B800] hover:underline">
+                    <a href="mailto:privacy@technorealm.com" className="text-[#14B8A6] hover:underline">
                       privacy@technorealm.com
                     </a>
                   </p>
                   <p>
-                    <a href="tel:+15558676543" className="text-[#E5B800] hover:underline">
+                    <a href="tel:+15558676543" className="text-[#14B8A6] hover:underline">
                       +1 (555) 867-6543
                     </a>
                   </p>

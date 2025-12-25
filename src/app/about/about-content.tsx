@@ -346,23 +346,23 @@ export default function AboutPageContent() {
                     </p>
                     <ul className="mb-6 space-y-3" role="list">
                       <li className="flex gap-3 items-center text-zinc-100 text-sm md:text-base">
-                        <span className="text-[#E5B800] font-bold" aria-hidden="true">✓</span>
+                        <span className="text-[#14B8A6] font-bold" aria-hidden="true">✓</span>
                         <span>Launched digital transformation services</span>
                       </li>
                       <li className="flex gap-3 items-center text-zinc-100 text-sm md:text-base">
-                        <span className="text-[#E5B800] font-bold" aria-hidden="true">✓</span>
+                        <span className="text-[#14B8A6] font-bold" aria-hidden="true">✓</span>
                         <span>Expanded mobile development capabilities</span>
                       </li>
                       <li className="flex gap-3 items-center text-zinc-100 text-sm md:text-base">
-                        <span className="text-[#E5B800] font-bold" aria-hidden="true">✓</span>
+                        <span className="text-[#14B8A6] font-bold" aria-hidden="true">✓</span>
                         <span>Achieved ISO 27001 certification</span>
                       </li>
                       <li className="flex gap-3 items-center text-zinc-100 text-sm md:text-base">
-                        <span className="text-[#E5B800] font-bold" aria-hidden="true">✓</span>
+                        <span className="text-[#14B8A6] font-bold" aria-hidden="true">✓</span>
                         <span>Opened new offices in key markets</span>
                       </li>
                       <li className="flex gap-3 items-center text-zinc-100 text-sm md:text-base">
-                        <span className="text-[#E5B800] font-bold" aria-hidden="true">✓</span>
+                        <span className="text-[#14B8A6] font-bold" aria-hidden="true">✓</span>
                         <span>Reached 100+ successful client projects</span>
                       </li>
                     </ul>

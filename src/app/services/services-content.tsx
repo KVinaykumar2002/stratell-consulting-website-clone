@@ -35,18 +35,18 @@ export default function ServicesPageContent() {
       {/* Hero Heading Section */}
       <section className="relative flex h-[60vh] md:h-[70vh] w-full items-center justify-center overflow-hidden bg-gradient-to-b from-[#0a1628] via-zinc-950/95 to-zinc-950" aria-labelledby="services-hero-title">
         {/* Subtle glow effect */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#E5B800]/5 rounded-full blur-[120px]" aria-hidden="true" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#14B8A6]/5 rounded-full blur-[120px]" aria-hidden="true" />
         
         <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6">
           <div className="flex flex-col items-center justify-center gap-6 text-center">
             <motion.div 
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E5B800]/30 bg-[#E5B800]/10 px-4 py-2"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#14B8A6]/30 bg-[#14B8A6]/10 px-4 py-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="h-2 w-2 rounded-full bg-[#E5B800] animate-pulse" aria-hidden="true"></div>
-              <p className="text-sm font-medium text-[#E5B800] tracking-wide">
+              <div className="h-2 w-2 rounded-full bg-[#14B8A6] animate-pulse" aria-hidden="true"></div>
+              <p className="text-sm font-medium text-[#14B8A6] tracking-wide">
                 Our Services
               </p>
             </motion.div>
@@ -55,7 +55,7 @@ export default function ServicesPageContent() {
               className="font-display text-4xl font-normal leading-[1.2] tracking-[-0.02em] text-white md:text-5xl lg:text-6xl"
             >
               Comprehensive IT Solutions for{" "}
-              <em className="italic text-[#E5B800]">Your Business</em>
+              <em className="italic text-[#14B8A6]">Your Business</em>
             </h1>
             <motion.p 
               className="max-w-2xl font-body text-lg font-normal leading-[1.6] text-zinc-400 md:text-xl"
@@ -142,14 +142,14 @@ export default function ServicesPageContent() {
         <div className="mx-auto w-full max-w-[1200px]">
           <div className="mb-12 text-center">
             <motion.div
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E5B800]/30 bg-[#E5B800]/10 px-4 py-2 mb-6"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#14B8A6]/30 bg-[#14B8A6]/10 px-4 py-2 mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="h-2 w-2 rounded-full bg-[#E5B800] animate-pulse" aria-hidden="true"></div>
-              <p className="text-sm font-medium text-[#E5B800] tracking-wide">
+              <div className="h-2 w-2 rounded-full bg-[#14B8A6] animate-pulse" aria-hidden="true"></div>
+              <p className="text-sm font-medium text-[#14B8A6] tracking-wide">
                 Explore Services
               </p>
             </motion.div>
@@ -157,7 +157,7 @@ export default function ServicesPageContent() {
               id="technology-services-title"
               className="font-display text-3xl font-normal leading-[1.2] tracking-[-0.02em] text-white md:text-4xl lg:text-5xl mb-4"
             >
-              Our Technology <span className="text-[#E5B800]">Services</span>
+              Our Technology <span className="text-[#14B8A6]">Services</span>
             </h2>
             <motion.p 
               className="max-w-2xl mx-auto font-body text-lg font-normal leading-[1.6] text-zinc-400"

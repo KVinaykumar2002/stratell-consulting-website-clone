@@ -240,13 +240,13 @@ export function ContactForm({
               !formData.email.trim() ||
               !formData.service
             }
-            className="group relative inline-flex items-center h-12 sm:h-14 px-8 sm:px-10 md:px-12 bg-[#E5B800] text-[#1E3A5F] rounded-xl overflow-hidden transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_30px_rgba(229,184,0,0.3)] text-sm sm:text-base font-semibold"
+            className="group relative inline-flex items-center h-12 sm:h-14 px-8 sm:px-10 md:px-12 bg-[#14B8A6] text-[#1E3A5F] rounded-xl overflow-hidden transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_30px_rgba(20,184,166,0.3)] text-sm sm:text-base font-semibold"
           >
             {/* Overlay animation from left to right */}
             <span className="absolute inset-0 bg-[#1E3A5F] transform origin-left -translate-x-full transition-transform duration-500 ease-in-out group-hover:translate-x-0 rounded-xl"></span>
             
             {/* Text - changes to gold on hover */}
-            <span className="relative z-10 font-semibold text-base leading-none transition-colors duration-300 delay-100 group-hover:text-[#E5B800] mr-3">
+            <span className="relative z-10 font-semibold text-base leading-none transition-colors duration-300 delay-100 group-hover:text-[#14B8A6] mr-3">
               {isSubmitting
                 ? "Sending..."
                 : isSubmitted
@@ -255,7 +255,7 @@ export function ContactForm({
             </span>
             
             {/* Navy circle with arrow */}
-            <div className="relative z-10 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-[#1E3A5F] rounded-full transition-all duration-300 group-hover:bg-[#E5B800] group-hover:translate-x-1">
+            <div className="relative z-10 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-[#1E3A5F] rounded-full transition-all duration-300 group-hover:bg-[#14B8A6] group-hover:translate-x-1">
               <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 text-white group-hover:text-[#1E3A5F] transition-colors" />
             </div>
           </button>

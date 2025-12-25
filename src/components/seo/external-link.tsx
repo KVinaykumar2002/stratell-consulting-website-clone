@@ -39,7 +39,7 @@ export function ExternalLink({
       href={href}
       target="_blank"
       rel={relParts.join(' ')}
-      className={`inline-flex items-center gap-1 text-[#E5B800] hover:text-[#f5c800] transition-colors ${className}`}
+      className={`inline-flex items-center gap-1 text-[#14B8A6] hover:text-[#0D9488] transition-colors ${className}`}
     >
       {children}
       {showIcon && <ExternalLinkIcon className="w-3.5 h-3.5" />}
@@ -62,7 +62,7 @@ export function TrustedExternalLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center gap-1 text-[#E5B800] hover:text-[#f5c800] transition-colors ${className}`}
+      className={`inline-flex items-center gap-1 text-[#14B8A6] hover:text-[#0D9488] transition-colors ${className}`}
     >
       {children}
       {showIcon && <ExternalLinkIcon className="w-3.5 h-3.5" />}
@@ -88,7 +88,7 @@ export function InternalLink({
   return (
     <a
       href={href}
-      className={`text-[#E5B800] hover:text-[#f5c800] transition-colors ${priority ? 'font-semibold' : ''} ${className}`}
+      className={`text-[#14B8A6] hover:text-[#0D9488] transition-colors ${priority ? 'font-semibold' : ''} ${className}`}
     >
       {children}
     </a>

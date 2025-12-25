@@ -38,7 +38,8 @@ interface LogoProps {
 
 // Default logo image paths - try these in order
 const DEFAULT_LOGO_PATHS = [
-  '/image.png', // Primary logo file in public folder
+  '/logo image/loading12/1234.png', // Primary logo file
+  '/image.png',
   '/technorealm-logo.png',
   '/technorealm-logo.svg',
   '/logo.png',

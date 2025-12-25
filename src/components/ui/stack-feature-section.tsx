@@ -74,13 +74,13 @@ export default function FeatureSection() {
       {/* Left side: Heading and Text */}
       <div className="w-half md:w-1/2 py-10 md:py-0 relative z-20 ">
         <h1 className="text-4xl sm:text-6xl font-bold mb-4 text-white">
-          Transform Your <span className="text-[#E5B800]">Business</span>
+          Transform Your <span className="text-[#14B8A6]">Business</span>
         </h1>
         <p className="text-zinc-400 mb-6 max-w-lg">
           We deliver end-to-end IT solutions—from cloud infrastructure and DevOps to custom software development and digital transformation strategies.
         </p>
         <div className="flex items-center gap-3">
-          <Button variant="default" className="bg-[#E5B800] text-[#1E3A5F] hover:bg-[#E5B800]/90">
+          <Button variant="default" className="bg-[#14B8A6] text-[#1E3A5F] hover:bg-[#14B8A6]/90">
             <Link href="/contact">
               Start Your Project
             </Link>
@@ -92,8 +92,8 @@ export default function FeatureSection() {
       <div className="relative w-full md:w-1/2 h-[20rem] md:h-full flex items-center justify-start overflow-hidden z-20">
         <div className="relative w-[50rem] h-[50rem] translate-x-[50%] flex items-center justify-center">
           {/* Center Circle */}
-          <div className="w-24 h-24 rounded-full bg-[#1E3A5F] shadow-[0_0_30px_rgba(229,184,0,0.2)] flex items-center justify-center border border-[#E5B800]/30">
-            <FaReact className="w-12 h-12 text-[#E5B800]" />
+          <div className="w-24 h-24 rounded-full bg-[#1E3A5F] shadow-[0_0_30px_rgba(20,184,166,0.2)] flex items-center justify-center border border-[#14B8A6]/30">
+            <FaReact className="w-12 h-12 text-[#14B8A6]" />
           </div>
 
           {/* Generate Orbits */}
@@ -105,7 +105,7 @@ export default function FeatureSection() {
             return (
               <div
                 key={orbitIdx}
-                className="absolute rounded-full border-2 border-dotted border-[#E5B800]/30"
+                className="absolute rounded-full border-2 border-dotted border-[#14B8A6]/30"
                 style={{
                   width: size,
                   height: size,

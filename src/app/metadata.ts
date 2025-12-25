@@ -26,7 +26,7 @@ export const homeMetadata: Metadata = {
     siteName: "TechnoRealm",
     images: [
       {
-        url: `${siteUrl}/logo-33.png`,
+        url: `${siteUrl}/logo image/loading12/1234.png`,
         width: 1200,
         height: 630,
         alt: "TechnoRealm - IT Consulting Services",
@@ -39,7 +39,7 @@ export const homeMetadata: Metadata = {
     card: "summary_large_image",
     title: "Expert IT Consulting & Technology Solutions | TechnoRealm",
     description: "Transform your business with cutting-edge IT consulting services.",
-    images: [`${siteUrl}/logo-33.png`],
+    images: [`${siteUrl}/logo image/loading12/1234.png`],
   },
   alternates: {
     canonical: siteUrl,
@@ -64,7 +64,7 @@ export const aboutMetadata: Metadata = {
     siteName: "TechnoRealm",
     images: [
       {
-        url: `${siteUrl}/logo-33.png`,
+        url: `${siteUrl}/logo image/loading12/1234.png`,
         width: 1200,
         height: 630,
         alt: "About TechnoRealm",
@@ -77,7 +77,7 @@ export const aboutMetadata: Metadata = {
     card: "summary_large_image",
     title: "About Us - Technology Consulting Experts | TechnoRealm",
     description: "Learn about TechnoRealm - a boutique technology consulting studio.",
-    images: [`${siteUrl}/logo-33.png`],
+    images: [`${siteUrl}/logo image/loading12/1234.png`],
   },
   alternates: {
     canonical: `${siteUrl}/about`,
@@ -105,7 +105,7 @@ export const servicesMetadata: Metadata = {
     siteName: "TechnoRealm",
     images: [
       {
-        url: `${siteUrl}/logo-33.png`,
+        url: `${siteUrl}/logo image/loading12/1234.png`,
         width: 1200,
         height: 630,
         alt: "TechnoRealm IT Services",
@@ -118,7 +118,7 @@ export const servicesMetadata: Metadata = {
     card: "summary_large_image",
     title: "IT Services - Cloud, AI/ML, Cybersecurity & More | TechnoRealm",
     description: "Comprehensive IT services for your business needs.",
-    images: [`${siteUrl}/logo-33.png`],
+    images: [`${siteUrl}/logo image/loading12/1234.png`],
   },
   alternates: {
     canonical: `${siteUrl}/services`,
@@ -142,7 +142,7 @@ export const contactMetadata: Metadata = {
     siteName: "TechnoRealm",
     images: [
       {
-        url: `${siteUrl}/logo-33.png`,
+        url: `${siteUrl}/logo image/loading12/1234.png`,
         width: 1200,
         height: 630,
         alt: "Contact TechnoRealm",
@@ -155,7 +155,7 @@ export const contactMetadata: Metadata = {
     card: "summary_large_image",
     title: "Contact Us - Get Expert IT Consulting | TechnoRealm",
     description: "Get in touch with TechnoRealm's IT consulting experts.",
-    images: [`${siteUrl}/logo-33.png`],
+    images: [`${siteUrl}/logo image/loading12/1234.png`],
   },
   alternates: {
     canonical: `${siteUrl}/contact`,
@@ -180,7 +180,7 @@ export const faqsMetadata: Metadata = {
     siteName: "TechnoRealm",
     images: [
       {
-        url: `${siteUrl}/logo-33.png`,
+        url: `${siteUrl}/logo image/loading12/1234.png`,
         width: 1200,
         height: 630,
         alt: "TechnoRealm FAQs",
@@ -193,7 +193,7 @@ export const faqsMetadata: Metadata = {
     card: "summary_large_image",
     title: "FAQs - IT Consulting Questions Answered | TechnoRealm",
     description: "Frequently asked questions about IT consulting services.",
-    images: [`${siteUrl}/logo-33.png`],
+    images: [`${siteUrl}/logo image/loading12/1234.png`],
   },
   alternates: {
     canonical: `${siteUrl}/faqs`,
@@ -218,7 +218,7 @@ export function getServiceMetadata(serviceName: string, description: string): Me
       siteName: "TechnoRealm",
       images: [
         {
-          url: `${siteUrl}/logo-33.png`,
+          url: `${siteUrl}/logo image/loading12/1234.png`,
           width: 1200,
           height: 630,
           alt: `${serviceName} - TechnoRealm`,
@@ -231,7 +231,7 @@ export function getServiceMetadata(serviceName: string, description: string): Me
       card: "summary_large_image",
       title: `${serviceName} - Expert IT Consulting Services | TechnoRealm`,
       description: `${description}`,
-      images: [`${siteUrl}/logo-33.png`],
+      images: [`${siteUrl}/logo image/loading12/1234.png`],
     },
     alternates: {
       canonical: `${siteUrl}/services/${serviceName.toLowerCase().replace(/\s+/g, "-")}`,

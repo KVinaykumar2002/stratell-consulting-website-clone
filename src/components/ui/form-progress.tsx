@@ -14,14 +14,14 @@ export const FormProgress = ({ completed, total }: FormProgressProps) => {
     <div className="mb-6">
       <div className="flex items-center justify-between mb-2">
         <span className="text-sm text-zinc-400">Form Progress</span>
-        <span className="text-sm font-medium text-[#FFD700]">{completed}/{total}</span>
+        <span className="text-sm font-medium text-[#14B8A6]">{completed}/{total}</span>
       </div>
       <div className="h-2 bg-zinc-800/50 rounded-full overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: `${percentage}%` }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="h-full bg-gradient-to-r from-[#FFD700] via-[#E5B800] to-[#FFD700] rounded-full relative overflow-hidden"
+          className="h-full bg-gradient-to-r from-[#14B8A6] via-[#14B8A6] to-[#14B8A6] rounded-full relative overflow-hidden"
         >
           <motion.div
             animate={{

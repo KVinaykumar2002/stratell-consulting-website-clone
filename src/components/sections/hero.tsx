@@ -7,7 +7,7 @@ import { useState, useEffect, useCallback, useMemo } from "react";
 export default function HeroSection() {
   // Memoize static arrays to prevent re-renders
   const words = useMemo(() => ["Business", "Ideas", "Goals", "Vision"], []);
-  const wordColor = "text-[#E5B800]"; // Single color - no array needed
+  const wordColor = "text-[#14B8A6]"; // Single color - no array needed
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
   // Memoize the interval callback
@@ -66,7 +66,7 @@ export default function HeroSection() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.5 }}
-                    className={`inline-block italic ${wordColor} drop-shadow-[0_0_20px_rgba(229,184,0,0.5)]`}
+                    className={`inline-block italic ${wordColor} drop-shadow-[0_0_20px_rgba(20,184,166,0.5)]`}
                     aria-live="polite"
                     aria-atomic="true"
                   >
@@ -89,7 +89,7 @@ export default function HeroSection() {
             </p>
             <a
               href="/contact"
-              className="group relative inline-flex items-center h-12 sm:h-14 px-5 sm:px-6 md:px-8 rounded-xl bg-[#E5B800] text-[#1E3A5F] overflow-hidden transition-all duration-300 shadow-[0_0_30px_rgba(229,184,0,0.3)] text-sm sm:text-base font-semibold"
+              className="group relative inline-flex items-center h-12 sm:h-14 px-5 sm:px-6 md:px-8 rounded-xl bg-[#14B8A6] text-[#1E3A5F] overflow-hidden transition-all duration-300 shadow-[0_0_30px_rgba(20,184,166,0.3)] text-sm sm:text-base font-semibold"
               aria-label="Book a free consultation with TechnoRealm IT experts"
             >
               {/* Overlay animation from left to right */}
@@ -99,13 +99,13 @@ export default function HeroSection() {
               />
               
               {/* Text - changes to gold on hover */}
-              <span className="relative z-10 font-semibold text-base leading-none transition-colors duration-300 delay-100 group-hover:text-[#E5B800] mr-3">
+              <span className="relative z-10 font-semibold text-base leading-none transition-colors duration-300 delay-100 group-hover:text-[#14B8A6] mr-3">
                 Book a Consultation
               </span>
               
               {/* Navy circle with arrow */}
               <span 
-                className="relative z-10 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-[#1E3A5F] rounded-full transition-all duration-300 group-hover:bg-[#E5B800] group-hover:translate-x-1"
+                className="relative z-10 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-[#1E3A5F] rounded-full transition-all duration-300 group-hover:bg-[#14B8A6] group-hover:translate-x-1"
                 aria-hidden="true"
               >
                 <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 text-white group-hover:text-[#1E3A5F] transition-colors" />

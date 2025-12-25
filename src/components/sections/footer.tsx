@@ -82,7 +82,7 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-zinc-950 to-[#0a1628] text-white font-body relative">
       {/* Top accent line */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-[#E5B800] to-transparent" />
+      <div className="h-1 bg-gradient-to-r from-transparent via-[#14B8A6] to-transparent" />
       
       <div className="container pt-10 pb-6">
         {/* Main Grid */}
@@ -92,7 +92,7 @@ const Footer = () => {
             <div>
               <Link href="/" className="inline-block relative h-32 md:h-40 lg:h-48" aria-label="TechnoRealm Home - IT Consulting Services">
                 <Image
-                  src="/chatgpt_log.png"
+                  src="/logo image/loading12/1234.png"
                   alt="TechnoRealm - Expert IT Consulting and Technology Solutions Logo"
                   width={500}
                   height={150}
@@ -103,13 +103,13 @@ const Footer = () => {
 
               <Link
                 href="/contact"
-                className="group relative inline-flex items-center h-14 px-6 mt-10 bg-[#E5B800] text-[#1E3A5F] rounded-xl overflow-hidden transition-all duration-300 shadow-[0_0_20px_rgba(229,184,0,0.2)]"
+                className="group relative inline-flex items-center h-14 px-6 mt-10 bg-[#14B8A6] text-[#1E3A5F] rounded-xl overflow-hidden transition-all duration-300 shadow-[0_0_20px_rgba(20,184,166,0.2)]"
               >
                 <span className="absolute inset-0 bg-[#1E3A5F] transform origin-left -translate-x-full transition-transform duration-500 ease-in-out group-hover:translate-x-0 rounded-xl"></span>
-                <span className="relative z-10 font-semibold text-base leading-none transition-colors duration-300 delay-100 group-hover:text-[#E5B800] mr-3">
+                <span className="relative z-10 font-semibold text-base leading-none transition-colors duration-300 delay-100 group-hover:text-[#14B8A6] mr-3">
                   Enquiry Now
                 </span>
-                <div className="relative z-10 flex items-center justify-center w-10 h-10 bg-[#1E3A5F] rounded-full transition-all duration-300 group-hover:bg-[#E5B800] group-hover:translate-x-1">
+                <div className="relative z-10 flex items-center justify-center w-10 h-10 bg-[#1E3A5F] rounded-full transition-all duration-300 group-hover:bg-[#14B8A6] group-hover:translate-x-1">
                   <ArrowRight className="w-4 h-4 text-white group-hover:text-[#1E3A5F] transition-colors" />
                 </div>
               </Link>
@@ -117,11 +117,11 @@ const Footer = () => {
 
             {/* Menu */}
             <div>
-              <h3 className="text-sm uppercase text-[#E5B800] mb-6 tracking-wider">Menu</h3>
+              <h3 className="text-sm uppercase text-[#14B8A6] mb-6 tracking-wider">Menu</h3>
               <ul className="space-y-3">
                 {menuItems.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-zinc-400 hover:text-[#E5B800] transition-colors">{item.name}</Link>
+                    <Link href={item.href} className="text-zinc-400 hover:text-[#14B8A6] transition-colors">{item.name}</Link>
                   </li>
                 ))}
               </ul>
@@ -129,15 +129,15 @@ const Footer = () => {
 
             {/* Services - Important for SEO internal linking */}
             <div>
-              <h3 className="text-sm uppercase text-[#E5B800] mb-6 tracking-wider">Services</h3>
+              <h3 className="text-sm uppercase text-[#14B8A6] mb-6 tracking-wider">Services</h3>
               <ul className="space-y-3">
                 {serviceLinks.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-zinc-400 hover:text-[#E5B800] transition-colors text-sm">{item.name}</Link>
+                    <Link href={item.href} className="text-zinc-400 hover:text-[#14B8A6] transition-colors text-sm">{item.name}</Link>
                   </li>
                 ))}
                 <li>
-                  <Link href="/services" className="text-[#E5B800] hover:text-[#f5c800] transition-colors text-sm font-medium">
+                  <Link href="/services" className="text-[#14B8A6] hover:text-[#0D9488] transition-colors text-sm font-medium">
                     View All →
                   </Link>
                 </li>
@@ -146,7 +146,7 @@ const Footer = () => {
 
             {/* Socials */}
             <div>
-              <h3 className="text-sm uppercase text-[#E5B800] mb-6 tracking-wider">Socials</h3>
+              <h3 className="text-sm uppercase text-[#14B8A6] mb-6 tracking-wider">Socials</h3>
               <ul className="space-y-3">
                 {socialLinks.map((link) => (
                   <li key={link.name}>
@@ -155,10 +155,10 @@ const Footer = () => {
                       target="_blank" 
                       rel="noopener noreferrer nofollow"
                       aria-label={`Follow TechnoRealm on ${link.name}`}
-                      className="flex items-center gap-3 text-zinc-400 hover:text-[#E5B800] transition-colors group"
+                      className="flex items-center gap-3 text-zinc-400 hover:text-[#14B8A6] transition-colors group"
                     >
                       <link.icon 
-                        className="w-5 h-5 text-[#E5B800] group-hover:scale-110 transition-transform" 
+                        className="w-5 h-5 text-[#14B8A6] group-hover:scale-110 transition-transform" 
                       />
                       {link.name}
                     </a>
@@ -169,22 +169,22 @@ const Footer = () => {
 
             {/* Contact */}
             <address className="not-italic">
-              <h3 className="text-sm uppercase text-[#E5B800] mb-6 tracking-wider">Contact</h3>
+              <h3 className="text-sm uppercase text-[#14B8A6] mb-6 tracking-wider">Contact</h3>
               <ul className="space-y-3 text-zinc-400">
                 <li>
-                  <a href="tel:+15558676543" className="flex items-center gap-3 hover:text-[#E5B800] transition-colors group">
-                    <HiPhone className="w-5 h-5 text-[#E5B800] group-hover:scale-110 transition-transform" />
+                  <a href="tel:+15558676543" className="flex items-center gap-3 hover:text-[#14B8A6] transition-colors group">
+                    <HiPhone className="w-5 h-5 text-[#14B8A6] group-hover:scale-110 transition-transform" />
                     +1 (555) 867-6543
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:contact@technorealm.com" className="flex items-center gap-3 hover:text-[#E5B800] transition-colors group">
-                    <HiEnvelope className="w-5 h-5 text-[#E5B800] group-hover:scale-110 transition-transform" />
+                  <a href="mailto:contact@technorealm.com" className="flex items-center gap-3 hover:text-[#14B8A6] transition-colors group">
+                    <HiEnvelope className="w-5 h-5 text-[#14B8A6] group-hover:scale-110 transition-transform" />
                     contact@technorealm.com
                   </a>
                 </li>
                 <li className="flex gap-3">
-                  <HiMapPin className="w-5 h-5 text-[#E5B800] flex-shrink-0 mt-0.5" />
+                  <HiMapPin className="w-5 h-5 text-[#14B8A6] flex-shrink-0 mt-0.5" />
                   <span>
                     420 TechnoRealm Avenue,<br />
                     Suite 300<br />
@@ -216,8 +216,8 @@ const Footer = () => {
           </p>
 
           <div className="flex gap-4 text-sm text-white/50">
-            <Link href="/privacy" className="hover:text-[#E5B800] transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-[#E5B800] transition-colors">Terms & Conditions</Link>
+            <Link href="/privacy" className="hover:text-[#14B8A6] transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-[#14B8A6] transition-colors">Terms & Conditions</Link>
           </div>
         </div>
       </div>
@@ -226,7 +226,7 @@ const Footer = () => {
       {isVisible && (
         <motion.button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-6 right-6 bg-[#E5B800] text-[#1E3A5F] px-4 py-2 rounded-full shadow-[0_0_20px_rgba(229,184,0,0.3)] z-50 font-bold"
+          className="fixed bottom-6 right-6 bg-[#14B8A6] text-[#1E3A5F] px-4 py-2 rounded-full shadow-[0_0_20px_rgba(20,184,166,0.3)] z-50 font-bold"
           animate={{
             opacity: 1,
             y: [0, -10, 0],
@@ -235,7 +235,7 @@ const Footer = () => {
           initial={{ opacity: 0, y: 20 }}
           whileHover={{
             backgroundColor: "#1E3A5F",
-            color: "#E5B800",
+            color: "#14B8A6",
             scale: 1.15,
             y: -5,
           }}

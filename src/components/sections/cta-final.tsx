@@ -28,20 +28,20 @@ const CtaFinal = () => {
       />
       <div className="absolute inset-0 z-10 bg-gradient-to-br from-[#1E3A5F]/80 via-[#0a1628]/70 to-[#1E3A5F]/80" />
       <motion.div 
-        className="relative z-20 flex w-full max-w-[680px] flex-col items-center gap-6 rounded-3xl bg-white/[.08] p-10 text-center backdrop-blur-[8px] md:p-8 sm:p-6 border border-[#E5B800]/20"
+        className="relative z-20 flex w-full max-w-[680px] flex-col items-center gap-6 rounded-3xl bg-white/[.08] p-10 text-center backdrop-blur-[8px] md:p-8 sm:p-6 border border-[#14B8A6]/20"
         initial={{ opacity: 0, y: 30 }}
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <h2 className="font-display text-[56px] font-normal leading-[1.2] tracking-[-0.01em] text-white md:text-[48px] sm:text-[40px]">
-          Ready to <em className="italic text-[#E5B800]">Transform</em> Your Business?
+          Ready to <em className="italic text-[#14B8A6]">Transform</em> Your Business?
         </h2>
         <p className="max-w-xl font-body text-base leading-[1.6] text-white/70">
           Schedule a free consultation and discover how TechnoRealm can streamline your operations, optimize performance, and deliver measurable results.
         </p>
         <Link
           href="/contact"
-          className="group relative mt-2 inline-flex items-center h-14 px-6 rounded-xl bg-[#E5B800] text-[#1E3A5F] overflow-hidden font-semibold transition-all duration-300 shadow-[0_0_30px_rgba(229,184,0,0.3)]"
+          className="group relative mt-2 inline-flex items-center h-14 px-6 rounded-xl bg-[#14B8A6] text-[#1E3A5F] overflow-hidden font-semibold transition-all duration-300 shadow-[0_0_30px_rgba(20,184,166,0.3)]"
         >
           {/* Overlay animation from left to right */}
           <span className="absolute inset-0 bg-white transform origin-left -translate-x-full transition-transform duration-500 ease-in-out group-hover:translate-x-0 rounded-xl"></span>
@@ -52,7 +52,7 @@ const CtaFinal = () => {
           </span>
           
           {/* Navy circle with arrow */}
-          <div className="relative z-10 flex items-center justify-center w-10 h-10 bg-[#1E3A5F] rounded-full transition-all duration-300 group-hover:bg-[#E5B800] group-hover:translate-x-1">
+          <div className="relative z-10 flex items-center justify-center w-10 h-10 bg-[#1E3A5F] rounded-full transition-all duration-300 group-hover:bg-[#14B8A6] group-hover:translate-x-1">
             <ArrowRight className="w-4 h-4 text-white group-hover:text-[#1E3A5F] transition-colors" />
           </div>
         </Link>

@@ -48,7 +48,7 @@ export function RelatedServices({
     <section className={`py-16 ${className}`}>
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">
-          Related <span className="text-[#E5B800]">Services</span>
+          Related <span className="text-[#14B8A6]">Services</span>
         </h2>
         <p className="text-zinc-400 mb-8">
           Explore other services that complement your needs
@@ -59,15 +59,15 @@ export function RelatedServices({
             <Link
               key={service.slug}
               href={`/services/${service.slug}`}
-              className="group block p-6 rounded-xl bg-[#1A2B42]/50 border border-white/5 hover:border-[#E5B800]/30 transition-all duration-300 hover:bg-[#1A2B42]"
+              className="group block p-6 rounded-xl bg-[#1A2B42]/50 border border-white/5 hover:border-[#14B8A6]/30 transition-all duration-300 hover:bg-[#1A2B42]"
             >
-              <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#E5B800] transition-colors">
+              <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#14B8A6] transition-colors">
                 {service.title}
               </h3>
               <p className="text-sm text-zinc-400 mb-4 line-clamp-2">
                 {service.shortDescription}
               </p>
-              <span className="inline-flex items-center gap-2 text-sm text-[#E5B800] font-medium">
+              <span className="inline-flex items-center gap-2 text-sm text-[#14B8A6] font-medium">
                 Learn More
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
@@ -78,7 +78,7 @@ export function RelatedServices({
         <div className="mt-8 text-center">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[#E5B800]/30 text-[#E5B800] hover:bg-[#E5B800]/10 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[#14B8A6]/30 text-[#14B8A6] hover:bg-[#14B8A6]/10 transition-colors"
           >
             View All Services
             <ArrowRight className="w-4 h-4" />
@@ -109,7 +109,7 @@ export function ServiceQuickLinks({
           <li key={service.slug}>
             <Link
               href={`/services/${service.slug}`}
-              className="text-sm text-zinc-400 hover:text-[#E5B800] transition-colors"
+              className="text-sm text-zinc-400 hover:text-[#14B8A6] transition-colors"
             >
               {service.title}
             </Link>
@@ -126,15 +126,15 @@ export function CTAWithLinks() {
     <section className="py-20 bg-gradient-to-b from-[#0f1729] to-[#0A0A10]">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
-          Ready to Transform Your <span className="text-[#E5B800]">Business</span>?
+          Ready to Transform Your <span className="text-[#14B8A6]">Business</span>?
         </h2>
         <p className="text-zinc-400 max-w-2xl mx-auto mb-8">
           Partner with TechnoRealm for expert IT consulting. From{' '}
-          <Link href="/services/cloud-infrastructure" className="text-[#E5B800] hover:underline">
+          <Link href="/services/cloud-infrastructure" className="text-[#14B8A6] hover:underline">
             cloud infrastructure
           </Link>{' '}
           to{' '}
-          <Link href="/services/ai-ml" className="text-[#E5B800] hover:underline">
+          <Link href="/services/ai-ml" className="text-[#14B8A6] hover:underline">
             AI solutions
           </Link>
           , we deliver results.
@@ -142,13 +142,13 @@ export function CTAWithLinks() {
         <div className="flex flex-wrap justify-center gap-4">
           <Link
             href="/contact"
-            className="px-8 py-3 bg-[#E5B800] text-[#0f1729] font-semibold rounded-lg hover:bg-[#f5c800] transition-colors"
+            className="px-8 py-3 bg-[#14B8A6] text-[#0f1729] font-semibold rounded-lg hover:bg-[#0D9488] transition-colors"
           >
             Get Started
           </Link>
           <Link
             href="/services"
-            className="px-8 py-3 border border-[#E5B800]/30 text-white rounded-lg hover:bg-[#E5B800]/10 transition-colors"
+            className="px-8 py-3 border border-[#14B8A6]/30 text-white rounded-lg hover:bg-[#14B8A6]/10 transition-colors"
           >
             Explore Services
           </Link>

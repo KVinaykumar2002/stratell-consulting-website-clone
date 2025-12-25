@@ -13,12 +13,12 @@ export function OrganizationSchema() {
     url: siteUrl,
     logo: {
       "@type": "ImageObject",
-      url: `${siteUrl}/logo-33.png`,
+      url: `${siteUrl}/logo image/loading12/1234.png`,
       width: 500,
       height: 150,
       caption: "TechnoRealm Logo"
     },
-    image: `${siteUrl}/logo-33.png`,
+    image: `${siteUrl}/logo image/loading12/1234.png`,
     description: "Expert IT consulting and technology solutions provider specializing in cloud infrastructure, AI/ML, cybersecurity, DevOps, and digital transformation. Serving enterprises across the United States with cutting-edge technology solutions.",
     foundingDate: "2020",
     founder: {
@@ -188,7 +188,7 @@ export function LocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "TechnoRealm",
-    image: `${siteUrl}/logo-33.png`,
+    image: `${siteUrl}/logo image/loading12/1234.png`,
     "@id": `${siteUrl}#localbusiness`,
     url: siteUrl,
     telephone: "+1-555-867-6543",
@@ -279,7 +279,7 @@ export function DetailedServiceSchema(service: {
       "@type": "Organization",
       name: "TechnoRealm",
       url: siteUrl,
-      logo: `${siteUrl}/logo-33.png`
+      logo: `${siteUrl}/logo image/loading12/1234.png`
     },
     areaServed: {
       "@type": "Country",

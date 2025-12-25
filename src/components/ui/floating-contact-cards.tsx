@@ -62,10 +62,10 @@ const FloatingCard = ({ icon, title, content, delay = 0 }: FloatingCardProps) =>
           transform: 'translateZ(75px)',
           transformStyle: 'preserve-3d',
         }}
-        className="relative rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#1A2B42]/80 via-[#1E3A5F]/60 to-[#0A0A10]/80 backdrop-blur-xl border border-[#FFD700]/20 p-4 sm:p-6 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_48px_rgba(255,215,0,0.3)] transition-all duration-300"
+        className="relative rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#1A2B42]/80 via-[#1E3A5F]/60 to-[#0A0A10]/80 backdrop-blur-xl border border-[#14B8A6]/20 p-4 sm:p-6 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_48px_rgba(20,184,166,0.3)] transition-all duration-300"
       >
         {/* Glow effect */}
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#FFD700]/0 via-[#FFD700]/0 to-[#FFD700]/0 group-hover:from-[#FFD700]/10 group-hover:via-[#FFD700]/5 group-hover:to-[#FFD700]/10 transition-all duration-500 -z-10 blur-xl" />
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#14B8A6]/0 via-[#14B8A6]/0 to-[#14B8A6]/0 group-hover:from-[#14B8A6]/10 group-hover:via-[#14B8A6]/5 group-hover:to-[#14B8A6]/10 transition-all duration-500 -z-10 blur-xl" />
         
         {/* Icon */}
         <div
@@ -74,7 +74,7 @@ const FloatingCard = ({ icon, title, content, delay = 0 }: FloatingCardProps) =>
           }}
           className="mb-4"
         >
-          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-[#FFD700] to-[#E5B800] flex items-center justify-center text-[#1E3A5F] shadow-lg">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-[#14B8A6] to-[#14B8A6] flex items-center justify-center text-[#1E3A5F] shadow-lg">
             <div className="w-5 h-5 sm:w-6 sm:h-6">
               {icon}
             </div>

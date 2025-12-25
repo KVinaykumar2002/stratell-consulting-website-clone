@@ -333,7 +333,7 @@ export function DynamicFrameLayout({
             />
             {/* Mobile touch indicator */}
             {isMobile && hovered?.row === row && hovered?.col === col && (
-              <div className="absolute inset-0 border-2 border-[#FFD700] rounded-lg pointer-events-none z-20" />
+              <div className="absolute inset-0 border-2 border-[#14B8A6] rounded-lg pointer-events-none z-20" />
             )}
           </motion.div>
         )

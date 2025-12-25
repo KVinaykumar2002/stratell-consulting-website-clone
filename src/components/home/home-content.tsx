@@ -54,7 +54,7 @@ const DynamicFrameLayout = dynamic(
     ssr: false,
     loading: () => (
       <div className="w-full h-full flex items-center justify-center">
-        <div className="w-16 h-16 border-4 border-[#E5B800] border-t-transparent rounded-full animate-spin" />
+        <div className="w-16 h-16 border-4 border-[#14B8A6] border-t-transparent rounded-full animate-spin" />
       </div>
     )
   }
@@ -137,21 +137,21 @@ export default function HomeContent() {
         <div className="mx-auto w-full max-w-[1200px] relative z-10">
           <div className="mb-8 sm:mb-10 md:mb-12 text-center">
             <motion.div
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E5B800]/30 bg-[#E5B800]/10 px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#14B8A6]/30 bg-[#14B8A6]/10 px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#E5B800] animate-pulse"></div>
-              <p className="text-xs sm:text-sm font-medium text-[#E5B800] tracking-wide">
+              <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#14B8A6] animate-pulse"></div>
+              <p className="text-xs sm:text-sm font-medium text-[#14B8A6] tracking-wide">
                 Our Services
               </p>
             </motion.div>
             <h2 
               className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal leading-[1.2] tracking-[-0.02em] text-white mb-3 sm:mb-4 px-4"
             >
-              Our Technology <span className="text-[#E5B800]">Services</span>
+              Our Technology <span className="text-[#14B8A6]">Services</span>
             </h2>
             <motion.p 
               className="max-w-2xl mx-auto font-body text-sm sm:text-base md:text-lg font-normal leading-[1.6] text-zinc-400 px-4"

@@ -35,7 +35,7 @@ export const TypingAnimation = ({ text, speed = 50, className = '' }: TypingAnim
         <motion.span
           animate={{ opacity: [1, 0] }}
           transition={{ duration: 0.8, repeat: Infinity, repeatType: 'reverse' }}
-          className="inline-block w-0.5 h-[1em] bg-[#FFD700] ml-1 align-middle"
+          className="inline-block w-0.5 h-[1em] bg-[#14B8A6] ml-1 align-middle"
         />
       )}
     </h2>
