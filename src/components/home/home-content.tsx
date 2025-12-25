@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Server, Brain, Code, Cloud } from "lucide-react";
 import Header from "@/components/sections/header";
 import HeroSection from "@/components/sections/hero";
+import PremiumServices from "@/components/sections/premium-services";
 
 // Import JSON animations - these are small and can be imported directly
 import webDevelopmentAnimation from "@/app/web_development.json";
@@ -46,6 +47,15 @@ const GlobalNetworkSection = dynamic(() => import("@/components/sections/global-
 const FeaturesAccordionSection = dynamic(() => import("@/components/sections/features-accordion"), { 
   ssr: false 
 });
+const WhyChooseUs = dynamic(() => import("@/components/sections/why-choose-us"), { 
+  ssr: false 
+});
+const Testimonials = dynamic(() => import("@/components/sections/testimonials"), { 
+  ssr: false 
+});
+const StrategicCTA = dynamic(() => import("@/components/sections/strategic-cta"), { 
+  ssr: false 
+});
 
 // Lazy load heavy components
 const DynamicFrameLayout = dynamic(
@@ -67,6 +77,7 @@ export default function HomeContent() {
     <main className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
       <Header />
       <HeroSection />
+      <PremiumServices />
       <Feature108
         badge="Our Expertise"
         heading="Comprehensive IT Solutions Tailored to Your Needs"
@@ -293,10 +304,17 @@ export default function HomeContent() {
         </div>
       </section>
     
+      <WhyChooseUs />
+      <StrategicCTA
+        title="Ready to Transform Your Business?"
+        subtitle="Let's discuss how TechnoRealm can help you achieve your technology goals."
+        primaryCTA={{ text: "Book a Free Consultation", href: "/contact" }}
+        secondaryCTA={{ text: "View Our Services", href: "/services" }}
+      />
       <FeaturesAccordionSection />
+      <Testimonials />
       <GlobalNetworkSection />
       <TrustedBy />
-      {/* <Testimonials /> */}
       <div className="container px-6 pb-20">
         <CtaFinal />
       </div>

@@ -100,11 +100,11 @@ const AboutContentSection = () => {
                 Client Impact
               </p>
               <p className="text-2xl md:text-3xl font-semibold text-[#1E3A5F]">
-                <AnimatedStatNumber value={95} />
-                <span className="ml-0.5 align-baseline text-xl">%</span>
+                <AnimatedStatNumber value={500} />
+                <span className="ml-0.5 align-baseline text-xl">+</span>
               </p>
               <p className="text-xs text-gray-600 mt-1">
-                of clients engage with us on multi‑year, multi‑project roadmaps.
+                Projects Delivered Successfully
               </p>
             </motion.div>
 
@@ -119,12 +119,12 @@ const AboutContentSection = () => {
               <p className="text-xs font-medium uppercase tracking-[0.16em] text-gray-600 mb-2">
                 Delivery
               </p>
-              <p className="text-2xl md:text-3xl font-semibold text-[#1E3A5F] flex items-baseline gap-1">
-                <AnimatedStatNumber value={4.8} decimals={1} />
-                <span className="text-base text-gray-600">/5</span>
+              <p className="text-2xl md:text-3xl font-semibold text-[#1E3A5F]">
+                <AnimatedStatNumber value={10} />
+                <span className="ml-0.5 align-baseline text-xl">+</span>
               </p>
               <p className="text-xs text-gray-600 mt-1">
-                average delivery satisfaction across transformation engagements.
+                Years of Experience
               </p>
             </motion.div>
 
@@ -140,11 +140,11 @@ const AboutContentSection = () => {
                 Reach
               </p>
               <p className="text-2xl md:text-3xl font-semibold text-[#1E3A5F]">
-                <AnimatedStatNumber value={10} />
-                <span className="ml-0.5 align-baseline text-xl">+</span>
+                <AnimatedStatNumber value={98} />
+                <span className="ml-0.5 align-baseline text-xl">%</span>
               </p>
               <p className="text-xs text-gray-600 mt-1">
-                industries served across finance, SaaS, retail, and emerging tech.
+                Client Satisfaction Rate
               </p>
             </motion.div>
           </div>

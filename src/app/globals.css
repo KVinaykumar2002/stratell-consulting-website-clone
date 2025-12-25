@@ -3,9 +3,12 @@
 @import "tw-animate-css";
 
 @theme {
-  /* TechnoRealm Brand Colors - Updated to match new logo */
-  --color-tr-navy: #1E3A5F;
-  --color-tr-teal: #14B8A6;
+  /* TechnoRealm Brand Colors - Enterprise Premium Palette */
+  --color-tr-navy: #0A1628; /* Deep Navy / Midnight Blue - Primary */
+  --color-tr-navy-light: #1E3A5F; /* Lighter navy for accents */
+  --color-tr-yellow: #FFD700; /* Tech Yellow - Accent */
+  --color-tr-blue: #00D4FF; /* Electric Blue - Accent */
+  --color-tr-teal: #14B8A6; /* Keep teal for compatibility */
   --color-tr-cyan: #00D4FF;
   --color-tr-dark: #0a1628;
   
@@ -19,17 +22,17 @@
   --color-popover: #FFFFFF;
   --color-popover-foreground: #1E3A5F;
 
-  --color-primary: #14B8A6;
+  --color-primary: #0A1628; /* Deep Navy */
   --color-primary-foreground: #FFFFFF;
 
   --color-secondary: #F1F5F9;
-  --color-secondary-foreground: #1E3A5F;
+  --color-secondary-foreground: #0A1628;
 
   --color-muted: #F1F5F9;
   --color-muted-foreground: #64748B;
 
-  --color-accent: #14B8A6;
-  --color-accent-foreground: #FFFFFF;
+  --color-accent: #FFD700; /* Tech Yellow */
+  --color-accent-foreground: #0A1628;
 
   --color-destructive: #ef4444;
   --color-destructive-foreground: #FFFFFF;

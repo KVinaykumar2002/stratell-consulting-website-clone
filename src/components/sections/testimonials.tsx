@@ -1,109 +1,151 @@
 "use client";
 
-import { TestimonialsColumn, type Testimonial } from "@/components/ui/testimonials-columns-1";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
+import { Star, Quote } from "lucide-react";
+import { useState, useEffect } from "react";
 
-const testimonials: Testimonial[] = [
+const testimonials = [
   {
-    text: "This ERP revolutionized our operations, streamlining finance and inventory. The cloud-based platform keeps us productive, even remotely.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face",
-    name: "Briana Patton",
-    role: "Operations Manager",
-  },
-  {
-    text: "Implementing this ERP was smooth and quick. The customizable, user-friendly interface made team training effortless.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-    name: "Bilal Ahmed",
-    role: "IT Manager",
-  },
-  {
-    text: "The support team is exceptional, guiding us through setup and providing ongoing assistance, ensuring our satisfaction.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
-    name: "Saman Malik",
-    role: "Customer Support Lead",
-  },
-  {
-    text: "This ERP's seamless integration enhanced our business operations and efficiency. Highly recommend for its intuitive interface.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
-    name: "Omar Raza",
+    name: "Sarah Johnson",
+    company: "TechStart Inc.",
     role: "CEO",
+    content: "TechnoRealm transformed our entire IT infrastructure. Their cloud migration strategy saved us 40% on operational costs while improving performance. Exceptional team!",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&q=80",
   },
   {
-    text: "Its robust features and quick support have transformed our workflow, making us significantly more efficient.",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face",
-    name: "Zainab Hussain",
-    role: "Project Manager",
+    name: "Michael Chen",
+    company: "Global Solutions LLC",
+    role: "CTO",
+    content: "The AI automation solutions they implemented have revolutionized our customer service. Response times improved by 60% and customer satisfaction is at an all-time high.",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&q=80",
   },
   {
-    text: "The smooth implementation exceeded expectations. It streamlined processes, improving overall business performance.",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop&crop=face",
-    name: "Aliza Khan",
-    role: "Business Analyst",
+    name: "Emily Rodriguez",
+    company: "InnovateCorp",
+    role: "VP of Operations",
+    content: "Working with TechnoRealm has been a game-changer. Their cybersecurity implementation protected us from multiple threats and their team is always responsive.",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&q=80",
   },
   {
-    text: "Our business functions improved with a user-friendly design and positive customer feedback.",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face",
-    name: "Farhan Siddiqui",
-    role: "Marketing Director",
-  },
-  {
-    text: "They delivered a solution that exceeded expectations, understanding our needs and enhancing our operations.",
-    image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&h=400&fit=crop&crop=face",
-    name: "Sana Sheikh",
-    role: "Sales Manager",
-  },
-  {
-    text: "Using this ERP, our online presence and conversions significantly improved, boosting business performance.",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face",
-    name: "Hassan Ali",
-    role: "E-commerce Manager",
+    name: "David Thompson",
+    company: "ScaleUp Enterprises",
+    role: "Founder",
+    content: "From web development to DevOps, TechnoRealm has been our trusted technology partner. They understand our business needs and deliver solutions that drive growth.",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&q=80",
   },
 ];
 
-const firstColumn = testimonials.slice(0, 3);
-const secondColumn = testimonials.slice(3, 6);
-const thirdColumn = testimonials.slice(6, 9);
+export default function Testimonials() {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-const Testimonials = () => {
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="bg-background my-20 relative">
-      <div className="container z-10 mx-auto">
+    <section 
+      className="py-24 md:py-32 px-4 sm:px-6 bg-gradient-to-b from-white via-gray-50 to-white"
+      aria-labelledby="testimonials-heading"
+    >
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
-          className="flex flex-col items-center justify-center max-w-[540px] mx-auto"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
         >
-          <div className="flex justify-center">
-            <div className="border py-1 px-4 rounded-lg">Testimonials</div>
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#0A1628]/20 bg-[#0A1628]/5 px-4 py-2 mb-6">
+            <Star className="w-4 h-4 text-[#FFD700]" aria-hidden="true" />
+            <span className="text-sm font-semibold text-[#0A1628] uppercase tracking-wide">
+              Client Success Stories
+            </span>
           </div>
-
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter mt-5">
-            What our users say
+          <h2 
+            id="testimonials-heading"
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#0A1628] mb-4"
+          >
+            Trusted by <span className="text-[#FFD700]">Industry Leaders</span>
           </h2>
-          <p className="text-center mt-5 opacity-75">
-            See what our customers have to say about us.
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            See what our clients say about working with TechnoRealm
           </p>
         </motion.div>
 
-        <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden">
-          <TestimonialsColumn testimonials={firstColumn} duration={15} />
-          <TestimonialsColumn
-            testimonials={secondColumn}
-            className="hidden md:block"
-            duration={19}
-          />
-          <TestimonialsColumn
-            testimonials={thirdColumn}
-            className="hidden lg:block"
-            duration={17}
-          />
+        {/* Testimonials Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12">
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="relative p-8 rounded-2xl bg-white border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300"
+            >
+              {/* Quote Icon */}
+              <Quote className="absolute top-6 right-6 w-12 h-12 text-[#FFD700]/20" aria-hidden="true" />
+              
+              {/* Rating */}
+              <div className="flex gap-1 mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-[#FFD700] text-[#FFD700]" aria-hidden="true" />
+                ))}
+              </div>
+
+              {/* Content */}
+              <p className="text-gray-700 mb-6 leading-relaxed text-lg">
+                "{testimonial.content}"
+              </p>
+
+              {/* Author */}
+              <div className="flex items-center gap-4">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="w-12 h-12 rounded-full object-cover"
+                />
+                <div>
+                  <p className="font-semibold text-[#0A1628]">{testimonial.name}</p>
+                  <p className="text-sm text-gray-600">{testimonial.role}, {testimonial.company}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
+
+        {/* Client Logos Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-16 pt-16 border-t border-gray-200"
+        >
+          <p className="text-center text-sm font-semibold text-gray-600 mb-8 uppercase tracking-wide">
+            Trusted by Leading Companies
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
+            {["Microsoft", "Amazon", "Google", "Salesforce", "IBM", "Oracle"].map((company, index) => (
+              <div
+                key={index}
+                className="text-2xl font-bold text-gray-400 hover:text-[#0A1628] transition-colors cursor-pointer"
+              >
+                {company}
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
-};
-
-export default Testimonials;
-
+}
