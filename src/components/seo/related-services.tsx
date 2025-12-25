@@ -59,7 +59,7 @@ export function RelatedServices({
             <Link
               key={service.slug}
               href={`/services/${service.slug}`}
-              className="group block p-6 rounded-xl bg-white border border-gray-200 hover:border-[#14B8A6]/30 transition-all duration-300 hover:bg-gray-50 shadow-sm"
+              className="group block p-6 rounded-xl bg-white border border-gray-200 hover:border-[#14B8A6]/50 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 hover:bg-gradient-to-br hover:from-white hover:to-[#14B8A6]/5 shadow-sm"
             >
               <h3 className="text-lg font-semibold text-[#1E3A5F] mb-2 group-hover:text-[#14B8A6] transition-colors">
                 {service.title}
@@ -123,7 +123,7 @@ export function ServiceQuickLinks({
 // CTA section with internal links
 export function CTAWithLinks() {
   return (
-    <section className="py-20 bg-gradient-to-b from-[#0f1729] to-[#0A0A10]">
+    <section className="py-20 bg-gradient-to-b from-white via-gray-50 to-white">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-display font-bold text-[#1E3A5F] mb-4">
           Ready to Transform Your <span className="text-[#14B8A6]">Business</span>?

@@ -80,7 +80,7 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
   }, [activeLottiePath]);
 
   return (
-    <section className="py-24 bg-gradient-to-b from-zinc-950 via-[#0a1628] to-zinc-950 relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-[#14B8A6]/10 rounded-full blur-3xl" />

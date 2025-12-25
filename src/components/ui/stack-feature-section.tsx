@@ -80,9 +80,13 @@ export default function FeatureSection() {
           We deliver end-to-end IT solutions—from cloud infrastructure and DevOps to custom software development and digital transformation strategies.
         </p>
         <div className="flex items-center gap-3">
-          <Button variant="default" className="bg-[#14B8A6] text-[#1E3A5F] hover:bg-[#14B8A6]/90">
-            <Link href="/contact">
+          <Button 
+            variant="default" 
+            className="bg-[#14B8A6] text-[#1E3A5F] hover:bg-[#0D9488] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[0_0_30px_rgba(20,184,166,0.4)]"
+          >
+            <Link href="/contact" className="flex items-center gap-2">
               Start Your Project
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Link>
           </Button>
         </div>
@@ -126,7 +130,7 @@ export default function FeatureSection() {
                     return (
                       <div
                         key={iconIdx}
-                        className="absolute bg-white rounded-full p-1 shadow-md border border-gray-200"
+                        className="absolute bg-white rounded-full p-1 shadow-md border border-gray-200 hover:scale-125 hover:shadow-lg hover:border-[#14B8A6]/50 transition-all duration-300 cursor-pointer"
                         style={{
                           left: `${x}%`,
                           top: `${y}%`,

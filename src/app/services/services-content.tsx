@@ -52,13 +52,13 @@ export default function ServicesPageContent() {
             </motion.div>
             <h1 
               id="services-hero-title"
-              className="font-display text-4xl font-normal leading-[1.2] tracking-[-0.02em] text-white md:text-5xl lg:text-6xl"
+              className="font-display text-4xl font-normal leading-[1.2] tracking-[-0.02em] text-[#1E3A5F] md:text-5xl lg:text-6xl"
             >
               Comprehensive IT Solutions for{" "}
               <em className="italic text-[#14B8A6]">Your Business</em>
             </h1>
             <motion.p 
-              className="max-w-2xl font-body text-lg font-normal leading-[1.6] text-zinc-400 md:text-xl"
+              className="max-w-2xl font-body text-lg font-normal leading-[1.6] text-gray-600 md:text-xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -155,12 +155,12 @@ export default function ServicesPageContent() {
             </motion.div>
             <h2 
               id="technology-services-title"
-              className="font-display text-3xl font-normal leading-[1.2] tracking-[-0.02em] text-white md:text-4xl lg:text-5xl mb-4"
+              className="font-display text-3xl font-normal leading-[1.2] tracking-[-0.02em] text-[#1E3A5F] md:text-4xl lg:text-5xl mb-4"
             >
               Our Technology <span className="text-[#14B8A6]">Services</span>
             </h2>
             <motion.p 
-              className="max-w-2xl mx-auto font-body text-lg font-normal leading-[1.6] text-zinc-400"
+              className="max-w-2xl mx-auto font-body text-lg font-normal leading-[1.6] text-gray-600"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

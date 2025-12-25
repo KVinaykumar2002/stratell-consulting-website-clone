@@ -74,7 +74,7 @@ export default function ServicePageContent({ service }: ServicePageContentProps)
             >
               <Link 
                 href="/services" 
-                className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors group"
+                className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-[#14B8A6] transition-colors group"
               >
                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" aria-hidden="true" />
                 <span>Back to Services</span>
@@ -98,7 +98,7 @@ export default function ServicePageContent({ service }: ServicePageContentProps)
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent"
+              className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight bg-gradient-to-r from-[#1E3A5F] via-[#14B8A6] to-[#1E3A5F] bg-clip-text text-transparent"
             >
               {service.title}
             </motion.h1>
@@ -107,7 +107,7 @@ export default function ServicePageContent({ service }: ServicePageContentProps)
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-xl md:text-2xl text-gray-300 max-w-3xl leading-relaxed"
+              className="text-xl md:text-2xl text-gray-700 max-w-3xl leading-relaxed"
             >
               {service.shortDescription}
             </motion.p>

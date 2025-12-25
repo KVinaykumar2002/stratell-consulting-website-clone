@@ -154,7 +154,7 @@ export default function HomeContent() {
               Our Technology <span className="text-[#14B8A6]">Services</span>
             </h2>
             <motion.p 
-              className="max-w-2xl mx-auto font-body text-sm sm:text-base md:text-lg font-normal leading-[1.6] text-zinc-400 px-4"
+              className="max-w-2xl mx-auto font-body text-sm sm:text-base md:text-lg font-normal leading-[1.6] text-gray-600 px-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

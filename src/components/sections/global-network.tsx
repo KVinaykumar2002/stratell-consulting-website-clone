@@ -31,7 +31,7 @@ export default function GlobalNetworkSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-sm md:text-lg text-zinc-400 max-w-2xl mx-auto py-4"
+          className="text-sm md:text-lg text-gray-600 max-w-2xl mx-auto py-4"
         >
           Connect with teams and clients worldwide. Our platform enables seamless
           collaboration across continents, bringing the world to your workspace.

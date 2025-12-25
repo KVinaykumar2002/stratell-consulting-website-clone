@@ -95,13 +95,13 @@ export default function ContactPageContent() {
             transition={{ duration: 0.8 }}
             className="text-center mb-8 sm:mb-10 md:mb-12"
           >
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#282800] px-3 sm:px-4 py-1 sm:py-1.5 mb-4 sm:mb-6">
-              <span className="h-[4px] w-[4px] sm:h-[6px] sm:w-[6px] rounded-full bg-[#14B8A6]" aria-hidden="true" />
-              <p className="text-[10px] sm:text-[11px] md:text-[12px] font-medium uppercase tracking-[0.16em] text-white/90">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#14B8A6]/30 bg-[#14B8A6]/10 px-3 sm:px-4 py-1 sm:py-1.5 mb-4 sm:mb-6">
+              <span className="h-[4px] w-[4px] sm:h-[6px] sm:w-[6px] rounded-full bg-[#14B8A6] animate-pulse" aria-hidden="true" />
+              <p className="text-[10px] sm:text-[11px] md:text-[12px] font-medium uppercase tracking-[0.16em] text-[#14B8A6]">
                 Let's Connect
               </p>
             </div>
-            <h1 id="contact-title" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-3 sm:mb-4 block px-2">
+            <h1 id="contact-title" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#1E3A5F] mb-3 sm:mb-4 block px-2">
               <TypingAnimation
                 text="Get in Touch with Our IT Experts"
                 speed={60}
@@ -112,7 +112,7 @@ export default function ContactPageContent() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.5, duration: 0.8 }}
-              className="text-sm sm:text-base md:text-lg text-zinc-300 max-w-2xl mx-auto px-4"
+              className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4"
             >
               Tell us about your project and we'll get back to you with a tailored solution.
             </motion.p>
