@@ -72,7 +72,7 @@ export default function HeroSection() {
             className="w-full max-w-5xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
           >
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] font-bold leading-[1.1] tracking-[-0.02em] text-white mb-6">
               Transform Your{" "}

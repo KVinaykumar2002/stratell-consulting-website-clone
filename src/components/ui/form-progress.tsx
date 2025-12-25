@@ -20,7 +20,7 @@ export const FormProgress = ({ completed, total }: FormProgressProps) => {
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: `${percentage}%` }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
+          transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
           className="h-full bg-gradient-to-r from-[#14B8A6] via-[#14B8A6] to-[#14B8A6] rounded-full relative overflow-hidden"
         >
           <motion.div

@@ -45,7 +45,7 @@ export const SuccessCelebration = ({ show, onComplete }: SuccessCelebrationProps
           }}
           transition={{
             duration: 2 + Math.random(),
-            ease: 'easeOut',
+            ease: [0.4, 0, 0.2, 1],
           }}
           className="absolute w-2 h-2 rounded-full"
           style={{

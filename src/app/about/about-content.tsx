@@ -35,7 +35,7 @@ const AnimatedStatNumber = ({
 
     const controls = animate(motionValue, value, {
       duration: 1.4,
-      ease: 'easeOut',
+      ease: [0.4, 0, 0.2, 1] as const,
     });
 
     const unsubscribe = motionValue.on('change', (latest) => {
@@ -92,7 +92,7 @@ const AboutContentSection = () => {
               initial={{ opacity: 0, y: 20, scale: 0.98 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               whileHover={{ y: -6, scale: 1.02, boxShadow: '0 24px 80px rgba(0,0,0,0.9)' }}
-              transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}
+              transition={{ duration: 0.5, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
               viewport={{ once: true, amount: 0.4 }}
               className="rounded-2xl border border-gray-200 bg-white/80 px-4 py-5 backdrop-blur-md shadow-sm"
             >
@@ -112,7 +112,7 @@ const AboutContentSection = () => {
               initial={{ opacity: 0, y: 20, scale: 0.98 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               whileHover={{ y: -6, scale: 1.02, boxShadow: '0 24px 80px rgba(0,0,0,0.9)' }}
-              transition={{ duration: 0.5, delay: 0.18, ease: 'easeOut' }}
+              transition={{ duration: 0.5, delay: 0.18, ease: [0.4, 0, 0.2, 1] }}
               viewport={{ once: true, amount: 0.4 }}
               className="rounded-2xl border border-gray-200 bg-white/80 px-4 py-5 backdrop-blur-md shadow-sm"
             >
@@ -132,7 +132,7 @@ const AboutContentSection = () => {
               initial={{ opacity: 0, y: 20, scale: 0.98 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               whileHover={{ y: -6, scale: 1.02, boxShadow: '0 24px 80px rgba(0,0,0,0.9)' }}
-              transition={{ duration: 0.5, delay: 0.26, ease: 'easeOut' }}
+              transition={{ duration: 0.5, delay: 0.26, ease: [0.4, 0, 0.2, 1] }}
               viewport={{ once: true, amount: 0.4 }}
               className="rounded-2xl border border-gray-200 bg-white/80 px-4 py-5 backdrop-blur-md sm:col-span-1 shadow-sm"
             >
