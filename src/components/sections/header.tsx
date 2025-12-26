@@ -226,6 +226,22 @@ export default function Header() {
               );
             }
             
+            // Special styling for Contact Us button
+            if (link.href === "/contact") {
+              return (
+                <Link 
+                  key={link.href} 
+                  to={link.href}
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 bg-[#14B8A6] text-white hover:bg-[#0D9488] hover:scale-105 active:scale-[0.98] shadow-lg hover:shadow-xl ${
+                    isScrolled ? 'h-10' : 'h-11'
+                  }`}
+                >
+                  {link.label}
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              );
+            }
+            
             return (
               <Link 
                 key={link.href} 
@@ -242,19 +258,8 @@ export default function Header() {
           })}
         </div>
 
-        {/* Contact Button & Mobile Menu */}
+        {/* Mobile Menu Button */}
         <div className="flex items-center gap-3">
-          <Link
-            to="/contact"
-            className={`hidden lg:flex items-center gap-2 bg-[#14B8A6] text-white font-semibold rounded-lg transition-all duration-200 hover:bg-[#0D9488] hover:scale-105 active:scale-[0.98] shadow-lg hover:shadow-xl ${
-              isScrolled ? 'h-10 px-5 text-sm' : 'h-11 px-6 text-sm'
-            }`}
-          >
-              Contact Us
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-
-          {/* Mobile Menu Button */}
           <div className="lg:hidden">
             <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
               <SheetTrigger asChild>
@@ -376,6 +381,21 @@ export default function Header() {
                           );
                         }
                         
+                      // Special styling for Contact Us button in mobile
+                      if (link.href === "/contact") {
+                        return (
+                          <SheetClose asChild key={link.href}>
+                            <Link 
+                              to={link.href} 
+                              className="flex items-center justify-center gap-2 w-full px-4 py-3.5 rounded-xl text-base font-semibold transition-all bg-[#14B8A6] text-white hover:bg-[#0D9488] shadow-lg"
+                            >
+                              {link.label}
+                              <ArrowRight className="w-5 h-5" />
+                            </Link>
+                          </SheetClose>
+                        );
+                      }
+                        
                       return (
                         <SheetClose asChild key={link.href}>
                           <Link 
@@ -393,19 +413,6 @@ export default function Header() {
                     })}
                     </div>
                   </nav>
-                  
-                  {/* Mobile Contact Button */}
-                  <div className="p-5 border-t border-slate-200">
-                    <SheetClose asChild>
-                      <Link 
-                        to="/contact" 
-                        className="flex items-center justify-center gap-2 w-full h-12 bg-[#14B8A6] text-white text-base font-semibold rounded-xl hover:bg-[#0D9488] transition-colors shadow-lg"
-                      >
-                          Contact Us
-                        <ArrowRight className="w-5 h-5" />
-                      </Link>
-                    </SheetClose>
-                  </div>
                 </div>
               </SheetContent>
             </Sheet>
