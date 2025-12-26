@@ -10,6 +10,12 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   useEffect(() => {
+    // Check if script already exists to prevent duplicate loading
+    const existingScript = document.querySelector('script[src*="route-messenger.js"]');
+    if (existingScript) {
+      return;
+    }
+
     // Load external script
     const script = document.createElement('script');
     script.src = 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts//route-messenger.js';

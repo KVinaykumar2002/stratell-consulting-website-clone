@@ -297,13 +297,13 @@ export default function ServicePageContent({ service }: ServicePageContentProps)
                   >
                     <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl opacity-0 group-hover:opacity-50 blur transition-opacity" aria-hidden="true" />
                     <div className="relative h-64 rounded-xl overflow-hidden border-2 border-gray-800">
-                      <Image
+                      <OptimizedImage
                         src={image}
                         alt={`${service.title} consulting service example ${index + 1} - TechnoRealm professional IT solutions`}
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
-                        loading="lazy"
+                        objectFit="cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
                     </div>
