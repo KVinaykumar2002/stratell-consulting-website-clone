@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import { Link } from "react-router-dom";
@@ -99,17 +99,6 @@ export default function HeroSection() {
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 md:px-8 pt-20 pb-32">
         <div className="flex flex-col items-center justify-center gap-8 md:gap-12 text-center">
-          {/* Trust Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-4 py-2"
-          >
-            <Check className="w-4 h-4 text-[#14B8A6]" aria-hidden="true" />
-            <span className="text-sm font-medium text-white">Trusted by Growing Businesses</span>
-          </motion.div>
-
           {/* Main Headline */}
           <motion.header 
             className="w-full max-w-5xl"
