@@ -12,7 +12,7 @@ export default function FAQWithSpiral() {
     points: 700,
     dotRadius: 1.8,
     duration: 3.0,
-    color: "#14B8A6", // TechnoRealm Gold
+    color: "#14B8A6", // Logo Teal
     gradient: "technorealm" as
       | "none"
       | "rainbow"
@@ -42,7 +42,7 @@ export default function FAQWithSpiral() {
       neon: ["#ff00ff", "#00ffff", "#ffff00"],
       pastel: ["#ffcccc", "#ccffcc", "#ccccff"],
       grayscale: ["#ffffff", "#999999", "#333333"],
-      technorealm: ["#14B8A6", "#1E3A5F", "#14B8A6"], // TechnoRealm Gold & Navy
+      technorealm: ["#14B8A6", "#1E3A5F", "#FFD700"], // Logo Teal, Navy & Yellow
     }),
     []
   );

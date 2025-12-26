@@ -74,22 +74,22 @@ const CtaCard = () => {
         style={{ objectFit: 'cover' }}
         className="z-0"
       />
-      <div className="absolute inset-0 bg-[#0F1828]/65 z-10"></div>
+      <div className="absolute inset-0 bg-[#0A1628]/65 z-10"></div>
       <div className="relative z-20 flex flex-col gap-8 items-start">
         <h3 className="font-display text-[32px] font-semibold leading-[1.3] text-white">
           Start Your <em className="italic">Growth</em> Journey
         </h3>
         <Link href="/contact" className="group/button relative inline-flex items-center bg-white text-foreground rounded-2xl h-14 pl-6 overflow-hidden text-button font-medium transition-all duration-300">
           {/* Overlay animation from left to right */}
-          <span className="absolute inset-0 bg-[#2639ED] transform origin-left -translate-x-full transition-transform duration-500 ease-in-out group-hover/button:translate-x-0 rounded-2xl"></span>
+          <span className="absolute inset-0 bg-[#14B8A6] transform origin-left -translate-x-full transition-transform duration-500 ease-in-out group-hover/button:translate-x-0 rounded-2xl"></span>
           
           {/* Text - changes to white on hover */}
           <span className="relative z-10 leading-none transition-colors duration-300 delay-100 group-hover/button:text-white mr-3">
             Get in Touch
           </span>
           
-          {/* Blue circle with arrow - aligned next to text */}
-          <div className="relative z-10 flex items-center justify-center w-10 h-10 bg-[#2639ED] rounded-full transition-all duration-300 group-hover/button:bg-[#1B28C3] group-hover/button:translate-x-1">
+          {/* Teal circle with arrow - aligned next to text */}
+          <div className="relative z-10 flex items-center justify-center w-10 h-10 bg-[#14B8A6] rounded-full transition-all duration-300 group-hover/button:bg-[#0D9488] group-hover/button:translate-x-1">
             <ArrowRight className="w-4 h-4 text-white" />
           </div>
         </Link>
@@ -113,13 +113,13 @@ const ServicesSection = () => {
       >
         <div className="bg-white rounded-2xl shadow-xl p-4 w-56 border border-border/50">
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center text-white font-bold">
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#14B8A6] to-[#0D9488] flex items-center justify-center text-white font-bold">
               LS
             </div>
             <div>
               <p className="font-semibold text-sm">Lucas Shaw</p>
               <div className="flex items-center gap-1">
-                <span className="text-yellow-500 text-sm">★</span>
+                <span className="text-[#FFD700] text-sm">★</span>
                 <span className="text-xs text-muted-foreground">4.9 Ratings</span>
               </div>
             </div>
@@ -136,13 +136,13 @@ const ServicesSection = () => {
       >
         <div className="bg-white rounded-2xl shadow-xl p-4 w-56 border border-border/50">
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-white font-bold">
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#FFD700] to-[#1E3A5F] flex items-center justify-center text-white font-bold">
               SR
             </div>
             <div>
               <p className="font-semibold text-sm">Samuel Reed</p>
               <div className="flex items-center gap-1">
-                <span className="text-yellow-500 text-sm">★</span>
+                <span className="text-[#FFD700] text-sm">★</span>
                 <span className="text-xs text-muted-foreground">4.9 Ratings</span>
               </div>
             </div>
@@ -159,13 +159,13 @@ const ServicesSection = () => {
       >
         <div className="bg-white rounded-2xl shadow-xl p-4 w-56 border border-border/50">
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-rose-400 to-rose-600 flex items-center justify-center text-white font-bold">
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#14B8A6] to-[#1E3A5F] flex items-center justify-center text-white font-bold">
               EC
             </div>
             <div>
               <p className="font-semibold text-sm">Ethan Collins</p>
               <div className="flex items-center gap-1">
-                <span className="text-yellow-500 text-sm">★</span>
+                <span className="text-[#FFD700] text-sm">★</span>
                 <span className="text-xs text-muted-foreground">4.9 Ratings</span>
               </div>
             </div>
@@ -182,13 +182,13 @@ const ServicesSection = () => {
       >
         <div className="bg-white rounded-2xl shadow-xl p-4 w-56 border border-border/50">
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-violet-400 to-violet-600 flex items-center justify-center text-white font-bold">
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#0A1628] to-[#1E3A5F] flex items-center justify-center text-white font-bold">
               JB
             </div>
             <div>
               <p className="font-semibold text-sm">Jacob Bennett</p>
               <div className="flex items-center gap-1">
-                <span className="text-yellow-500 text-sm">★</span>
+                <span className="text-[#FFD700] text-sm">★</span>
                 <span className="text-xs text-muted-foreground">4.9 Ratings</span>
               </div>
             </div>

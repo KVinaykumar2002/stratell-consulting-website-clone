@@ -133,7 +133,7 @@ export default function Header() {
                     href={link.href}
                     className={`flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
                       active 
-                        ? 'text-[#FFD700] bg-[#0A1628]/10 font-semibold' 
+                        ? 'text-[#14B8A6] bg-[#0A1628]/10 font-semibold' 
                         : 'text-slate-800/80 hover:text-[#0A1628] hover:bg-[#0A1628]/5'
                     }`}
                   >
@@ -163,9 +163,9 @@ export default function Header() {
                           <Link
                             key={service.href}
                             href={service.href}
-                            className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:text-[#00D4FF] hover:bg-slate-950/5 transition-colors"
+                            className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:text-[#14B8A6] hover:bg-slate-950/5 transition-colors"
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#00D4FF]/50" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#14B8A6]/50" />
                             {service.label}
                           </Link>
                         ))}
@@ -173,7 +173,7 @@ export default function Header() {
                       <div className="border-t border-white/10 mt-2 pt-2 px-2">
                         <Link
                           href="/services"
-                          className="flex items-center justify-between px-3 py-2.5 text-sm font-medium text-[#00D4FF] hover:bg-[#00D4FF]/10 rounded-lg transition-colors"
+                          className="flex items-center justify-between px-3 py-2.5 text-sm font-medium text-[#14B8A6] hover:bg-[#14B8A6]/10 rounded-lg transition-colors"
                         >
                           View All Services
                           <ArrowRight className="w-4 h-4" />
@@ -202,9 +202,9 @@ export default function Header() {
                           <Link
                             key={tech.href}
                             href={tech.href}
-                            className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:text-[#FFD700] hover:bg-slate-950/5 transition-colors"
+                            className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:text-[#14B8A6] hover:bg-slate-950/5 transition-colors"
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#FFD700]/50" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#14B8A6]/50" />
                             {tech.label}
                           </Link>
                         ))}
@@ -212,7 +212,7 @@ export default function Header() {
                       <div className="border-t border-white/10 mt-2 pt-2 px-2">
                         <Link
                           href="/technologies"
-                          className="flex items-center justify-between px-3 py-2.5 text-sm font-medium text-[#FFD700] hover:bg-[#FFD700]/10 rounded-lg transition-colors"
+                          className="flex items-center justify-between px-3 py-2.5 text-sm font-medium text-[#14B8A6] hover:bg-[#14B8A6]/10 rounded-lg transition-colors"
                         >
                           View All Technologies
                           <ArrowRight className="w-4 h-4" />
@@ -244,7 +244,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <Link
             href="/contact"
-            className={`hidden lg:flex items-center gap-2 bg-[#FFD700] text-[#0A1628] font-semibold rounded-lg transition-all duration-200 hover:bg-[#FFD700]/90 hover:scale-105 active:scale-[0.98] shadow-lg hover:shadow-xl ${
+            className={`hidden lg:flex items-center gap-2 bg-[#14B8A6] text-white font-semibold rounded-lg transition-all duration-200 hover:bg-[#0D9488] hover:scale-105 active:scale-[0.98] shadow-lg hover:shadow-xl ${
               isScrolled ? 'h-10 px-5 text-sm' : 'h-11 px-6 text-sm'
             }`}
           >
@@ -311,7 +311,7 @@ export default function Header() {
                                 }}
                                 className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-base font-medium transition-all ${
                                   active
-                                    ? 'text-[#FFD700] bg-[#0A1628]/10'
+                                    ? 'text-[#14B8A6] bg-[#0A1628]/10'
                                     : 'text-slate-800/80 hover:text-slate-900 hover:bg-slate-950/5'
                                 }`}
                               >
@@ -328,7 +328,7 @@ export default function Header() {
                                     <SheetClose asChild key={service.href}>
                                       <Link
                                         href={service.href}
-                                        className="block px-4 py-2.5 text-sm text-slate-600 hover:text-[#00D4FF] rounded-lg transition-colors"
+                                        className="block px-4 py-2.5 text-sm text-slate-600 hover:text-[#14B8A6] rounded-lg transition-colors"
                                       >
                                         {service.label}
                                       </Link>
@@ -337,7 +337,7 @@ export default function Header() {
                                   <SheetClose asChild>
                                     <Link
                                       href="/services"
-                                      className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-[#00D4FF] rounded-lg"
+                                      className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-[#14B8A6] rounded-lg"
                                     >
                                       View All Services
                                       <ArrowRight className="w-4 h-4" />
@@ -397,7 +397,7 @@ export default function Header() {
                     <SheetClose asChild>
                       <Link 
                         href="/contact" 
-                        className="flex items-center justify-center gap-2 w-full h-12 bg-[#FFD700] text-[#0A1628] text-base font-semibold rounded-xl hover:bg-[#FFD700]/90 transition-colors shadow-lg"
+                        className="flex items-center justify-center gap-2 w-full h-12 bg-[#14B8A6] text-white text-base font-semibold rounded-xl hover:bg-[#0D9488] transition-colors shadow-lg"
                       >
                           Contact Us
                         <ArrowRight className="w-5 h-5" />

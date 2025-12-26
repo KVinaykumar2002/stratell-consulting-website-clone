@@ -18,42 +18,42 @@ const services = [
     title: "Web Development",
     description: "Build scalable, high-performance web applications with modern frameworks and best practices.",
     href: "/services/application-development",
-    color: "from-blue-500 to-cyan-500",
+    color: "from-[#14B8A6] to-[#0A1628]",
   },
   {
     icon: Cloud,
     title: "Cloud & DevOps",
     description: "Accelerate your digital transformation with scalable cloud infrastructure and automated workflows.",
     href: "/services/cloud-infrastructure",
-    color: "from-purple-500 to-pink-500",
+    color: "from-[#1E3A5F] to-[#14B8A6]",
   },
   {
     icon: Brain,
     title: "AI & Automation",
     description: "Harness the power of artificial intelligence to automate processes and gain competitive advantages.",
     href: "/services/ai-ml",
-    color: "from-yellow-500 to-orange-500",
+    color: "from-[#FFD700] to-[#14B8A6]",
   },
   {
     icon: Shield,
     title: "Cybersecurity",
     description: "Protect your business with enterprise-grade security solutions and risk management strategies.",
     href: "/services/cybersecurity",
-    color: "from-green-500 to-emerald-500",
+    color: "from-[#14B8A6] to-[#1E3A5F]",
   },
   {
     icon: Settings,
     title: "IT Consulting",
     description: "Strategic technology guidance to optimize operations, reduce costs, and drive innovation.",
     href: "/services/it-consulting",
-    color: "from-indigo-500 to-blue-500",
+    color: "from-[#0A1628] to-[#1E3A5F]",
   },
   {
     icon: Sparkles,
     title: "Digital Transformation",
     description: "Complete digital overhaul to modernize your business processes and customer experiences.",
     href: "/services/digital-transformation",
-    color: "from-rose-500 to-pink-500",
+    color: "from-[#FFD700] to-[#0A1628]",
   },
 ];
 
@@ -95,7 +95,7 @@ export default function PremiumServices() {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-[#0A1628]/20 bg-[#0A1628]/5 px-4 py-2 mb-6">
-            <Sparkles className="w-4 h-4 text-[#FFD700]" aria-hidden="true" />
+            <Sparkles className="w-4 h-4 text-[#14B8A6]" aria-hidden="true" />
             <span className="text-sm font-semibold text-[#0A1628] uppercase tracking-wide">
               Our Services
             </span>
@@ -105,7 +105,7 @@ export default function PremiumServices() {
             className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#0A1628] mb-4"
           >
             Comprehensive IT Solutions for{" "}
-            <span className="text-[#FFD700]">Your Business</span>
+            <span className="text-[#14B8A6]">Your Business</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             From web development to AI automation, we deliver enterprise-grade technology solutions that drive growth and innovation.
@@ -163,7 +163,7 @@ export default function PremiumServices() {
                     </p>
 
                     {/* CTA */}
-                    <div className="flex items-center gap-2 text-[#0A1628] font-semibold group-hover:text-[#FFD700] transition-colors">
+                    <div className="flex items-center gap-2 text-[#0A1628] font-semibold group-hover:text-[#14B8A6] transition-colors">
                       <span>View Details</span>
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" aria-hidden="true" />
                     </div>

@@ -7,9 +7,9 @@
   --color-tr-navy: #0A1628; /* Deep Navy / Midnight Blue - Primary */
   --color-tr-navy-light: #1E3A5F; /* Lighter navy for accents */
   --color-tr-yellow: #FFD700; /* Tech Yellow - Accent */
-  --color-tr-blue: #00D4FF; /* Electric Blue - Accent */
-  --color-tr-teal: #14B8A6; /* Keep teal for compatibility */
-  --color-tr-cyan: #00D4FF;
+  --color-tr-blue: #14B8A6; /* Logo Teal - Accent */
+  --color-tr-teal: #14B8A6; /* Logo Teal */
+  --color-tr-cyan: #14B8A6; /* Logo Teal */
   --color-tr-dark: #0a1628;
   
   /* Shadcn/UI colors - Light Theme for TechnoRealm */
@@ -31,8 +31,8 @@
   --color-muted: #F1F5F9;
   --color-muted-foreground: #64748B;
 
-  --color-accent: #FFD700; /* Tech Yellow */
-  --color-accent-foreground: #0A1628;
+  --color-accent: #14B8A6; /* Logo Teal */
+  --color-accent-foreground: #FFFFFF;
 
   --color-destructive: #ef4444;
   --color-destructive-foreground: #FFFFFF;
@@ -43,9 +43,9 @@
 
   --color-chart-1: #14B8A6;
   --color-chart-2: #1E3A5F;
-  --color-chart-3: #3b82f6;
-  --color-chart-4: #f1c40f;
-  --color-chart-5: #e74c3c;
+  --color-chart-3: #FFD700;
+  --color-chart-4: #1E3A5F;
+  --color-chart-5: #0A1628;
 
   --color-sidebar: #FFFFFF;
   --color-sidebar-foreground: #1E3A5F;
@@ -83,7 +83,7 @@
   /* TechnoRealm design system colors - Light Theme */
   --color-primary-navy: #1E3A5F;
   --color-primary-teal: #14B8A6;
-  --color-primary-cyan: #00D4FF;
+  --color-primary-cyan: #14B8A6;
   --color-background-light: #FFFFFF;
   --color-background-lighter: #F8FAFC;
   --color-text-dark: #1E3A5F;
