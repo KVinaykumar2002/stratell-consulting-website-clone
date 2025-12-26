@@ -2,7 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { SplineScene } from "@/components/ui/spline-scene";
+import { Spotlight } from "@/components/ui/spotlight";
 
 interface StrategicCTAProps {
   title: string;
@@ -29,13 +31,28 @@ export default function StrategicCTA({
   
   return (
     <section 
-      className={`py-20 md:py-32 px-4 sm:px-6 ${
+      className={`relative py-20 md:py-32 px-4 sm:px-6 overflow-hidden ${
         isDark 
           ? "bg-gradient-to-br from-[#0A1628] via-[#0A1628] to-[#1E3A5F]" 
           : "bg-gradient-to-br from-gray-50 via-white to-gray-50"
       }`}
     >
-      <div className="max-w-4xl mx-auto text-center">
+      {/* Spline 3D Background */}
+      <div className="absolute inset-0 w-full h-full opacity-30 pointer-events-none">
+        <SplineScene 
+          scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+          className="w-full h-full"
+        />
+      </div>
+
+      {/* Spotlight Effect */}
+      <Spotlight
+        className="-top-40 left-0 md:left-60 md:-top-20"
+        size={400}
+      />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -61,7 +78,7 @@ export default function StrategicCTA({
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               to={primaryCTA.href}
-              className="group inline-flex items-center justify-center h-14 px-8 rounded-xl bg-[#14B8A6] text-white font-bold text-lg hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(20,184,166,0.4)] hover:shadow-[0_0_50px_rgba(20,184,166,0.6)]"
+              className="group inline-flex items-center justify-center h-14 px-8 rounded-xl bg-[#14B8A6] text-white font-bold text-lg hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(20,184,166,0.4)] hover:shadow-[0_0_50px_rgba(20,184,166,0.6)] relative z-20"
             >
               <span>{primaryCTA.text}</span>
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -70,7 +87,7 @@ export default function StrategicCTA({
             {secondaryCTA && (
               <Link
                 to={secondaryCTA.href}
-                className={`inline-flex items-center justify-center h-14 px-8 rounded-xl border-2 font-semibold text-lg transition-all duration-300 hover:scale-105 ${
+                className={`inline-flex items-center justify-center h-14 px-8 rounded-xl border-2 font-semibold text-lg transition-all duration-300 hover:scale-105 relative z-20 ${
                   isDark
                     ? "border-white/30 text-white hover:bg-white/10"
                     : "border-[#0A1628]/30 text-[#0A1628] hover:bg-[#0A1628]/5"
