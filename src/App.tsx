@@ -1,17 +1,29 @@
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Head } from './lib/use-head';
 import RootLayout from './components/layout/RootLayout';
 import StructuredDataScript from './components/StructuredDataScript';
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import ServicesPage from './pages/ServicesPage';
-import ServiceDetailPage from './pages/ServiceDetailPage';
-import ContactPage from './pages/ContactPage';
-import FaqsPage from './pages/FaqsPage';
-import PrivacyPage from './pages/PrivacyPage';
-import TermsPage from './pages/TermsPage';
-import NotFoundPage from './pages/NotFoundPage';
+
+// Lazy load all page components for code splitting
+const HomePage = lazy(() => import('./pages/HomePage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const ServicesPage = lazy(() => import('./pages/ServicesPage'));
+const ServiceDetailPage = lazy(() => import('./pages/ServiceDetailPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+const FaqsPage = lazy(() => import('./pages/FaqsPage'));
+const PrivacyPage = lazy(() => import('./pages/PrivacyPage'));
+const TermsPage = lazy(() => import('./pages/TermsPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+
+// Loading fallback component
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="flex flex-col items-center gap-4">
+      <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+      <p className="text-muted-foreground">Loading...</p>
+    </div>
+  </div>
+);
 
 const siteUrl = import.meta.env.VITE_SITE_URL || 'https://technorealm.com';
 
@@ -72,17 +84,19 @@ function App() {
       <StructuredDataScript />
       
       <RootLayout>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/services/:slug" element={<ServiceDetailPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/faqs" element={<FaqsPage />} />
-          <Route path="/privacy" element={<PrivacyPage />} />
-          <Route path="/terms" element={<TermsPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/services/:slug" element={<ServiceDetailPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/faqs" element={<FaqsPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Suspense>
       </RootLayout>
     </>
   );
