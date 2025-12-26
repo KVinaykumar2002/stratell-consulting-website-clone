@@ -57,7 +57,7 @@ export default function FeatureSection() {
   return (
     <section className="relative w-full my-32 px-6 md:px-10 flex flex-col md:flex-row items-center justify-between min-h-[30rem] border border-gray-200 bg-gradient-to-br from-white to-gray-50 overflow-hidden rounded-3xl shadow-lg">
       {/* Background Lottie Animation - positioned behind left side */}
-      <div className="absolute left-50 top-0 w-full md:w-1/2 h-full pointer-events-none z-0">
+      <div className="hidden md:block absolute left-50 top-0 w-full md:w-1/2 h-full pointer-events-none z-0">
         <Lottie
           animationData={workingOnlineAnimation}
           loop={true}
@@ -93,7 +93,7 @@ export default function FeatureSection() {
       </div>
 
       {/* Right side: Orbit animation cropped to 1/4 */}
-      <div className="relative w-full md:w-1/2 h-[20rem] md:h-full flex items-center justify-start overflow-hidden z-20">
+      <div className="hidden md:flex relative w-full md:w-1/2 h-[20rem] md:h-full items-center justify-start overflow-hidden z-20">
         <div className="relative w-[50rem] h-[50rem] translate-x-[50%] flex items-center justify-center">
           {/* Center Circle */}
           <div className="w-24 h-24 rounded-full bg-[#1E3A5F] shadow-[0_0_30px_rgba(20,184,166,0.2)] flex items-center justify-center border border-[#14B8A6]/30">
