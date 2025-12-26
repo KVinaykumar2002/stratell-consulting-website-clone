@@ -10,7 +10,6 @@ export default function HeroSection() {
   const words = useMemo(() => ["Business", "Ideas", "Goals", "Vision"], []);
   const wordColor = "text-[#14B8A6]"; // Logo Teal
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -24,30 +23,13 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, [rotateWord]);
 
-  // Lazy load video when section is in viewport
+  // Ensure video plays when component mounts
   useEffect(() => {
-    if (!sectionRef.current) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setShouldLoadVideo(true);
-            // Start loading video after a small delay to prioritize text rendering
-            setTimeout(() => {
-              if (videoRef.current) {
-                videoRef.current.load();
-              }
-            }, 100);
-            observer.disconnect();
-          }
-        });
-      },
-      { rootMargin: "50px" }
-    );
-
-    observer.observe(sectionRef.current);
-    return () => observer.disconnect();
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+        // Auto-play failed, video will play on user interaction
+      });
+    }
   }, []);
 
   return (
@@ -56,35 +38,33 @@ export default function HeroSection() {
       className="relative flex min-h-screen w-full items-center justify-center overflow-hidden" 
       aria-label="Hero section - Transform your business with expert IT solutions"
     >
-      {/* Background Video with optimized loading for better LCP */}
+      {/* Background Video */}
       <div className="absolute inset-0 z-0" role="presentation" aria-hidden="true">
         {/* Static gradient background - shows immediately while video loads */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#0A1628] via-[#1E3A5F] to-[#0A1628]" />
         
-        {shouldLoadVideo && (
-          <video
-            ref={videoRef}
-            src="https://ikconsultingservices.com/wp-content/uploads/2025/03/business-consulting11.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-            className="h-full w-full object-cover"
-            aria-hidden="true"
-            onLoadedData={() => {
-              // Video loaded, ensure it plays
-              if (videoRef.current) {
-                videoRef.current.play().catch(() => {
-                  // Auto-play failed, video will play on user interaction
-                });
-              }
-            }}
-          >
-            {/* Fallback text for accessibility */}
-            <p>Business professionals collaborating in a modern office environment, showcasing IT consulting and technology solutions.</p>
-          </video>
-        )}
+        <video
+          ref={videoRef}
+          src="https://ikconsultingservices.com/wp-content/uploads/2025/03/business-consulting11.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="absolute inset-0 h-full w-full object-cover"
+          aria-hidden="true"
+          onLoadedData={() => {
+            // Video loaded, ensure it plays
+            if (videoRef.current) {
+              videoRef.current.play().catch(() => {
+                // Auto-play failed, video will play on user interaction
+              });
+            }
+          }}
+        >
+          {/* Fallback text for accessibility */}
+          <p>Business professionals collaborating in a modern office environment, showcasing IT consulting and technology solutions.</p>
+        </video>
         {/* Enhanced gradient overlay for text readability */}
         <div 
           className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/60 via-[#0A1628]/40 to-[#0A1628]/70" 
@@ -98,7 +78,7 @@ export default function HeroSection() {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 md:px-8 pt-20 pb-32">
-        <div className="flex flex-col items-center justify-center gap-8 md:gap-12 text-center">
+        <div className="flex flex-col items-center justify-center gap-8 md:gap-12 text-center mt-32 md:mt-40 lg:mt-48 xl:mt-56">
           {/* Main Headline */}
           <motion.header 
             className="w-full max-w-5xl"
@@ -140,7 +120,7 @@ export default function HeroSection() {
           >
             {/* Primary CTA */}
             <Link
-              href="/contact"
+              to="/contact"
               className="group relative inline-flex items-center justify-center h-14 px-8 rounded-xl bg-[#14B8A6] text-white overflow-hidden transition-all duration-300 shadow-[0_0_40px_rgba(20,184,166,0.4)] text-base sm:text-lg font-bold hover:scale-105 hover:shadow-[0_0_50px_rgba(20,184,166,0.6)]"
               aria-label="Book a free consultation with TechnoRealm IT experts"
             >
@@ -166,7 +146,7 @@ export default function HeroSection() {
 
             {/* Secondary CTA */}
             <Link
-              href="/services"
+              to="/services"
               className="group inline-flex items-center justify-center h-14 px-8 rounded-xl border-2 border-white/30 bg-white/10 backdrop-blur-md text-white overflow-hidden transition-all duration-300 hover:bg-white/20 hover:border-white/50 text-base sm:text-lg font-semibold"
               aria-label="View all TechnoRealm services"
             >
