@@ -35,7 +35,6 @@ export default function HeroSection() {
           muted
           playsInline
           preload="none"
-          poster="/images/hero-poster.jpg"
           className="h-full w-full object-cover"
           aria-hidden="true"
         >
@@ -143,28 +142,6 @@ export default function HeroSection() {
             </Link>
           </motion.div>
 
-          {/* Trust Indicators */}
-          <motion.div 
-            className="flex flex-wrap items-center justify-center gap-6 md:gap-8 mt-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          >
-            <div className="flex items-center gap-2 text-white/80">
-              <div className="w-2 h-2 rounded-full bg-[#14B8A6] animate-pulse" aria-hidden="true" />
-              <span className="text-sm font-medium">Secure</span>
-            </div>
-            <div className="w-px h-6 bg-white/20" aria-hidden="true" />
-            <div className="flex items-center gap-2 text-white/80">
-              <div className="w-2 h-2 rounded-full bg-[#14B8A6] animate-pulse" aria-hidden="true" />
-              <span className="text-sm font-medium">Scalable</span>
-            </div>
-            <div className="w-px h-6 bg-white/20" aria-hidden="true" />
-            <div className="flex items-center gap-2 text-white/80">
-              <div className="w-2 h-2 rounded-full bg-[#14B8A6] animate-pulse" aria-hidden="true" />
-              <span className="text-sm font-medium">Reliable</span>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>
