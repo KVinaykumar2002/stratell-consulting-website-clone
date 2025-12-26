@@ -1,7 +1,7 @@
 'use client';
 
-import Image from 'next/image';
-import Link from 'next/link';
+import OptimizedImage from '@/lib/image-utils';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
@@ -17,14 +17,13 @@ const CtaFinal = () => {
       animate={isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.6 }}
     >
-      <Image
+      <OptimizedImage
         src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/9b84987e-5fc0-480d-bd08-54bddc2234ce-stratwell-consulting-framer-website/assets/images/G6uXFBOzh6vAiHkQIbFMIYuCAc-11.jpg"
         alt="TechnoRealm IT consulting team collaborating on technology solutions and digital transformation projects"
         fill
         objectFit="cover"
         objectPosition="center"
         className="z-0"
-        loading="lazy"
       />
       <div className="absolute inset-0 z-10 bg-gradient-to-br from-[#1E3A5F]/60 via-white/40 to-[#1E3A5F]/60" />
       <motion.div 

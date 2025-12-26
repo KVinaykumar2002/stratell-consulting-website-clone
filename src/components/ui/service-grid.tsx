@@ -1,7 +1,7 @@
 // components/ui/service-grid.tsx
 
 import * as React from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils"; // Your utility for merging Tailwind classes
 
@@ -95,7 +95,7 @@ const ServiceGrid = React.forwardRef<HTMLDivElement, ServiceGridProps>(
                 className="w-full"
               >
                 <Link
-                  href={service.href}
+                  to={service.href}
                   className="group flex flex-col items-center justify-start gap-3 text-center cursor-pointer block w-full h-full"
                 >
                   <div className="flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 mx-auto">

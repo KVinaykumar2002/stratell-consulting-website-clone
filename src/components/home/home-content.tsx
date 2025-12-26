@@ -1,6 +1,6 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import { lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import { Server, Brain, Code, Cloud } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -10,18 +10,16 @@ import PremiumServices from "@/components/sections/premium-services";
 
 // Lazy load JSON animations to reduce initial bundle size
 // These will be loaded only when the Feature108 component is rendered
-const Feature108 = dynamic(
-  () => import("@/components/blocks/shadcnblocks-com-feature108").then((mod) => ({ default: mod.Feature108 })),
-  { 
-    ssr: false,
-    loading: () => (
-      <div className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="h-96 bg-gray-200 rounded-2xl animate-pulse" />
-        </div>
-      </div>
-    )
-  }
+const Feature108 = lazy(
+  () => import("@/components/blocks/shadcnblocks-com-feature108").then((mod) => ({ default: mod.Feature108 }))
+);
+
+const Feature108Loading = () => (
+  <div className="py-20 px-6">
+    <div className="max-w-6xl mx-auto">
+      <div className="h-96 bg-gray-200 rounded-2xl animate-pulse" />
+    </div>
+  </div>
 );
 
 // Component that lazy loads animations
@@ -62,10 +60,11 @@ function Feature108WithAnimations({ badge, heading, description }: { badge: stri
   }
 
   return (
-    <Feature108
-      badge={badge}
-      heading={heading}
-      description={description}
+    <Suspense fallback={<Feature108Loading />}>
+      <Feature108
+        badge={badge}
+        heading={heading}
+        description={description}
       tabs={[
         {
           value: "it-feature",
@@ -124,51 +123,32 @@ function Feature108WithAnimations({ badge, heading, description }: { badge: stri
           },
         },
       ]}
-    />
+      />
+    </Suspense>
   );
 }
 
 
 // Lazy load sections below the fold - only load when needed
-const FeatureSection = dynamic(() => import("@/components/ui/stack-feature-section"), { 
-  ssr: false 
-});
-const TrustedBy = dynamic(() => import("@/components/sections/trusted-by"), { 
-  ssr: false 
-});
-const CtaFinal = dynamic(() => import("@/components/sections/cta-final"), { 
-  ssr: false 
-});
-const Footer = dynamic(() => import("@/components/sections/footer"), { 
-  ssr: false 
-});
-const GlobalNetworkSection = dynamic(() => import("@/components/sections/global-network"), { 
-  ssr: false 
-});
-const FeaturesAccordionSection = dynamic(() => import("@/components/sections/features-accordion"), { 
-  ssr: false 
-});
-const WhyChooseUs = dynamic(() => import("@/components/sections/why-choose-us"), { 
-  ssr: false 
-});
-const Testimonials = dynamic(() => import("@/components/sections/testimonials"), { 
-  ssr: false 
-});
-const StrategicCTA = dynamic(() => import("@/components/sections/strategic-cta"), { 
-  ssr: false 
-});
+const FeatureSection = lazy(() => import("@/components/ui/stack-feature-section"));
+const TrustedBy = lazy(() => import("@/components/sections/trusted-by"));
+const CtaFinal = lazy(() => import("@/components/sections/cta-final"));
+const Footer = lazy(() => import("@/components/sections/footer"));
+const GlobalNetworkSection = lazy(() => import("@/components/sections/global-network"));
+const FeaturesAccordionSection = lazy(() => import("@/components/sections/features-accordion"));
+const WhyChooseUs = lazy(() => import("@/components/sections/why-choose-us"));
+const Testimonials = lazy(() => import("@/components/sections/testimonials"));
+const StrategicCTA = lazy(() => import("@/components/sections/strategic-cta"));
 
 // Lazy load heavy components
-const DynamicFrameLayout = dynamic(
-  () => import("@/components/ui/dynamic-frame-layout").then((mod) => ({ default: mod.DynamicFrameLayout })),
-  { 
-    ssr: false,
-    loading: () => (
-      <div className="w-full h-full flex items-center justify-center">
-        <div className="w-16 h-16 border-4 border-[#14B8A6] border-t-transparent rounded-full animate-spin" />
-      </div>
-    )
-  }
+const DynamicFrameLayout = lazy(
+  () => import("@/components/ui/dynamic-frame-layout").then((mod) => ({ default: mod.DynamicFrameLayout }))
+);
+
+const DynamicFrameLayoutLoading = () => (
+  <div className="w-full h-full flex items-center justify-center">
+    <div className="w-16 h-16 border-4 border-[#14B8A6] border-t-transparent rounded-full animate-spin" />
+  </div>
 );
 
 export default function HomeContent() {
@@ -184,7 +164,9 @@ export default function HomeContent() {
         heading="Comprehensive IT Solutions Tailored to Your Needs"
         description="Explore our core service areas and discover how we can transform your business with cutting-edge technology."
       />
-      <FeatureSection />
+      <Suspense fallback={<div className="h-96 bg-gray-200 animate-pulse rounded-2xl" />}>
+        <FeatureSection />
+      </Suspense>
       
       {/* Our Technology Services Section */}
       <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-to-b from-gray-50 to-white relative overflow-visible">
@@ -218,7 +200,8 @@ export default function HomeContent() {
             </motion.p>
           </div>
           <div className="w-full h-[600px] sm:h-[500px] md:h-[600px] lg:h-[700px] xl:h-[800px] overflow-visible relative">
-            <DynamicFrameLayout 
+            <Suspense fallback={<DynamicFrameLayoutLoading />}>
+              <DynamicFrameLayout 
               frames={[
                 {
                   id: 1,
@@ -343,6 +326,7 @@ export default function HomeContent() {
               gapSize={4}
               showFrames={false}
             />
+            </Suspense>
           </div>
         </div>
       </section>

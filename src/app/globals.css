@@ -1,4 +1,4 @@
-/* Fonts are loaded via next/font in layout.tsx for optimal performance */
+/* Fonts are loaded via Google Fonts in index.html for optimal performance */
 @import "tailwindcss";
 @import "tw-animate-css";
 

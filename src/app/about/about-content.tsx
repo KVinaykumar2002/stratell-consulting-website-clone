@@ -2,21 +2,15 @@
 
 import { useEffect, useRef } from 'react';
 import { motion, useInView, useMotionValue, animate } from 'framer-motion';
-import dynamic from 'next/dynamic';
-import Image from 'next/image';
+import { lazy, Suspense } from 'react';
+import OptimizedImage from '@/lib/image-utils';
 import Header from '@/components/sections/header';
 import Footer from '@/components/sections/footer';
 
 // Lazy load heavy components
-const ScrollExpandMedia = dynamic(() => import('@/components/ui/scroll-expansion-hero').then((mod) => ({ default: mod.default })), { 
-  ssr: false 
-});
-const Timeline = dynamic(() => import('@/components/ui/timeline').then((mod) => ({ default: mod.Timeline })), { 
-  ssr: false 
-});
-const TrustedBy = dynamic(() => import('@/components/sections/trusted-by'), { 
-  ssr: false 
-});
+const ScrollExpandMedia = lazy(() => import('@/components/ui/scroll-expansion-hero').then((mod) => ({ default: mod.default })));
+const Timeline = lazy(() => import('@/components/ui/timeline').then((mod) => ({ default: mod.Timeline })));
+const TrustedBy = lazy(() => import('@/components/sections/trusted-by'));
 
 const AnimatedStatNumber = ({
   value,
@@ -194,7 +188,8 @@ export default function AboutPageContent() {
     <main className='min-h-screen bg-gradient-to-b from-white via-gray-50 to-white text-foreground'>
       <Header />
       <div className='min-h-screen'>
-        <ScrollExpandMedia
+        <Suspense fallback={<div className="h-screen bg-gray-200 animate-pulse" />}>
+          <ScrollExpandMedia
           mediaType='video'
           mediaSrc='https://res.cloudinary.com/dp7oywrdl/video/upload/v1765227997/3252148-uhd_3840_2160_25fps_kwhlgo.mp4'
           bgImageSrc='/about_us_back.jpg'
@@ -205,6 +200,7 @@ export default function AboutPageContent() {
         >
           <AboutContentSection />
         </ScrollExpandMedia>
+        </Suspense>
       </div>
 
       {/* Mission & Vision Section */}
@@ -335,7 +331,8 @@ export default function AboutPageContent() {
             </p>
           </motion.div>
 
-          <Timeline
+          <Suspense fallback={<div className="h-96 bg-gray-200 animate-pulse rounded-2xl" />}>
+            <Timeline
             data={[
               {
                 title: "2022",
@@ -367,7 +364,7 @@ export default function AboutPageContent() {
                       </li>
                     </ul>
                     <div className="grid grid-cols-2 gap-4">
-                      <Image
+                      <OptimizedImage
                         src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=500&h=500&fit=crop&q=80"
                         alt="Digital transformation consulting services by TechnoRealm - Modern business technology solutions"
                         width={500}
@@ -375,7 +372,7 @@ export default function AboutPageContent() {
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
                         loading="lazy"
                       />
-                      <Image
+                      <OptimizedImage
                         src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=500&fit=crop&q=80"
                         alt="Mobile application development services by TechnoRealm - iOS and Android app development"
                         width={500}
@@ -383,7 +380,7 @@ export default function AboutPageContent() {
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
                         loading="lazy"
                       />
-                      <Image
+                      <OptimizedImage
                         src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=500&h=500&fit=crop&q=80"
                         alt="UI/UX design services by TechnoRealm - User experience and interface design"
                         width={500}
@@ -391,7 +388,7 @@ export default function AboutPageContent() {
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
                         loading="lazy"
                       />
-                      <Image
+                      <OptimizedImage
                         src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=500&fit=crop&q=80"
                         alt="Cybersecurity and risk management services by TechnoRealm - Enterprise security solutions"
                         width={500}
@@ -414,7 +411,7 @@ export default function AboutPageContent() {
                       Established strategic partnerships with leading cloud providers and expanded our team of certified engineers.
                     </p>
                     <div className="grid grid-cols-2 gap-4">
-                      <Image
+                      <OptimizedImage
                         src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=500&fit=crop&q=80"
                         alt="DevOps consulting and CI/CD pipeline services by TechnoRealm"
                         width={500}
@@ -422,7 +419,7 @@ export default function AboutPageContent() {
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
                         loading="lazy"
                       />
-                      <Image
+                      <OptimizedImage
                         src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&h=500&fit=crop&q=80"
                         alt="Cloud infrastructure and migration services by TechnoRealm"
                         width={500}
@@ -430,7 +427,7 @@ export default function AboutPageContent() {
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
                         loading="lazy"
                       />
-                      <Image
+                      <OptimizedImage
                         src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=500&fit=crop&q=80"
                         alt="Software development and engineering services by TechnoRealm"
                         width={500}
@@ -438,7 +435,7 @@ export default function AboutPageContent() {
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
                         loading="lazy"
                       />
-                      <Image
+                      <OptimizedImage
                         src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=500&h=500&fit=crop&q=80"
                         alt="Database management and optimization services by TechnoRealm"
                         width={500}
@@ -458,7 +455,7 @@ export default function AboutPageContent() {
                       Expanded our service offerings with cutting-edge AI and machine learning solutions, helping clients transform their businesses with intelligent automation.
                     </p>
                     <div className="grid grid-cols-2 gap-4">
-                      <Image
+                      <OptimizedImage
                         src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=500&h=500&fit=crop&q=80"
                         alt="AI and machine learning consulting services by TechnoRealm - Artificial intelligence solutions"
                         width={500}
@@ -466,7 +463,7 @@ export default function AboutPageContent() {
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
                         loading="lazy"
                       />
-                      <Image
+                      <OptimizedImage
                         src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=500&fit=crop&q=80"
                         alt="Data analytics and business intelligence services by TechnoRealm"
                         width={500}
@@ -474,7 +471,7 @@ export default function AboutPageContent() {
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
                         loading="lazy"
                       />
-                      <Image
+                      <OptimizedImage
                         src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&h=500&fit=crop&q=80"
                         alt="Cloud migration and infrastructure services by TechnoRealm - AWS, Azure, GCP solutions"
                         width={500}
@@ -482,7 +479,7 @@ export default function AboutPageContent() {
                         className="rounded-lg object-cover h-32 md:h-48 lg:h-64 w-full"
                         loading="lazy"
                       />
-                      <Image
+                      <OptimizedImage
                         src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&h=500&fit=crop&q=80"
                         alt="Enterprise security and compliance solutions by TechnoRealm"
                         width={500}
@@ -496,11 +493,14 @@ export default function AboutPageContent() {
               },
             ]}
           />
+          </Suspense>
         </div>
       </section>
 
       {/* Trusted By Section */}
-      <TrustedBy />
+      <Suspense fallback={<div className="h-96 bg-gray-200 animate-pulse rounded-2xl" />}>
+        <TrustedBy />
+      </Suspense>
 
       <Footer />
     </main>

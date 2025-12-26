@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Layout, Pointer, Zap, Cloud, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 
 // Lazy load JSON files - only import when default tabs are actually used
@@ -242,7 +242,7 @@ const Feature108 = ({
                       {tab.content.description}
                     </p>
                     {tab.content.buttonHref ? (
-                      <Link href={tab.content.buttonHref}>
+                      <Link to={tab.content.buttonHref}>
                         <Button className="mt-2 sm:mt-2.5 w-full sm:w-fit gap-2 group/btn relative overflow-hidden transition-all duration-300 hover:scale-105 bg-[#14B8A6] text-[#1E3A5F] hover:bg-[#14B8A6]/90 shadow-[0_0_20px_rgba(20,184,166,0.3)] text-sm sm:text-base" size="default">
                           <span className="relative z-10 transition-all duration-300 font-semibold">{tab.content.buttonText}</span>
                           <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 relative z-10 transition-all duration-300 group-hover/btn:translate-x-2" />

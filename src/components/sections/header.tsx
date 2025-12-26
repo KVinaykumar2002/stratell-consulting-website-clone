@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
-import Image from "next/image";
+import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import OptimizedImage from "@/lib/image-utils";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 
@@ -32,7 +32,8 @@ const technologyItems = [
 ];
 
 export default function Header() {
-  const pathname = usePathname();
+  const location = useLocation();
+  const pathname = location.pathname;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -82,11 +83,11 @@ export default function Header() {
           }}
       >
         {/* Logo */}
-        <Link href="/" className="flex-shrink-0 relative z-10">
+        <Link to="/" className="flex-shrink-0 relative z-10">
           <div className={`relative transition-all duration-300 ${
             isScrolled ? 'h-36 md:h-44' : 'h-44 md:h-56'
           }`}>
-            <Image
+            <OptimizedImage
               src="/logo image/loading12/1234.png"
               alt="TechnoRealm"
               width={560}
@@ -271,8 +272,8 @@ export default function Header() {
                   {/* Mobile Header */}
                   <div className="flex items-center justify-between p-5 border-b border-slate-200">
                     <SheetClose asChild>
-                      <Link href="/" className="relative h-10">
-                        <Image
+                      <Link to="/" className="relative h-10">
+                        <OptimizedImage
                           src="/logo image/loading12/1234.png"
                           alt="TechnoRealm"
                           width={180}

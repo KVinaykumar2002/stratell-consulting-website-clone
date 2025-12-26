@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 interface StrategicCTAProps {
@@ -60,7 +60,7 @@ export default function StrategicCTA({
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href={primaryCTA.href}
+              to={primaryCTA.href}
               className="group inline-flex items-center justify-center h-14 px-8 rounded-xl bg-[#14B8A6] text-white font-bold text-lg hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(20,184,166,0.4)] hover:shadow-[0_0_50px_rgba(20,184,166,0.6)]"
             >
               <span>{primaryCTA.text}</span>
@@ -69,7 +69,7 @@ export default function StrategicCTA({
             
             {secondaryCTA && (
               <Link
-                href={secondaryCTA.href}
+                to={secondaryCTA.href}
                 className={`inline-flex items-center justify-center h-14 px-8 rounded-xl border-2 font-semibold text-lg transition-all duration-300 hover:scale-105 ${
                   isDark
                     ? "border-white/30 text-white hover:bg-white/10"

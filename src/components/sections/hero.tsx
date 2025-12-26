@@ -3,7 +3,7 @@
 import { ArrowRight, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useCallback, useMemo, useRef } from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   // Memoize static arrays to prevent re-renders

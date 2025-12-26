@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { servicesData } from '@/lib/services-data';
 
@@ -58,7 +58,7 @@ export function RelatedServices({
           {relatedServices.map((service) => (
             <Link
               key={service.slug}
-              href={`/services/${service.slug}`}
+              to={`/services/${service.slug}`}
               className="group block p-6 rounded-xl bg-white border border-gray-200 hover:border-[#14B8A6]/50 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 hover:bg-gradient-to-br hover:from-white hover:to-[#14B8A6]/5 shadow-sm"
             >
               <h3 className="text-lg font-semibold text-[#1E3A5F] mb-2 group-hover:text-[#14B8A6] transition-colors">
@@ -77,7 +77,7 @@ export function RelatedServices({
         
         <div className="mt-8 text-center">
           <Link
-            href="/services"
+            to="/services"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[#14B8A6]/30 text-[#14B8A6] hover:bg-[#14B8A6]/10 transition-colors"
           >
             View All Services
@@ -108,7 +108,7 @@ export function ServiceQuickLinks({
         {services.map((service) => (
           <li key={service.slug}>
             <Link
-              href={`/services/${service.slug}`}
+              to={`/services/${service.slug}`}
               className="text-sm text-gray-600 hover:text-[#14B8A6] transition-colors"
             >
               {service.title}
@@ -130,24 +130,24 @@ export function CTAWithLinks() {
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto mb-8">
           Partner with TechnoRealm for expert IT consulting. From{' '}
-          <Link href="/services/cloud-infrastructure" className="text-[#14B8A6] hover:underline">
+          <Link to="/services/cloud-infrastructure" className="text-[#14B8A6] hover:underline">
             cloud infrastructure
           </Link>{' '}
           to{' '}
-          <Link href="/services/ai-ml" className="text-[#14B8A6] hover:underline">
+          <Link to="/services/ai-ml" className="text-[#14B8A6] hover:underline">
             AI solutions
           </Link>
           , we deliver results.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link
-            href="/contact"
+            to="/contact"
             className="px-8 py-3 bg-[#14B8A6] text-[#0f1729] font-semibold rounded-lg hover:bg-[#0D9488] transition-colors"
           >
             Get Started
           </Link>
           <Link
-            href="/services"
+            to="/services"
             className="px-8 py-3 border border-[#14B8A6]/30 text-[#1E3A5F] rounded-lg hover:bg-[#14B8A6]/10 transition-colors"
           >
             Explore Services

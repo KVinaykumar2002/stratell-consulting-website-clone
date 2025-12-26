@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 
@@ -12,7 +12,7 @@ export default function NotFound() {
           The service you're looking for doesn't exist or may have been moved.
         </p>
         <Link
-          href="/services"
+          to="/services"
           className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-xl font-medium hover:bg-primary/90 transition-colors"
         >
           Back to Services

@@ -25,7 +25,7 @@
  */
 
 import React, { useState } from 'react';
-import Image from 'next/image';
+import OptimizedImage from '@/lib/image-utils';
 
 interface LogoProps {
   className?: string;
@@ -62,17 +62,17 @@ export const TechnoRealmLogo: React.FC<LogoProps> = ({
   // Determine which image source to use
   const finalImageSrc = imageSrc || (useImage ? DEFAULT_LOGO_PATHS[0] : null);
   
-  // If image source is provided and useImage is true, use Image component
+  // If image source is provided and useImage is true, use OptimizedImage component
   if (useImage && finalImageSrc && !imageError) {
     return (
-      <Image
+      <OptimizedImage
         src={finalImageSrc}
         alt="TechnoRealm Logo"
         width={width}
         height={height}
         className={className}
         priority
-        style={{ objectFit: 'contain' }}
+        objectFit="contain"
         onError={() => setImageError(true)}
       />
     );

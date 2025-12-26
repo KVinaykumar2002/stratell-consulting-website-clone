@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import workingOnlineAnimation from "@/app/Working_Online.json";
 import {
@@ -84,7 +84,7 @@ export default function FeatureSection() {
             variant="default" 
             className="bg-[#14B8A6] text-[#1E3A5F] hover:bg-[#0D9488] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[0_0_30px_rgba(20,184,166,0.4)]"
           >
-            <Link href="/contact" className="flex items-center gap-2">
+            <Link to="/contact" className="flex items-center gap-2">
               Start Your Project
               <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Link>

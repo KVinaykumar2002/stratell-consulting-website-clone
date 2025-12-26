@@ -3,7 +3,7 @@
 import { useRef, useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import DottedMap from "dotted-map";
-import Image from "next/image";
+import OptimizedImage from "@/lib/image-utils";
 import { useTheme } from "next-themes";
 
 interface MapProps {
@@ -69,7 +69,7 @@ export function WorldMap({
 
   return (
     <div className="w-full aspect-[2/1] md:aspect-[2.5/1] lg:aspect-[2/1] bg-white rounded-lg relative font-sans overflow-hidden">
-      <Image
+      <OptimizedImage
         src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
         className="h-full w-full [mask-image:linear-gradient(to_bottom,transparent,white_10%,white_90%,transparent)] pointer-events-none select-none object-cover"
         alt="world map"

@@ -2,8 +2,8 @@
 
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
+import OptimizedImage from "@/lib/image-utils";
+import { Link } from "react-router-dom";
 import { ArrowLeft, Check, ArrowRight, Zap } from "lucide-react";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
@@ -194,7 +194,7 @@ export default function ServicePageContent({ service }: ServicePageContentProps)
                 >
                   <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-2xl opacity-50 group-hover:opacity-75 blur-lg transition-opacity" aria-hidden="true" />
                   <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden border-2 border-gray-800">
-                    <Image
+                    <OptimizedImage
                       src={service.heroImage}
                       alt={`${service.title} - TechnoRealm professional IT consulting services illustration`}
                       fill

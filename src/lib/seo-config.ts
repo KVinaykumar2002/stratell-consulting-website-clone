@@ -3,7 +3,7 @@
  * Covers: Keyword Research, On-Page Optimization, Technical SEO, and Off-Page Signals
  */
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://technorealm.com";
+export const siteUrl = import.meta.env.VITE_SITE_URL || "https://technorealm.com";
 
 // =============================================================================
 // 1. KEYWORD RESEARCH - Organized by intent and volume

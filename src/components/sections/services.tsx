@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
@@ -45,7 +45,7 @@ const ServiceCard = ({ icon, title, description, href, index }: { icon: string; 
       animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-      <Link href={href} className="group block bg-card rounded-3xl p-10 shadow-[0_4px_24px_rgba(15,24,40,0.08)] hover:shadow-[0_8px_32px_rgba(15,24,40,0.12)] transition-all duration-300 ease-in-out hover:scale-[1.02] flex flex-col gap-6">
+      <Link to={href} className="group block bg-card rounded-3xl p-10 shadow-[0_4px_24px_rgba(15,24,40,0.08)] hover:shadow-[0_8px_32px_rgba(15,24,40,0.12)] transition-all duration-300 ease-in-out hover:scale-[1.02] flex flex-col gap-6">
         <Image src={icon} alt={`${title} icon`} width={56} height={56} />
         <div className="flex flex-col gap-2">
           <h3 className="font-display text-[32px] font-semibold leading-[1.3] text-foreground">{title}</h3>
@@ -79,7 +79,7 @@ const CtaCard = () => {
         <h3 className="font-display text-[32px] font-semibold leading-[1.3] text-white">
           Start Your <em className="italic">Growth</em> Journey
         </h3>
-        <Link href="/contact" className="group/button relative inline-flex items-center bg-white text-foreground rounded-2xl h-14 pl-6 overflow-hidden text-button font-medium transition-all duration-300">
+        <Link to="/contact" className="group/button relative inline-flex items-center bg-white text-foreground rounded-2xl h-14 pl-6 overflow-hidden text-button font-medium transition-all duration-300">
           {/* Overlay animation from left to right */}
           <span className="absolute inset-0 bg-[#14B8A6] transform origin-left -translate-x-full transition-transform duration-500 ease-in-out group-hover/button:translate-x-0 rounded-2xl"></span>
           

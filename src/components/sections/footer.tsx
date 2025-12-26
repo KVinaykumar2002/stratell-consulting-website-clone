@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
+import { Link } from "react-router-dom";
+import OptimizedImage from "@/lib/image-utils";
 import { SparklesPreview } from "@/components/ui/sparkles-preview";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -90,8 +90,8 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1fr] gap-x-8 lg:gap-x-12 gap-y-12">
             {/* Logo */}
             <div>
-              <Link href="/" className="inline-block relative h-32 md:h-40 lg:h-48" aria-label="TechnoRealm Home - IT Consulting Services">
-                <Image
+              <Link to="/" className="inline-block relative h-32 md:h-40 lg:h-48" aria-label="TechnoRealm Home - IT Consulting Services">
+                <OptimizedImage
                   src="/logo image/loading12/1234.png"
                   alt="TechnoRealm - Expert IT Consulting and Technology Solutions Logo"
                   width={500}
@@ -121,7 +121,7 @@ const Footer = () => {
               <ul className="space-y-3">
                 {menuItems.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-gray-600 hover:text-[#14B8A6] transition-colors">{item.name}</Link>
+                    <Link to={item.href} className="text-gray-600 hover:text-[#14B8A6] transition-colors">{item.name}</Link>
                   </li>
                 ))}
               </ul>
@@ -133,11 +133,11 @@ const Footer = () => {
               <ul className="space-y-3">
                 {serviceLinks.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-gray-600 hover:text-[#14B8A6] transition-colors text-sm">{item.name}</Link>
+                    <Link to={item.href} className="text-gray-600 hover:text-[#14B8A6] transition-colors text-sm">{item.name}</Link>
                   </li>
                 ))}
                 <li>
-                  <Link href="/services" className="text-[#14B8A6] hover:text-[#0D9488] transition-colors text-sm font-medium">
+                  <Link to="/services" className="text-[#14B8A6] hover:text-[#0D9488] transition-colors text-sm font-medium">
                     View All →
                   </Link>
                 </li>
@@ -216,8 +216,8 @@ const Footer = () => {
           </p>
 
           <div className="flex gap-4 text-sm text-gray-600">
-            <Link href="/privacy" className="hover:text-[#14B8A6] transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-[#14B8A6] transition-colors">Terms & Conditions</Link>
+            <Link to="/privacy" className="hover:text-[#14B8A6] transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-[#14B8A6] transition-colors">Terms & Conditions</Link>
           </div>
         </div>
       </div>

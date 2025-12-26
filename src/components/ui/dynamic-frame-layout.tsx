@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
-import Link from "next/link"
+import { Link } from "react-router-dom"
 import { getServiceSlugFromName } from "@/lib/services-data"
 
 interface Frame {
@@ -216,7 +216,7 @@ function FrameComponent({
 
   if (href) {
     return (
-      <Link href={href} className="block w-full h-full cursor-pointer">
+      <Link to={href} className="block w-full h-full cursor-pointer">
         {content}
       </Link>
     )

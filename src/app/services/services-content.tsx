@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
-import dynamic from "next/dynamic";
+import { lazy, Suspense } from "react";
 import { Server, Brain, Code, Cloud } from "lucide-react";
 import { DynamicFrameLayout } from "@/components/ui/dynamic-frame-layout";
 import webDevelopmentAnimation from "@/app/web_development.json";
@@ -13,14 +13,9 @@ import dataSecurityAnimation from "@/app/DATA_SECURITY.json";
 import cloudAnimation from "@/app/Cloud.json";
 
 // Lazy load heavy components
-const ZoomParallaxDemo = dynamic(() => import("@/components/ui/zoom-parallax-demo"), { 
-  ssr: false 
-});
-const Feature108 = dynamic(
-  () => import("@/components/blocks/shadcnblocks-com-feature108").then((mod) => ({ default: mod.Feature108 })),
-  { 
-    ssr: false 
-  }
+const ZoomParallaxDemo = lazy(() => import("@/components/ui/zoom-parallax-demo"));
+const Feature108 = lazy(
+  () => import("@/components/blocks/shadcnblocks-com-feature108").then((mod) => ({ default: mod.Feature108 }))
 );
 
 export default function ServicesPageContent() {
@@ -70,14 +65,17 @@ export default function ServicesPageContent() {
         </div>
       </section>
 
-      <ZoomParallaxDemo />
+      <Suspense fallback={<div className="h-96 bg-gray-200 animate-pulse rounded-2xl" />}>
+        <ZoomParallaxDemo />
+      </Suspense>
       
       {/* Features Section with Tabs */}
-      <Feature108
-        badge="Our Expertise"
-        heading="Comprehensive IT Solutions Tailored to Your Needs"
-        description="Explore our core service areas and discover how we can transform your business with cutting-edge technology."
-        tabs={[
+      <Suspense fallback={<div className="h-96 bg-gray-200 animate-pulse rounded-2xl" />}>
+        <Feature108
+          badge="Our Expertise"
+          heading="Comprehensive IT Solutions Tailored to Your Needs"
+          description="Explore our core service areas and discover how we can transform your business with cutting-edge technology."
+          tabs={[
           {
             value: "it-feature",
             icon: <Server className="h-auto w-4 shrink-0" />,
@@ -134,8 +132,9 @@ export default function ServicesPageContent() {
               animationData: cloudAnimation,
             },
           },
-        ]}
-      />
+          ]}
+        />
+      </Suspense>
 
       {/* Dynamic Frame Layout Section */}
       <section className="py-32 px-6 bg-gradient-to-b from-gray-50 to-white" aria-labelledby="technology-services-title">

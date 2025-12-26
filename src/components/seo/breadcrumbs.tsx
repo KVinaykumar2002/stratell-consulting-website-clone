@@ -1,9 +1,8 @@
 'use client';
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { ChevronRight, Home } from 'lucide-react';
-import Script from 'next/script';
 
 interface BreadcrumbItem {
   name: string;
@@ -39,8 +38,9 @@ const pathNameMap: Record<string, string> = {
 };
 
 export function Breadcrumbs({ items, className = '', showHome = true }: BreadcrumbsProps) {
-  const pathname = usePathname();
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://technorealm.com';
+  const location = useLocation();
+  const pathname = location.pathname;
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://technorealm.com';
   
   // Auto-generate breadcrumbs from pathname if items not provided
   const breadcrumbItems: BreadcrumbItem[] = items || (() => {
@@ -84,15 +84,23 @@ export function Breadcrumbs({ items, className = '', showHome = true }: Breadcru
     ]
   };
 
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.id = 'breadcrumb-schema';
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(breadcrumbSchema);
+    document.head.appendChild(script);
+
+    return () => {
+      const existingScript = document.getElementById('breadcrumb-schema');
+      if (existingScript) {
+        document.head.removeChild(existingScript);
+      }
+    };
+  }, [breadcrumbSchema]);
+
   return (
     <>
-      <Script
-        id="breadcrumb-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
-      />
       <nav 
         aria-label="Breadcrumb" 
         className={`py-3 ${className}`}

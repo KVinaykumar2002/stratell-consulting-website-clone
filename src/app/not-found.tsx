@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Lottie from "lottie-react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 
@@ -57,7 +57,7 @@ export default function NotFound() {
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <Link
-              href="/"
+              to="/"
               className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
             >
               Go Home
