@@ -122,29 +122,6 @@ export default function Testimonials() {
             </motion.div>
           ))}
         </div>
-
-        {/* Client Logos Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mt-16 pt-16 border-t border-gray-200"
-        >
-          <p className="text-center text-sm font-semibold text-gray-600 mb-8 uppercase tracking-wide">
-            Trusted by Leading Companies
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
-            {["Microsoft", "Amazon", "Google", "Salesforce", "IBM", "Oracle"].map((company, index) => (
-              <div
-                key={index}
-                className="text-2xl font-bold text-gray-400 hover:text-[#0A1628] transition-colors cursor-pointer"
-              >
-                {company}
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );
