@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import Image from "next/image"
 
 export function NeonOrbs() {
   const [mounted, setMounted] = useState(false)
@@ -107,13 +106,11 @@ export function NeonOrbs() {
           }`}
           style={{ transitionDelay: "500ms" }}
         >
-          <Image
+          <img
             src="/logo image/loading12/1234.png"
             alt="TechnoRealm Logo"
-            width={800}
-            height={300}
             className="w-auto h-48 md:h-64 lg:h-80 xl:h-96 mx-auto"
-            priority
+            loading="eager"
           />
         </div>
       </div>

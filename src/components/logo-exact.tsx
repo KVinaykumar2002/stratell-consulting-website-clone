@@ -6,7 +6,6 @@
  */
 
 import React from 'react';
-import Image from 'next/image';
 
 interface ExactLogoProps {
   className?: string;
@@ -30,17 +29,15 @@ export const TechnoRealmExactLogo: React.FC<ExactLogoProps> = ({
   
   return (
     <div className={`relative ${sizeClasses[size]} ${className}`}>
-      <Image
+      <img
         src={logoPath}
         alt="TechnoRealm Logo"
-        width={400}
-        height={120}
         className="h-full w-auto object-contain"
         style={{
           // Use CSS to blend white background with dark theme
           filter: 'drop-shadow(0 0 0 transparent)',
         }}
-        priority
+        loading="eager"
       />
       {/* Fallback: If image fails, show SVG version */}
       <style jsx>{`

@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -46,7 +45,7 @@ const ServiceCard = ({ icon, title, description, href, index }: { icon: string; 
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       <Link to={href} className="group block bg-card rounded-3xl p-10 shadow-[0_4px_24px_rgba(15,24,40,0.08)] hover:shadow-[0_8px_32px_rgba(15,24,40,0.12)] transition-all duration-300 ease-in-out hover:scale-[1.02] flex flex-col gap-6">
-        <Image src={icon} alt={`${title} icon`} width={56} height={56} />
+        <img src={icon} alt={`${title} icon`} className="w-14 h-14" />
         <div className="flex flex-col gap-2">
           <h3 className="font-display text-[32px] font-semibold leading-[1.3] text-foreground">{title}</h3>
           <p className="text-muted-foreground">{description}</p>
@@ -67,12 +66,10 @@ const CtaCard = () => {
       transition={{ duration: 0.5, delay: 0.4 }}
       className="relative flex flex-col justify-end h-full min-h-[380px] p-10 rounded-3xl overflow-hidden"
     >
-      <Image
+      <img
         src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/9b84987e-5fc0-480d-bd08-54bddc2234ce-stratwell-consulting-framer-website/assets/images/bdaoSUaLvfhzG6ko44D0lXACYLk-1.jpg"
         alt="Business people shaking hands"
-        fill
-        style={{ objectFit: 'cover' }}
-        className="z-0"
+        className="absolute inset-0 w-full h-full object-cover z-0"
       />
       <div className="absolute inset-0 bg-[#0A1628]/65 z-10"></div>
       <div className="relative z-20 flex flex-col gap-8 items-start">
