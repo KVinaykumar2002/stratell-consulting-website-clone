@@ -131,10 +131,10 @@ export default function Header() {
                 >
                   <Link 
                     href={link.href}
-                    className={`flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    className={`flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 relative ${
                       active 
-                        ? 'text-[#14B8A6] bg-[#0A1628]/10 font-semibold' 
-                        : 'text-slate-800/80 hover:text-[#0A1628] hover:bg-[#0A1628]/5'
+                        ? 'text-[#14B8A6] bg-[#14B8A6]/10 font-semibold' 
+                        : 'text-slate-800/80 hover:text-[#14B8A6] hover:bg-[#14B8A6]/10'
                     }`}
                   >
                     {link.label}
@@ -163,9 +163,9 @@ export default function Header() {
                           <Link
                             key={service.href}
                             href={service.href}
-                            className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:text-[#14B8A6] hover:bg-slate-950/5 transition-colors"
+                            className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:text-[#14B8A6] hover:bg-[#14B8A6]/10 transition-all duration-200 rounded-lg group"
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#14B8A6]/50" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#14B8A6]/50 group-hover:bg-[#14B8A6] transition-colors" />
                             {service.label}
                           </Link>
                         ))}
@@ -202,9 +202,9 @@ export default function Header() {
                           <Link
                             key={tech.href}
                             href={tech.href}
-                            className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:text-[#14B8A6] hover:bg-slate-950/5 transition-colors"
+                            className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:text-[#14B8A6] hover:bg-[#14B8A6]/10 transition-all duration-200 rounded-lg group"
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#14B8A6]/50" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#14B8A6]/50 group-hover:bg-[#14B8A6] transition-colors" />
                             {tech.label}
                           </Link>
                         ))}
@@ -228,10 +228,10 @@ export default function Header() {
               <Link 
                 key={link.href} 
                 href={link.href}
-                className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
+                className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 relative ${
                   active 
-                    ? 'text-[#FFD700] bg-[#0A1628]/10 font-semibold' 
-                    : 'text-slate-800/80 hover:text-[#0A1628] hover:bg-[#0A1628]/5'
+                    ? 'text-[#14B8A6] bg-[#14B8A6]/10 font-semibold' 
+                    : 'text-slate-800/80 hover:text-[#14B8A6] hover:bg-[#14B8A6]/10'
                 }`}
               >
                 {link.label}
@@ -311,8 +311,8 @@ export default function Header() {
                                 }}
                                 className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-base font-medium transition-all ${
                                   active
-                                    ? 'text-[#14B8A6] bg-[#0A1628]/10'
-                                    : 'text-slate-800/80 hover:text-slate-900 hover:bg-slate-950/5'
+                                    ? 'text-[#14B8A6] bg-[#14B8A6]/10'
+                                    : 'text-slate-800/80 hover:text-[#14B8A6] hover:bg-[#14B8A6]/10'
                                 }`}
                               >
                                 {link.label}
@@ -328,7 +328,7 @@ export default function Header() {
                                     <SheetClose asChild key={service.href}>
                                       <Link
                                         href={service.href}
-                                        className="block px-4 py-2.5 text-sm text-slate-600 hover:text-[#14B8A6] rounded-lg transition-colors"
+                                        className="block px-4 py-2.5 text-sm text-slate-600 hover:text-[#14B8A6] hover:bg-[#14B8A6]/10 rounded-lg transition-all duration-200"
                                       >
                                         {service.label}
                                       </Link>
@@ -353,7 +353,7 @@ export default function Header() {
                                     <SheetClose asChild key={tech.href}>
                                       <Link
                                         href={tech.href}
-                                        className="block px-4 py-2.5 text-sm text-slate-600 hover:text-[#FFD700] rounded-lg transition-colors"
+                                        className="block px-4 py-2.5 text-sm text-slate-600 hover:text-[#14B8A6] hover:bg-[#14B8A6]/10 rounded-lg transition-all duration-200"
                                       >
                                         {tech.label}
                                       </Link>
@@ -362,7 +362,7 @@ export default function Header() {
                                   <SheetClose asChild>
                                     <Link
                                       href="/technologies"
-                                      className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-[#FFD700] rounded-lg"
+                                      className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-[#14B8A6] hover:bg-[#14B8A6]/10 rounded-lg transition-all duration-200"
                                     >
                                       View All Technologies
                                       <ArrowRight className="w-4 h-4" />
@@ -380,8 +380,8 @@ export default function Header() {
                             href={link.href} 
                               className={`block px-4 py-3.5 rounded-xl text-base font-medium transition-all ${
                               active
-                                  ? 'text-[#FFD700] bg-[#0A1628]/10'
-                                  : 'text-slate-800/80 hover:text-slate-900 hover:bg-slate-950/5'
+                                  ? 'text-[#14B8A6] bg-[#14B8A6]/10'
+                                  : 'text-slate-800/80 hover:text-[#14B8A6] hover:bg-[#14B8A6]/10'
                               }`}
                             >
                               {link.label}
