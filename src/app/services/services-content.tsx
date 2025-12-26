@@ -165,7 +165,7 @@ export default function ServicesPageContent() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              Comprehensive technology solutions to drive your business forward. Hover over each service to explore.
+              Comprehensive technology solutions to drive your business forward. Explore our services below.
             </motion.p>
           </div>
           <div className="w-full h-[800px] md:h-[900px] lg:h-[1000px]">

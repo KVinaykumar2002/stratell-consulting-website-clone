@@ -79,14 +79,13 @@ function FrameComponent({
   }, [])
 
   useEffect(() => {
-    if (isHovered && shouldLoad) {
-      videoRef.current?.play().catch(() => {
+    if (shouldLoad && videoRef.current) {
+      // Always play video when loaded, not just on hover
+      videoRef.current.play().catch(() => {
         // Handle autoplay restrictions
       })
-    } else {
-      videoRef.current?.pause()
     }
-  }, [isHovered, shouldLoad])
+  }, [shouldLoad])
 
   const content = (
     <div
@@ -127,7 +126,8 @@ function FrameComponent({
                 loop
                 muted
                 playsInline
-                preload="none"
+                autoPlay
+                preload="auto"
                 ref={videoRef}
               />
             ) : (
