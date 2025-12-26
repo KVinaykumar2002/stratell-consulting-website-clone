@@ -131,7 +131,7 @@ export default function Header() {
                   }}
                 >
                   <Link 
-                    href={link.href}
+                    to={link.href}
                     className={`flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 relative ${
                       active 
                         ? 'text-[#14B8A6] bg-[#14B8A6]/10 font-semibold' 
@@ -163,7 +163,7 @@ export default function Header() {
                         {serviceItems.map((service) => (
                           <Link
                             key={service.href}
-                            href={service.href}
+                            to={service.href}
                             className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:text-[#14B8A6] hover:bg-[#14B8A6]/10 transition-all duration-200 rounded-lg group"
                           >
                             <span className="w-1.5 h-1.5 rounded-full bg-[#14B8A6]/50 group-hover:bg-[#14B8A6] transition-colors" />
@@ -173,7 +173,7 @@ export default function Header() {
                       </div>
                       <div className="border-t border-white/10 mt-2 pt-2 px-2">
                         <Link
-                          href="/services"
+                          to="/services"
                           className="flex items-center justify-between px-3 py-2.5 text-sm font-medium text-[#14B8A6] hover:bg-[#14B8A6]/10 rounded-lg transition-colors"
                         >
                           View All Services
@@ -202,7 +202,7 @@ export default function Header() {
                         {technologyItems.map((tech) => (
                           <Link
                             key={tech.href}
-                            href={tech.href}
+                            to={tech.href}
                             className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:text-[#14B8A6] hover:bg-[#14B8A6]/10 transition-all duration-200 rounded-lg group"
                           >
                             <span className="w-1.5 h-1.5 rounded-full bg-[#14B8A6]/50 group-hover:bg-[#14B8A6] transition-colors" />
@@ -212,7 +212,7 @@ export default function Header() {
                       </div>
                       <div className="border-t border-white/10 mt-2 pt-2 px-2">
                         <Link
-                          href="/technologies"
+                          to="/technologies"
                           className="flex items-center justify-between px-3 py-2.5 text-sm font-medium text-[#14B8A6] hover:bg-[#14B8A6]/10 rounded-lg transition-colors"
                         >
                           View All Technologies
@@ -228,7 +228,7 @@ export default function Header() {
             return (
               <Link 
                 key={link.href} 
-                href={link.href}
+                to={link.href}
                 className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 relative ${
                   active 
                     ? 'text-[#14B8A6] bg-[#14B8A6]/10 font-semibold' 
@@ -244,7 +244,7 @@ export default function Header() {
         {/* Contact Button & Mobile Menu */}
         <div className="flex items-center gap-3">
           <Link
-            href="/contact"
+            to="/contact"
             className={`hidden lg:flex items-center gap-2 bg-[#14B8A6] text-white font-semibold rounded-lg transition-all duration-200 hover:bg-[#0D9488] hover:scale-105 active:scale-[0.98] shadow-lg hover:shadow-xl ${
               isScrolled ? 'h-10 px-5 text-sm' : 'h-11 px-6 text-sm'
             }`}
@@ -328,7 +328,7 @@ export default function Header() {
                                   {serviceItems.map((service) => (
                                     <SheetClose asChild key={service.href}>
                                       <Link
-                                        href={service.href}
+                                        to={service.href}
                                         className="block px-4 py-2.5 text-sm text-slate-600 hover:text-[#14B8A6] hover:bg-[#14B8A6]/10 rounded-lg transition-all duration-200"
                                       >
                                         {service.label}
@@ -337,7 +337,7 @@ export default function Header() {
                                   ))}
                                   <SheetClose asChild>
                                     <Link
-                                      href="/services"
+                                      to="/services"
                                       className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-[#14B8A6] rounded-lg"
                                     >
                                       View All Services
@@ -353,7 +353,7 @@ export default function Header() {
                                   {technologyItems.map((tech) => (
                                     <SheetClose asChild key={tech.href}>
                                       <Link
-                                        href={tech.href}
+                                        to={tech.href}
                                         className="block px-4 py-2.5 text-sm text-slate-600 hover:text-[#14B8A6] hover:bg-[#14B8A6]/10 rounded-lg transition-all duration-200"
                                       >
                                         {tech.label}
@@ -362,7 +362,7 @@ export default function Header() {
                                   ))}
                                   <SheetClose asChild>
                                     <Link
-                                      href="/technologies"
+                                      to="/technologies"
                                       className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-[#14B8A6] hover:bg-[#14B8A6]/10 rounded-lg transition-all duration-200"
                                     >
                                       View All Technologies
@@ -378,7 +378,7 @@ export default function Header() {
                       return (
                         <SheetClose asChild key={link.href}>
                           <Link 
-                            href={link.href} 
+                            to={link.href} 
                               className={`block px-4 py-3.5 rounded-xl text-base font-medium transition-all ${
                               active
                                   ? 'text-[#14B8A6] bg-[#14B8A6]/10'
@@ -397,7 +397,7 @@ export default function Header() {
                   <div className="p-5 border-t border-slate-200">
                     <SheetClose asChild>
                       <Link 
-                        href="/contact" 
+                        to="/contact" 
                         className="flex items-center justify-center gap-2 w-full h-12 bg-[#14B8A6] text-white text-base font-semibold rounded-xl hover:bg-[#0D9488] transition-colors shadow-lg"
                       >
                           Contact Us
