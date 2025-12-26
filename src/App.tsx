@@ -9,6 +9,8 @@ const HomePage = lazy(() => import('./pages/HomePage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const ServiceDetailPage = lazy(() => import('./pages/ServiceDetailPage'));
+const TechnologiesPage = lazy(() => import('./pages/TechnologiesPage'));
+const TechnologyDetailPage = lazy(() => import('./pages/TechnologyDetailPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const FaqsPage = lazy(() => import('./pages/FaqsPage'));
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage'));
@@ -90,6 +92,8 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/services/:slug" element={<ServiceDetailPage />} />
+            <Route path="/technologies" element={<TechnologiesPage />} />
+            <Route path="/technologies/:slug" element={<TechnologyDetailPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/faqs" element={<FaqsPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
