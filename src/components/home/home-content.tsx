@@ -6,7 +6,6 @@ import { Server, Brain, Code, Cloud } from "lucide-react";
 import { useState, useEffect } from "react";
 import Header from "@/components/sections/header";
 import HeroSection from "@/components/sections/hero";
-import PremiumServices from "@/components/sections/premium-services";
 
 // Lazy load JSON animations to reduce initial bundle size
 // These will be loaded only when the Feature108 component is rendered
@@ -136,7 +135,6 @@ const CtaFinal = lazy(() => import("@/components/sections/cta-final"));
 const Footer = lazy(() => import("@/components/sections/footer"));
 const GlobalNetworkSection = lazy(() => import("@/components/sections/global-network"));
 const FeaturesAccordionSection = lazy(() => import("@/components/sections/features-accordion"));
-const WhyChooseUs = lazy(() => import("@/components/sections/why-choose-us"));
 const StrategicCTA = lazy(() => import("@/components/sections/strategic-cta"));
 const Testimonials = lazy(() => import("@/components/sections/testimonials"));
 
@@ -158,7 +156,6 @@ export default function HomeContent() {
     <main className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
       <Header />
       <HeroSection />
-      <PremiumServices />
       <Feature108WithAnimations
         badge="Our Expertise"
         heading="Comprehensive IT Solutions Tailored to Your Needs"
@@ -331,7 +328,6 @@ export default function HomeContent() {
         </div>
       </section>
     
-      <WhyChooseUs />
       <StrategicCTA
         title="Ready to Transform Your Business?"
         subtitle="Let's discuss how TechnoRealm can help you achieve your technology goals."
