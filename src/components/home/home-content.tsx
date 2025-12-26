@@ -137,8 +137,8 @@ const Footer = lazy(() => import("@/components/sections/footer"));
 const GlobalNetworkSection = lazy(() => import("@/components/sections/global-network"));
 const FeaturesAccordionSection = lazy(() => import("@/components/sections/features-accordion"));
 const WhyChooseUs = lazy(() => import("@/components/sections/why-choose-us"));
-const Testimonials = lazy(() => import("@/components/sections/testimonials"));
 const StrategicCTA = lazy(() => import("@/components/sections/strategic-cta"));
+const Testimonials = lazy(() => import("@/components/sections/testimonials"));
 
 // Lazy load heavy components
 const DynamicFrameLayout = lazy(
@@ -339,7 +339,9 @@ export default function HomeContent() {
         secondaryCTA={{ text: "View Our Services", href: "/services" }}
       />
       <FeaturesAccordionSection />
-      <Testimonials />
+      <Suspense fallback={<div className="h-96 bg-gray-200 animate-pulse rounded-2xl" />}>
+        <Testimonials />
+      </Suspense>
       <GlobalNetworkSection />
       <TrustedBy />
       <div className="container px-6 pb-20">
