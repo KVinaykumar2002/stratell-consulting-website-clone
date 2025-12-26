@@ -13,6 +13,7 @@ const navLinks = [
   { href: "/technologies", label: "Technologies", hasDropdown: true },
   { href: "/about", label: "About Us" },
   { href: "/faqs", label: "FAQs" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 const serviceItems = [
