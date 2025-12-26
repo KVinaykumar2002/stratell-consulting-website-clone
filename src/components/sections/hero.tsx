@@ -2,7 +2,7 @@
 
 import { ArrowRight, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import Link from "next/link";
 
 export default function HeroSection() {
@@ -10,6 +10,9 @@ export default function HeroSection() {
   const words = useMemo(() => ["Business", "Ideas", "Goals", "Vision"], []);
   const wordColor = "text-[#14B8A6]"; // Logo Teal
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   // Memoize the interval callback
   const rotateWord = useCallback(() => {
@@ -21,26 +24,67 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, [rotateWord]);
 
+  // Lazy load video when section is in viewport
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setShouldLoadVideo(true);
+            // Start loading video after a small delay to prioritize text rendering
+            setTimeout(() => {
+              if (videoRef.current) {
+                videoRef.current.load();
+              }
+            }, 100);
+            observer.disconnect();
+          }
+        });
+      },
+      { rootMargin: "50px" }
+    );
+
+    observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section 
+      ref={sectionRef}
       className="relative flex min-h-screen w-full items-center justify-center overflow-hidden" 
       aria-label="Hero section - Transform your business with expert IT solutions"
     >
       {/* Background Video with optimized loading for better LCP */}
       <div className="absolute inset-0 z-0" role="presentation" aria-hidden="true">
-        <video
-          src="https://ikconsultingservices.com/wp-content/uploads/2025/03/business-consulting11.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="none"
-          className="h-full w-full object-cover"
-          aria-hidden="true"
-        >
-          {/* Fallback text for accessibility */}
-          <p>Business professionals collaborating in a modern office environment, showcasing IT consulting and technology solutions.</p>
-        </video>
+        {/* Static gradient background - shows immediately while video loads */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0A1628] via-[#1E3A5F] to-[#0A1628]" />
+        
+        {shouldLoadVideo && (
+          <video
+            ref={videoRef}
+            src="https://ikconsultingservices.com/wp-content/uploads/2025/03/business-consulting11.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            className="h-full w-full object-cover"
+            aria-hidden="true"
+            onLoadedData={() => {
+              // Video loaded, ensure it plays
+              if (videoRef.current) {
+                videoRef.current.play().catch(() => {
+                  // Auto-play failed, video will play on user interaction
+                });
+              }
+            }}
+          >
+            {/* Fallback text for accessibility */}
+            <p>Business professionals collaborating in a modern office environment, showcasing IT consulting and technology solutions.</p>
+          </video>
+        )}
         {/* Enhanced gradient overlay for text readability */}
         <div 
           className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/60 via-[#0A1628]/40 to-[#0A1628]/70" 

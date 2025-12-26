@@ -8,11 +8,8 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Lottie from "lottie-react";
 
-// Import JSON files directly - Next.js will handle these
-import webDevelopmentAnimation from "@/app/web_development.json";
-import itDevPinkAnimation from "@/app/IT_dev_pink.json";
-import dataSecurityAnimation from "@/app/DATA_SECURITY.json";
-import cloudAnimation from "@/app/Cloud.json";
+// Lazy load JSON files - only import when default tabs are actually used
+// This prevents blocking initial bundle load
 
 interface TabContent {
   badge: string;
@@ -38,12 +35,21 @@ interface Feature108Props {
   autoSwitchInterval?: number; // Interval in milliseconds (default: 5000ms = 5 seconds)
 }
 
-const Feature108 = ({
-  badge = "shadcnblocks.com",
-  heading = "A Collection of Components Built With Shadcn & Tailwind",
-  description = "Join us to build flawless web solutions.",
-  autoSwitchInterval = 5000, // 5 seconds default
-  tabs = [
+// Helper function to get default tabs - lazy loads animations only when needed
+const getDefaultTabs = async (): Promise<Tab[]> => {
+  const [
+    { default: webDevelopmentAnimation },
+    { default: itDevPinkAnimation },
+    { default: dataSecurityAnimation },
+    { default: cloudAnimation }
+  ] = await Promise.all([
+    import("@/app/web_development.json"),
+    import("@/app/IT_dev_pink.json"),
+    import("@/app/DATA_SECURITY.json"),
+    import("@/app/Cloud.json")
+  ]);
+
+  return [
     {
       value: "tab-1",
       icon: <Zap className="h-auto w-4 shrink-0" />,
@@ -96,9 +102,49 @@ const Feature108 = ({
         animationData: cloudAnimation,
       },
     },
-  ],
+  ];
+};
+
+const Feature108 = ({
+  badge = "shadcnblocks.com",
+  heading = "A Collection of Components Built With Shadcn & Tailwind",
+  description = "Join us to build flawless web solutions.",
+  autoSwitchInterval = 5000, // 5 seconds default
+  tabs: providedTabs,
 }: Feature108Props) => {
-  const [activeTab, setActiveTab] = useState(tabs[0].value);
+  const [tabs, setTabs] = useState<Tab[] | undefined>(providedTabs);
+  const [isLoadingDefaults, setIsLoadingDefaults] = useState(!providedTabs);
+
+  // Load default tabs if none provided
+  useEffect(() => {
+    if (!providedTabs && isLoadingDefaults) {
+      getDefaultTabs().then((defaultTabs) => {
+        setTabs(defaultTabs);
+        setIsLoadingDefaults(false);
+      });
+    }
+  }, [providedTabs, isLoadingDefaults]);
+
+  // Use provided tabs or wait for defaults
+  const activeTabs = tabs || [];
+  const [activeTab, setActiveTab] = useState(activeTabs[0]?.value || "");
+
+  // Update activeTab when tabs load
+  useEffect(() => {
+    if (activeTabs.length > 0 && !activeTab) {
+      setActiveTab(activeTabs[0].value);
+    }
+  }, [activeTabs, activeTab]);
+
+  if (!tabs || tabs.length === 0) {
+    return (
+      <section className="py-16 sm:py-24 md:py-32 bg-gradient-to-b from-white to-gray-50">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="h-96 bg-gray-200 rounded-2xl animate-pulse" />
+        </div>
+      </section>
+    );
+  }
   const autoSwitchPausedRef = useRef(false);
   const pauseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -108,14 +154,14 @@ const Feature108 = ({
 
     const interval = setInterval(() => {
       setActiveTab((current) => {
-        const currentIndex = tabs.findIndex((tab) => tab.value === current);
-        const nextIndex = (currentIndex + 1) % tabs.length;
-        return tabs[nextIndex].value;
+        const currentIndex = activeTabs.findIndex((tab) => tab.value === current);
+        const nextIndex = (currentIndex + 1) % activeTabs.length;
+        return activeTabs[nextIndex].value;
       });
     }, autoSwitchInterval);
 
     return () => clearInterval(interval);
-  }, [tabs, autoSwitchInterval]);
+  }, [activeTabs, autoSwitchInterval]);
 
   // Handle manual tab change - pause auto-switching temporarily
   const handleTabChange = (value: string) => {
@@ -157,7 +203,7 @@ const Feature108 = ({
         </div>
         <Tabs value={activeTab} onValueChange={handleTabChange} className="mt-6 sm:mt-8">
           <TabsList className="container flex flex-row items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-10 bg-transparent w-full sm:w-auto px-2 sm:px-0 overflow-x-auto scrollbar-hide">
-            {tabs.map((tab) => (
+            {activeTabs.map((tab) => (
               <TabsTrigger
                 key={tab.value}
                 value={tab.value}
@@ -169,7 +215,7 @@ const Feature108 = ({
             ))}
           </TabsList>
           <div className="mx-auto mt-6 sm:mt-8 max-w-screen-xl rounded-xl sm:rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 p-4 sm:p-6 md:p-8 lg:p-16 relative overflow-hidden min-h-[400px] sm:min-h-[500px] md:min-h-[600px] shadow-lg">
-            {tabs.map((tab) => {
+            {activeTabs.map((tab) => {
               const isActive = activeTab === tab.value;
               return (
                 <TabsContent
