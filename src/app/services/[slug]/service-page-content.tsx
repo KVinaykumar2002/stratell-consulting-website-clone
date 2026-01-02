@@ -58,7 +58,7 @@ export default function ServicePageContent({ service }: ServicePageContentProps)
       <Header />
       
       {/* Tech Hero Section */}
-      <section className="relative pt-32 pb-24 px-6 min-h-[70vh] flex items-center" aria-labelledby="service-title">
+      <section className="relative pt-32 pb-0 px-6 min-h-[70vh] flex items-center" aria-labelledby="service-title">
         <div className="container mx-auto max-w-6xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -119,7 +119,7 @@ export default function ServicePageContent({ service }: ServicePageContentProps)
       </section>
 
       {/* Main Content Section */}
-      <section className="relative py-20 px-6" aria-label="Service details">
+      <section className="relative pt-20 pb-0 px-6" aria-label="Service details">
         <div className="container mx-auto max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Left Column - Main Description */}
@@ -137,9 +137,37 @@ export default function ServicePageContent({ service }: ServicePageContentProps)
                   <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                     Overview
                   </h2>
-                  <p className="text-lg leading-relaxed text-gray-300">
+                  <p className="text-lg leading-relaxed text-gray-300 mb-8">
                     {service.fullDescription}
                   </p>
+                  
+                  {/* Images in Overview Section */}
+                  {service.slug === "system-integration" && (
+                    <div className="mt-8">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <motion.figure
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.5 }}
+                          whileHover={{ scale: 1.02 }}
+                          className="relative group/image"
+                        >
+                          <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl opacity-0 group-hover/image:opacity-50 blur transition-opacity" aria-hidden="true" />
+                          <div className="relative h-48 rounded-xl overflow-hidden border-2 border-gray-700">
+                            <OptimizedImage
+                              src="/images/system integration/AdobeStock_1846317270_Preview.jpeg"
+                              alt="System Integration - TechnoRealm professional IT consulting services"
+                              fill
+                              className="object-cover group-hover/image:scale-110 transition-transform duration-500"
+                              sizes="(max-width: 768px) 100vw, 50vw"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity" aria-hidden="true" />
+                          </div>
+                        </motion.figure>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </motion.article>
 
@@ -273,7 +301,7 @@ export default function ServicePageContent({ service }: ServicePageContentProps)
 
       {/* Image Gallery with Tech Theme */}
       {service.images && service.images.length > 0 && (
-        <section className="relative py-20 px-6 bg-gradient-to-b from-black via-gray-950 to-black" aria-labelledby="gallery-title">
+        <section className="relative pt-20 pb-20 px-6 bg-gradient-to-b from-black via-gray-950 to-black" aria-labelledby="gallery-title">
           <div className="container mx-auto max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 40 }}

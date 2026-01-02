@@ -16,10 +16,10 @@ export const servicesData: Record<string, ServiceDetail> = {
     title: "Business Strategy",
     shortDescription: "Set the right direction with market insights and actionable roadmaps.",
     fullDescription: "Our business strategy services help organizations navigate complex markets, identify growth opportunities, and develop comprehensive strategic roadmaps. We combine deep industry expertise with data-driven insights to help you make informed decisions that drive sustainable growth and competitive advantage.",
-    heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop&q=80",
+    heroImage: "https://t3.ftcdn.net/jpg/02/92/12/08/240_F_292120827_BnQl1hroKf3PgvA4EUwUlUqVlCeFjJrk.jpg",
     images: [
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop&q=80",
+      "https://t4.ftcdn.net/jpg/01/04/69/19/240_F_104691994_WkFmCdLYezhi2J8PJNtpmWQD1eyDkLz7.jpg",
+      "https://t4.ftcdn.net/jpg/07/15/17/75/240_F_715177520_Es6UzVhhAYPd8i1gBOLFesf9SK0TRL2c.jpg",
       "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&q=80"
     ],
     benefits: [
@@ -82,11 +82,11 @@ export const servicesData: Record<string, ServiceDetail> = {
     title: "Digital Transformation",
     shortDescription: "Set the right direction with market insights and actionable roadmaps.",
     fullDescription: "Accelerate your digital transformation journey with our comprehensive services. We help organizations modernize their technology stack, digitize processes, and create new digital capabilities that drive innovation and growth. Our holistic approach ensures alignment between technology and business objectives.",
-    heroImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=600&fit=crop&q=80",
+    heroImage: "https://t3.ftcdn.net/jpg/04/28/90/90/240_F_428909091_g2GtRie7tZ9vqhx8zcCi9nQ4oLPiFvZl.jpg",
     images: [
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop&q=80"
+      "https://t4.ftcdn.net/jpg/16/18/08/07/240_F_1618080711_VubjtKSSXkuAPdZHmc87Cu6GDVeUSBs6.jpg",
+      "https://t4.ftcdn.net/jpg/03/09/28/69/240_F_309286913_BeX1L9I588hQWhIWGGG2LhUGLvmANYbP.jpg",
+      "https://t4.ftcdn.net/jpg/17/21/89/47/240_F_1721894756_szxdZ9NV4cZVLWmd1KnbU6ZOJ3I6S4jl.jpg"
     ],
     benefits: [
       "Modernized technology infrastructure",
@@ -148,7 +148,7 @@ export const servicesData: Record<string, ServiceDetail> = {
     title: "AI & Machine Learning",
     shortDescription: "Harness the power of artificial intelligence and machine learning.",
     fullDescription: "Transform your business with cutting-edge AI and ML solutions. From predictive analytics to intelligent automation, we help you leverage artificial intelligence to gain competitive advantages, improve decision-making, and create innovative products and services.",
-    heroImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&h=600&fit=crop&q=80",
+    heroImage: "https://t4.ftcdn.net/jpg/03/93/50/99/240_F_393509907_Vdt91Xv8Bqm1MG9ZiphWb7V9m1x7kWl5.jpg",
     images: [
       "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&h=600&fit=crop&q=80",
       "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop&q=80",
@@ -252,11 +252,11 @@ export const servicesData: Record<string, ServiceDetail> = {
     title: "Application Development",
     shortDescription: "Build scalable, high-performance applications.",
     fullDescription: "Create custom applications tailored to your business needs. From web applications to mobile apps and enterprise software, we deliver solutions that are scalable, secure, and user-friendly.",
-    heroImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=600&fit=crop&q=80",
+    heroImage: "https://t4.ftcdn.net/jpg/07/89/10/11/240_F_789101146_B5XSkBbvu912V2G0iCXXN2ISi2PDbuBB.jpg",
     images: [
-      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop&q=80"
+      "https://t4.ftcdn.net/jpg/02/13/63/47/240_F_213634747_7onnOfb7aGF9QLNuuPSCAQokGzzUJVbH.jpg",
+      "https://t4.ftcdn.net/jpg/05/42/39/55/240_F_542395566_rg0X5qLpOn3QHvNsdqKtFJmzSWnWYJ04.jpg",
+      "https://t3.ftcdn.net/jpg/01/71/46/68/240_F_171466870_1YYZpPXFaPNK8zs0JsU95aN0kVL0B8e3.jpg"
     ],
     benefits: [
       "Custom solutions",
@@ -304,11 +304,11 @@ export const servicesData: Record<string, ServiceDetail> = {
     title: "System Integration",
     shortDescription: "Seamlessly connect your systems and applications.",
     fullDescription: "Integrate your disparate systems and applications to create a unified technology ecosystem. Our integration services ensure seamless data flow, improved efficiency, and better visibility across your organization.",
-    heroImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=600&fit=crop&q=80",
+    heroImage: "https://t3.ftcdn.net/jpg/15/68/95/84/240_F_1568958476_XjhPgLNcdlkRHfbaHqGQS46iThsLmZd6.jpg",
     images: [
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop&q=80"
+      "https://t3.ftcdn.net/jpg/16/37/71/34/240_F_1637713495_O2cxNVFuOrwXIfmpOSTvb1n3obKXK31P.jpg",
+      "https://t4.ftcdn.net/jpg/12/89/00/67/240_F_1289006746_fccj5OxL6nTmshVI4vrUQ7Qx5vpHGGZV.jpg",
+      "https://t4.ftcdn.net/jpg/10/11/03/87/240_F_1011038757_jQoYky5j9JKWOMCtLwHIRgxMqmRDa1cO.jpg"
     ],
     benefits: [
       "Unified systems",
@@ -330,7 +330,7 @@ export const servicesData: Record<string, ServiceDetail> = {
     title: "IT Consulting",
     shortDescription: "Strategic IT guidance for your business.",
     fullDescription: "Get expert IT consulting services to align your technology strategy with business goals. We provide strategic guidance, architecture design, technology selection, and implementation support to help you maximize the value of your IT investments.",
-    heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop&q=80",
+    heroImage: "https://t3.ftcdn.net/jpg/06/03/31/70/240_F_603317015_NJQ8W3HcAaBTFQNwCpv5RqUfJAVmkOFS.jpg",
     images: [
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop&q=80",
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop&q=80",

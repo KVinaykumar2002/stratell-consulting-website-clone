@@ -16,11 +16,11 @@ export const technologiesData: Record<string, TechnologyDetail> = {
     title: "AI & Machine Learning",
     shortDescription: "Harness the power of artificial intelligence and machine learning to drive intelligent automation, predictive analytics, and data-driven decision making.",
     fullDescription: "Transform your business with cutting-edge AI and ML solutions. From predictive analytics to intelligent automation, we help you leverage artificial intelligence to gain competitive advantages, improve decision-making, and create innovative products and services. Our expertise spans natural language processing, computer vision, deep learning, and reinforcement learning to solve complex business challenges.",
-    heroImage: "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=1200&h=600&fit=crop&q=80",
+    heroImage: "https://t4.ftcdn.net/jpg/15/72/20/69/240_F_1572206982_moz0RXTqXCiyOWrMVChdaozyNz8tMpYU.jpg",
     images: [
       "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&h=600&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1676299080923-7c75a5e4d674?w=800&h=600&fit=crop&q=80"
+      "https://t4.ftcdn.net/jpg/02/97/62/87/240_F_297628716_9bKovbG8vNcJV4QaWicTrfcmpV0OrTSr.jpg",
+      "https://t3.ftcdn.net/jpg/07/79/96/26/240_F_779962600_2k1JURjTAsP1VJ8X0PCMBv4QTU4gkm0I.jpg"
     ],
     benefits: [
       "Predictive analytics capabilities",
@@ -49,11 +49,11 @@ export const technologiesData: Record<string, TechnologyDetail> = {
     title: "Cloud Infrastructure",
     shortDescription: "Scalable, secure, and resilient cloud solutions across AWS, Azure, and GCP. Transform your infrastructure with cloud-native architectures.",
     fullDescription: "Build and manage robust cloud infrastructure that scales with your business. Our cloud services cover migration, architecture design, optimization, and ongoing management across AWS, Azure, and GCP platforms. We help organizations leverage cloud computing to reduce costs, improve agility, and enable innovation through modern cloud-native architectures.",
-    heroImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=600&fit=crop&q=80",
+    heroImage: "https://t3.ftcdn.net/jpg/05/29/73/10/240_F_529731004_UaoYV7jskuWv59UBAW379oNlvB7eFSXQ.jpg",
     images: [
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop&q=80"
+      "https://t4.ftcdn.net/jpg/05/84/71/53/240_F_584715352_PajwBHBUOBdsORbzPg99lmLdnu0ZNPL4.jpg",
+      "https://t3.ftcdn.net/jpg/05/99/28/96/240_F_599289609_q89N5DgCBeJqdEz3D1ULzMG5XGhTaTp6.jpg",
+      "https://t4.ftcdn.net/jpg/06/20/15/33/240_F_620153327_yspRZ2WcILsmDRjp0tjvdAjA4mErmfdp.jpg"
     ],
     benefits: [
       "Scalable infrastructure on-demand",
@@ -82,11 +82,11 @@ export const technologiesData: Record<string, TechnologyDetail> = {
     title: "Cybersecurity",
     shortDescription: "Comprehensive security solutions to protect your digital assets. From threat detection to compliance, we keep your business secure.",
     fullDescription: "Safeguard your organization against evolving cyber threats with our comprehensive cybersecurity services. We provide security assessments, threat protection, compliance support, and ongoing monitoring to keep your digital assets secure. Our proactive approach helps identify vulnerabilities before they become threats and ensures your systems meet industry compliance standards.",
-    heroImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&h=600&fit=crop&q=80",
+    heroImage: "https://t3.ftcdn.net/jpg/15/83/30/52/240_F_1583305283_wyfW0WekhFv2Ye6THHoU5fldkMKBpqkZ.jpg",
     images: [
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&h=600&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop&q=80"
+      "https://t4.ftcdn.net/jpg/03/62/07/47/240_F_362074732_j0l660xPemFu4NPxapPxkkAwUaQ2sAyS.jpg",
+      "https://t3.ftcdn.net/jpg/05/23/62/52/240_F_523625234_LbxOHj5GOeiOPFP8TfbikgqM2qK7XNKh.jpg",
+      "https://t4.ftcdn.net/jpg/04/39/16/65/240_F_439166548_rYObR3HwqMoOTNN5Bzc1EWlmgpzKkZHS.jpg"
     ],
     benefits: [
       "Enhanced security posture",
@@ -115,11 +115,11 @@ export const technologiesData: Record<string, TechnologyDetail> = {
     title: "DevOps Consulting",
     shortDescription: "Accelerate delivery with CI/CD pipelines, infrastructure automation, containerization, and automation. Achieve faster time-to-market.",
     fullDescription: "Streamline your development and operations with our DevOps expertise. We help organizations implement CI/CD pipelines, infrastructure automation, and best practices that enable faster, more reliable software delivery. Our DevOps solutions reduce deployment times, improve collaboration between teams, and ensure consistent, repeatable processes across your development lifecycle.",
-    heroImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=600&fit=crop&q=80",
+    heroImage: "https://t3.ftcdn.net/jpg/15/88/61/10/240_F_1588611086_2tpSAbRoDeLvky7HpGKjyvGebBT9nnrW.jpg",
     images: [
-      "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&h=600&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop&q=80"
+      "https://t4.ftcdn.net/jpg/16/06/41/09/240_F_1606410942_j6wt9dv4y9E9BVA49ehZv5zEtXUiVnOU.jpg",
+      "https://t3.ftcdn.net/jpg/11/75/61/80/240_F_1175618042_owy2F2y4hZc6PLGFnJz1Szc4BL723Z3B.jpg",
+      "https://t4.ftcdn.net/jpg/12/52/01/23/240_F_1252012310_Ju3jjRewNKHxX3S1gKnXgXeFJZyF4Zo2.jpg"
     ],
     benefits: [
       "Faster deployment cycles",
