@@ -73,10 +73,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: "Instagram", href: "https://www.instagram.com/technorealm", icon: FaInstagram },
+    { name: "Instagram", href: "https://www.instagram.com/technorealmtr?igsh=MTd0Nzh2NXhiZmF6Mg==", icon: FaInstagram },
     { name: "Facebook", href: "https://www.facebook.com/technorealm", icon: FaFacebookF },
-    { name: "LinkedIn", href: "https://www.linkedin.com/company/technorealm", icon: FaLinkedinIn },
-    { name: "Twitter (X)", href: "https://twitter.com/technorealm", icon: FaXTwitter },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/technorealm", icon: FaLinkedinIn },
+    { name: "Twitter (X)", href: "https://x.com/TechnoRealmtr", icon: FaXTwitter },
   ];
 
   return (
@@ -172,9 +172,9 @@ const Footer = () => {
               <h3 className="text-sm uppercase text-[#14B8A6] mb-6 tracking-wider">Contact</h3>
               <ul className="space-y-3 text-gray-600">
                 <li>
-                  <a href="tel:+15558676543" className="flex items-center gap-3 hover:text-[#14B8A6] transition-colors group">
+                  <a href="tel:+12149406126" className="flex items-center gap-3 hover:text-[#14B8A6] transition-colors group">
                     <HiPhone className="w-5 h-5 text-[#14B8A6] group-hover:scale-110 transition-transform" />
-                    +1 (555) 867-6543
+                    +1 (214) 940-6126
                   </a>
                 </li>
                 <li>
@@ -186,9 +186,8 @@ const Footer = () => {
                 <li className="flex gap-3">
                   <HiMapPin className="w-5 h-5 text-[#14B8A6] flex-shrink-0 mt-0.5" />
                   <span>
-                    420 TechnoRealm Avenue,<br />
-                    Suite 300<br />
-                    Boston, MA 02116, USA
+                    445 Dexter Avenue, Suite 4050<br />
+                    Montgomery, AL 36104
                   </span>
                 </li>
               </ul>

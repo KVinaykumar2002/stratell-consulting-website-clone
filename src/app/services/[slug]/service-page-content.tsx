@@ -58,7 +58,7 @@ export default function ServicePageContent({ service }: ServicePageContentProps)
       <Header />
       
       {/* Tech Hero Section */}
-      <section className="relative pt-32 pb-0 px-6 min-h-[70vh] flex items-center" aria-labelledby="service-title">
+      <section className="relative pt-32 pb-24 px-6 min-h-[70vh] flex items-center" aria-labelledby="service-title">
         <div className="container mx-auto max-w-6xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -119,7 +119,7 @@ export default function ServicePageContent({ service }: ServicePageContentProps)
       </section>
 
       {/* Main Content Section */}
-      <section className="relative pt-20 pb-0 px-6" aria-label="Service details">
+      <section className="relative py-20 px-6" aria-label="Service details">
         <div className="container mx-auto max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Left Column - Main Description */}
@@ -301,7 +301,7 @@ export default function ServicePageContent({ service }: ServicePageContentProps)
 
       {/* Image Gallery with Tech Theme */}
       {service.images && service.images.length > 0 && (
-        <section className="relative pt-20 pb-20 px-6 bg-gradient-to-b from-black via-gray-950 to-black" aria-labelledby="gallery-title">
+        <section className="relative py-20 px-6 bg-gradient-to-b from-black via-gray-950 to-black" aria-labelledby="gallery-title">
           <div className="container mx-auto max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
