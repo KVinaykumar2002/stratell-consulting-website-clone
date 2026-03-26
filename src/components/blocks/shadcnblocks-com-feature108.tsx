@@ -255,7 +255,7 @@ const Feature108 = ({
                       </Button>
                     )}
                   </div>
-                  <div className={`w-full max-w-lg h-[220px] sm:h-[260px] md:h-[320px] flex items-center justify-center overflow-hidden bg-transparent transition-all duration-700 ease-out ${
+                  <div className={`w-full max-w-xl h-[260px] sm:h-[320px] md:h-[380px] lg:h-[420px] flex items-center justify-center lg:justify-end overflow-hidden bg-transparent transition-all duration-700 ease-out ${
                     isActive 
                       ? "opacity-100 scale-100 delay-300" 
                       : "opacity-0 scale-95"
@@ -267,10 +267,10 @@ const Feature108 = ({
                       style={{ 
                         width: "100%", 
                         height: "100%",
-                        maxWidth: "100%",
-                        maxHeight: "100%"
+                        maxWidth: "120%",
+                        maxHeight: "120%"
                       }}
-                      className="rounded-xl"
+                      className="rounded-xl lg:translate-x-6"
                     />
                   </div>
                 </TabsContent>

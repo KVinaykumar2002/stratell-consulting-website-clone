@@ -5,7 +5,6 @@ import { Server, Brain, Code, Cloud } from "lucide-react";
 import { useState, useEffect } from "react";
 import Header from "@/components/sections/header";
 import HeroSection from "@/components/sections/hero";
-import HomeServicesShowcase from "@/components/sections/home-services-showcase";
 
 // Lazy load JSON animations to reduce initial bundle size
 // These will be loaded only when the Feature108 component is rendered
@@ -130,6 +129,7 @@ function Feature108WithAnimations({ badge, heading, description }: { badge: stri
 
 // Lazy load sections below the fold - only load when needed
 const FeatureSection = lazy(() => import("@/components/ui/stack-feature-section"));
+const HomeServicesShowcase = lazy(() => import("@/components/sections/home-services-showcase"));
 const TrustedBy = lazy(() => import("@/components/sections/trusted-by"));
 const CtaFinal = lazy(() => import("@/components/sections/cta-final"));
 const Footer = lazy(() => import("@/components/sections/footer"));
@@ -153,20 +153,34 @@ export default function HomeContent() {
         <FeatureSection />
       </Suspense>
     
-      <StrategicCTA
-        title="Ready to Transform Your Business?"
-        subtitle="Let's discuss how TechnoRealm can help you achieve your technology goals."
-        primaryCTA={{ text: "Book a Free Consultation", href: "/contact" }}
-        secondaryCTA={{ text: "View Our Services", href: "/services" }}
-      />
-      <HomeServicesShowcase />
-      <FeaturesAccordionSection />
-      <GlobalNetworkSection />
-      <TrustedBy />
+      <Suspense fallback={<div className="h-56 bg-gray-100 animate-pulse rounded-2xl" />}>
+        <StrategicCTA
+          title="Ready to Transform Your Business?"
+          subtitle="Let's discuss how TechnoRealm can help you achieve your technology goals."
+          primaryCTA={{ text: "Book a Free Consultation", href: "/contact" }}
+          secondaryCTA={{ text: "View Our Services", href: "/services" }}
+        />
+      </Suspense>
+      <Suspense fallback={<div className="h-80 bg-gray-100 animate-pulse rounded-2xl" />}>
+        <HomeServicesShowcase />
+      </Suspense>
+      <Suspense fallback={<div className="h-80 bg-gray-100 animate-pulse rounded-2xl" />}>
+        <FeaturesAccordionSection />
+      </Suspense>
+      <Suspense fallback={<div className="h-80 bg-gray-100 animate-pulse rounded-2xl" />}>
+        <GlobalNetworkSection />
+      </Suspense>
+      <Suspense fallback={<div className="h-80 bg-gray-100 animate-pulse rounded-2xl" />}>
+        <TrustedBy />
+      </Suspense>
       <div className="container px-6 pb-10 md:pb-14">
-        <CtaFinal />
+        <Suspense fallback={<div className="h-56 bg-gray-100 animate-pulse rounded-2xl" />}>
+          <CtaFinal />
+        </Suspense>
       </div>
-      <Footer />
+      <Suspense fallback={<div className="h-40 bg-gray-100 animate-pulse rounded-2xl" />}>
+        <Footer />
+      </Suspense>
     </main>
   );
 }
