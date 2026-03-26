@@ -36,7 +36,7 @@ export function OrganizationSchema() {
         "@type": "ContactPoint",
         telephone: "+1-555-867-6543",
         contactType: "Customer Service",
-        email: "contact@technorealm.com",
+        email: "info@technorealmtr.com",
         areaServed: "US",
         availableLanguage: ["English"],
         hoursAvailable: {
@@ -50,7 +50,7 @@ export function OrganizationSchema() {
         "@type": "ContactPoint",
         telephone: "+1-555-867-6543",
         contactType: "Sales",
-        email: "sales@technorealm.com",
+        email: "info@technorealmtr.com",
         areaServed: "US",
         availableLanguage: ["English"]
       },
@@ -58,7 +58,7 @@ export function OrganizationSchema() {
         "@type": "ContactPoint",
         telephone: "+1-555-867-6543",
         contactType: "Technical Support",
-        email: "support@technorealm.com",
+        email: "info@technorealmtr.com",
         areaServed: "US",
         availableLanguage: ["English"]
       }
@@ -192,7 +192,7 @@ export function LocalBusinessSchema() {
     "@id": `${siteUrl}#localbusiness`,
     url: siteUrl,
     telephone: "+1-555-867-6543",
-    email: "contact@technorealm.com",
+    email: "info@technorealmtr.com",
     description: "Expert IT consulting and technology solutions provider in Boston, MA",
     address: {
       "@type": "PostalAddress",

@@ -369,7 +369,7 @@ export const schemaTemplates = {
       longitude: "-71.0656",
     },
     telephone: "+1-555-867-6543",
-    email: "contact@technorealm.com",
+    email: "info@technorealmtr.com",
     priceRange: "$$-$$$",
   },
 

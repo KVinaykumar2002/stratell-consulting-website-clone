@@ -178,9 +178,9 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:contact@technorealm.com" className="flex items-center gap-3 hover:text-[#14B8A6] transition-colors group">
+                  <a href="mailto:info@technorealmtr.com" className="flex items-center gap-3 hover:text-[#14B8A6] transition-colors group">
                     <HiEnvelope className="w-5 h-5 text-[#14B8A6] group-hover:scale-110 transition-transform" />
-                    contact@technorealm.com
+                    info@technorealmtr.com
                   </a>
                 </li>
                 <li className="flex gap-3">

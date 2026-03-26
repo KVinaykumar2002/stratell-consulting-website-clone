@@ -107,7 +107,7 @@ export const FloatingContactCards = () => {
       <FloatingCard
         icon={<Mail className="w-6 h-6" />}
         title="Email Us"
-        content="hello@technorealm.com"
+        content="info@technorealmtr.com"
         delay={0}
       />
       <FloatingCard
