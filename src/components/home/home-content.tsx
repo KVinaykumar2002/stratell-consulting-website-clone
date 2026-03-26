@@ -1,9 +1,8 @@
 "use client";
 
-import { lazy, Suspense } from "react";
-import { motion } from "framer-motion";
+import { lazy, Suspense, type ReactNode } from "react";
 import { Server, Brain, Code, Cloud } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Header from "@/components/sections/header";
 import HeroSection from "@/components/sections/hero";
 
@@ -148,56 +147,107 @@ const DynamicFrameLayoutLoading = () => (
   </div>
 );
 
+function DeferredSection({
+  children,
+  fallback,
+  rootMargin = "350px",
+}: {
+  children: ReactNode;
+  fallback: ReactNode;
+  rootMargin?: string;
+}) {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    if (!sectionRef.current || isVisible) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin }
+    );
+
+    observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, [isVisible, rootMargin]);
+
+  return <div ref={sectionRef}>{isVisible ? children : fallback}</div>;
+}
+
 export default function HomeContent() {
-  // Removed artificial 2-second loading delay - this was killing LCP scores
+  const frameSectionRef = useRef<HTMLDivElement>(null);
+  const [shouldMountFrames, setShouldMountFrames] = useState(false);
+
+  useEffect(() => {
+    if (!frameSectionRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setShouldMountFrames(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "300px" }
+    );
+
+    observer.observe(frameSectionRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
       <Header />
       <HeroSection />
-      <Feature108WithAnimations
-        badge="Our Expertise"
-        heading="Comprehensive IT Solutions Tailored to Your Needs"
-        description="Explore our core service areas and discover how we can transform your business with cutting-edge technology."
-      />
-      <Suspense fallback={<div className="h-96 bg-gray-200 animate-pulse rounded-2xl" />}>
-        <FeatureSection />
-      </Suspense>
+      <DeferredSection fallback={<Feature108Loading />}>
+        <Feature108WithAnimations
+          badge="Our Expertise"
+          heading="Comprehensive IT Solutions Tailored to Your Needs"
+          description="Explore our core service areas and discover how we can transform your business with cutting-edge technology."
+        />
+      </DeferredSection>
+      <DeferredSection fallback={<div className="h-96 bg-gray-200 animate-pulse rounded-2xl" />}>
+        <Suspense fallback={<div className="h-96 bg-gray-200 animate-pulse rounded-2xl" />}>
+          <FeatureSection />
+        </Suspense>
+      </DeferredSection>
       
       {/* Our Technology Services Section */}
       <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-to-b from-gray-50 to-white relative overflow-visible">
         <div className="mx-auto w-full max-w-[1200px] relative z-10">
           <div className="mb-8 sm:mb-10 md:mb-12 text-center">
-            <motion.div
+            <div
               className="inline-flex items-center justify-center gap-2 rounded-full border border-[#14B8A6]/30 bg-[#14B8A6]/10 px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
             >
               <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#14B8A6] animate-pulse"></div>
               <p className="text-xs sm:text-sm font-medium text-[#14B8A6] tracking-wide">
                 Our Services
               </p>
-            </motion.div>
+            </div>
             <h2 
               className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal leading-[1.2] tracking-[-0.02em] text-[#1E3A5F] mb-3 sm:mb-4 px-4"
             >
               Our Technology <span className="text-[#14B8A6]">Services</span>
             </h2>
-            <motion.p 
+            <p 
               className="max-w-2xl mx-auto font-body text-sm sm:text-base md:text-lg font-normal leading-[1.6] text-gray-600 px-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
             >
               Comprehensive technology solutions to drive your business forward. Hover over each service to explore.
-            </motion.p>
+            </p>
           </div>
-          <div className="w-full h-[600px] sm:h-[500px] md:h-[600px] lg:h-[700px] xl:h-[800px] overflow-visible relative">
-            <Suspense fallback={<DynamicFrameLayoutLoading />}>
-              <DynamicFrameLayout 
+          <div
+            ref={frameSectionRef}
+            className="w-full h-[600px] sm:h-[500px] md:h-[600px] lg:h-[700px] xl:h-[800px] overflow-visible relative"
+          >
+            {shouldMountFrames ? (
+              <Suspense fallback={<DynamicFrameLayoutLoading />}>
+                <DynamicFrameLayout 
               frames={[
                 {
                   id: 1,
@@ -322,24 +372,51 @@ export default function HomeContent() {
               gapSize={4}
               showFrames={false}
             />
-            </Suspense>
+              </Suspense>
+            ) : (
+              <DynamicFrameLayoutLoading />
+            )}
           </div>
         </div>
       </section>
     
-      <StrategicCTA
-        title="Ready to Transform Your Business?"
-        subtitle="Let's discuss how TechnoRealm can help you achieve your technology goals."
-        primaryCTA={{ text: "Book a Free Consultation", href: "/contact" }}
-        secondaryCTA={{ text: "View Our Services", href: "/services" }}
-      />
-      <FeaturesAccordionSection />
-      <GlobalNetworkSection />
-      <TrustedBy />
-      <div className="container px-6 pb-20">
-        <CtaFinal />
-      </div>
-      <Footer />
+      <DeferredSection fallback={<div className="h-48 sm:h-56 md:h-64 bg-gray-100 animate-pulse rounded-xl" />}>
+        <Suspense fallback={<div className="h-48 sm:h-56 md:h-64 bg-gray-100 animate-pulse rounded-xl" />}>
+          <StrategicCTA
+            title="Ready to Transform Your Business?"
+            subtitle="Let's discuss how TechnoRealm can help you achieve your technology goals."
+            primaryCTA={{ text: "Book a Free Consultation", href: "/contact" }}
+            secondaryCTA={{ text: "View Our Services", href: "/services" }}
+          />
+        </Suspense>
+      </DeferredSection>
+      <DeferredSection fallback={<div className="h-72 bg-gray-100 animate-pulse rounded-xl" />}>
+        <Suspense fallback={<div className="h-72 bg-gray-100 animate-pulse rounded-xl" />}>
+          <FeaturesAccordionSection />
+        </Suspense>
+      </DeferredSection>
+      <DeferredSection fallback={<div className="h-80 bg-gray-100 animate-pulse rounded-xl" />}>
+        <Suspense fallback={<div className="h-80 bg-gray-100 animate-pulse rounded-xl" />}>
+          <GlobalNetworkSection />
+        </Suspense>
+      </DeferredSection>
+      <DeferredSection fallback={<div className="h-48 bg-gray-100 animate-pulse rounded-xl" />}>
+        <Suspense fallback={<div className="h-48 bg-gray-100 animate-pulse rounded-xl" />}>
+          <TrustedBy />
+        </Suspense>
+      </DeferredSection>
+      <DeferredSection fallback={<div className="container px-6 pb-20"><div className="h-52 bg-gray-100 animate-pulse rounded-xl" /></div>}>
+        <Suspense fallback={<div className="container px-6 pb-20"><div className="h-52 bg-gray-100 animate-pulse rounded-xl" /></div>}>
+          <div className="container px-6 pb-20">
+            <CtaFinal />
+          </div>
+        </Suspense>
+      </DeferredSection>
+      <DeferredSection fallback={<div className="h-64 bg-gray-100 animate-pulse" />}>
+        <Suspense fallback={<div className="h-64 bg-gray-100 animate-pulse" />}>
+          <Footer />
+        </Suspense>
+      </DeferredSection>
     </main>
   );
 }
