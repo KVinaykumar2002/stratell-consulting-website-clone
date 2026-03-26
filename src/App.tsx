@@ -71,8 +71,8 @@ function App() {
   return (
     <>
       <Head
-        title="TechnoRealm - Expert IT Consulting & Technology Solutions | Boston, MA"
-        description="TechnoRealm - Leading IT consulting company in Boston, MA. Expert technology consulting services including cloud computing, AI/ML solutions, cybersecurity, DevOps, custom software development, and digital transformation. Trusted by Fortune 500 companies. Get a free consultation today."
+        title="TechnoRealm - Expert IT Consulting & Technology Solutions | 445 Dexter Avenue, Suite 4050, Montgomery, AL 36104"
+        description="TechnoRealm - Leading IT consulting company in Montgomery, AL. Expert technology consulting services including cloud computing, AI/ML solutions, cybersecurity, DevOps, custom software development, and digital transformation. Visit us at 445 Dexter Avenue, Suite 4050, Montgomery, AL 36104. Trusted by Fortune 500 companies. Get a free consultation today."
         keywords="IT consulting, IT consulting services, IT consulting company, technology consulting, cloud consulting, AI consulting, cybersecurity consulting, DevOps consulting, Boston IT consulting"
         canonical={siteUrl}
         ogTitle="TechnoRealm - Expert IT Consulting & Technology Solutions"
