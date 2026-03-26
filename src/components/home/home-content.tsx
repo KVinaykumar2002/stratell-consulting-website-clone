@@ -5,6 +5,7 @@ import { Server, Brain, Code, Cloud } from "lucide-react";
 import { useState, useEffect } from "react";
 import Header from "@/components/sections/header";
 import HeroSection from "@/components/sections/hero";
+import HomeServicesShowcase from "@/components/sections/home-services-showcase";
 
 // Lazy load JSON animations to reduce initial bundle size
 // These will be loaded only when the Feature108 component is rendered
@@ -158,6 +159,7 @@ export default function HomeContent() {
         primaryCTA={{ text: "Book a Free Consultation", href: "/contact" }}
         secondaryCTA={{ text: "View Our Services", href: "/services" }}
       />
+      <HomeServicesShowcase />
       <FeaturesAccordionSection />
       <GlobalNetworkSection />
       <TrustedBy />

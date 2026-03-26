@@ -94,7 +94,7 @@ const FloatingCard = ({ icon, title, content, delay = 0 }: FloatingCardProps) =>
 
         {/* Shine effect */}
         <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+          <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-[#14B8A6]/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
         </div>
       </div>
     </motion.div>
