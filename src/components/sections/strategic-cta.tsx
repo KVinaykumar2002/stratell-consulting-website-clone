@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { SplineScene } from "@/components/ui/spline-scene";
 import { Spotlight } from "@/components/ui/spotlight";
 
 interface StrategicCTAProps {
@@ -31,20 +30,12 @@ export default function StrategicCTA({
   
   return (
     <section 
-      className={`relative py-20 md:py-32 px-4 sm:px-6 overflow-hidden ${
+      className={`relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 overflow-hidden ${
         isDark 
           ? "bg-gradient-to-br from-[#0A1628] via-[#0A1628] to-[#1E3A5F]" 
           : "bg-gradient-to-br from-gray-50 via-white to-gray-50"
       }`}
     >
-      {/* Spline 3D Background */}
-      <div className="absolute inset-0 w-full h-full opacity-30 pointer-events-none">
-        <SplineScene 
-          scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-          className="w-full h-full"
-        />
-      </div>
-
       {/* Spotlight Effect */}
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"

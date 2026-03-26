@@ -138,7 +138,7 @@ const Feature108 = ({
 
   if (!tabs || tabs.length === 0) {
     return (
-      <section className="py-16 sm:py-24 md:py-32 bg-gradient-to-b from-white to-gray-50">
+      <section className="py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="h-96 bg-gray-200 rounded-2xl animate-pulse" />
         </div>
@@ -189,9 +189,9 @@ const Feature108 = ({
   }, []);
 
   return (
-    <section className="py-16 sm:py-24 md:py-32 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-8 sm:py-10 md:py-12">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="flex flex-col items-center gap-3 sm:gap-4 text-center mb-4 sm:mb-0">
+        <div className="flex flex-col items-center gap-3 sm:gap-4 text-center mb-2 sm:mb-0">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#14B8A6]/30 bg-[#14B8A6]/10 px-3 sm:px-4 py-1.5 sm:py-2">
             <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#14B8A6] animate-pulse" />
             <span className="text-xs sm:text-sm font-medium text-[#14B8A6] tracking-wide">{badge}</span>
@@ -201,7 +201,7 @@ const Feature108 = ({
           </h1>
           <p className="text-sm sm:text-base text-zinc-400 px-4 leading-relaxed">{description}</p>
         </div>
-        <Tabs value={activeTab} onValueChange={handleTabChange} className="mt-6 sm:mt-8">
+        <Tabs value={activeTab} onValueChange={handleTabChange} className="mt-3 sm:mt-4">
           <TabsList className="container flex flex-row items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-10 bg-transparent w-full sm:w-auto px-2 sm:px-0 overflow-x-auto scrollbar-hide">
             {activeTabs.map((tab) => (
               <TabsTrigger
@@ -214,14 +214,14 @@ const Feature108 = ({
               </TabsTrigger>
             ))}
           </TabsList>
-          <div className="mx-auto mt-6 sm:mt-8 max-w-screen-xl rounded-xl sm:rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 p-4 sm:p-6 md:p-8 lg:p-16 relative overflow-hidden min-h-[400px] sm:min-h-[500px] md:min-h-[600px] shadow-lg">
+          <div className="mx-auto mt-2 sm:mt-3 max-w-screen-xl p-3 sm:p-5 md:p-6 lg:p-8 relative overflow-hidden">
             {activeTabs.map((tab) => {
               const isActive = activeTab === tab.value;
               return (
                 <TabsContent
                   key={tab.value}
                   value={tab.value}
-                  className={`grid place-items-center gap-8 sm:gap-12 md:gap-16 lg:gap-20 lg:grid-cols-2 lg:gap-10 transition-all duration-500 ease-in-out ${
+                  className={`grid place-items-center gap-6 sm:gap-8 md:gap-10 lg:grid-cols-2 lg:gap-8 transition-all duration-500 ease-in-out ${
                     isActive 
                       ? "opacity-100 translate-x-0 relative z-10" 
                       : "opacity-0 translate-x-4 absolute inset-0 pointer-events-none"
@@ -255,7 +255,7 @@ const Feature108 = ({
                       </Button>
                     )}
                   </div>
-                  <div className={`w-full max-w-lg h-[300px] sm:h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden bg-transparent transition-all duration-700 ease-out ${
+                  <div className={`w-full max-w-lg h-[220px] sm:h-[260px] md:h-[320px] flex items-center justify-center overflow-hidden bg-transparent transition-all duration-700 ease-out ${
                     isActive 
                       ? "opacity-100 scale-100 delay-300" 
                       : "opacity-0 scale-95"

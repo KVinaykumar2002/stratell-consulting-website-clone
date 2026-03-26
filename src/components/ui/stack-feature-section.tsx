@@ -55,7 +55,7 @@ export default function FeatureSection() {
   const iconsPerOrbit = Math.ceil(iconConfigs.length / orbitCount);
 
   return (
-    <section className="relative w-full my-32 px-6 md:px-10 flex flex-col md:flex-row items-center justify-between min-h-[30rem] border border-gray-200 bg-gradient-to-br from-white to-gray-50 overflow-hidden rounded-3xl shadow-lg">
+    <section className="relative w-full my-6 md:my-8 px-6 md:px-10 flex flex-col md:flex-row items-center justify-between min-h-[24rem] overflow-hidden">
       {/* Background Lottie Animation - positioned behind left side */}
       <div className="hidden md:block absolute left-50 top-0 w-full md:w-1/2 h-full pointer-events-none z-0">
         <Lottie

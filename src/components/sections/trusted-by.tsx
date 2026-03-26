@@ -35,9 +35,9 @@ const clients = [
 
 const TrustedBy = () => {
   return (
-    <section className="bg-gradient-to-b from-white via-gray-50 to-white py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px] relative overflow-hidden">
+    <section className="bg-gradient-to-b from-white via-gray-50 to-white py-10 sm:py-12 md:py-16 lg:py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
-        <div className="flex flex-col items-center text-center mb-10 sm:mb-12 md:mb-16">
+        <div className="flex flex-col items-center text-center mb-8 sm:mb-10 md:mb-12">
           {/* Tag with teal background */}
           <div className="inline-flex items-center gap-x-2 rounded-full border border-[#14B8A6]/30 bg-[#14B8A6]/10 px-3 sm:px-4 py-1 sm:py-1.5 mb-3 sm:mb-4">
             <div className="h-[4px] w-[4px] sm:h-[6px] sm:w-[6px] rounded-full bg-[#14B8A6] animate-pulse" />

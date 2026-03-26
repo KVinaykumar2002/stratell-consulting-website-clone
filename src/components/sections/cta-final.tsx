@@ -25,9 +25,9 @@ const CtaFinal = () => {
         objectPosition="center"
         className="z-0"
       />
-      <div className="absolute inset-0 z-10 bg-gradient-to-br from-[#1E3A5F]/60 via-white/40 to-[#1E3A5F]/60" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-br from-[#1E3A5F]/60 via-white/35 to-[#1E3A5F]/60" />
       <motion.div 
-        className="relative z-20 flex w-full max-w-[680px] flex-col items-center gap-6 rounded-3xl bg-white/[.08] p-10 text-center backdrop-blur-[8px] md:p-8 sm:p-6 border border-[#14B8A6]/20"
+        className="relative z-20 flex w-full max-w-[680px] flex-col items-center gap-6 rounded-3xl bg-white/[.08] p-10 text-center backdrop-blur-[8px] md:p-8 sm:p-6"
         initial={{ opacity: 0, y: 30 }}
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.6, delay: 0.2 }}

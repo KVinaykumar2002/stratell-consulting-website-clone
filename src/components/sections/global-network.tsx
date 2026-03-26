@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function GlobalNetworkSection() {
   return (
-    <div className="py-40 bg-gradient-to-b from-white to-gray-50 w-full">
+    <div className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-white to-gray-50 w-full">
       <div className="max-w-7xl mx-auto text-center px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

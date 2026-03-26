@@ -80,7 +80,7 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
   }, [activeLottiePath]);
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+    <section className="py-14 sm:py-16 md:py-20 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-[#14B8A6]/10 rounded-full blur-3xl" />
@@ -94,7 +94,7 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12"
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-[#14B8A6]/30 bg-[#14B8A6]/10 px-4 py-2 mb-4">
             <div className="h-2 w-2 rounded-full bg-[#14B8A6] animate-pulse" />
@@ -108,7 +108,7 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
           </p>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row items-start justify-between gap-12">
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-8 md:gap-10">
           {/* Accordion Section */}
           <motion.div 
             initial={{ opacity: 0, x: -30 }}

@@ -1,8 +1,8 @@
 "use client";
 
-import { lazy, Suspense, type ReactNode } from "react";
+import { lazy, Suspense } from "react";
 import { Server, Brain, Code, Cloud } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/sections/header";
 import HeroSection from "@/components/sections/hero";
 
@@ -136,287 +136,35 @@ const GlobalNetworkSection = lazy(() => import("@/components/sections/global-net
 const FeaturesAccordionSection = lazy(() => import("@/components/sections/features-accordion"));
 const StrategicCTA = lazy(() => import("@/components/sections/strategic-cta"));
 
-// Lazy load heavy components
-const DynamicFrameLayout = lazy(
-  () => import("@/components/ui/dynamic-frame-layout").then((mod) => ({ default: mod.DynamicFrameLayout }))
-);
-
-const DynamicFrameLayoutLoading = () => (
-  <div className="w-full h-full flex items-center justify-center">
-    <div className="w-16 h-16 border-4 border-[#14B8A6] border-t-transparent rounded-full animate-spin" />
-  </div>
-);
-
-function DeferredSection({
-  children,
-  fallback,
-  rootMargin = "350px",
-}: {
-  children: ReactNode;
-  fallback: ReactNode;
-  rootMargin?: string;
-}) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    if (!sectionRef.current || isVisible) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0]?.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin }
-    );
-
-    observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, [isVisible, rootMargin]);
-
-  return <div ref={sectionRef}>{isVisible ? children : fallback}</div>;
-}
-
 export default function HomeContent() {
-  const frameSectionRef = useRef<HTMLDivElement>(null);
-  const [shouldMountFrames, setShouldMountFrames] = useState(false);
-
-  useEffect(() => {
-    if (!frameSectionRef.current) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries;
-        if (entry.isIntersecting) {
-          setShouldMountFrames(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "300px" }
-    );
-
-    observer.observe(frameSectionRef.current);
-    return () => observer.disconnect();
-  }, []);
+  // Removed artificial 2-second loading delay - this was killing LCP scores
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
       <Header />
       <HeroSection />
-      <DeferredSection fallback={<Feature108Loading />}>
-        <Feature108WithAnimations
-          badge="Our Expertise"
-          heading="Comprehensive IT Solutions Tailored to Your Needs"
-          description="Explore our core service areas and discover how we can transform your business with cutting-edge technology."
-        />
-      </DeferredSection>
-      <DeferredSection fallback={<div className="h-96 bg-gray-200 animate-pulse rounded-2xl" />}>
-        <Suspense fallback={<div className="h-96 bg-gray-200 animate-pulse rounded-2xl" />}>
-          <FeatureSection />
-        </Suspense>
-      </DeferredSection>
-      
-      {/* Our Technology Services Section */}
-      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-to-b from-gray-50 to-white relative overflow-visible">
-        <div className="mx-auto w-full max-w-[1200px] relative z-10">
-          <div className="mb-8 sm:mb-10 md:mb-12 text-center">
-            <div
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#14B8A6]/30 bg-[#14B8A6]/10 px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6"
-            >
-              <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#14B8A6] animate-pulse"></div>
-              <p className="text-xs sm:text-sm font-medium text-[#14B8A6] tracking-wide">
-                Our Services
-              </p>
-            </div>
-            <h2 
-              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal leading-[1.2] tracking-[-0.02em] text-[#1E3A5F] mb-3 sm:mb-4 px-4"
-            >
-              Our Technology <span className="text-[#14B8A6]">Services</span>
-            </h2>
-            <p 
-              className="max-w-2xl mx-auto font-body text-sm sm:text-base md:text-lg font-normal leading-[1.6] text-gray-600 px-4"
-            >
-              Comprehensive technology solutions to drive your business forward. Hover over each service to explore.
-            </p>
-          </div>
-          <div
-            ref={frameSectionRef}
-            className="w-full h-[600px] sm:h-[500px] md:h-[600px] lg:h-[700px] xl:h-[800px] overflow-visible relative"
-          >
-            {shouldMountFrames ? (
-              <Suspense fallback={<DynamicFrameLayoutLoading />}>
-                <DynamicFrameLayout 
-              frames={[
-                {
-                  id: 1,
-                  video: "/animations/9videos/21.mp4",
-                  defaultPos: { x: 0, y: 0, w: 4, h: 4 },
-                  corner: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L64,0 L64,64 L0,64 Z' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3Cpath d='M0,0 L32,0 L0,32 Z' fill='%23ffffff' opacity='0.1'/%3E%3C/svg%3E",
-                  edgeHorizontal: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='64' y2='0' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E",
-                  edgeVertical: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='0' y2='64' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E",
-                  mediaSize: 1,
-                  borderThickness: 4,
-                  borderSize: 95,
-                  isHovered: false,
-                  serviceName: "AI & Machine Learning",
-                },
-                {
-                  id: 2,
-                  video: "/animations/9videos/22.mp4",
-                  defaultPos: { x: 4, y: 0, w: 4, h: 4 },
-                  corner: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L64,0 L64,64 L0,64 Z' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3Cpath d='M0,0 L32,0 L0,32 Z' fill='%23ffffff' opacity='0.1'/%3E%3C/svg%3E",
-                  edgeHorizontal: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='64' y2='0' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E",
-                  edgeVertical: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='0' y2='64' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E",
-                  mediaSize: 1,
-                  borderThickness: 4,
-                  borderSize: 95,
-                  isHovered: false,
-                  serviceName: "Cloud Infrastructure & Management",
-                },
-                {
-                  id: 3,
-                  video: "/animations/9videos/23.mp4",
-                  defaultPos: { x: 8, y: 0, w: 4, h: 4 },
-                  corner: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L64,0 L64,64 L0,64 Z' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3Cpath d='M0,0 L32,0 L0,32 Z' fill='%23ffffff' opacity='0.1'/%3E%3C/svg%3E",
-                  edgeHorizontal: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='64' y2='0' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E",
-                  edgeVertical: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='0' y2='64' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E",
-                  mediaSize: 1,
-                  borderThickness: 4,
-                  borderSize: 95,
-                  isHovered: false,
-                  serviceName: "Cybersecurity & Risk Management",
-                },
-                {
-                  id: 4,
-                  video: "/animations/9videos/24.mp4",
-                  defaultPos: { x: 0, y: 4, w: 4, h: 4 },
-                  corner: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L64,0 L64,64 L0,64 Z' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3Cpath d='M0,0 L32,0 L0,32 Z' fill='%23ffffff' opacity='0.1'/%3E%3C/svg%3E",
-                  edgeHorizontal: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='64' y2='0' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E",
-                  edgeVertical: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='0' y2='64' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E",
-                  mediaSize: 1,
-                  borderThickness: 4,
-                  borderSize: 95,
-                  isHovered: false,
-                  serviceName: "DevOps Consulting",
-                },
-                {
-                  id: 5,
-                  video: "/animations/9videos/25.mp4",
-                  defaultPos: { x: 4, y: 4, w: 4, h: 4 },
-                  corner: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L64,0 L64,64 L0,64 Z' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3Cpath d='M0,0 L32,0 L0,32 Z' fill='%23ffffff' opacity='0.1'/%3E%3C/svg%3E",
-                  edgeHorizontal: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='64' y2='0' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E",
-                  edgeVertical: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='0' y2='64' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E",
-                  mediaSize: 1,
-                  borderThickness: 4,
-                  borderSize: 95,
-                  isHovered: false,
-                  serviceName: "Application Development",
-                },
-                {
-                  id: 6,
-                  video: "/animations/9videos/26.mp4",
-                  defaultPos: { x: 8, y: 4, w: 4, h: 4 },
-                  corner: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L64,0 L64,64 L0,64 Z' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3Cpath d='M0,0 L32,0 L0,32 Z' fill='%23ffffff' opacity='0.1'/%3E%3C/svg%3E",
-                  edgeHorizontal: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='64' y2='0' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E",
-                  edgeVertical: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='0' y2='64' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E",
-                  mediaSize: 1,
-                  borderThickness: 4,
-                  borderSize: 95,
-                  isHovered: false,
-                  serviceName: "Data & Analytics",
-                },
-                {
-                  id: 7,
-                  video: "/animations/9videos/27.mp4",
-                  defaultPos: { x: 0, y: 8, w: 4, h: 4 },
-                  corner: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L64,0 L64,64 L0,64 Z' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3Cpath d='M0,0 L32,0 L0,32 Z' fill='%23ffffff' opacity='0.1'/%3E%3C/svg%3E",
-                  edgeHorizontal: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='64' y2='0' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E",
-                  edgeVertical: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='0' y2='64' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E",
-                  mediaSize: 1,
-                  borderThickness: 4,
-                  borderSize: 95,
-                  isHovered: false,
-                  serviceName: "Salesforce & Centene",
-                },
-                {
-                  id: 8,
-                  video: "/animations/9videos/28.mp4",
-                  defaultPos: { x: 4, y: 8, w: 4, h: 4 },
-                  corner: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L64,0 L64,64 L0,64 Z' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3Cpath d='M0,0 L32,0 L0,32 Z' fill='%23ffffff' opacity='0.1'/%3E%3C/svg%3E",
-                  edgeHorizontal: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='64' y2='0' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E",
-                  edgeVertical: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='0' y2='64' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E",
-                  mediaSize: 1,
-                  borderThickness: 4,
-                  borderSize: 95,
-                  isHovered: false,
-                  serviceName: "System Integration",
-                },
-                {
-                  id: 9,
-                  video: "/animations/9videos/29.mp4",
-                  defaultPos: { x: 8, y: 8, w: 4, h: 4 },
-                  corner: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L64,0 L64,64 L0,64 Z' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3Cpath d='M0,0 L32,0 L0,32 Z' fill='%23ffffff' opacity='0.1'/%3E%3C/svg%3E",
-                  edgeHorizontal: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='64' y2='0' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E",
-                  edgeVertical: "data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='0' y2='64' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E",
-                  mediaSize: 1,
-                  borderThickness: 4,
-                  borderSize: 95,
-                  isHovered: false,
-                  serviceName: "IT Consulting",
-                },
-              ]} 
-              className="w-full h-full" 
-              hoverSize={6}
-              gapSize={4}
-              showFrames={false}
-            />
-              </Suspense>
-            ) : (
-              <DynamicFrameLayoutLoading />
-            )}
-          </div>
-        </div>
-      </section>
+      <Feature108WithAnimations
+        badge="Our Expertise"
+        heading="Comprehensive IT Solutions Tailored to Your Needs"
+        description="Explore our core service areas and discover how we can transform your business with cutting-edge technology."
+      />
+      <Suspense fallback={<div className="h-96 bg-gray-200 animate-pulse rounded-2xl" />}>
+        <FeatureSection />
+      </Suspense>
     
-      <DeferredSection fallback={<div className="h-48 sm:h-56 md:h-64 bg-gray-100 animate-pulse rounded-xl" />}>
-        <Suspense fallback={<div className="h-48 sm:h-56 md:h-64 bg-gray-100 animate-pulse rounded-xl" />}>
-          <StrategicCTA
-            title="Ready to Transform Your Business?"
-            subtitle="Let's discuss how TechnoRealm can help you achieve your technology goals."
-            primaryCTA={{ text: "Book a Free Consultation", href: "/contact" }}
-            secondaryCTA={{ text: "View Our Services", href: "/services" }}
-          />
-        </Suspense>
-      </DeferredSection>
-      <DeferredSection fallback={<div className="h-72 bg-gray-100 animate-pulse rounded-xl" />}>
-        <Suspense fallback={<div className="h-72 bg-gray-100 animate-pulse rounded-xl" />}>
-          <FeaturesAccordionSection />
-        </Suspense>
-      </DeferredSection>
-      <DeferredSection fallback={<div className="h-80 bg-gray-100 animate-pulse rounded-xl" />}>
-        <Suspense fallback={<div className="h-80 bg-gray-100 animate-pulse rounded-xl" />}>
-          <GlobalNetworkSection />
-        </Suspense>
-      </DeferredSection>
-      <DeferredSection fallback={<div className="h-48 bg-gray-100 animate-pulse rounded-xl" />}>
-        <Suspense fallback={<div className="h-48 bg-gray-100 animate-pulse rounded-xl" />}>
-          <TrustedBy />
-        </Suspense>
-      </DeferredSection>
-      <DeferredSection fallback={<div className="container px-6 pb-20"><div className="h-52 bg-gray-100 animate-pulse rounded-xl" /></div>}>
-        <Suspense fallback={<div className="container px-6 pb-20"><div className="h-52 bg-gray-100 animate-pulse rounded-xl" /></div>}>
-          <div className="container px-6 pb-20">
-            <CtaFinal />
-          </div>
-        </Suspense>
-      </DeferredSection>
-      <DeferredSection fallback={<div className="h-64 bg-gray-100 animate-pulse" />}>
-        <Suspense fallback={<div className="h-64 bg-gray-100 animate-pulse" />}>
-          <Footer />
-        </Suspense>
-      </DeferredSection>
+      <StrategicCTA
+        title="Ready to Transform Your Business?"
+        subtitle="Let's discuss how TechnoRealm can help you achieve your technology goals."
+        primaryCTA={{ text: "Book a Free Consultation", href: "/contact" }}
+        secondaryCTA={{ text: "View Our Services", href: "/services" }}
+      />
+      <FeaturesAccordionSection />
+      <GlobalNetworkSection />
+      <TrustedBy />
+      <div className="container px-6 pb-10 md:pb-14">
+        <CtaFinal />
+      </div>
+      <Footer />
     </main>
   );
 }

@@ -33,7 +33,6 @@ interface FrameComponentProps {
   borderSize: number
   showFrame: boolean
   isHovered: boolean
-  shouldPlay: boolean
   serviceName?: string
   href?: string
 }
@@ -51,13 +50,11 @@ function FrameComponent({
   borderSize,
   showFrame,
   isHovered,
-  shouldPlay,
   serviceName,
   href,
 }: FrameComponentProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [shouldLoad, setShouldLoad] = useState(false)
-  const [hasVideoError, setHasVideoError] = useState(false)
   const frameRef = useRef<HTMLDivElement>(null)
 
   // Intersection Observer for lazy loading
@@ -82,17 +79,13 @@ function FrameComponent({
   }, [])
 
   useEffect(() => {
-    if (!shouldLoad || !videoRef.current || hasVideoError) return
-
-    if (shouldPlay) {
+    if (shouldLoad && videoRef.current) {
+      // Always play video when loaded, not just on hover
       videoRef.current.play().catch(() => {
-        // Ignore autoplay/playback errors silently.
+        // Handle autoplay restrictions
       })
-      return
     }
-
-    videoRef.current.pause()
-  }, [shouldLoad, shouldPlay, hasVideoError])
+  }, [shouldLoad])
 
   const content = (
     <div
@@ -126,22 +119,20 @@ function FrameComponent({
               transition: "transform 0.3s ease-in-out",
             }}
           >
-            {shouldLoad && !hasVideoError ? (
+            {shouldLoad ? (
               <video
                 className="w-full h-full object-cover"
                 src={video}
                 loop
                 muted
                 playsInline
-                preload="metadata"
+                autoPlay
+                preload="auto"
                 ref={videoRef}
-                onError={() => setHasVideoError(true)}
               />
             ) : (
               <div className="w-full h-full bg-gradient-to-br from-zinc-800 to-zinc-900 animate-pulse flex items-center justify-center">
-                <div className="text-zinc-500 text-xs text-center px-2">
-                  {hasVideoError ? "Preview unavailable" : "Loading..."}
-                </div>
+                <div className="text-zinc-500 text-xs text-center px-2">Loading...</div>
               </div>
             )}
           </div>
@@ -337,7 +328,6 @@ export function DynamicFrameLayout({
               borderSize={frame.borderSize}
               showFrame={showFrames}
               isHovered={hovered?.row === row && hovered?.col === col}
-              shouldPlay={hovered?.row === row && hovered?.col === col}
               serviceName={frame.serviceName}
               href={href}
             />
