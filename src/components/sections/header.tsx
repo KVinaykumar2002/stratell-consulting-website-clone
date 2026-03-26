@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services", hasDropdown: true },
   { href: "/technologies", label: "Technologies", hasDropdown: true },
+  { href: "/training", label: "Training" },
   { href: "/about", label: "About Us" },
   { href: "/faqs", label: "FAQs" },
   { href: "/contact", label: "Contact Us" },

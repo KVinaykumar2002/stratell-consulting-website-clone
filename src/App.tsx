@@ -13,6 +13,7 @@ const TechnologiesPage = lazy(() => import('./pages/TechnologiesPage'));
 const TechnologyDetailPage = lazy(() => import('./pages/TechnologyDetailPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const FaqsPage = lazy(() => import('./pages/FaqsPage'));
+const TrainingPage = lazy(() => import('./pages/TrainingPage'));
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage'));
 const TermsPage = lazy(() => import('./pages/TermsPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
@@ -96,6 +97,7 @@ function App() {
             <Route path="/technologies/:slug" element={<TechnologyDetailPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/faqs" element={<FaqsPage />} />
+            <Route path="/training" element={<TrainingPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/terms" element={<TermsPage />} />
             <Route path="*" element={<NotFoundPage />} />
