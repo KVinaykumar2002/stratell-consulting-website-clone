@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: "TechnoRealm - Expert IT Consulting & Technology Solutions | Montgomery, MA",
-    template: "%s | TechnoRealm - IT Consulting"
+    template: "%s | technorealmtr.com - IT Consulting"
   },
   description: "TechnoRealm - Leading IT consulting company in Montgomery, MA. Expert technology consulting services including cloud computing, AI/ML solutions, cybersecurity, DevOps, custom software development, and digital transformation. Trusted by Fortune 500 companies. Get a free consultation today.",
   keywords: [
@@ -183,8 +183,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    siteName: "TechnoRealm",
-    title: "TechnoRealm - Expert IT Consulting & Technology Solutions",
+    siteName: "technorealmtr.com",
+    title: "technorealmtr.com - Expert IT Consulting & Technology Solutions",
     description: "Transform your business with cutting-edge IT consulting services. Expert solutions in cloud infrastructure, AI/ML, cybersecurity, DevOps, and digital transformation. Trusted by 100+ enterprises.",
     images: [
       {
@@ -200,7 +200,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@technorealm",
-    title: "TechnoRealm - Expert IT Consulting & Technology Solutions",
+    title: "technorealmtr.com - Expert IT Consulting & Technology Solutions",
     description: "Transform your business with cutting-edge IT consulting. Cloud, AI/ML, Cybersecurity, DevOps & Digital Transformation. Trusted by 100+ enterprises.",
     images: {
       url: `${siteUrl}/twitter-image`,

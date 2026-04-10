@@ -23,12 +23,12 @@ export async function generateMetadata({
 
   if (!service) {
     return {
-      title: "Service Not Found | TechnoRealm",
+      title: "Service Not Found | technorealmtr.com",
       description: "The requested service page could not be found.",
     };
   }
 
-  const title = `${service.title} - Expert IT Consulting Services | TechnoRealm`;
+  const title = `${service.title} - Expert IT Consulting Services | technorealmtr.com`;
   const description = `${service.fullDescription.slice(0, 155)}...`;
 
   return {
@@ -47,13 +47,13 @@ export async function generateMetadata({
       title,
       description: service.shortDescription,
       url: `${siteUrl}/services/${slug}`,
-      siteName: "TechnoRealm",
+      siteName: "technorealmtr.com",
       images: [
         {
           url: service.heroImage,
           width: 1200,
           height: 630,
-          alt: `${service.title} - TechnoRealm IT Consulting Services`,
+          alt: `${service.title} - technorealmtr.com IT Consulting Services`,
         },
       ],
       locale: "en_US",

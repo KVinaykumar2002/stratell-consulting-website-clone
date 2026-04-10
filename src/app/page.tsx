@@ -4,7 +4,7 @@ import HomeContent from "@/components/home/home-content";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://technorealm.com";
 
 export const metadata: Metadata = {
-  title: "Expert IT Consulting & Technology Solutions | TechnoRealm",
+  title: "Expert IT Consulting & Technology Solutions | technorealmtr.com",
   description: "Transform your business with TechnoRealm's cutting-edge IT consulting services. Expert solutions in cloud infrastructure, AI/ML, cybersecurity, DevOps, application development, and digital transformation. Drive innovation and accelerate growth.",
   keywords: [
     "IT consulting services",
@@ -23,10 +23,10 @@ export const metadata: Metadata = {
     "enterprise technology solutions"
   ],
   openGraph: {
-    title: "Expert IT Consulting & Technology Solutions | TechnoRealm",
+    title: "Expert IT Consulting & Technology Solutions | technorealmtr.com",
     description: "Transform your business with cutting-edge IT consulting services. Expert solutions in cloud infrastructure, AI/ML, cybersecurity, DevOps, and digital transformation.",
     url: siteUrl,
-    siteName: "TechnoRealm",
+    siteName: "technorealmtr.com",
     images: [
       {
         url: `${siteUrl}/og-image.png`,
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Expert IT Consulting & Technology Solutions | TechnoRealm",
+    title: "Expert IT Consulting & Technology Solutions | technorealmtr.com",
     description: "Transform your business with cutting-edge IT consulting services.",
     images: [`${siteUrl}/og-image.png`],
     creator: "@technorealm",

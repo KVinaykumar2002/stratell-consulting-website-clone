@@ -4,7 +4,7 @@ import ServicesPageContent from "./services-content";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://technorealm.com";
 
 export const metadata: Metadata = {
-  title: "IT Services - Cloud, AI/ML, Cybersecurity & More | TechnoRealm",
+  title: "IT Services - Cloud, AI/ML, Cybersecurity & More | technorealmtr.com",
   description: "Comprehensive IT services including cloud infrastructure, AI & machine learning, cybersecurity, DevOps, application development, data analytics, and system integration. Tailored solutions for your business needs.",
   keywords: [
     "IT services",
@@ -20,10 +20,10 @@ export const metadata: Metadata = {
     "enterprise IT solutions"
   ],
   openGraph: {
-    title: "IT Services - Cloud, AI/ML, Cybersecurity & More | TechnoRealm",
+    title: "IT Services - Cloud, AI/ML, Cybersecurity & More | technorealmtr.com",
     description: "Comprehensive IT services including cloud infrastructure, AI & machine learning, cybersecurity, DevOps, and more.",
     url: `${siteUrl}/services`,
-    siteName: "TechnoRealm",
+    siteName: "technorealmtr.com",
     images: [
       {
         url: `${siteUrl}/og-image.png`,
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "IT Services - Cloud, AI/ML, Cybersecurity & More | TechnoRealm",
+    title: "IT Services - Cloud, AI/ML, Cybersecurity & More | technorealmtr.com",
     description: "Comprehensive IT services for your business needs.",
     images: [`${siteUrl}/og-image.png`],
     creator: "@technorealm",

@@ -6,7 +6,7 @@ import { LocalBusinessSchema } from "@/components/seo/structured-data";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://technorealm.com";
 
 export const metadata: Metadata = {
-  title: "Contact Us - Get Expert IT Consulting | TechnoRealm",
+  title: "Contact Us - Get Expert IT Consulting | technorealmtr.com",
   description: "Get in touch with TechnoRealm's IT consulting experts. Contact us for cloud infrastructure, AI/ML, cybersecurity, DevOps, and digital transformation solutions. Located in Montgomery, MA. Free consultation available.",
   keywords: [
     "contact TechnoRealm",
@@ -19,10 +19,10 @@ export const metadata: Metadata = {
     "enterprise IT contact"
   ],
   openGraph: {
-    title: "Contact Us - Get Expert IT Consulting | TechnoRealm",
+    title: "Contact Us - Get Expert IT Consulting | technorealmtr.com",
     description: "Get in touch with TechnoRealm's IT consulting experts for your technology needs. Free consultation available.",
     url: `${siteUrl}/contact`,
-    siteName: "TechnoRealm",
+    siteName: "technorealmtr.com",
     images: [
       {
         url: `${siteUrl}/og-image.png`,
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Us - Get Expert IT Consulting | TechnoRealm",
+    title: "Contact Us - Get Expert IT Consulting | technorealmtr.com",
     description: "Get in touch with TechnoRealm's IT consulting experts.",
     images: [`${siteUrl}/og-image.png`],
     creator: "@technorealm",

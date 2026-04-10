@@ -7,7 +7,7 @@ export default function TermsPageWrapper() {
   return (
     <>
       <Head
-        title="Terms & Conditions | TechnoRealm"
+        title="Terms & Conditions | technorealmtr.com"
         description="TechnoRealm Terms & Conditions - Read our terms of service and usage policies."
         canonical={`${siteUrl}/terms`}
       />

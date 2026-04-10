@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions - TechnoRealm",
+  title: "Terms & Conditions - technorealmtr.com",
   description: "Read TechnoRealm's Terms & Conditions to understand the terms of use for our website and IT consulting services.",
   robots: {
     index: true,

@@ -30,7 +30,7 @@ const faqItems = [
 ];
 
 export const metadata: Metadata = {
-  title: "FAQs - IT Consulting Questions Answered | TechnoRealm",
+  title: "FAQs - IT Consulting Questions Answered | technorealmtr.com",
   description: "Frequently asked questions about TechnoRealm's IT consulting services, cloud infrastructure, AI/ML, cybersecurity, DevOps, and digital transformation solutions. Get answers to common questions about our technology consulting services.",
   keywords: [
     "IT consulting FAQs",
@@ -43,10 +43,10 @@ export const metadata: Metadata = {
     "technology consulting process"
   ],
   openGraph: {
-    title: "FAQs - IT Consulting Questions Answered | TechnoRealm",
+    title: "FAQs - IT Consulting Questions Answered | technorealmtr.com",
     description: "Frequently asked questions about TechnoRealm's IT consulting services and solutions.",
     url: `${siteUrl}/faqs`,
-    siteName: "TechnoRealm",
+    siteName: "technorealmtr.com",
     images: [
       {
         url: `${siteUrl}/og-image.png`,
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FAQs - IT Consulting Questions Answered | TechnoRealm",
+    title: "FAQs - IT Consulting Questions Answered | technorealmtr.com",
     description: "Frequently asked questions about IT consulting services.",
     images: [`${siteUrl}/og-image.png`],
     creator: "@technorealm",

@@ -7,7 +7,7 @@ export default function PrivacyPageWrapper() {
   return (
     <>
       <Head
-        title="Privacy Policy | TechnoRealm"
+        title="Privacy Policy | technorealmtr.com"
         description="TechnoRealm Privacy Policy - Learn how we collect, use, and protect your personal information."
         canonical={`${siteUrl}/privacy`}
       />

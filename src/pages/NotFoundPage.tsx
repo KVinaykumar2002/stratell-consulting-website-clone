@@ -18,7 +18,7 @@ export default function NotFoundPage() {
   return (
     <>
       <Head
-        title="404 - Page Not Found | TechnoRealm"
+        title="404 - Page Not Found | technorealmtr.com"
       />
       <RobotsNoIndex />
       <div className="min-h-screen bg-background flex flex-col">

@@ -57,15 +57,15 @@ export default function TrainingPage() {
   return (
     <>
       <Head
-        title="Training Programs | TechnoRealm"
+        title="Training Programs | technorealmtr.com"
         description="Enroll in TechnoRealm training programs including Data Engineer, Gen AI, Business Intelligence, Power BI, and Data Analyst."
         keywords="training programs, data engineer training, gen ai training, business intelligence course, power bi course, data analyst course"
         canonical={`${siteUrl}/training`}
-        ogTitle="Training Programs | TechnoRealm"
+        ogTitle="Training Programs | technorealmtr.com"
         ogDescription="Enroll in our practical training tracks for data and AI careers."
         ogUrl={`${siteUrl}/training`}
         ogImage={`${siteUrl}/og-image.png`}
-        twitterTitle="Training Programs | TechnoRealm"
+        twitterTitle="Training Programs | technorealmtr.com"
         twitterDescription="Enroll in Data Engineer, Gen AI, BI, Power BI, and Data Analyst programs."
         twitterImage={`${siteUrl}/og-image.png`}
       />

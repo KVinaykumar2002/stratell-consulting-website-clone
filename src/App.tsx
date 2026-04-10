@@ -71,15 +71,15 @@ function App() {
   return (
     <>
       <Head
-        title="TechnoRealm - Expert IT Consulting & Technology Solutions | 445 Dexter Avenue, Suite 4050, Montgomery, AL 36104"
+        title="technorealmtr.com - Expert IT Consulting & Technology Solutions | 445 Dexter Avenue, Suite 4050, Montgomery, AL 36104"
         description="TechnoRealm - Leading IT consulting company in Montgomery, AL. Expert technology consulting services including cloud computing, AI/ML solutions, cybersecurity, DevOps, custom software development, and digital transformation. Visit us at 445 Dexter Avenue, Suite 4050, Montgomery, AL 36104. Trusted by Fortune 500 companies. Get a free consultation today."
         keywords="IT consulting, IT consulting services, IT consulting company, technology consulting, cloud consulting, AI consulting, cybersecurity consulting, DevOps consulting, Montgomery IT consulting"
         canonical={siteUrl}
-        ogTitle="TechnoRealm - Expert IT Consulting & Technology Solutions"
+        ogTitle="technorealmtr.com - Expert IT Consulting & Technology Solutions"
         ogDescription="Transform your business with cutting-edge IT consulting services. Expert solutions in cloud infrastructure, AI/ML, cybersecurity, DevOps, and digital transformation. Trusted by 100+ enterprises."
         ogImage={`${siteUrl}/opengraph-image`}
         ogUrl={siteUrl}
-        twitterTitle="TechnoRealm - Expert IT Consulting & Technology Solutions"
+        twitterTitle="technorealmtr.com - Expert IT Consulting & Technology Solutions"
         twitterDescription="Transform your business with cutting-edge IT consulting. Cloud, AI/ML, Cybersecurity, DevOps & Digital Transformation. Trusted by 100+ enterprises."
         twitterImage={`${siteUrl}/twitter-image`}
       />

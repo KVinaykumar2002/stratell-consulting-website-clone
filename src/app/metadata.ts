@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://technorealm.com";
 
 export const homeMetadata: Metadata = {
-  title: "Expert IT Consulting & Technology Solutions | TechnoRealm",
+  title: "Expert IT Consulting & Technology Solutions | technorealmtr.com",
   description: "Transform your business with TechnoRealm's cutting-edge IT consulting services. Expert solutions in cloud infrastructure, AI/ML, cybersecurity, DevOps, application development, and digital transformation. Drive innovation and accelerate growth.",
   keywords: [
     "IT consulting services",
@@ -20,10 +20,10 @@ export const homeMetadata: Metadata = {
     "business technology solutions"
   ],
   openGraph: {
-    title: "Expert IT Consulting & Technology Solutions | TechnoRealm",
+    title: "Expert IT Consulting & Technology Solutions | technorealmtr.com",
     description: "Transform your business with cutting-edge IT consulting services. Expert solutions in cloud infrastructure, AI/ML, cybersecurity, DevOps, and digital transformation.",
     url: siteUrl,
-    siteName: "TechnoRealm",
+    siteName: "technorealmtr.com",
     images: [
       {
         url: `${siteUrl}/logo image/loading12/1234.png`,
@@ -37,7 +37,7 @@ export const homeMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Expert IT Consulting & Technology Solutions | TechnoRealm",
+    title: "Expert IT Consulting & Technology Solutions | technorealmtr.com",
     description: "Transform your business with cutting-edge IT consulting services.",
     images: [`${siteUrl}/logo image/loading12/1234.png`],
   },
@@ -47,7 +47,7 @@ export const homeMetadata: Metadata = {
 };
 
 export const aboutMetadata: Metadata = {
-  title: "About Us - Technology Consulting Experts | TechnoRealm",
+  title: "About Us - Technology Consulting Experts | technorealmtr.com",
   description: "Learn about TechnoRealm - a boutique technology consulting studio helping modern organizations redesign operations, scale, and innovate. Expert team with decades of combined experience across industries.",
   keywords: [
     "about TechnoRealm",
@@ -58,10 +58,10 @@ export const aboutMetadata: Metadata = {
     "IT consulting firm"
   ],
   openGraph: {
-    title: "About Us - Technology Consulting Experts | TechnoRealm",
+    title: "About Us - Technology Consulting Experts | technorealmtr.com",
     description: "Learn about TechnoRealm - a boutique technology consulting studio helping modern organizations redesign operations, scale, and innovate.",
     url: `${siteUrl}/about`,
-    siteName: "TechnoRealm",
+    siteName: "technorealmtr.com",
     images: [
       {
         url: `${siteUrl}/logo image/loading12/1234.png`,
@@ -75,7 +75,7 @@ export const aboutMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Us - Technology Consulting Experts | TechnoRealm",
+    title: "About Us - Technology Consulting Experts | technorealmtr.com",
     description: "Learn about TechnoRealm - a boutique technology consulting studio.",
     images: [`${siteUrl}/logo image/loading12/1234.png`],
   },
@@ -85,7 +85,7 @@ export const aboutMetadata: Metadata = {
 };
 
 export const servicesMetadata: Metadata = {
-  title: "IT Services - Cloud, AI/ML, Cybersecurity & More | TechnoRealm",
+  title: "IT Services - Cloud, AI/ML, Cybersecurity & More | technorealmtr.com",
   description: "Comprehensive IT services including cloud infrastructure, AI & machine learning, cybersecurity, DevOps, application development, data analytics, and system integration. Tailored solutions for your business needs.",
   keywords: [
     "IT services",
@@ -99,10 +99,10 @@ export const servicesMetadata: Metadata = {
     "IT consulting services"
   ],
   openGraph: {
-    title: "IT Services - Cloud, AI/ML, Cybersecurity & More | TechnoRealm",
+    title: "IT Services - Cloud, AI/ML, Cybersecurity & More | technorealmtr.com",
     description: "Comprehensive IT services including cloud infrastructure, AI & machine learning, cybersecurity, DevOps, and more.",
     url: `${siteUrl}/services`,
-    siteName: "TechnoRealm",
+    siteName: "technorealmtr.com",
     images: [
       {
         url: `${siteUrl}/logo image/loading12/1234.png`,
@@ -116,7 +116,7 @@ export const servicesMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "IT Services - Cloud, AI/ML, Cybersecurity & More | TechnoRealm",
+    title: "IT Services - Cloud, AI/ML, Cybersecurity & More | technorealmtr.com",
     description: "Comprehensive IT services for your business needs.",
     images: [`${siteUrl}/logo image/loading12/1234.png`],
   },
@@ -126,7 +126,7 @@ export const servicesMetadata: Metadata = {
 };
 
 export const contactMetadata: Metadata = {
-  title: "Contact Us - Get Expert IT Consulting | TechnoRealm",
+  title: "Contact Us - Get Expert IT Consulting | technorealmtr.com",
   description: "Get in touch with TechnoRealm's IT consulting experts. Contact us for cloud infrastructure, AI/ML, cybersecurity, DevOps, and digital transformation solutions. Located in Montgomery, MA.",
   keywords: [
     "contact TechnoRealm",
@@ -136,10 +136,10 @@ export const contactMetadata: Metadata = {
     "IT services contact"
   ],
   openGraph: {
-    title: "Contact Us - Get Expert IT Consulting | TechnoRealm",
+    title: "Contact Us - Get Expert IT Consulting | technorealmtr.com",
     description: "Get in touch with TechnoRealm's IT consulting experts for your technology needs.",
     url: `${siteUrl}/contact`,
-    siteName: "TechnoRealm",
+    siteName: "technorealmtr.com",
     images: [
       {
         url: `${siteUrl}/logo image/loading12/1234.png`,
@@ -153,7 +153,7 @@ export const contactMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Us - Get Expert IT Consulting | TechnoRealm",
+    title: "Contact Us - Get Expert IT Consulting | technorealmtr.com",
     description: "Get in touch with TechnoRealm's IT consulting experts.",
     images: [`${siteUrl}/logo image/loading12/1234.png`],
   },
@@ -163,7 +163,7 @@ export const contactMetadata: Metadata = {
 };
 
 export const faqsMetadata: Metadata = {
-  title: "FAQs - IT Consulting Questions Answered | TechnoRealm",
+  title: "FAQs - IT Consulting Questions Answered | technorealmtr.com",
   description: "Frequently asked questions about TechnoRealm's IT consulting services, cloud infrastructure, AI/ML, cybersecurity, DevOps, and digital transformation solutions. Get answers to common questions.",
   keywords: [
     "IT consulting FAQs",
@@ -174,10 +174,10 @@ export const faqsMetadata: Metadata = {
     "DevOps FAQs"
   ],
   openGraph: {
-    title: "FAQs - IT Consulting Questions Answered | TechnoRealm",
+    title: "FAQs - IT Consulting Questions Answered | technorealmtr.com",
     description: "Frequently asked questions about TechnoRealm's IT consulting services and solutions.",
     url: `${siteUrl}/faqs`,
-    siteName: "TechnoRealm",
+    siteName: "technorealmtr.com",
     images: [
       {
         url: `${siteUrl}/logo image/loading12/1234.png`,
@@ -191,7 +191,7 @@ export const faqsMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FAQs - IT Consulting Questions Answered | TechnoRealm",
+    title: "FAQs - IT Consulting Questions Answered | technorealmtr.com",
     description: "Frequently asked questions about IT consulting services.",
     images: [`${siteUrl}/logo image/loading12/1234.png`],
   },
@@ -202,7 +202,7 @@ export const faqsMetadata: Metadata = {
 
 export function getServiceMetadata(serviceName: string, description: string): Metadata {
   return {
-    title: `${serviceName} - Expert IT Consulting Services | TechnoRealm`,
+    title: `${serviceName} - Expert IT Consulting Services | technorealmtr.com`,
     description: `${description} Expert ${serviceName} consulting services from TechnoRealm.`,
     keywords: [
       serviceName.toLowerCase(),
@@ -212,10 +212,10 @@ export function getServiceMetadata(serviceName: string, description: string): Me
       "technology solutions"
     ],
     openGraph: {
-      title: `${serviceName} - Expert IT Consulting Services | TechnoRealm`,
+      title: `${serviceName} - Expert IT Consulting Services | technorealmtr.com`,
       description: `${description} Expert ${serviceName} consulting services.`,
       url: `${siteUrl}/services/${serviceName.toLowerCase().replace(/\s+/g, "-")}`,
-      siteName: "TechnoRealm",
+      siteName: "technorealmtr.com",
       images: [
         {
           url: `${siteUrl}/logo image/loading12/1234.png`,
@@ -229,7 +229,7 @@ export function getServiceMetadata(serviceName: string, description: string): Me
     },
     twitter: {
       card: "summary_large_image",
-      title: `${serviceName} - Expert IT Consulting Services | TechnoRealm`,
+      title: `${serviceName} - Expert IT Consulting Services | technorealmtr.com`,
       description: `${description}`,
       images: [`${siteUrl}/logo image/loading12/1234.png`],
     },

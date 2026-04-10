@@ -24,15 +24,15 @@ export default function ContactPage() {
   return (
     <>
       <Head
-        title="Contact Us - Get Expert IT Consulting | TechnoRealm"
+        title="Contact Us - Get Expert IT Consulting | technorealmtr.com"
         description="Get in touch with TechnoRealm's IT consulting experts. Contact us for cloud infrastructure, AI/ML, cybersecurity, DevOps, and digital transformation solutions. Located in Montgomery, MA. Free consultation available."
         keywords="contact TechnoRealm, IT consulting contact, technology consulting contact, Montgomery IT consulting, IT services contact, free IT consultation, technology partner contact, enterprise IT contact"
         canonical={`${siteUrl}/contact`}
-        ogTitle="Contact Us - Get Expert IT Consulting | TechnoRealm"
+        ogTitle="Contact Us - Get Expert IT Consulting | technorealmtr.com"
         ogDescription="Get in touch with TechnoRealm's IT consulting experts for your technology needs. Free consultation available."
         ogUrl={`${siteUrl}/contact`}
         ogImage={`${siteUrl}/og-image.png`}
-        twitterTitle="Contact Us - Get Expert IT Consulting | TechnoRealm"
+        twitterTitle="Contact Us - Get Expert IT Consulting | technorealmtr.com"
         twitterDescription="Get in touch with TechnoRealm's IT consulting experts."
         twitterImage={`${siteUrl}/og-image.png`}
       />

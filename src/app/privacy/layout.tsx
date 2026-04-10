@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - TechnoRealm",
+  title: "Privacy Policy - technorealmtr.com",
   description: "Read TechnoRealm's Privacy Policy to understand how we collect, use, and protect your personal information when you use our IT consulting services.",
   robots: {
     index: true,

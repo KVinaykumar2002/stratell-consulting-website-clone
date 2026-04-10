@@ -7,15 +7,15 @@ export default function AboutPage() {
   return (
     <>
       <Head
-        title="About Us - Technology Consulting Experts | TechnoRealm"
+        title="About Us - Technology Consulting Experts | technorealmtr.com"
         description="Learn about TechnoRealm - a boutique technology consulting studio helping modern organizations redesign operations, scale, and innovate. Expert team with decades of combined experience across industries."
         keywords="about TechnoRealm, technology consulting company, IT consulting team, technology experts, digital transformation experts, IT consulting firm, Montgomery IT consultants, enterprise technology partners"
         canonical={`${siteUrl}/about`}
-        ogTitle="About Us - Technology Consulting Experts | TechnoRealm"
+        ogTitle="About Us - Technology Consulting Experts | technorealmtr.com"
         ogDescription="Learn about TechnoRealm - a boutique technology consulting studio helping modern organizations redesign operations, scale, and innovate."
         ogUrl={`${siteUrl}/about`}
         ogImage={`${siteUrl}/og-image.png`}
-        twitterTitle="About Us - Technology Consulting Experts | TechnoRealm"
+        twitterTitle="About Us - Technology Consulting Experts | technorealmtr.com"
         twitterDescription="Learn about TechnoRealm - a boutique technology consulting studio."
         twitterImage={`${siteUrl}/og-image.png`}
       />

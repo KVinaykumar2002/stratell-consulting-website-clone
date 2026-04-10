@@ -4,7 +4,7 @@ import AboutPageContent from "./about-content";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://technorealm.com";
 
 export const metadata: Metadata = {
-  title: "About Us - Technology Consulting Experts | TechnoRealm",
+  title: "About Us - Technology Consulting Experts | technorealmtr.com",
   description: "Learn about TechnoRealm - a boutique technology consulting studio helping modern organizations redesign operations, scale, and innovate. Expert team with decades of combined experience across industries.",
   keywords: [
     "about TechnoRealm",
@@ -17,10 +17,10 @@ export const metadata: Metadata = {
     "enterprise technology partners"
   ],
   openGraph: {
-    title: "About Us - Technology Consulting Experts | TechnoRealm",
+    title: "About Us - Technology Consulting Experts | technorealmtr.com",
     description: "Learn about TechnoRealm - a boutique technology consulting studio helping modern organizations redesign operations, scale, and innovate.",
     url: `${siteUrl}/about`,
-    siteName: "TechnoRealm",
+    siteName: "technorealmtr.com",
     images: [
       {
         url: `${siteUrl}/og-image.png`,
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Us - Technology Consulting Experts | TechnoRealm",
+    title: "About Us - Technology Consulting Experts | technorealmtr.com",
     description: "Learn about TechnoRealm - a boutique technology consulting studio.",
     images: [`${siteUrl}/og-image.png`],
     creator: "@technorealm",

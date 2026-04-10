@@ -47,15 +47,15 @@ export default function FaqsPage() {
   return (
     <>
       <Head
-        title="FAQs - IT Consulting Questions Answered | TechnoRealm"
+        title="FAQs - IT Consulting Questions Answered | technorealmtr.com"
         description="Frequently asked questions about TechnoRealm's IT consulting services, cloud infrastructure, AI/ML, cybersecurity, DevOps, and digital transformation solutions. Get answers to common questions about our technology consulting services."
         keywords="IT consulting FAQs, technology consulting questions, cloud services FAQs, AI ML consulting FAQs, cybersecurity FAQs, DevOps FAQs, IT consulting pricing, technology consulting process"
         canonical={`${siteUrl}/faqs`}
-        ogTitle="FAQs - IT Consulting Questions Answered | TechnoRealm"
+        ogTitle="FAQs - IT Consulting Questions Answered | technorealmtr.com"
         ogDescription="Frequently asked questions about TechnoRealm's IT consulting services and solutions."
         ogUrl={`${siteUrl}/faqs`}
         ogImage={`${siteUrl}/og-image.png`}
-        twitterTitle="FAQs - IT Consulting Questions Answered | TechnoRealm"
+        twitterTitle="FAQs - IT Consulting Questions Answered | technorealmtr.com"
         twitterDescription="Frequently asked questions about IT consulting services."
         twitterImage={`${siteUrl}/og-image.png`}
       />
