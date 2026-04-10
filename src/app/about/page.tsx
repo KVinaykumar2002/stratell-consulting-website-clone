@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "technology experts",
     "digital transformation experts",
     "IT consulting firm",
-    "Boston IT consultants",
+    "Montgomery IT consultants",
     "enterprise technology partners"
   ],
   openGraph: {

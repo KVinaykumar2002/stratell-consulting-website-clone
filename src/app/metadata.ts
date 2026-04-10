@@ -127,12 +127,12 @@ export const servicesMetadata: Metadata = {
 
 export const contactMetadata: Metadata = {
   title: "Contact Us - Get Expert IT Consulting | TechnoRealm",
-  description: "Get in touch with TechnoRealm's IT consulting experts. Contact us for cloud infrastructure, AI/ML, cybersecurity, DevOps, and digital transformation solutions. Located in Boston, MA.",
+  description: "Get in touch with TechnoRealm's IT consulting experts. Contact us for cloud infrastructure, AI/ML, cybersecurity, DevOps, and digital transformation solutions. Located in Montgomery, MA.",
   keywords: [
     "contact TechnoRealm",
     "IT consulting contact",
     "technology consulting contact",
-    "Boston IT consulting",
+    "Montgomery IT consulting",
     "IT services contact"
   ],
   openGraph: {

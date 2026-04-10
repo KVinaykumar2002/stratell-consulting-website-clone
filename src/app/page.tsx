@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "system integration services",
     "data analytics consulting",
     "business technology solutions",
-    "Boston IT consulting",
+    "Montgomery IT consulting",
     "enterprise technology solutions"
   ],
   openGraph: {

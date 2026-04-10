@@ -7,12 +7,12 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://technorealm.com";
 
 export const metadata: Metadata = {
   title: "Contact Us - Get Expert IT Consulting | TechnoRealm",
-  description: "Get in touch with TechnoRealm's IT consulting experts. Contact us for cloud infrastructure, AI/ML, cybersecurity, DevOps, and digital transformation solutions. Located in Boston, MA. Free consultation available.",
+  description: "Get in touch with TechnoRealm's IT consulting experts. Contact us for cloud infrastructure, AI/ML, cybersecurity, DevOps, and digital transformation solutions. Located in Montgomery, MA. Free consultation available.",
   keywords: [
     "contact TechnoRealm",
     "IT consulting contact",
     "technology consulting contact",
-    "Boston IT consulting",
+    "Montgomery IT consulting",
     "IT services contact",
     "free IT consultation",
     "technology partner contact",

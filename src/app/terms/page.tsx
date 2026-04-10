@@ -165,7 +165,7 @@ export default function TermsPage() {
                 <div className="bg-zinc-900/50 rounded-lg p-6 space-y-2">
                   <p className="text-white font-semibold">TechnoRealm</p>
                   <p>420 TechnoRealm Avenue, Suite 300</p>
-                  <p>Boston, MA 02116, USA</p>
+                  <p>Montgomery, MA 02116, USA</p>
                   <p>
                     <a href="mailto:legal@technorealm.com" className="text-[#14B8A6] hover:underline">
                       legal@technorealm.com

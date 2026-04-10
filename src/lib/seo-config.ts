@@ -103,11 +103,11 @@ export const keywordStrategy = {
 
   // Local SEO Keywords
   local: [
-    "IT consulting Boston",
-    "Boston IT consulting company",
+    "IT consulting Montgomery",
+    "Montgomery IT consulting company",
     "Massachusetts IT services",
-    "IT consultants Boston MA",
-    "technology consulting Boston",
+    "IT consultants Montgomery MA",
+    "technology consulting Montgomery",
     "IT services near me",
   ],
 
@@ -119,7 +119,7 @@ export const keywordStrategy = {
     "AI implementation consulting for business",
     "cybersecurity consulting for small business",
     "DevOps consulting for enterprise",
-    "custom software development company Boston",
+    "custom software development company Montgomery",
     "digital transformation consulting services",
   ],
 
@@ -161,8 +161,8 @@ export const pageOptimization = {
   },
   
   contact: {
-    title: "Contact TechnoRealm - Free IT Consulting Quote | Boston, MA",
-    description: "Contact TechnoRealm for free IT consulting. Boston, MA. Call +1 (555) 867-6543. Response within 24 hours. Get your project assessment today.",
+    title: "Contact TechnoRealm - Free IT Consulting Quote | Montgomery, MA",
+    description: "Contact TechnoRealm for free IT consulting. Montgomery, MA. Call +1 (555) 867-6543. Response within 24 hours. Get your project assessment today.",
     h1: "Contact Us",
     keywords: [...keywordStrategy.local, "IT consulting quote", "free consultation"],
   },
@@ -358,7 +358,7 @@ export const schemaTemplates = {
     address: {
       "@type": "PostalAddress",
       streetAddress: "420 TechnoRealm Avenue, Suite 300",
-      addressLocality: "Boston",
+      addressLocality: "Montgomery",
       addressRegion: "MA",
       postalCode: "02116",
       addressCountry: "US",

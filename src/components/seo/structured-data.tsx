@@ -66,7 +66,7 @@ export function OrganizationSchema() {
     address: {
       "@type": "PostalAddress",
       streetAddress: "420 TechnoRealm Avenue, Suite 300",
-      addressLocality: "Boston",
+      addressLocality: "Montgomery",
       addressRegion: "MA",
       postalCode: "02116",
       addressCountry: "US"
@@ -193,11 +193,11 @@ export function LocalBusinessSchema() {
     url: siteUrl,
     telephone: "+1-555-867-6543",
     email: "info@technorealmtr.com",
-    description: "Expert IT consulting and technology solutions provider in Boston, MA",
+    description: "Expert IT consulting and technology solutions provider in Montgomery, MA",
     address: {
       "@type": "PostalAddress",
       streetAddress: "420 TechnoRealm Avenue, Suite 300",
-      addressLocality: "Boston",
+      addressLocality: "Montgomery",
       addressRegion: "MA",
       postalCode: "02116",
       addressCountry: "US",

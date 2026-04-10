@@ -27,10 +27,10 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://technorealm.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "TechnoRealm - Expert IT Consulting & Technology Solutions | Boston, MA",
+    default: "TechnoRealm - Expert IT Consulting & Technology Solutions | Montgomery, MA",
     template: "%s | TechnoRealm - IT Consulting"
   },
-  description: "TechnoRealm - Leading IT consulting company in Boston, MA. Expert technology consulting services including cloud computing, AI/ML solutions, cybersecurity, DevOps, custom software development, and digital transformation. Trusted by Fortune 500 companies. Get a free consultation today.",
+  description: "TechnoRealm - Leading IT consulting company in Montgomery, MA. Expert technology consulting services including cloud computing, AI/ML solutions, cybersecurity, DevOps, custom software development, and digital transformation. Trusted by Fortune 500 companies. Get a free consultation today.",
   keywords: [
     // Primary High-Volume Keywords
     "IT consulting",
@@ -131,12 +131,12 @@ export const metadata: Metadata = {
     "CRM integration",
     
     // Local SEO Keywords
-    "IT consulting Boston",
-    "Boston IT consulting company",
+    "IT consulting Montgomery",
+    "Montgomery IT consulting company",
     "Massachusetts IT consulting",
     "IT consultants near me",
-    "technology consulting Boston MA",
-    "IT services Boston",
+    "technology consulting Montgomery MA",
+    "IT services Montgomery",
     
     // Industry Keywords
     "healthcare IT consulting",
@@ -239,7 +239,7 @@ export const metadata: Metadata = {
   classification: "Business",
   other: {
     "geo.region": "US-MA",
-    "geo.placename": "Boston",
+    "geo.placename": "Montgomery",
     "geo.position": "42.3551;-71.0656",
     "ICBM": "42.3551, -71.0656",
     "revisit-after": "7 days",

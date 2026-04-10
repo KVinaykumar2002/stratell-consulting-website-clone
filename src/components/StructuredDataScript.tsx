@@ -16,7 +16,7 @@ export default function StructuredDataScript() {
       description: 'Expert IT consulting and technology solutions',
       address: {
         '@type': 'PostalAddress',
-        addressLocality: 'Boston',
+        addressLocality: 'Montgomery',
         addressRegion: 'MA',
         addressCountry: 'US',
       },

@@ -9,7 +9,7 @@ export default function AboutPage() {
       <Head
         title="About Us - Technology Consulting Experts | TechnoRealm"
         description="Learn about TechnoRealm - a boutique technology consulting studio helping modern organizations redesign operations, scale, and innovate. Expert team with decades of combined experience across industries."
-        keywords="about TechnoRealm, technology consulting company, IT consulting team, technology experts, digital transformation experts, IT consulting firm, Boston IT consultants, enterprise technology partners"
+        keywords="about TechnoRealm, technology consulting company, IT consulting team, technology experts, digital transformation experts, IT consulting firm, Montgomery IT consultants, enterprise technology partners"
         canonical={`${siteUrl}/about`}
         ogTitle="About Us - Technology Consulting Experts | TechnoRealm"
         ogDescription="Learn about TechnoRealm - a boutique technology consulting studio helping modern organizations redesign operations, scale, and innovate."

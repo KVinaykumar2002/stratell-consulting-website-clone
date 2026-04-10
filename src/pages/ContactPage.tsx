@@ -25,8 +25,8 @@ export default function ContactPage() {
     <>
       <Head
         title="Contact Us - Get Expert IT Consulting | TechnoRealm"
-        description="Get in touch with TechnoRealm's IT consulting experts. Contact us for cloud infrastructure, AI/ML, cybersecurity, DevOps, and digital transformation solutions. Located in Boston, MA. Free consultation available."
-        keywords="contact TechnoRealm, IT consulting contact, technology consulting contact, Boston IT consulting, IT services contact, free IT consultation, technology partner contact, enterprise IT contact"
+        description="Get in touch with TechnoRealm's IT consulting experts. Contact us for cloud infrastructure, AI/ML, cybersecurity, DevOps, and digital transformation solutions. Located in Montgomery, MA. Free consultation available."
+        keywords="contact TechnoRealm, IT consulting contact, technology consulting contact, Montgomery IT consulting, IT services contact, free IT consultation, technology partner contact, enterprise IT contact"
         canonical={`${siteUrl}/contact`}
         ogTitle="Contact Us - Get Expert IT Consulting | TechnoRealm"
         ogDescription="Get in touch with TechnoRealm's IT consulting experts for your technology needs. Free consultation available."
